@@ -1,4 +1,4 @@
-const githubProfileUrl = "https://api.github.com/users/sun0225SUN";
+const githubProfileUrl = "https://github.com/RecoFu";
 const linkedInProfileUrl = "https://www.linkedin.com/in/recofu/";
 
 // Fetch and display GitHub profile
