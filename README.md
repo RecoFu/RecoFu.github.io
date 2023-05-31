@@ -1,158 +1,18 @@
-# RecoFu.github.io
+# 💫 About Me:
+Electrical Engineering, PLC, Automatic Control Systems, Communication Systems, Networks, Fully Automated Trading, System Root Cause Analysis and Cloud Architecture.
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reco Fu - Personal Projects on GitHub</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      background-color: lightblue;
-      font-family: Arial, sans-serif;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
 
-    h1, h2 {
-      color: #fff;
-      background-color: #007bff;
-      padding: 10px;
-      margin: 0;
-    }
+## 🌐 Socials:
+[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/reco.fu) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/recofu) 
 
-    section {
-      margin-bottom: 30px;
-      padding: 20px;
-      background-color: #fff;
-    }
-    
-    .links {
-      margin-top: 20px;
-    }
-    
-    .links a {
-      display: inline-block;
-      margin-right: 10px;
-      color: #007bff;
-      text-decoration: none;
-    }
+# 💻 Tech Stack:
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Fortran](https://img.shields.io/badge/Fortran-%23734F96.svg?style=for-the-badge&logo=fortran&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=azure-devops&logoColor=white) ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white) ![Google Cloud](https://img.shields.io/badge/Google%20Cloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white) ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white) ![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white) ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) ![ANDROID](https://img.shields.io/badge/android-%2320232a.svg?style=for-the-badge&logo=android&logoColor=%a4c639) ![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white) ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![MicrosoftSQLServer](https://img.shields.io/badge/Microsoft%20SQL%20Sever-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white) ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white) ![AmazonDynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-4053D6?style=for-the-badge&logo=Amazon%20DynamoDB&logoColor=white) ![Gimp Gnu Image Manipulation Program](https://img.shields.io/badge/Gimp-657D8B?style=for-the-badge&logo=gimp&logoColor=FFFFFF) ![Keras](https://img.shields.io/badge/Keras-%23D00000.svg?style=for-the-badge&logo=Keras&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white) ![LINUX](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black) ![Ansible](https://img.shields.io/badge/ansible-%231A1918.svg?style=for-the-badge&logo=ansible&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white) ![ElasticSearch](https://img.shields.io/badge/-ElasticSearch-005571?style=for-the-badge&logo=elasticsearch) ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=RecoFu&theme=tokyonight&hide_border=false&include_all_commits=false&count_private=false)<br/>
+![](https://github-readme-streak-stats.herokuapp.com/?user=RecoFu&theme=tokyonight&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=RecoFu&theme=tokyonight&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
-    .flex-container {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      margin-top: 20px;
-    }
+---
+[![](https://visitcount.itsvg.in/api?id=RecoFu&icon=0&color=1)](https://visitcount.itsvg.in)
 
-    .flex-container img {
-      margin: 0 10px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Reco Fu - Personal Projects on GitHub</h1>
-  </header>
-  
-  <section id="about">
-    <h2>About Me:</h2>
-    <p>
-      Hello, I'm Reco Fu. I am an experienced professional with a strong passion for innovation, adaptability, and problem-solving. With a background in electrical engineering and a wide range of technical skills, I have successfully led teams and managed complex projects throughout my career.
-    </p>
-    <p>
-      My expertise lies in areas such as PLC, automatic control systems, communication systems, networks, fully automated trading, system root cause analysis, and cloud architecture. I thrive in independent and forward-thinking environments, and I have a proven track record of delivering innovative solutions.
-    </p>
-    <h2>Education:</h2>
-    <p>Graduated from Nankai Institute of Technology in February 1993, majoring in electrical engineering.</p>
-    <div class="links">
-      <a href="https://linkedin.com/in/recofu">LinkedIn</a>
-      <a href="https://github.com/RecoFu">GitHub</a>
-    </div>
-  </section>
- 
-  <section id="experiences">
-    <h2>Important Experiences:</h2>
-    <ul>
-      <li>
-        <h3>2023 - Mar to Oct: wda.gov.tw Network system Cisco certification training</h3>
-        <p>Skills used: Ansible, UiPath, Robot Framework</p>
-      </li>
-      <li>
-        <h3>2022-2023: ChatGPT Integration Project (Remote)</h3>
-        <p>Quests: Responsible for integrating ChatGPT into various software systems and platforms, ensuring seamless communication between ChatGPT and other applications, and improving the user experience.</p>
-        <p>Achievements: Utilized Natural Language Processing, Python, RESTful APIs, and cloud platforms such as AWS, GCP, and Azure.</p>
-      </li>
-      <li>
-        <h3>2021: MIS Leader, Pih Group, Phnom Penh, Cambodia</h3>
-        <p>Quests: Responsible for managing software and hardware equipment, establishing information construction, and maintaining computers and systems.</p>
-        <p>Achievements: Utilized LibreNMS, Fortinet, Cisco, Router OS, OpenWrt, Hyper-V 2016, MS-AD 2016, O365, and GCP Directory Sync.</p>
-      </li>
-      <li>
-        <h3>2020: MIS Specialist (Ph-5), Internet-related business, Taichung City</h3>
-        <p>Quests: Provided AWS clouding with Local service CDN, Established High Availability for Management Zone vCenters, Automated the management of networks, DNS, and AWS cloud.</p>
-        <p>Achievements: Utilized Redmine, Open Audit, AWS, Prometheus, Grafana, Python, Numpy, Pandas, Tensorflow, Keras, PowerBi, and Line chatBot.</p>
-      </li>
-      <li>
-        <h3>2016: SRE, LF Company, computer system integration service industry, Neihu District, Taipei City</h3>
-        <p>Quests: Provided customer support, collaborated with telecom operators to defend against DDOS attacks, utilized F5 Big-IP for traffic filtering and backup, monitored network and system equipment using Cacti and PRTG, employed Splunk for event collection and analysis, and conducted cloud deployment tests on AWS, Google, Azure, and Alibaba Cloud.</p>
-        <p>Project 1: AWS server website management and maintenance</p>
-        <p>Project 2: Finding the root cause of random issues in large networks, proposing solutions and estimating costs, and adjusting monitoring.</p>
-        <p>Achievements: Utilized Windows HA, Cluster, DR, Cloudflare, Salesforce, PRTG, Cacti, Splunk, Eve-ng, F5, VCenter, AWS, Cisco TCP/IP, MS SQL, PHP, and other technologies.</p>
-      </li>
-      <li>
-        <h3>2003: Financial Manager of Dingli Flower Art Equipment</h3>
-        <p>Responsibilities: Managed investment managers with a team of fewer than 4 people, responsible for research and judgment analysis, strategy execution of Taiwan stock market futures options, warrants, ETFs, etc., strategy backtesting and analysis, cash flow and leverage balance, trend judgment and market strategy, target matching and option avoidance Risk/hedging arbitrage, quantitative automatic trading system.</p>
-        <p>Achievements: Utilized MultiCharts, EasyLanguage, public opinion collection and knowledge system, big data analysis and backtesting, strategy verification and automated trading, financial market analysis and data collection, financial planning and investment management, financial product risk assessment, finance and risk management, funds management.</p>
-      </li>
-      <!-- Include more experience details here -->
-    </ul>
-  </section>
- 
-  <section id="portfolio">
-    <h2>Portfolio:</h2>
-    <p>Here are some examples of my personal projects:</p>
-    <ul>
-      <li>
-        <h3>Project 1: Automated Trading System</h3>
-        <p>Description: Developed a fully automated trading system using Python, financial market data analysis, and algorithmic trading strategies.</p>
-        <p>Technologies used: Python, Pandas, NumPy, MultiCharts</p>
-      </li>
-      <li>
-        <h3>Project 2: Cloud Migration and Optimization</h3>
-        <p>Description: Led the migration of a company's infrastructure to the cloud and optimized the architecture for cost efficiency and scalability.</p>
-        <p>Technologies used: AWS, Azure, GCP</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="testimonials">
-    <h2>Testimonials:</h2>
-    <blockquote>
-      "Reco Fu's expertise and problem-solving skills have been instrumental in the success of our projects. His ability to integrate ChatGPT seamlessly into our software systems has greatly improved our user experience."
-      <cite>- John Smith, CEO of ABC Company</cite>
-    </blockquote>
-  </section>
-
-  <section id="blog">
-    <h2>Blog & News:</h2>
-    <!-- Include blog posts or news articles here -->
-    <p>Stay tuned for the latest updates and insights from Reco Fu.</p>
-  </section>
-  
-  <div>
-    <img src="https://i.epochtimes.com/assets/uploads/2022/12/id13895547-593289-600x400.jpg">
-  </div>
-  
-  <div style="display: flex; justify-content: flex-end;">
-    <img height="128px" src="https://github-readme-stats.vercel.app/api?username=recofu&hide_title=true&hide_border=true&layout=compact&langs_count=8&text_color=000&icon_color=fff&bg_color=0,52fa5a,4dfcff,c64dff&theme=graywhite" alt="GitHub Stats">
-    <img height="128px" src="https://github-readme-stats.vercel.app/api?username=recofu&hide_title=true&hide_border=true&show_icons=true&line_height=16&text_color=000&icon_color=000&bg_color=0,ea6161,ffc64d,fffc4d,52fa5a&theme=graywhite" alt="GitHub Stats">
-  </div>  
-  
-  <footer>
-    <p>© 2023 Reco Fu. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
