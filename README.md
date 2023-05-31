@@ -1,4 +1,152 @@
 # RecoFu.github.io
 <div> <img src="https://i.epochtimes.com/assets/uploads/2022/12/id13895547-593289-600x400.jpg"> </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reco Fu - Personal Projects on GitHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2 {
+      color: #fff;
+      background-color: #007bff;
+      padding: 10px;
+      margin: 0;
+    }
+
+    section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: #fff;
+    }
+    
+    .links {
+      margin-top: 20px;
+    }
+    
+    .links a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .flex-container img {
+      margin: 0 10px;
+    }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Reco Fu - Personal Projects on GitHub</h1>
+  </header>
+  
+  <section id="about">
+    <h2>About Me:</h2>
+    <p>
+      Hello, I'm Reco Fu. I am an experienced professional with a strong passion for innovation, adaptability, and problem-solving. With a background in electrical engineering and a wide range of technical skills, I have successfully led teams and managed complex projects throughout my career.
+    </p>
+    <p>
+      My expertise lies in areas such as PLC, automatic control systems, communication systems, networks, fully automated trading, system root cause analysis, and cloud architecture. I thrive in independent and forward-thinking environments, and I have a proven track record of delivering innovative solutions.
+    </p>
+    <h2>Education:</h2>
+    <p>Graduated from Nankai Institute of Technology in February 1993, majoring in electrical engineering.</p>
+    <div class="links">
+      <a href="https://linkedin.com/in/recofu">LinkedIn</a>
+      <a href="https://github.com/RecoFu">GitHub</a>
+    </div>
+  </section>
+ 
+  <section id="experiences">
+    <h2>Important Experiences:</h2>
+    <ul>
+      <li>
+        <h3>2023 - Mar to Oct: wda.gov.tw Network system Cisco certification training</h3>
+        <p>Skills used: Ansible, UiPath, Robot Framework</p>
+      </li>
+      <li>
+        <h3>2022-2023: ChatGPT Integration Project (Remote)</h3>
+        <p>Quests: Responsible for integrating ChatGPT into various software systems and platforms, ensuring seamless communication between ChatGPT and other applications, and improving the user experience.</p>
+        <p>Achievements: Utilized Natural Language Processing, Python, RESTful APIs, and cloud platforms such as AWS, GCP, and Azure.</p>
+      </li>
+      <li>
+        <h3>2021: MIS Leader, Pih Group, Phnom Penh, Cambodia</h3>
+        <p>Quests: Responsible for managing software and hardware equipment, establishing information construction, and maintaining computers and systems.</p>
+        <p>Achievements: Utilized LibreNMS, Fortinet, Cisco, Router OS, OpenWrt, Hyper-V 2016, MS-AD 2016, O365, and GCP Directory Sync.</p>
+      </li>
+      <li>
+        <h3>2020: MIS Specialist (Ph-5), Internet-related business, Taichung City</h3>
+        <p>Quests: Provided AWS clouding with Local service CDN, Established High Availability for Management Zone vCenters, Automated the management of networks, DNS, and AWS cloud.</p>
+        <p>Achievements: Utilized Redmine, Open Audit, AWS, Prometheus, Grafana, Python, Numpy, Pandas, Tensorflow, Keras, PowerBi, and Line chatBot.</p>
+      </li>
+      <li>
+        <h3>2016: SRE, LF Company, computer system integration service industry, Neihu District, Taipei City</h3>
+        <p>Quests: Provided customer support, collaborated with telecom operators to defend against DDOS attacks, utilized F5 Big-IP for traffic filtering and backup, monitored network and system equipment using Cacti and PRTG, employed Splunk for event collection and analysis, and conducted cloud deployment tests on AWS, Google, Azure, and Alibaba Cloud.</p>
+        <p>Project 1: AWS server website management and maintenance</p>
+        <p>Project 2: Finding the root cause of random issues in large networks, proposing solutions and estimating costs, and adjusting monitoring.</p>
+        <p>Achievements: Utilized Windows HA, Cluster, DR, Cloudflare, Salesforce, PRTG, Cacti, Splunk, Eve-ng, F5, VCenter, AWS, Cisco TCP/IP, MS SQL, PHP, and other technologies.</p>
+      </li>
+      <li>
+        <h3>2003: Financial Manager of Dingli Flower Art Equipment</h3>
+        <p>Responsibilities: Managed investment managers with a team of fewer than 4 people, responsible for research and judgment analysis, strategy execution of Taiwan stock market futures options, warrants, ETFs, etc., strategy backtesting and analysis, cash flow and leverage balance, trend judgment and market strategy, target matching and option avoidance Risk/hedging arbitrage, quantitative automatic trading system.</p>
+        <p>Achievements: Utilized MultiCharts, EasyLanguage, public opinion collection and knowledge system, big data analysis and backtesting, strategy verification and automated trading, financial market analysis and data collection, financial planning and investment management, financial product risk assessment, finance and risk management, funds management.</p>
+      </li>
+      <!-- Include more experience details here -->
+    </ul>
+  </section>
+ 
+  <section id="portfolio">
+    <h2>Portfolio:</h2>
+    <p>Here are some examples of my personal projects:</p>
+    <ul>
+      <li>
+        <h3>Project 1: Automated Trading System</h3>
+        <p>Description: Developed a fully automated trading system using Python, financial market data analysis, and algorithmic trading strategies.</p>
+        <p>Technologies used: Python, Pandas, NumPy, MultiCharts</p>
+      </li>
+      <li>
+        <h3>Project 2: Cloud Migration and Optimization</h3>
+        <p>Description: Led the migration of a company's infrastructure to the cloud and optimized the architecture for cost efficiency and scalability.</p>
+        <p>Technologies used: AWS, Azure, GCP</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="testimonials">
+    <h2>Testimonials:</h2>
+    <blockquote>
+      "Reco Fu's expertise and problem-solving skills have been instrumental in the success of our projects. His ability to integrate ChatGPT seamlessly into our software systems has greatly improved our user experience."
+      <cite>- John Smith, CEO of ABC Company</cite>
+    </blockquote>
+  </section>
+
+  <section id="blog">
+    <h2>Blog & News:</h2>
+    <!-- Include blog posts or news articles here -->
+    <p>Stay tuned for the latest updates and insights from Reco Fu.</p>
+  </section>
+  
+  <footer>
+    <p>© 2023 Reco Fu. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
 <div> <img height="137px" src="https://github-readme-stats.vercel.app/api?username=recofu&hide_title=true&hide_border=true&show_icons=trueline_height=21&text_color=000&icon_color=000&bg_color=0,ea6161,ffc64d,fffc4d,52fa5a&theme=graywhite" /> </div>
 <div> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=recofu&hide_title=true&hide_border=true&layout=compact&langs_count=6&text_color=000&icon_color=fff&bg_color=0,52fa5a,4dfcff,c64dff&theme=graywhite" /> </div>
