@@ -3,7 +3,7 @@
 ```markdown
 # Reco Fu
 **Cloud Architect | Cybersecurity Specialist | AI-Driven Trader**  
-📍 Taichung, Taiwan | 🌐 [LinkedIn](https://www.linkedin.com/in/recofu) | 📱 [Plurk](https://www.plurk.com/Reco_F)  
+📍 Taichung, Taiwan | 🌐 [LinkedIn](https://www.linkedin.com/in/recofu) | 📱 [Github](https://github.com/RecoFu)  
 
 ---
 
