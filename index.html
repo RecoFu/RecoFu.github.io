@@ -3,120 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Reco Fu - Cloud Architect & Cybersecurity Expert with 30 years of IT experience.">
-    <title>Reco Fu - Cloud Architect & Cybersecurity Expert</title>
+    <meta name="description" content="Reco Fu - a cross-domain systems architect specializing in building anti-fragile, autonomous systems at the intersection of the physical and digital worlds.">
+    <meta name="author" content="Reco Fu">
+    <title>Reco Fu - Principal Architect, Resilient & Intelligent Systems</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --bg-color: #121212;
+            --text-color: #E0E0E0;
+            --primary-color: #BB86FC;
+            --secondary-color: #03DAC6;
+            --surface-color: #1E1E1E;
+            --border-color: #333333;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
+            font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            font-weight: 300;
+            font-size: 18px;
         }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+
         .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
-        img {
-            max-width: 100%;
-            height: auto;
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #FFFFFF;
+             font-family: 'Roboto', sans-serif;
+        }
+
+        header .tagline {
+            font-size: 1.5em;
+            font-weight: 300;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        header .subtitle {
+            font-size: 1.1em;
+            color: var(--text-color);
+            margin-top: 15px;
+            font-weight: 400;
+        }
+
+
+        section {
+            background-color: var(--surface-color);
+            margin-bottom: 40px;
+            padding: 30px;
             border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-top: 0;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            display: inline-block;
+        }
+        
+        .philosophy-section h2 {
+             border-bottom: none;
+             padding-bottom: 0;
+             margin-bottom: 20px;
+        }
+        
+        .philosophy-section .sub-heading {
+            font-weight: 700;
+            color: var(--text-color);
+            margin-top: 20px;
+        }
+        
+        .battlefield {
+            margin-bottom: 30px;
+            padding-left: 25px;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .battlefield h3 {
+            font-size: 1.6em;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+        
+        .battlefield .highlight {
+             font-weight: 400;
+             color: var(--text-color);
+             font-style: italic;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #000000;
+        }
+
+        .cta-section h2 {
+            color: #000000;
+            border-bottom: none;
+        }
+        
+        .contact-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            header .tagline {
+                font-size: 1.2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            body {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Reco Fu</h1>
-        <p><strong>Cloud Architect | Cybersecurity Specialist | AI-Driven Trader</strong></p>
-        <p>📍 Taichung, Taiwan | 🌐 <a href="https://www.linkedin.com/in/recofu">LinkedIn</a> | 📱 <a href="https://github.com/RecoFu">Github</a></p>
 
-        <h2>🚀 Core Competencies</h2>
-        <ul>
-            <li>30 years of full-stack IT experience, covering cloud architecture (AWS/GCP), cybersecurity (Fortinet/SIEM), and automation (Ansible/Python).</li>
-            <li>Global leadership in digital transformation projects across Thailand and Cambodia, successfully defending against ransomware attacks.</li>
-            <li>Integration of AI into cybersecurity monitoring and quantitative trading systems, achieving a 10x return on investment.</li>
-        </ul>
+        <header>
+            <h1>Reco Fu</h1>
+            <p class="tagline">The Sower: Architecting Resilient Ecosystems in a Chaotic World</p>
+            <p class="subtitle">Principal Architect, Physical Asset Intelligence & Automation</p>
+             <div class="contact-links">
+                <a href="https://www.linkedin.com/in/recofu" target="_blank">LinkedIn</a> &bull;
+                <a href="mailto:reco@outlook.com">Email</a> &bull;
+                <a href="https://www.cakeresume.com/s--qSHqra8pirtqnBhQXt3SGw--/reco-fu" target="_blank">Portfolio</a>
+            </div>
+        </header>
 
-        <h2>🛠 Technical Stack</h2>
-        <table border="1" cellpadding="5" cellspacing="0">
-            <tr>
-                <th>Field</th>
-                <th>Skills & Tools</th>
-            </tr>
-            <tr>
-                <td>Cloud/Virtualization</td>
-                <td>AWS, GCP, VMware vSphere, Hyper-V, Docker 🐳</td>
-            </tr>
-            <tr>
-                <td>Cybersecurity</td>
-                <td>Fortinet, SIEM (Splunk), IDS/IPS, WAF, CEH certification preparation</td>
-            </tr>
-            <tr>
-                <td>Development & Automation</td>
-                <td>Python, Ansible, TensorFlow, Linux (RHEL/Rocky), Shell Script 🐧</td>
-            </tr>
-            <tr>
-                <td>Network Architecture</td>
-                <td>TCP/IP, SD-WAN, Cisco/Juniper, Zabbix/LibreNMS 📡</td>
-            </tr>
-        </table>
+        <section class="philosophy-section">
+            <h2>My Philosophy: The Creation of Order</h2>
+            <p>
+                My career has been a 30-year obsession with a single question: How do you impose a resilient, intelligent order upon a chaotic world? I am not a manager. I am not an employee. I am a **"Sower"**—an architect who enters a chaotic environment, builds a self-sustaining ecosystem, and then moves on to find the next barren field.
+            </p>
+            <p class="sub-heading">I Believe in Systems:</p>
+            <p>
+                From electrical engineering to quantitative finance, I see the underlying "source code" that governs reality. My talent lies in discovering, refactoring, and rewriting this code, replacing chaos with a superior, autonomous order.
+            </p>
+            <p class="sub-heading">I Confront Humanity:</p>
+            <p>
+                 I understand that humanity is the most powerful and unpredictable variable in any system. My strategy is not to "fix" or "manage" it. Instead, I build systems so elegant and robust that they liberate human potential from the shackles of repetitive, low-value work, allowing it to focus on higher-order creation.
+            </p>
+        </section>
 
-        <h2>🌍 Career Highlights</h2>
-        <h3>Cybersecurity Defense</h3>
-        <ul>
-            <li>2015 Ransomware Defense in Cambodia: Isolated infected nodes and restored data via offline backups, achieving 100% SLA.</li>
-            <li>Thailand Factory Monitoring System: Deployed LibreNMS + Grafana, managing over 200 devices and reducing MTTR by 40%.</li>
-        </ul>
+        <section>
+            <h2>My Methodology: Three Battlefields, One War</h2>
+            <p>My journey is not a linear path but a series of stress tests of the same core methodology across three distinct, yet interconnected, battlefields.</p>
+            
+            <div class="battlefield">
+                <h3>1. The Physical World: Taming Real-World Chaos</h3>
+                <p>
+                    **Challenge:** Building stable, secure, and efficient IT/OT fusion factories from scratch in the resource-constrained and culturally diverse environments of Southeast Asia.
+                </p>
+                <p class="highlight">
+                    **Proof:** Successfully delivered the digital nervous systems for 4 major manufacturing conglomerates. Single-handedly neutralized a large-scale ransomware attack with **zero data loss**, saving millions in potential damages. True resilience is forged in the constraints of reality.
+                </p>
+            </div>
 
-        <h3>Global Project Leadership</h3>
-        <ul>
-            <li>Digital Transformation in Southeast Asia: Planned cross-border ERP and IoT monitoring systems compliant with ISO and C-TPAT standards.</li>
-            <li>AWS High Availability Architecture: Designed multi-AZ deployment and Auto Scaling to ensure 99.9% uptime.</li>
-        </ul>
+            <div class="battlefield">
+                <h3>2. The Financial Markets: The Ghost in the Machine</h3>
+                <p>
+                    **Challenge:** Creating a purely rational, autonomous system to profit from a zero-sum market driven by the most primitive human emotions: greed and fear.
+                </p>
+                <p class="highlight">
+                    **Proof:** Independently architected a fully automated trading system that operated unmanned for nearly a decade. Its greatest triumph was not just profitability, but its ability to survive **real-world physical black swans like typhoons and power outages**. The most robust systems don't predict chaos; they endure it.
+                </p>
+            </div>
 
-        <h3>Quantitative Trading System</h3>
-        <ul>
-            <li>2010-2020 Fully Automated Trading: Achieved a 10x return on Taiwan stock futures using Python and MultiCharts.</li>
-            <li>Machine Learning Optimization: Integrated TensorFlow to analyze market signals and dynamically adjust risk exposure.</li>
-        </ul>
+            <div class="battlefield">
+                <h3>3. The Intelligence Realm: Architecting the Future</h3>
+                <p>
+                    **Challenge:** Translating the invaluable, non-scalable "intuition" of human experts into replicable, scalable algorithms.
+                </p>
+                <p class="highlight">
+                    **Proof:** Currently pioneering the integration of AI/LLMs into complex professional domains like law and security. My focus is on the engineering of "expert systems" that can democratize elite knowledge. The ultimate leverage is the automation of human wisdom.
+                </p>
+            </div>
+        </section>
 
-        <h2>📚 Certifications & Learning</h2>
-        <ul>
-            <li>2023: Completed Microsoft Learn AI Skills Challenge.</li>
-            <li>2021: Google Analytics Individual Certification.</li>
-            <li>Ongoing: Preparing for CCNA and CISSP certifications, dedicating 10 hours per week to technical research.</li>
-        </ul>
+        <section class="cta-section">
+            <h2>My Next Mission: The Impossible Problems</h2>
+            <p>I am not looking for a job. I am looking for a battlefield worthy of the next decade. My focus lies at the intersection of:</p>
+            <p><strong>Industrial AI & Security &bull; Quantitative Geopolitical Risk &bull; The Scaling of Human Expertise</strong></p>
+            <p>If you are working on a problem that is fundamental, complex, and requires not just a new piece of code, but an entirely new way of seeing the world, you will recognize me.</p>
+        </section>
 
-        <h2>📈 Career Goals</h2>
-        <ul>
-            <li>Short-term: Focus on cybersecurity architecture design or cloud migration consulting.</li>
-            <li>Long-term: Develop AI-driven cybersecurity and trading systems to promote technological inclusivity.</li>
-        </ul>
-
-        <h2>📄 Projects & Works</h2>
-        <alt="Cambodia Factory Monitoring Dashboard">
-        <p><em>Figure: Cambodia factory monitoring system dashboard (LibreNMS + Grafana)</em></p>
-
-        <h2>Update Log</h2>
-        <ul>
-            <li>2024/03: Added cybersecurity defense cases and technical stack icons.</li>
-            <li>2023/12: Completed Microsoft AI certification.</li>
-        </ul>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Reco Fu. All rights reserved. | "The best way to predict the future is to invent it." - Alan Kay</p>
+    </footer>
+
 </body>
 </html>
