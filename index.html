@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>傅瑞乾 Reco Fu — 系統與量化架構師</title>
+    <title>Reco Fu 傅瑞乾 — 系統架構與生存協議</title>
     <style>
-        /* 第一性原理：清晰度即力量 */
+        /* 核心設計：深海藍與高對比排版 */
+        :root {
+            --ocean-blue: #003366;
+            --text-main: #1a1a1a;
+            --gray-text: #4a4a4a;
+            --border-color: #003366;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            font-family: 'Inter', 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            font-family: 'Segoe UI', 'Microsoft YaHei', 'PingFang TC', serif;
             font-size: 11.5pt; /* 字體放大 */
             line-height: 1.5;
-            color: #1a1a1a;
+            color: var(--text-main);
             background: #f0f2f5;
         }
         
@@ -21,17 +28,10 @@
             margin: 20px auto;
             padding: 1.2cm;
             background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             position: relative;
         }
         
-        /* 顏色定義：深海藍 */
-        :root {
-            --ocean-blue: #004b8d;
-            --light-blue: #e6f0f9;
-            --accent: #d32f2f;
-        }
-
         @media print {
             body { background: white; }
             .page { margin: 0; box-shadow: none; page-break-after: always; }
@@ -45,100 +45,114 @@
             margin-bottom: 0.6cm; 
         }
         .header h1 { 
-            font-size: 24pt; 
-            color: var(--ocean-blue); 
-            margin-bottom: 0.2cm;
-            letter-spacing: 1px;
+            font-size: 26pt; 
+            font-weight: 900; 
+            color: var(--ocean-blue);
+            letter-spacing: -1px;
         }
-        .header .subtitle { 
-            font-size: 12pt; 
-            font-weight: bold; 
-            color: #333;
-        }
+        .header p { font-size: 11pt; color: var(--gray-text); margin-top: 5px; }
         
         /* Section */
         .section { margin-bottom: 0.6cm; }
         .section-title { 
-            font-size: 14pt; 
-            font-weight: 800;
-            color: var(--ocean-blue);
-            border-bottom: 2px solid var(--ocean-blue);
-            padding-bottom: 0.1cm;
+            font-size: 15pt; 
+            font-weight: bold;
+            color: white;
+            background: var(--ocean-blue);
+            padding: 5px 15px;
             margin-bottom: 0.3cm;
-            display: flex;
-            justify-content: space-between;
+            display: inline-block;
+            clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
         }
         
-        /* Content Blocks */
+        /* Competitive Edge Blocks */
         .content-block { 
             margin-bottom: 0.3cm; 
-            padding-left: 0.4cm;
             border-left: 4px solid var(--ocean-blue);
+            padding-left: 15px;
         }
-        .content-zh { font-weight: 600; font-size: 11.5pt; margin-bottom: 2px; }
-        .content-en { font-size: 10pt; color: #666; font-style: italic; }
+        .zh-highlight { font-size: 12pt; font-weight: bold; color: var(--ocean-blue); }
+        .en-dim { font-size: 10pt; color: #666; font-style: italic; display: block; }
 
         /* Tables */
         table { 
             width: 100%; 
             border-collapse: collapse; 
-            font-size: 10pt; 
-            margin: 0.2cm 0;
+            font-size: 10.5pt; 
+            margin: 15px 0;
         }
         th, td { 
             border: 1px solid #ddd; 
             padding: 10px;
-            text-align: left; /* 全部向左靠 */
+            text-align: left; /* 全面左靠 */
         }
         th { 
-            background: var(--light-blue); 
-            color: var(--ocean-blue);
-            font-weight: bold;
+            background: var(--gray-text); 
+            color: white;
+            font-weight: bold; 
         }
         
-        /* Specialized Styles */
-        .highlight-row { background: #fffde7; }
-        .black-swan { background: #fff5f5; border-left: 4px solid var(--accent); }
-        .mono { font-family: 'Consolas', 'Courier New', monospace; font-weight: bold; color: #444; }
+        .quant-table td { text-align: center; } /* 數據表保持置中 */
+        .quant-table td:first-child { text-align: left; }
         
+        .critical-row { background: #fff5f5; font-weight: bold; color: #c00; }
+        .success-row { background: #f0fdf4; font-weight: bold; }
+
         .footer { 
-            position: absolute;
-            bottom: 1cm;
-            width: calc(100% - 2.4cm);
-            text-align: center;
-            font-size: 9pt;
-            color: #888;
+            margin-top: 0.5cm;
             border-top: 1px solid #eee;
-            padding-top: 0.2cm;
+            padding-top: 10px;
+            font-size: 9pt;
+            color: #999;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+        }
+
+        .disruptive-text {
+            background: #fff8e1;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: 500;
+            border: 1px solid #ffe082;
         }
     </style>
 </head>
 <body>
 
-    <!-- ========== PAGE 1: 破局競爭力 ========== -->
+    <!-- ========== PAGE 1: 破局競爭力與戰績 ========== -->
     <div class="page">
         <div class="header">
             <h1>傅瑞乾 Reco Fu</h1>
-            <div class="subtitle">系統架構師 | 根因診斷專家 | 40年零中毒、零遺失、零勒索支付記錄</div>
-            <p style="font-size: 10pt; margin-top: 5px; color: #555;">Architect of Resilience | SRE & Quant Logic | Taichung / Remote-First</p>
+            <p><strong>系統架構師｜根因診斷專家｜40年「零資料損失」紀錄保持者</strong></p>
+            <p>Architect of Resilience | Root Cause Specialist | 40-Year Zero-Loss Legacy</p>
         </div>
 
         <div class="section">
-            <div class="section-title">破局競爭力：系統生存的唯一常數</div>
-            <div class="content-block">
-                <div class="content-zh">1. 極端環境修復力 (Extreme Recovery)</div>
-                <div class="content-en">Ransomware zero-loss survival & 8-hour restoration.</div>
-                <p>2015年柬埔寨工廠遭勒索病毒襲擊，我以 <b>Air-Gapped</b> 隔離還原技術，8小時內達成 ERP 100% 恢復，零數據損毀，拒絕支付贖金。</p>
+            <div class="section-title">破局競爭力｜Disruptive Edge</div>
+            <div class="disruptive-text">
+                「我不只是在維護系統，我是在確保系統的『生存權』。當市場或環境陷入混沌（Ransomware, Market Crash, Power Failure），我的協議是唯一不動的常數。」
             </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">核心實施論｜Core Methodology</div>
+            
             <div class="content-block">
-                <div class="content-zh">2. 核心級根因判定 (Kernel-Level Diagnostics)</div>
-                <div class="content-en">Solving what vendors can't. Broadcom VMQ bug specialist.</div>
-                <p>2016年獨自診斷出 Broadcom NIC 驅動層 VMQ 衝突，解決業界各大原廠無法判定的隨機當機噩夢，MTTR 縮短 30%。</p>
+                <span class="zh-highlight">1. 極端韌性架構 (Extreme Resilience)</span>
+                <span class="en-dim">Protocol-level defense and immutable data strategy.</span>
+                四十載無中毒、無掉檔、無勒索支付。曾在柬埔寨工廠遭劫時，於 36 小時內達成 100% 零損恢復，靠的是底層協議級的備份邏輯。
             </div>
+
             <div class="content-block">
-                <div class="content-zh">3. 十年無人值守營運 (Unattended Longevity)</div>
-                <div class="content-en">8.92 years of autonomous system survival across natural disasters.</div>
-                <p>人在海外，系統在台中家獨自運行十年，扛過強震、颱風與斷電，實現 27 倍資金增長。我寫的不是代碼，是<b>生存協議</b>。</p>
+                <span class="zh-highlight">2. 根因診斷能力 (The Root Cause Analyst)</span>
+                <span class="en-dim">Solving what vendors cannot.</span>
+                獨立診斷業界無解之 Broadcom NIC 隨機當機案。我從 Kernel 中斷與驅動層級定位問題，將 MTTR 縮短 30%，讓系統在硬體缺陷中依然穩定。
+            </div>
+
+            <div class="content-block">
+                <span class="zh-highlight">3. 無人值守自動化 (Autonomous Execution)</span>
+                <span class="en-dim">Systems that breathe without humans.</span>
+                人在海外十年，系統在台中家獨自存活。歷經 3 次大地震、5 次強颱、多次斷電，系統靠 Watchdog 與自癒代碼達成 8.92 年零中斷。
             </div>
         </div>
 
@@ -147,103 +161,92 @@
             <table>
                 <thead>
                     <tr>
-                        <th style="width: 15%;">年代</th>
-                        <th style="width: 45%;">事件與實施</th>
-                        <th style="width: 40%;">破局成就 (行家觀點)</th>
+                        <th style="width: 15%;">年份</th>
+                        <th>戰場/事件</th>
+                        <th>破局成就 (量化證明)</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>1984-00</td><td>FidoNet 節點營運 (6:722/228)</td><td>建立底層協議安全 DNA，掌握網際網路前身技術。</td></tr>
-                    <tr><td>1994-95</td><td>國軍精實案電腦化</td><td>獨立將軍方紙本測考題庫數位化，效率提升 400%。</td></tr>
-                    <tr><td>1996-98</td><td>中華電信 & 戶役政系統</td><td>全國級機房催費機與交換機維護，大規模數據管控。</td></tr>
-                    <tr><td>1999-03</td><td>3G 核心網 & 金融骨幹</td><td>部署中部首座 3G 中心與證交所/期交所 T1 骨幹網路。</td></tr>
-                    <tr><td>2003-20</td><td>台指期無人交易系統</td><td>8.92 年無人值守，韌性測試：強震、颱風、ISP 中斷。</td></tr>
-                    <tr><td>2010-14</td><td>越南/泰國 MIS 擴建</td><td>跨國 IT 基建從零到一，導入 ERP 提升效能 10%。</td></tr>
-                    <tr class="highlight-row"><td>2015</td><td>柬埔寨勒索病毒防禦</td><td><b>零損失恢復。</b> 證明了我的備份架構無懈可擊。</td></tr>
-                    <tr class="highlight-row"><td>2016-17</td><td>SRE 根因診斷戰務</td><td>抓出 Broadcom VMQ 驅動 Bug，挽救企業級叢集崩潰。</td></tr>
-                    <tr><td>2021-22</td><td>跨國工廠穩定運轉</td><td>獨立負責柬埔寨 PIH 集團 IT 系統導入與效能優化。</td></tr>
-                    <tr><td>2022-25</td><td>GDI + AI 安全整合</td><td>ChatGPT 安全 API 設計，漏洞風險降低 75%。</td></tr>
+                    <tr><td>1984-00</td><td>FidoNet 節點營運</td><td>編號 6:722/228。在網際網路前夕建立協議級安全 DNA。</td></tr>
+                    <tr><td>1994-95</td><td>國軍精實案</td><td>獨立開發測考題庫與精實資料庫，將軍方流程從紙本轉向數位化。</td></tr>
+                    <tr><td>1995-96</td><td>養雞場自動化</td><td>首創農業硬軟整合。開發自動化投餵與環境監測，人力成本↓60%。</td></tr>
+                    <tr><td>1996-98</td><td>中華電信/戶役政</td><td>主導全國級催費機房建置與 PBX 交換機維護。承載全國流量。</td></tr>
+                    <tr><td>1999-03</td><td>3G 核心網/金融骨幹</td><td>建置中部第一座 3G 核心中心；證交所、期交所專屬骨幹對接。</td></tr>
+                    <tr><td>2003-20</td><td>無人交易系統</td><td>8.92 年無人值守運作。在極端氣候與斷電環境下達成 27 倍報酬。</td></tr>
+                    <tr><td>2015</td><td>柬埔寨勒索事件</td><td>36 小時內從底層還原 ERP。零勒索金支付、零資料遺失。</td></tr>
+                    <tr><td>2016-17</td><td>Broadcom NIC 災難</td><td>診斷出硬體 offload 漏洞，解決隨機重啟噩夢。可用性↑43%。</td></tr>
+                    <tr><td>2010-22</td><td>跨國 MIS 主管</td><td>管理越南、泰國、柬埔寨工廠基建，導入 ERP 使效率↑10%。</td></tr>
+                    <tr><td>2022-至今</td><td>AI 安全整合</td><td>開發 GDI 與 ChatGPT 安全 API，將系統邏輯漏洞風險降低 75%。</td></tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="section">
-            <div class="section-title">技術堆疊 (從底層到雲端)</div>
-            <p><b>底層 / 硬體：</b> PLC、自動控制、電機機械、Watchdog 硬體計時器設計、8051 單晶片。<br>
-               <b>網路 / 系統：</b> FidoNet、Novell、OS/2、WinNT、SRE 監控 (Grafana/Splunk)、VLAN 隔離。<br>
-               <b>開發 / 量化：</b> Python、EasyLanguage (MultiCharts)、Fortran77、QBasic、Shell Script。<br>
-               <b>現代 AI：</b> ChatGPT API 整合、GDI 安全防護介面、自動化數據應用證書。</p>
-        </div>
-
         <div class="footer">
-            證據層：SHA256: 0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a | recofu.github.io
+            VERIFIED VIA GITHUB: recofu.github.io | PROOF OF WORK: UNFAILING SYSTEM LOGS (1984-2025)
         </div>
     </div>
 
-    <!-- ========== PAGE 2: 小白鼠帳戶 (PoW) ========== -->
+    <!-- ========== PAGE 2: 小白鼠帳戶與反脆弱論證 ========== -->
     <div class="page">
         <div class="header">
-            <h1>小白鼠帳戶 (PoW) 驗證庫</h1>
-            <div class="subtitle">2012–2020 無人值守自動化交易系統 — 技術完整性證明</div>
+            <h1 style="color: var(--ocean-blue);">小白鼠帳戶：PoW 效能分析</h1>
+            <p>2012-2020 數據實測：系統韌性與黑天鵝壓力測試報告</p>
         </div>
 
         <div class="section">
-            <div class="section-title">量化數據：2,013 筆交易的實證</div>
-            <table>
+            <div class="section-title">量化實績｜Performance Analysis</div>
+            <table class="quant-table">
                 <thead>
                     <tr>
                         <th>年份</th>
-                        <th>期初權益</th>
-                        <th>期末權益</th>
-                        <th>年報酬%</th>
-                        <th>錯誤率%</th>
-                        <th>技術觀察 (行家解析)</th>
+                        <th>帳戶</th>
+                        <th>期初 (TWD)</th>
+                        <th>期末 (TWD)</th>
+                        <th>年度報酬</th>
+                        <th>獲利因子</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>2013</td><td>50,000</td><td>80,000</td><td>60.0%</td><td>2.33%</td><td>系統初始化，建立交易慣性。</td></tr>
-                    <tr><td>2015</td><td>150,000</td><td>360,000</td><td>140.0%</td><td>0.00%</td><td>高穩定運行，完全掌握盤勢共振。</td></tr>
-                    <tr class="highlight-row"><td>2017</td><td>315,493</td><td>637,711</td><td>102.1%</td><td><b>89.59%</b></td><td><b>容錯能力證明：</b> 9成錯誤仍獲利，靠風控機制存活。</td></tr>
-                    <tr><td>2019</td><td>997,678</td><td>1,350,000</td><td>35.3%</td><td>33.10%</td><td>資產峰值，人在柬埔寨，系統在台中自轉。</td></tr>
-                    <tr class="black-swan"><td>2020</td><td>1,350,000</td><td>30,000</td><td>-97.7%</td><td>33.73%</td><td>2020/3/18 停止運作。<b>詳見下方分析。</b></td></tr>
+                    <tr><td>2013</td><td>元大</td><td>50,000</td><td>80,000</td><td class="success-row">+60.0%</td><td>0.78</td></tr>
+                    <tr><td>2015</td><td>元大</td><td>150,000</td><td>360,000</td><td class="success-row">+140.0%</td><td>0.87</td></tr>
+                    <tr class="success-row"><td>2017</td><td>KGI</td><td>315,493</td><td>637,711</td><td>+102.13%</td><td>2.75</td></tr>
+                    <tr><td>2019</td><td>KGI</td><td>997,678</td><td>1,350,000</td><td>+35.31%</td><td>2.04</td></tr>
+                    <tr class="critical-row"><td>2020</td><td>KGI</td><td>1,350,000</td><td>30,000</td><td>-97.7%</td><td>2.29</td></tr>
                 </tbody>
             </table>
         </div>
 
         <div class="section">
-            <div class="section-title">2020 年黑天鵝事件：系統設計的最終考試</div>
-            <div class="content-block black-swan" style="padding: 15px;">
-                <p><b>停止日期：</b> 2020 年 3 月 18 日</p>
-                <p><b>並非系統失敗，而是市場時代的更迭：</b></p>
-                <ul>
-                    <li>舊量化策略（技術分析 + 基本面）遇上 <b>AI 蜂巢時代</b> 市場結構劇變，共振模式失效。</li>
-                    <li>一個月後「負原油價格」出現，宣告舊金融文明正式終結。</li>
-                    <li><b>反脆弱價值的證明：</b> 儘管帳戶崩毀，系統在崩盤極限壓力下仍<b>保持了完整的日誌記錄</b>。</li>
-                    <li>這才是 2020 年失敗的意義：系統能在極端環境下「完整地戰死」，而非「悄無聲息地失聯」。</li>
+            <div class="section-title">2020 黑天鵝：系統設計的最終考試</div>
+            <div class="content-block" style="border-left-color: #c00; background: #fff8f8;">
+                <p><strong>停止日期：</strong> 2020 年 3 月 18 日</p>
+                <p><strong>本質判定：</strong> 非系統失敗，而是「時代更迭」。</p>
+                <ul style="margin-left: 20px; font-size: 11pt;">
+                    <li>舊量化邏輯（技術分析+基本面）在 AI 蜂巢時代的共振中失效。</li>
+                    <li>負原油事件（2020/4）宣告了舊文明金融紀元的葬禮。</li>
+                    <li><strong>反脆弱價值：</strong> 系統在崩盤瞬間保持了完美的日誌紀錄與完整性，並未產生不可控的連鎖反應。</li>
                 </ul>
+                <p style="margin-top: 10px; font-style: italic;">「我不預測黑天鵝，但我設計能讓系統在黑天鵝降臨時，依舊冷靜記錄、精確停止的協議。」</p>
             </div>
         </div>
 
         <div class="section">
-            <div class="section-title">三重不可篡改驗證機制</div>
+            <div class="section-title">三重密碼學驗證｜Triple-Verification</div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div style="background: #f9f9f9; padding: 15px; border-radius: 5px;">
-                    <b>1. Google 權威時間戳</b><br>
-                    2,013 筆交易均由系統自動寄送 Gmail，由 Google 伺服器提供法律級的精確時間證明。
+                <div style="border: 1px solid #ddd; padding: 15px;">
+                    <strong>Gmail 伺服器時間戳</strong><br>
+                    2,013 筆交易自動化日誌，由 Google 第三方伺服器永久保存時間戳，無法回溯篡改。
                 </div>
-                <div style="background: #f9f9f9; padding: 15px; border-radius: 5px;">
-                    <b>2. Merkle Hash (密碼學)</b><br>
-                    修改任何一筆交易日誌，SHA256 Hash 立即斷裂。保證數據的絕對真實性。
-                </div>
-                <div style="background: #f9f9f9; padding: 15px; border-radius: 5px;">
-                    <b>3. GitHub 提交歷史</b><br>
-                    代碼與數據 CSV 已上傳至 GitHub，Commit 歷史記錄了系統演化的每一哩路。
+                <div style="border: 1px solid #ddd; padding: 15px;">
+                    <strong>Merkle Root (SHA256)</strong><br>
+                    全交易數據生成 Merkle Tree，任何一個 Bit 的變更都將導致 Hash 值失效。
                 </div>
             </div>
         </div>
 
         <div class="footer">
-            Pauca sed matura. (少，但成熟。) — Carl Friedrich Gauss 對本履歷之邏輯背書
+            Final Verdict: 2020.03.18 was not a failure, but the conclusion of a proof. <br>
+            HASH: 0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a
         </div>
     </div>
 
