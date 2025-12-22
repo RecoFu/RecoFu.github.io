@@ -1,199 +1,229 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reco F. | Systems Architect Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --gauss-white: #ffffff;
-            --gauss-light-gray: #f8f9fa;
-            --gauss-deep-navy: #1a202c;
-            --gauss-gold: #b794f4; /* Subtle Elegance */
-            --gauss-accent: #3182ce;
+            --paper-white: #ffffff;
+            --ink-black: #1a202c;
+            --gauss-blue: #2c5282;
+            --accent-gold: #b7791f;
+            --border-gray: #e2e8f0;
         }
 
         body {
-            margin: 0; padding: 0;
-            font-family: 'Inter', 'Noto Sans TC', sans-serif;
-            background-color: #f1f5f9;
-            color: var(--gauss-deep-navy);
+            background-color: #f8fafc;
+            color: var(--ink-black);
+            font-family: 'Inter', 'Noto Sans TC', serif;
+            margin: 0;
+            padding: 0;
         }
 
-        .a4-container {
-            width: 210mm;
-            min-height: 297mm;
-            margin: 20px auto;
-            background: var(--gauss-white);
-            box-shadow: 0 0 40px rgba(0,0,0,0.1);
-            padding: 50px;
-            box-sizing: border-box;
+        .page {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: var(--paper-white);
+            padding: 80px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             position: relative;
         }
 
+        /* Gaussian Curve Background Decal */
+        .page::before {
+            content: "f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}";
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 0.8rem;
+            color: #edf2f7;
+            font-family: serif;
+        }
+
         header {
-            border-bottom: 2px solid var(--gauss-deep-navy);
+            border-bottom: 2px solid var(--gauss-blue);
             padding-bottom: 30px;
             margin-bottom: 40px;
         }
 
-        .header-top { display: flex; justify-content: space-between; align-items: flex-end; }
-        h1 { margin: 0; font-size: 2.8rem; letter-spacing: -2px; text-transform: uppercase; }
-        .contact-info { text-align: right; font-size: 0.85rem; line-height: 1.8; }
+        h1 { font-size: 2.8rem; margin: 0; color: var(--gauss-blue); font-weight: 800; }
+        .contact-info { margin-top: 15px; font-size: 0.9rem; color: var(--accent-gold); display: flex; gap: 20px; }
+        .contact-info a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; }
+        .contact-info a:hover { border-bottom: 1px solid var(--accent-gold); }
 
         .axiom-bar {
-            background: var(--gauss-deep-navy);
-            color: var(--gauss-white);
-            padding: 10px 20px;
-            margin: 20px 0;
-            font-family: monospace;
-            font-size: 0.9rem;
-            display: flex; justify-content: space-between;
+            background: #f1f5f9;
+            padding: 15px 25px;
+            border-radius: 4px;
+            margin: 30px 0;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
         }
 
-        section { margin-bottom: 40px; }
-        h2 { 
-            font-size: 1.4rem; border-left: 4px solid var(--gauss-accent); 
-            padding-left: 15px; margin-bottom: 20px; color: var(--gauss-accent);
-            display: flex; justify-content: space-between; align-items: center;
+        h2 { font-size: 1.4rem; color: var(--gauss-blue); text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid var(--border-gray); padding-bottom: 10px; margin-top: 50px; }
+
+        .module { margin-bottom: 40px; }
+        .module-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .module-title-en { font-size: 0.85rem; color: #718096; text-transform: uppercase; font-weight: 600; }
+        .module-title-ch { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; }
+
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 10px; }
+        .content-item { font-size: 0.95rem; }
+        .content-item b { color: var(--gauss-blue); }
+
+        .timeline-box { margin-bottom: 20px; padding-left: 20px; border-left: 2px solid var(--border-gray); }
+        .year { font-weight: 800; color: var(--gauss-blue); font-size: 0.9rem; }
+
+        .chart-container { background: #fff; padding: 20px; border: 1px solid var(--border-gray); border-radius: 8px; margin-top: 20px; }
+
+        .philosophy-card {
+            background: var(--gauss-blue);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 60px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
         }
-        h2 span { font-size: 0.8rem; color: #a0aec0; }
 
-        .module { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 25px; }
-        .lang-block { margin-bottom: 10px; }
-        .en { font-size: 0.85rem; color: #718096; display: block; margin-bottom: 2px; }
-        .tw { font-weight: 500; font-size: 1rem; color: var(--gauss-deep-navy); display: block; }
-
-        .milestone-item { margin-bottom: 20px; border-bottom: 1px solid #edf2f7; padding-bottom: 15px; }
-        .milestone-header { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px; }
-        .milestone-year { color: var(--gauss-accent); font-family: monospace; }
-
-        .tag-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-        .tag { background: #edf2f7; padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
-
-        /* The Lab Rat Section - Discreetly placed at bottom */
-        .lab-rat-section {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 2px dashed #e2e8f0;
-            opacity: 0.8;
-        }
-        .quote { font-style: italic; color: #e53e3e; border-left: 3px solid #e53e3e; padding-left: 15px; margin: 20px 0; }
+        .footer { text-align: center; color: #a0aec0; font-size: 0.8rem; margin-top: 80px; }
 
         @media print {
-            body { background: none; }
-            .a4-container { margin: 0; box-shadow: none; width: 100%; }
-            .no-print { display: none; }
+            body { background: white; }
+            .page { box-shadow: none; margin: 0; padding: 40px; }
         }
     </style>
 </head>
 <body>
 
-<div class="a4-container">
+<div class="page">
     <header>
-        <div class="header-top">
-            <h1>Reco F.</h1>
-            <div class="contact-info">
-                reco@outlook.com | Taichung, Taiwan<br>
-                <a href="https://linkedin.com/in/recofu">linkedin.com/in/recofu</a><br>
-                <a href="https://recofu.github.io">recofu.github.io</a>
-            </div>
-        </div>
-        <div class="axiom-bar">
-            <span>(Logic && Quantifiable && Verifiable && Timestamp)</span>
-            <span>Strategy: 20% Stability | 80% Velocity</span>
+        <h1>Reco F. (傅瑞乾)</h1>
+        <div class="contact-info">
+            <span><i class="fas fa-envelope"></i> reco@outlook.com</span>
+            <span><i class="fas fa-map-marker-alt"></i> Taichung, Taiwan</span>
+            <a href="https://linkedin.com/in/recofu"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/RecoFu"><i class="fab fa-github"></i> GitHub</a>
         </div>
     </header>
 
-    <section>
-        <h2>Executive Summary <span>核心摘要</span></h2>
-        <div class="lang-block">
-            <span class="en">Strategic architect with 40 years of experience, unifying physical IT/OT environments with high-velocity AI governance. Dedicated to building anti-fragile systems in chaotic markets and manufacturing landscapes.</span>
-            <span class="tw">擁有 40 年經驗的戰略架構師，致力於統一物理 IT/OT 環境與高速 AI 治理。專注於在混亂的市場與製造業景觀中構建反脆弱系統。</span>
+    <div class="axiom-bar">
+        <span>\[ Axiom: (Logic \land Quantifiable \land Verifiable \land Timestamp) \]</span>
+        <span>\[ Strategic Leverage: 20\% Stability \mid 80\% Velocity \]</span>
+    </div>
+
+    <section class="module">
+        <div class="module-header">
+            <span class="module-title-ch">戰略價值定位</span>
+            <span class="module-title-en">Strategic Value Proposition</span>
+        </div>
+        <div class="content-grid">
+            <div class="content-item">
+                <b>[IT/OT Convergence]</b><br>
+                40 years of bridging the gap between physical electrical systems and high-level cloud architectures. Specialized in high-availability systems that operate in extreme conditions.
+            </div>
+            <div class="content-item">
+                <b>[虛實整合治理]</b><br>
+                具備 40 年從電機底層到雲端架構的垂直整合經驗。擅長在極端物理環境與數位戰場中，建構高可用性且具備韌性的治理體系。
+            </div>
         </div>
     </section>
 
-    <section>
-        <h2>Core Competencies <span>核心能力</span></h2>
-        <div class="module">
-            <div class="lang-block">
-                <span class="en">IT/OT Convergence Architecture</span>
-                <span class="tw">虛實整合系統架構</span>
-                <p style="font-size: 0.85rem;">Vietnam, Thailand, Cambodia infrastructure deployment. 40-year zero-loss data record.</p>
-            </div>
-            <div class="lang-block">
-                <span class="en">AI & Quantitative Strategy</span>
-                <span class="tw">量化分析與 AI 策略</span>
-                <p style="font-size: 0.85rem;">MultiCharts, Python, LLM Security API. Seamlessly integrating AI into legacy ecosystems.</p>
-            </div>
+    <section class="module">
+        <h2>Career Milestones | 職涯關鍵里程碑</h2>
+
+        <div class="timeline-box">
+            <div class="year">2020 — 2025</div>
+            <div class="module-title-ch">AI 系統整合與安全治理 (AI Security & Governance)</div>
+            <p>融合 LLM 與企業軟體生態，確保隨機性模型在確定性業務邏輯中的無縫運行。研發 GDI 即時守護系統，將安全漏洞風險降低 75%。</p>
+        </div>
+
+        <div class="timeline-box">
+            <div class="year">2010 — 2022</div>
+            <div class="module-title-ch">跨國製造業 MIS 主管 (Overseas IT/OT Director)</div>
+            <p>在越、泰、柬三國主導 4 座大型工廠的 IT 基礎建設與資安防禦。在柬埔寨遭遇勒索攻擊時，實現 8 小時內 100% 數據復原，確保 40 年零資料損失紀錄。</p>
+        </div>
+
+        <div class="timeline-box">
+            <div class="year">2017 — 2018</div>
+            <div class="module-title-ch">SRE 網站可靠性工程師 (LF台北)</div>
+            <p>深入 Broadcom 核心驅動層級判定隨機當機根因。利用 Splunk 與 F5 工具鏈將系統平均故障排除時間 (MTTR) 縮短 30%。</p>
+        </div>
+
+        <div class="timeline-box">
+            <div class="year">1984 — 2003</div>
+            <div class="module-title-ch">數位協議開拓與金融骨幹 (Legacy & Infrastructure)</div>
+            <p>獨立建置 FidoNet 節點；負責證交所與各大金融機構的 T1/ATM 骨幹網路整合，深耕網路協議底層架構。</p>
         </div>
     </section>
 
-    <section>
-        <h2>Strategic Milestones <span>職涯里程碑</span></h2>
-        
-        <div class="milestone-item">
-            <div class="milestone-header">
-                <div class="tw">AI 治理與系統安全整合 (AI Governance & Integration)</div>
-                <div class="milestone-year">2021 - 2025</div>
-            </div>
-            <span class="en">Spearheaded the integration of LLMs with software ecosystems; architected secure API wrappers and defensive AI systems.</span>
-            <div class="tag-container">
-                <span class="tag">ChatGPT API</span><span class="tag">GDI Security</span><span class="tag">System Evolution</span>
-            </div>
-        </div>
+    <div class="philosophy-card">
+        "2012年5萬起始的小白鼠帳戶死於2020/3/18，證明了量化共振無法在AI蜂巢中存活；一個月後的負原油就是舊文明的葬禮，宣告了以AI治理為核心的新交易紀元開啟。"
+    </div>
 
-        <div class="milestone-item">
-            <div class="milestone-header">
-                <div class="tw">跨國 MIS 主管與 SRE 專家 (Overseas MIS Director & SRE)</div>
-                <div class="milestone-year">2010 - 2020</div>
-            </div>
-            <span class="en">Led IT/OT rejuvenation for 4 major groups. Solved complex network kernel failures (MTTR reduced by 30%). Secured zero-loss recovery during ransomware strikes.</span>
-            <div class="tag-container">
-                <span class="tag">IT/OT</span><span class="tag">SRE</span><span class="tag">Root Cause Analysis</span><span class="tag">Disaster Recovery</span>
-            </div>
+    <section class="module">
+        <div class="module-header">
+            <span class="module-title-ch">實驗性量化實績 (小白鼠驗證)</span>
+            <span class="module-title-en">Quant Lab: Experimental Verification</span>
         </div>
-
-        <div class="milestone-item">
-            <div class="milestone-header">
-                <div class="tw">金融骨幹與 3G 電信建設 (Financial Backbone & Telecom)</div>
-                <div class="milestone-year">1996 - 2010</div>
-            </div>
-            <span class="en">Deployed mission-critical T1/ATM networks for stock exchanges and telecommunication core centers.</span>
-            <div class="tag-container">
-                <span class="tag">T1/ATM</span><span class="tag">3G Core</span><span class="tag">Infrastructure</span>
-            </div>
+        <p style="font-size: 0.9rem; color: #4a5568;">
+            此帳戶作為極端壓力測試環境，驗證全自動化算法在無人值守下的長期獲利能力與系統韌性。
+        </p>
+        <div class="chart-container">
+            <canvas id="quantChart"></canvas>
         </div>
-
-        <div class="milestone-item">
-            <div class="milestone-header">
-                <div class="tw">FidoNet 與自動化先驅 (FidoNet Pioneer)</div>
-                <div class="milestone-year">1984 - 1996</div>
-            </div>
-            <span class="en">Managed FidoNet Node (6:722/228). Developed automation software for agricultural systems during the dawn of the PC era.</span>
-        </div>
+        <p style="text-align: right; font-size: 0.8rem;">
+            Verification Hash: <a href="https://github.com/RecoFu/mouse-account-verification">SHA-256 Proof @ GitHub</a>
+        </p>
     </section>
 
-    <section class="lab-rat-section">
-        <h2>Quantitative Verification (Appendix) <span>量化驗證</span></h2>
-        <div class="quote">
-            "2012年5萬起始的小白鼠帳戶死於2020/3/18，證明了量化共振無法在AI蜂巢中存活；這宣告了以AI治理為核心的新交易紀元開啟。"
-        </div>
-        <div class="lang-block">
-            <span class="en">Autonomous Trading System (2012-2020): +2700% Cumulative Return. A proof of "Anti-fragile" architecture—surviving physical disasters and blackouts without human intervention.</span>
-            <span class="tw">全自動交易系統實踐 (2012-2020)：累計報酬 +2700%。這是「反脆弱」架構的實證——在無人干預下，系統於空屋中挺過颱風、斷電與換倉挑戰。</span>
-        </div>
-        <div style="margin-top: 15px; font-size: 0.85rem;">
-            Verification: <a href="https://github.com/RecoFu/mouse-account-verification">github.com/RecoFu/mouse-account-verification</a>
-        </div>
-    </section>
-
-    <footer style="margin-top: 50px; font-size: 0.7rem; color: #a0aec0; text-align: center;">
-        Timestamp: 20251223-G | Built with Gaussian Precision
-    </footer>
+    <div class="footer">
+        <p>Axiomatically Generated | Timestamp: 2025.12.23 | Version 4.0.1</p>
+    </div>
 </div>
+
+<script>
+    const ctx = document.getElementById('quantChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+            datasets: [{
+                label: 'Cumulative Growth (%)',
+                data: [0, 60, 200, 620, 530, 1175, 1433, 2292, 2700],
+                borderColor: '#2c5282',
+                backgroundColor: 'rgba(44, 82, 130, 0.05)',
+                borderWidth: 3,
+                fill: true,
+                pointRadius: 4,
+                tension: 0.3
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                y: {
+                    ticks: { callback: function(value) { return value + '%'; } },
+                    grid: { color: '#f1f5f9' }
+                }
+            }
+        }
+    });
+</script>
 
 </body>
 </html>
