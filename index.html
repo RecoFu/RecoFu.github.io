@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reco Fu 傅瑞乾 — 系統架構師 | 零損失保證</title>
+    <title>Reco Fu 傅瑞乾 — 系統架構師 | 40年數據零損失紀錄</title>
     <style>
         :root {
             --ocean-blue: #003366;
             --text-dark: #1a1a1a;
             --gray-sub: #555555;
             --highlight: #f0f4f8;
+            --critical-red: #8b0000;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Segoe UI', 'PingFang TC', 'Microsoft YaHei', serif;
-            font-size: 11.5pt; /* 字體放大 */
+            font-size: 11.5pt;
             line-height: 1.5;
             color: var(--text-dark);
-            background: #f0f0f0;
+            background: #e9ecef;
         }
         
         .page { 
@@ -52,14 +53,13 @@
             font-weight: bold; 
             color: var(--text-dark); 
         }
-        .header .sub-tagline { font-size: 10pt; color: var(--gray-sub); font-style: italic; }
 
         /* Section */
         .section { margin-bottom: 0.6cm; }
         .section-title { 
             font-size: 14pt; 
             font-weight: bold;
-            color: var(--ocean-blue); /* 海洋深藍色 */
+            color: var(--ocean-blue);
             border-left: 6px solid var(--ocean-blue);
             padding-left: 12px;
             margin-bottom: 0.3cm;
@@ -85,7 +85,7 @@
         th, td { 
             border: 1px solid #ddd; 
             padding: 10px;
-            text-align: left; /* 全部向左靠 */
+            text-align: left; 
         }
         th { 
             background: var(--ocean-blue); 
@@ -93,6 +93,12 @@
             font-weight: bold;
         }
         .critical-row { background: #fff5f5; font-weight: bold; }
+        .black-swan-box {
+            border: 2px solid var(--critical-red);
+            padding: 15px;
+            background: #fffafa;
+            margin-top: 15px;
+        }
         
         /* Footer */
         .footer { 
@@ -110,26 +116,23 @@
     <div class="page">
         <div class="header">
             <h1>RECO FU (傅瑞乾)</h1>
-            <p class="tagline">跨國系統架構師 | 40年數據零損失紀錄 | 根因診斷「最後一道防線」</p>
-            <p class="sub-tagline">Systems Architect | Zero-Loss Guardian | Root Cause Specialist</p>
+            <p class="tagline">跨國系統架構師 | 根因診斷權威 | 40年數據零損失紀錄</p>
         </div>
 
         <div class="section">
-            <div class="section-title">破局競爭力 | Competitive Edge</div>
+            <div class="section-title">核心競爭力 | Core Competencies</div>
             <div class="content-block">
-                <span class="hero-text">● 當系統失效、全體撤退時，我是留下來解決問題的人。</span><br/>
-                我不只具備維運能力，更具備在「無人敢接手」的舊系統與極端環境中，重建秩序的實戰權威。
-                <div class="en-desc">I specialize in restoring order where others see chaos—managing undocumented legacy systems and extreme crises.</div>
+                <span class="hero-text">● 系統生存主義者的極致：</span>
+                當環境進入崩潰態，多數人選擇重灌或放棄，我選擇深入底層進行**根因診斷**。從業 40 年，從未掉過任何一筆客戶資料。
             </div>
             <div class="content-block">
-                <span class="hero-text">● 四十年「零數據遺失」是我的職業信仰。</span><br/>
-                從 1984 年 FidoNet 撥接時代到 2025 年 AI 治理，歷經勒索病毒攻擊、國家級骨幹故障、自然災害，始終維持 100% 數據可用性。
-                <div class="en-desc">40 years of zero data loss across typhoons, earthquakes, and ransomware attacks.</div>
+                <span class="hero-text">● 無人值守自動化架構：</span>
+                具備在極端物理環境（颱風、地震、斷電）下，建構具備**自癒能力**的系統。我設計的不是程式，是韌性。
             </div>
         </div>
 
         <div class="section">
-            <div class="section-title">10個不可否認的戰役 | 10 Unforgeable Battle Records</div>
+            <div class="section-title">10個難忘的戰役 | 10 Memorable Battles</div>
             <table>
                 <thead>
                     <tr>
@@ -139,26 +142,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>1984-00</td><td>FidoNet 節點營運</td><td>台灣網路先驅 (6:722/228)，獨立掌握底層安全協議。</td></tr>
-                    <tr><td>1994-95</td><td>國軍精實專案</td><td>獨立將測考題庫與精實資料庫數位化，軍方信賴的資訊兵。</td></tr>
-                    <tr><td>1996-98</td><td>中華電信 & 戶役政</td><td>主導全國級催費機房與交換機系統，扛起中部行政數位化。</td></tr>
-                    <tr><td>1999-03</td><td>金融骨幹建置</td><td>證交所、期交所、集保、中信局 ATM/T1 骨幹核心佈署。</td></tr>
-                    <tr><td>2003-20</td><td>無人值守量化系統</td><td><b>8.92 年無人操作</b>，27 倍資本增長，抗衡所有自然災害。</td></tr>
-                    <tr class="critical-row"><td>2015</td><td>柬埔寨勒索軟體戰</td><td><b>8小時內全系統恢復</b>，零贖金支付，零數據損失。</td></tr>
-                    <tr><td>2016-17</td><td>SRE 根因判定</td><td>獨立定位 Broadcom NIC VMQ 底層漏洞，解決全球級硬體死穴。</td></tr>
-                    <tr><td>2010-22</td><td>東南亞四廠 MIS</td><td>越南、泰國、柬埔寨從零建置 IT/OT 基建，數據效率提升 10%。</td></tr>
-                    <tr><td>2022-25</td><td>AI 治理 & 安全</td><td>ChatGPT 安全架構設計，API 漏洞降低 75%，確保企業級 AI 落地。</td></tr>
-                    <tr><td>全時期</td><td>秩序守護者</td><td><b>40 年職涯：零中毒、零掉資料、零損失。</b></td></tr>
+                    <tr><td>1984-00</td><td>FidoNet 撥接時代</td><td>獨立營運 6:722/228 節點，掌握網路安全协议之源。</td></tr>
+                    <tr><td>1994-95</td><td>國軍測考數位化</td><td>獨立將軍方題庫與精實專案資料庫數位化，效率提升數倍。</td></tr>
+                    <tr><td>1996-98</td><td>中華電信機房建置</td><td>主導全國帳單催費與 PBX 交換機系統，承載國家級資費流。</td></tr>
+                    <tr><td>1999-03</td><td>金融骨幹 T1 網路</td><td>證交所、期交所、集保、中信局之 ATM 網路核心佈署。</td></tr>
+                    <tr><td>2003-20</td><td>自動化量化交易</td><td><b>無人值守 8.92 年</b>，實現 27 倍資本成長與物理抗災。</td></tr>
+                    <tr class="critical-row"><td>2015</td><td>柬埔寨勒索軟體戰</td><td><b>8小時內全數據恢復</b>，零贖金支付，擊碎勒索威脅。</td></tr>
+                    <tr><td>2016-17</td><td>VMQ 驅動級故障診斷</td><td>定位 Broadcom 網卡底層漏洞，解決全球級隨機重啟噩夢。</td></tr>
+                    <tr><td>2010-22</td><td>東南亞四廠 MIS 建置</td><td>越南/泰國/柬埔寨，從荒蕪中建立完整 IT/OT 生態系。</td></tr>
+                    <tr><td>2022-25</td><td>AI 安全治理與 GDI</td><td>整合 LLM 至 MIS 架構，透過安全 API 將漏洞風險降低 75%。</td></tr>
+                    <tr><td>2020</td><td>黑天鵝系統考驗</td><td><b>系統於 3/18 停止運作</b>，見證舊文明終結，數據日誌 100% 完整。</td></tr>
                 </tbody>
             </table>
-        </div>
-
-        <div class="section">
-            <div class="section-title">全棧技術深度 | Technical Depth</div>
-            <p><strong>底層：</strong> PLC/自動控制、 watchDog 硬體計時器、8051 微處理器、Fortran 77。<br/>
-               <strong>架構：</strong> AWS/GCP、K8s、Novell/OS2、電信 3G Core、金融 ATM 骨幹。<br/>
-               <strong>安全：</strong> GDI 即時守護、AI 注入防禦、Merkle-Hash 數據校驗。
-            </p>
         </div>
 
         <div class="footer">
@@ -166,57 +161,66 @@
         </div>
     </div>
 
-    <!-- PAGE 2: THE PROOF -->
+    <!-- PAGE 2: THE BLACK SWAN PHILOSOPHY -->
     <div class="page">
         <div class="header">
-            <h1>小白鼠帳戶 (THE PROOF)</h1>
-            <p class="tagline">2012-2020 | 無人值守自動化交易系統 | 韌性與容錯的數學實證</p>
+            <h1>小白鼠帳戶：技術與時代的見證</h1>
+            <p class="tagline">2012-2020 | 27 倍資本成長的量化實證</p>
         </div>
 
         <div class="section">
-            <div class="section-title">核心績效數據 | Performance Summary</div>
+            <div class="section-title">數據摘要 | Performance Metrics</div>
             <table>
                 <thead>
                     <tr>
                         <th>年份</th>
-                        <th>期初 (TWD)</th>
-                        <th>期末 (TWD)</th>
+                        <th>帳戶狀態</th>
                         <th>年報酬 (%)</th>
-                        <th>備註 (環境壓力)</th>
+                        <th>錯誤率 (%)</th>
+                        <th>備註</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>2013</td><td>50,000</td><td>80,000</td><td>+60.00%</td><td>初始自動化測試</td></tr>
-                    <tr><td>2015</td><td>150,000</td><td>360,000</td><td>+140.00%</td><td>策略爆發期</td></tr>
-                    <tr class="critical-row"><td>2017</td><td>315,493</td><td>637,711</td><td>+102.13%</td><td><b>89% 錯誤率下仍獲利 (極致容錯)</b></td></tr>
-                    <tr><td>2019</td><td>997,678</td><td>1,350,000</td><td>+35.31%</td><td>達到資本峰值 (27倍增長)</td></tr>
+                    <tr><td>2013</td><td>初啟自動化</td><td>+60.00%</td><td>2.33%</td><td>穩定運行中</td></tr>
+                    <tr><td>2015</td><td>資本爆發</td><td>+140.00%</td><td>0.00%</td><td>高精度執行</td></tr>
+                    <tr class="critical-row"><td>2017</td><td>極致容錯測試</td><td>+102.13%</td><td><b>89.59%</b></td><td>架構優勢：高錯誤仍獲利</td></tr>
+                    <tr><td>2019</td><td>資本峰值</td><td>+35.31%</td><td>33.10%</td><td>1.35M (27倍)</td></tr>
                 </tbody>
             </table>
         </div>
 
         <div class="section">
-            <div class="section-title">破局觀點：為何這份數據「無法反駁」？</div>
-            <div class="content-block">
-                <span class="hero-text">1. 數學級容錯證明 (The 2017 Miracle)</span><br/>
-                2017 年出現 89% 的執行錯誤，但依靠自動止損與風險管理，系統依然產出 102% 的回報。這證明了我的**架構設計優先於單純的預測邏輯**。
-            </div>
-            <div class="content-block">
-                <span class="hero-text">2. 無人值守的生存主義 (8.92 Years Survival)</span><br/>
-                人在海外，系統獨自在台中家中運作。歷經多次地震、停電與網路崩潰，系統具備自動換倉、異常重啟與自我恢復能力。這不是金融故事，這是**系統工程的極致展現**。
-            </div>
-            <div class="content-block">
-                <span class="hero-text">3. 三重密碼學校驗 (Triple Verification)</span><br/>
-                ● **Gmail 時間戳：** 2,013 筆交易由 Google 伺服器公正記錄時間。<br/>
-                ● **Merkle Hash：** 數據指紋 SHA256 校驗，修改一行即崩潰。<br/>
-                ● **GitHub Commit：** 歷史軌跡公開，時間鏈不可篡改。
+            <div class="section-title">2020 年黑天鵝事件：系統設計的最終考試</div>
+            <div class="black-swan-box">
+                <p><strong>系統停止日期：2020 年 3 月 18 日</strong></p>
+                <p style="margin-top: 10px;">
+                    這並非系統的失敗，而是**「市場時代的更新」**。
+                </p>
+                <p style="margin-top: 10px; color: var(--critical-red); font-weight: bold;">
+                    舊文明的葬禮：
+                </p>
+                <p>
+                    當舊有的量化策略（傳統技術分析與基本面）遭遇「AI 蜂巢時代」的市場結構劇變，舊體系已無法描述新現實。一個月後，「原油負值」的歷史奇點出現，正式宣告了舊金融文明的終結。
+                </p>
+                <p style="margin-top: 10px; color: var(--ocean-blue); font-weight: bold;">
+                    反脆弱設計的真正價值：
+                </p>
+                <p>
+                    即便在策略失效、資本劇震的極端壓力下，**系統依然保持了 100% 完整的日誌記錄**。我們無法預測黑天鵝，但我的系統在黑天鵝降臨時，確保了「架構的完整性」與「數據的真實性」。
+                </p>
+                <p style="margin-top: 10px; font-style: italic;">
+                    這才是 2020 年失敗的意義：證明了系統在毀滅面前，秩序依然存在。
+                </p>
             </div>
         </div>
 
         <div class="section">
-            <div class="section-title">結語 | Conclusion</div>
-            <p style="text-align: justify;">
-                我尋求的不僅是一份工作，而是一個需要「絕對穩定」與「解決疑難雜症」的戰場。如果你的系統正處於崩潰邊緣，或者你需要建構一個在未來十年都不會倒下的自動化架構，**Reco Fu 是你唯一的選擇。**
-            </p>
+            <div class="section-title">為什麼這份履歷是高競爭力的？</div>
+            <ul style="padding-left: 20px;">
+                <li style="margin-bottom: 8px;"><strong>不可證偽性：</strong> 2,013 筆交易、Gmail 時間戳、SHA256 密碼校驗。</li>
+                <li style="margin-bottom: 8px;"><strong>抗壓經驗：</strong> 真刀真槍應對勒索軟體與全球硬體 Bug。</li>
+                <li style="margin-bottom: 8px;"><strong>未來思維：</strong> 已完成從傳統量化到 AI 安全治理的範式轉移。</li>
+            </ul>
         </div>
 
         <div class="footer">
