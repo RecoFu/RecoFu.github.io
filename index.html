@@ -1,182 +1,220 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reco F. | Systems Architect & Quantitative Strategist</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0d1117;
-            --text-color: #c9d1d9;
-            --accent-color: #58a6ff;
-            --grid-color: #30363d;
-            --quant-color: #3fb950;
+            --primary: #1a365d; /* Navy */
+            --secondary: #2b6cb0; /* Professional Blue */
+            --accent: #38b2ac; /* Teal/Success */
+            --bg-light: #f7fafc;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --white: #ffffff;
         }
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            border: 1px solid var(--grid-color);
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+        .container { max-width: 1000px; margin: 40px auto; background: var(--white); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+        /* Header Section */
         header {
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-        h1 { color: var(--accent-color); margin: 0; font-size: 1.8rem; }
-        .tagline { font-weight: bold; color: #8b949e; margin-top: 10px; }
-        .axiom-box {
-            background: #161b22;
-            padding: 15px;
-            border-left: 4px solid var(--quant-color);
-            margin: 20px 0;
-            font-size: 0.9rem;
-        }
-        h2 { border-left: 4px solid var(--accent-color); padding-left: 10px; font-size: 1.2rem; margin-top: 40px; }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.85rem;
-        }
-        th, td {
-            border: 1px solid var(--grid-color);
-            padding: 10px;
-            text-align: left;
-        }
-        th { background: #161b22; color: var(--accent-color); }
-        .chart-container {
-            margin: 30px 0;
-            background: #161b22;
-            padding: 20px;
-            border-radius: 4px;
-        }
-        .milestone {
-            margin-bottom: 15px;
-            display: flex;
-            gap: 20px;
-        }
-        .date { color: var(--accent-color); min-width: 120px; font-weight: bold; }
-        .content b { color: #fff; }
-        footer {
-            margin-top: 50px;
-            font-size: 0.8rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 60px 40px;
             text-align: center;
-            color: #484f58;
-            border-top: 1px solid var(--grid-color);
-            padding-top: 20px;
+            position: relative;
         }
-        .highlight { color: var(--quant-color); }
-        @media (max-width: 600px) {
-            .container { padding: 15px; }
-            .milestone { flex-direction: column; gap: 5px; }
+        header h1 { font-size: 2.5rem; margin: 0; letter-spacing: -1px; }
+        header p.subtitle { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; }
+        
+        .social-links { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
+        .social-links a { color: var(--white); font-size: 1.5rem; text-decoration: none; transition: 0.3s; }
+        .social-links a:hover { color: var(--accent); }
+        /* Axiom & Strategy Box */
+        .axiom-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #edf2f7;
+            padding: 20px 40px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .axiom-item { display: flex; align-items: center; gap: 10px; color: var(--primary); }
+        /* Main Content */
+        .main-content { padding: 40px; }
+        
+        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; text-transform: uppercase; font-size: 1.4rem; margin-top: 40px; }
+        .dual-lang { display: flex; flex-direction: column; margin-bottom: 5px; }
+        .lang-en { font-size: 0.85rem; color: var(--text-muted); font-weight: 400; }
+        .lang-tw { font-weight: 700; font-size: 1.05rem; }
+        /* Experience Timeline */
+        .timeline-item { border-left: 2px solid #e2e8f0; padding-left: 25px; margin-bottom: 30px; position: relative; }
+        .timeline-item::before { content: ""; position: absolute; left: -7px; top: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--secondary); }
+        .year { color: var(--secondary); font-weight: 800; font-size: 0.9rem; }
+        /* Quantitative Performance Section */
+        .perf-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; margin-top: 20px; }
+        .chart-box { background: #fff; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; }
+        /* Philosphy Box */
+        .philosophy-quote {
+            background: #fff5f5;
+            border-left: 4px solid #f56565;
+            padding: 20px;
+            font-style: italic;
+            margin: 30px 0;
+            font-size: 1.1rem;
+            color: #c53030;
+        }
+        /* Footer */
+        footer { background: var(--primary); color: var(--white); padding: 30px; text-align: center; font-size: 0.8rem; }
+        @media (max-width: 768px) {
+            .axiom-container, .perf-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 <div class="container">
     <header>
-        <h1>Reco F. | Systems Architect & Quantitative Strategist</h1>
-        <div class="tagline">跨越 FidoNet → Quant → AI 的系統治理者</div>
+        <h1>Reco F.</h1>
+        <p class="subtitle">Cloud Architect | Quantitative Systems Strategist | AI Governance</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/recofu" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/RecoFu" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://recofu.github.io" title="Website"><i class="fas fa-globe"></i></a>
+        </div>
     </header>
-    <div class="axiom-box">
-        <b>Axiom:</b> (Logic && Quantifiable && Verifiable && Timestamp) <br>
-        <b>Strategy:</b> 20% Stability (Legacy Wisdom) || 80% Velocity (AI Leverage)
+    <div class="axiom-container">
+        <div class="axiom-item">
+            <i class="fas fa-microchip"></i>
+            <span>AXIOM: (Logic && Quantifiable && Verifiable && Timestamp)</span>
+        </div>
+        <div class="axiom-item" style="justify-content: flex-end;">
+            <i class="fas fa-bolt"></i>
+            <span>STRATEGY: 20% Stability (Legacy) || 80% Velocity (AI Leverage)</span>
+        </div>
     </div>
-    <section id="quant">
-        <h2>📊 量化績效 (2012-2020 無人值守自動化交易)</h2>
-        <p>人在海外，系統在家。經受地震、斷電、換倉考驗，實現韌性架構。</p>
-        <div class="chart-container">
-            <canvas id="performanceChart"></canvas>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>年度</th>
-                    <th>帳戶</th>
-                    <th>錯誤率</th>
-                    <th>累計報酬(%)</th>
-                    <th>備註</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>2013</td><td>元大</td><td>2.33%</td><td>60.00%</td><td>策略初步量化</td></tr>
-                <tr><td>2015</td><td>元大</td><td>0.00%</td><td>620.00%</td><td>自動化系統穩態</td></tr>
-                <tr><td>2017</td><td>KGI</td><td>89.59%</td><td>1175.42%</td><td>極端波動捕獲</td></tr>
-                <tr><td>2020</td><td>KGI</td><td>33.73%</td><td><span class="highlight">2700.00%</span></td><td>舊文明葬禮，AI轉型點</td></tr>
-            </tbody>
-        </table>
-    </section>
-    <section id="career">
-        <h2>🛠 關鍵戰略里程碑 (Strategic Milestones)</h2>
+    <main class="main-content">
         
-        <div class="milestone">
-            <div class="date">2022 - 2025</div>
-            <div class="content"><b>AI Security & GDI Architecture:</b> 自研 GDI 環境守護系統；整合 ChatGPT API 安全架構，降低 75% 系統風險。</div>
-        </div>
-        <div class="milestone">
-            <div class="date">2015 - 2017</div>
-            <div class="content"><b>SRE Root Cause Expert:</b> 柬埔寨工廠勒索病毒 8 小時零損毀復原；偵測並修復 Broadcom VMQ 核心驅動漏洞。</div>
-        </div>
-        <div class="milestone">
-            <div class="date">2010 - 2014</div>
-            <div class="content"><b>Global Infrastructure:</b> 領導泰、越、柬三國跨國 IT 基礎建設，導入 ERP 提升管理效率 10%。</div>
-        </div>
-        <div class="milestone">
-            <div class="date">1999 - 2003</div>
-            <div class="content"><b>Financial Backbone:</b> 建置證交所、期交所、集保中心之全國級 T1/ATM 骨幹網路。</div>
-        </div>
-        <div class="milestone">
-            <div class="date">1984 - 2000</div>
-            <div class="content"><b>FidoNet Pioneer:</b> 建立 Node 6:722/228，從撥接時代掌握底層通訊協議安全。</div>
-        </div>
-    </section>
-    <section id="competency">
-        <h2>🧠 競爭力宣言</h2>
-        <ul>
-            <li><b>無損紀錄：</b>40 年職涯，系統零中毒、資料零遺失、核心零停機。</li>
-            <li><b>硬核根因：</b>具備從 8051 組合語言到 LLM API 的全棧垂直理解力。</li>
-            <li><b>治理哲學：</b>拒絕模糊判斷，所有決策基於可證偽的量化指標與時間戳。</li>
-        </ul>
-    </section>
+        <section>
+            <h2>Strategic Value | 戰略價值</h2>
+            <p>
+                <b>40年核心基礎建設資歷：</b>跨越 FidoNet、金融骨幹 (T1/ATM)、電信 3G Core 到現代 AI 安全治理。
+                具備極致的「根因判定 (Root Cause Identification)」能力與「零停機、零中毒、零遺失」的系統運維紀錄。
+            </p>
+        </section>
+        <section>
+            <h2>Quantitative Governance | 量化治理實績</h2>
+            <div class="perf-grid">
+                <div class="chart-box">
+                    <canvas id="yieldChart"></canvas>
+                </div>
+                <div>
+                    <div class="dual-lang">
+                        <span class="lang-tw">無人值守全自動交易系統 (2012-2020)</span>
+                        <span class="lang-en">Unattended Quantitative Trading System</span>
+                    </div>
+                    <ul style="font-size: 0.9rem;">
+                        <li>累計報酬率：<b>+2700%</b></li>
+                        <li>韌性指標：人在海外，系統於台中經受地震、斷電、換倉自動處理。</li>
+                        <li>驗證路徑：<a href="https://github.com/RecoFu/mouse-account-verification" target="_blank">Mouse Account Verification Link</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="philosophy-quote">
+                「2012年5萬起始的小白鼠帳戶死於2020/3/18，證明了<b>量化共振無法在 AI 蜂巢中存活</b>；一個月後的負原油就是舊文明的葬禮，宣告了以 AI 治理為核心的新交易紀元開啟。」
+            </div>
+        </section>
+        <section>
+            <h2>Key Milestones | 關鍵里程碑</h2>
+            
+            <div class="timeline-item">
+                <div class="year">2022 — PRESENT</div>
+                <div class="dual-lang">
+                    <span class="lang-tw">AI 安全架構與 GDI 即時守護系統整合</span>
+                    <span class="lang-en">AI Security Architecture & GDI Real-time Defense System</span>
+                </div>
+                <p>研發 GDI 個人環境即時守護系統，針對 LLM/ChatGPT API 進行安全性加固，有效阻斷 75% 潛在安全漏洞。</p>
+            </div>
+            <div class="timeline-item">
+                <div class="year">2016 — 2017</div>
+                <div class="dual-lang">
+                    <span class="lang-tw">LF 公司 SRE 系統工程師 - 網卡驅動根因突破</span>
+                    <span class="lang-en">SRE System Engineer - Network Kernel Root Cause Identification</span>
+                </div>
+                <p>解決 Broadcom VMQ 隨機當機問題，透過核心層級判定根因並推動董事會級別的架構重構。</p>
+            </div>
+            <div class="timeline-item">
+                <div class="year">2010 — 2016</div>
+                <div class="dual-lang">
+                    <span class="lang-tw">跨國 IT 基礎建設主管 (泰國/越南/柬埔寨)</span>
+                    <span class="lang-en">Overseas MIS Director (TH/VN/KH)</span>
+                </div>
+                <p>主導鼎新 ERP 導入與勒索病毒防禦。於柬埔寨遭受攻擊時達成 8 小時零損毀復原。確保 40 年資料零遺失紀錄。</p>
+            </div>
+            <div class="timeline-item">
+                <div class="year">1999 — 2003</div>
+                <div class="dual-lang">
+                    <span class="lang-tw">金融命脈與電信骨幹部署</span>
+                    <span class="lang-en">Financial Backbone & Telecom 3G Infrastructure</span>
+                </div>
+                <p>建置證交所、期交所、中信局之 T1/ATM 骨幹網路；部署台灣中部首座 3G 核心交換中心。</p>
+            </div>
+            <div class="timeline-item">
+                <div class="year">1984 — 2000</div>
+                <div class="dual-lang">
+                    <span class="lang-tw">FidoNet 節點維護與自動化啟蒙</span>
+                    <span class="lang-en">FidoNet Node (6:722/228) & Industrial Automation</span>
+                </div>
+                <p>獨立維護 FidoNet 節點。開發農畜產業自動化系統，實現早期的軟硬整合監控流程。</p>
+            </div>
+        </section>
+        <section>
+            <h2>Technical DNA | 技術棧</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <span style="background: #e2e8f0; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">Cloud Governance</span>
+                <span style="background: #e2e8f0; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">LLM Security API</span>
+                <span style="background: #e2e8f0; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">Quantitative Analysis</span>
+                <span style="background: #e2e8f0; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">SRE & DR</span>
+                <span style="background: #e2e8f0; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">FidoNet/Legacy Wisdom</span>
+                <span style="background: #e2e8f0; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">MultiCharts / EasyLanguage</span>
+            </div>
+        </section>
+    </main>
     <footer>
-        Build: 20251222 | Version: 3.1.0-Release | Powered by AI Governance Logic
+        <p>Built with Logic & Precision | © 2025 Reco F. | <i class="fas fa-code"></i> Verified Portfolio</p>
     </footer>
 </div>
 <script>
-    const ctx = document.getElementById('performanceChart').getContext('2d');
+    const ctx = document.getElementById('yieldChart').getContext('2d');
     new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+            labels: ['2012', '2014', '2016', '2018', '2020'],
             datasets: [{
-                label: 'Cumulative Return (%)',
-                data: [0, 60, 200, 620, 530, 1175, 1433, 2292, 2700],
-                borderColor: '#3fb950',
-                backgroundColor: 'rgba(63, 185, 80, 0.1)',
-                borderWidth: 2,
+                label: 'Cumulative Returns (Growth Curve)',
+                data: [0, 200, 530, 1433, 2700],
+                borderColor: '#38b2ac',
+                backgroundColor: 'rgba(56, 178, 172, 0.1)',
+                borderWidth: 3,
                 fill: true,
-                tension: 0.3
+                tension: 0.4
             }]
         },
         options: {
             responsive: true,
+            plugins: { legend: { display: false } },
             scales: {
-                y: { beginAtZero: true, grid: { color: '#30363d' } },
-                x: { grid: { color: '#30363d' } }
-            },
-            plugins: {
-                legend: { labels: { color: '#c9d1d9' } }
+                y: { ticks: { callback: value => value + '%' } }
             }
         }
     });
