@@ -3,102 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>傅瑞乾 (Reco Fu) | 資訊架構總監 & 系統架構師</title>
+    <title>Reco F. | Systems Architect & Quantitative Strategist</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body { font-family: "PingFang TC", "Helvetica Neue", Arial, sans-serif; line-height: 1.8; color: #333; background: #f8f9fa; margin: 0; padding: 0; }
-        .en { font-family: "Helvetica Neue", Arial, sans-serif; }
-        header { background: linear-gradient(to right, #004080, #0060a0); color: #fff; padding: 80px 20px; text-align: center; }
-        h1 { font-size: 42px; margin: 0; }
-        h2 { font-size: 28px; background: #004080; color: #fff; padding: 15px 20px; margin: 40px 0 20px; border-radius: 8px; }
-        .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
-        .section { background: #fff; padding: 35px; margin-bottom: 40px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px; }
-        table { width: 100%; border-collapse: collapse; margin: 30px 0; }
-        th, td { border: 1px solid #ddd; padding: 15px; text-align: center; }
-        th { background: #004080; color: #fff; }
-        ul { padding-left: 30px; }
-        li { margin-bottom: 18px; }
-        .links a { display: inline-block; margin: 10px; padding: 10px 20px; background: #004080; color: #fff; border-radius: 6px; text-decoration: none; }
-        .footnote { font-size: 15px; color: #666; padding: 20px; background: #eee; border-radius: 8px; }
-        .bilingual { margin-bottom: 30px; }
-        .zh { font-weight: bold; }
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --grid-color: #30363d;
+            --quant-color: #3fb950;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid var(--grid-color);
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        header {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 { color: var(--accent-color); margin: 0; font-size: 1.8rem; }
+        .tagline { font-weight: bold; color: #8b949e; margin-top: 10px; }
+        .axiom-box {
+            background: #161b22;
+            padding: 15px;
+            border-left: 4px solid var(--quant-color);
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+        h2 { border-left: 4px solid var(--accent-color); padding-left: 10px; font-size: 1.2rem; margin-top: 40px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.85rem;
+        }
+        th, td {
+            border: 1px solid var(--grid-color);
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #161b22; color: var(--accent-color); }
+        .chart-container {
+            margin: 30px 0;
+            background: #161b22;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        .milestone {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 20px;
+        }
+        .date { color: var(--accent-color); min-width: 120px; font-weight: bold; }
+        .content b { color: #fff; }
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            text-align: center;
+            color: #484f58;
+            border-top: 1px solid var(--grid-color);
+            padding-top: 20px;
+        }
+        .highlight { color: var(--quant-color); }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .milestone { flex-direction: column; gap: 5px; }
+        }
     </style>
 </head>
 <body>
-<header>
-    <h1>傅瑞乾 (Reco Fu)</h1>
-    <p style="font-size:24px; margin:20px 0;">資訊架構總監｜雲端解決方案架構師｜資訊安全專家<br><span class="en">Information Architecture Director | Cloud Solutions Architect | Information Security Specialist</span></p>
-    <p style="font-size:20px;">40年零資料遺失紀錄｜抗脆弱系統建構者<br><span class="en">40-Year Zero Data Loss Record | Antifragile Systems Builder</span></p>
-    <div class="links">
-        <a href="https://www.linkedin.com/in/recofu/" target="_blank">LinkedIn</a>
-        <a href="https://recofu.github.io/" target="_blank">Portfolio</a>
-        <a href="https://github.com/RecoFu" target="_blank">GitHub</a>
-    </div>
-</header>
 <div class="container">
-    <div class="section">
-        <div class="bilingual">
-            <span class="zh">關於我</span><br><br>
-            擁有超過40年資訊安全與系統架構經驗，專注建構經得起時間與極端事件考驗的抗脆弱系統。<br>
-            核心理念：Pauca sed matura（少，但成熟）。<br><br>
-            <span class="en">About Me</span><br><br>
-            With over 40 years of experience in information security and systems architecture, specializing in building antifragile systems resilient to time and extreme events.<br>
-            Core Philosophy: Pauca sed matura (Few, but mature).
-        </div>
+    <header>
+        <h1>Reco F. | Systems Architect & Quantitative Strategist</h1>
+        <div class="tagline">跨越 FidoNet → Quant → AI 的系統治理者</div>
+    </header>
+    <div class="axiom-box">
+        <b>Axiom:</b> (Logic && Quantifiable && Verifiable && Timestamp) <br>
+        <b>Strategy:</b> 20% Stability (Legacy Wisdom) || 80% Velocity (AI Leverage)
     </div>
-    <h2>關鍵成就與專案<br><span class="en">Key Achievements & Projects</span></h2>
-    <div class="grid">
-        <div class="section">
-            <strong class="zh">國家級基礎設施建置 (1984-2003)</strong><strong class="en">National Infrastructure Deployment (1984-2003)</strong>
-            <ul>
-                <li class="zh">參與台灣證交所及中華電信T1/ATM骨幹網路部署，管理國家級資料完整性。</li>
-                <li class="en">Deployed TWSE and Chunghwa Telecom T1/ATM backbone networks, managing national-scale data integrity.</li>
-            </ul>
+    <section id="quant">
+        <h2>📊 量化績效 (2012-2020 無人值守自動化交易)</h2>
+        <p>人在海外，系統在家。經受地震、斷電、換倉考驗，實現韌性架構。</p>
+        <div class="chart-container">
+            <canvas id="performanceChart"></canvas>
         </div>
-        <div class="section">
-            <strong class="zh">勒索軟體危機恢復 (2015)</strong><strong class="en">Ransomware Crisis Recovery (2015)</strong>
-            <ul>
-                <li class="zh">柬埔寨工廠攻擊事件：8小時內氣隙恢復ERP，零贖金、零遺失。</li>
-                <li class="en">Cambodian factory attack: 8-hour air-gap ERP recovery, zero ransom, zero loss.</li>
-            </ul>
-        </div>
-        <div class="section">
-            <strong class="zh">Broadcom NIC 根因診斷 (2016-2018)</strong><strong class="en">Broadcom NIC Root Cause Diagnosis (2016-2018)</strong>
-            <ul>
-                <li class="zh">識別Hyper-V中斷衝突，推翻供應商誤判，提升效能。</li>
-                <li class="en">Identified interrupt conflict in Hyper-V, overrode vendor misdiagnosis, improved performance.</li>
-            </ul>
-        </div>
-        <div class="section">
-            <strong class="zh">AI安全編排 (2022-2025)</strong><strong class="en">AI Security Orchestration (2022-2025)</strong>
-            <ul>
-                <li class="zh">整合LLM至GDI，降低邏輯注入風險75%。</li>
-                <li class="en">Integrated LLM with GDI, reduced logic injection risk by 75%.</li>
-            </ul>
-        </div>
-    </div>
-    <h2>專業證照<br><span class="en">Certifications</span></h2>
-    <div class="section">
-        <ul>
-            <li>CCNA: Switching, Routing, and Wireless Essentials (Cisco, 2023)</li>
-            <li>CCNA: Introduction to Networks (Cisco, 2023)</li>
-        </ul>
-    </div>
-    <h2>量化系統實證 (自報，不可獨立證偽)<br><span class="en">Quantitative System Proof (Self-Reported, Non-Falsifiable Independently)</span></h2>
-    <div class="section">
-        <p class="zh">2012-2020無人值守交易系統，歷經極端事件穩健成長。</p>
-        <p class="en">2012-2020 unattended trading system, robust growth through extreme events.</p>
         <table>
-            <thead><tr><th>年份<br>Year</th><th>報酬率<br>Return</th><th>權益 (TWD)<br>Equity</th><th>ZKP Hash Proof</th></tr></thead>
+            <thead>
+                <tr>
+                    <th>年度</th>
+                    <th>帳戶</th>
+                    <th>錯誤率</th>
+                    <th>累計報酬(%)</th>
+                    <th>備註</th>
+                </tr>
+            </thead>
             <tbody>
-                <tr><td>2013</td><td>+60.00%</td><td>80,000</td><td>692c11e23b44c257</td></tr>
-                <tr><td>2015</td><td>+140.0%</td><td>360,000</td><td>b6034e26329e6424</td></tr>
-                <tr><td>2017</td><td>+102.1%</td><td>637,711</td><td>53bdb60190796cfc</td></tr>
-                <tr><td>2019</td><td>+35.31%</td><td>1,350,000</td><td>ed323687a580dea0</td></tr>
+                <tr><td>2013</td><td>元大</td><td>2.33%</td><td>60.00%</td><td>策略初步量化</td></tr>
+                <tr><td>2015</td><td>元大</td><td>0.00%</td><td>620.00%</td><td>自動化系統穩態</td></tr>
+                <tr><td>2017</td><td>KGI</td><td>89.59%</td><td>1175.42%</td><td>極端波動捕獲</td></tr>
+                <tr><td>2020</td><td>KGI</td><td>33.73%</td><td><span class="highlight">2700.00%</span></td><td>舊文明葬禮，AI轉型點</td></tr>
             </tbody>
         </table>
-        <p class="footnote zh">數據自報，ZKP Hash確保完整性但不可獨立證偽。<br class="en">Self-reported data; ZKP Hash ensures integrity but not independently verifiable.</p>
-    </div>
+    </section>
+    <section id="career">
+        <h2>🛠 關鍵戰略里程碑 (Strategic Milestones)</h2>
+        
+        <div class="milestone">
+            <div class="date">2022 - 2025</div>
+            <div class="content"><b>AI Security & GDI Architecture:</b> 自研 GDI 環境守護系統；整合 ChatGPT API 安全架構，降低 75% 系統風險。</div>
+        </div>
+        <div class="milestone">
+            <div class="date">2015 - 2017</div>
+            <div class="content"><b>SRE Root Cause Expert:</b> 柬埔寨工廠勒索病毒 8 小時零損毀復原；偵測並修復 Broadcom VMQ 核心驅動漏洞。</div>
+        </div>
+        <div class="milestone">
+            <div class="date">2010 - 2014</div>
+            <div class="content"><b>Global Infrastructure:</b> 領導泰、越、柬三國跨國 IT 基礎建設，導入 ERP 提升管理效率 10%。</div>
+        </div>
+        <div class="milestone">
+            <div class="date">1999 - 2003</div>
+            <div class="content"><b>Financial Backbone:</b> 建置證交所、期交所、集保中心之全國級 T1/ATM 骨幹網路。</div>
+        </div>
+        <div class="milestone">
+            <div class="date">1984 - 2000</div>
+            <div class="content"><b>FidoNet Pioneer:</b> 建立 Node 6:722/228，從撥接時代掌握底層通訊協議安全。</div>
+        </div>
+    </section>
+    <section id="competency">
+        <h2>🧠 競爭力宣言</h2>
+        <ul>
+            <li><b>無損紀錄：</b>40 年職涯，系統零中毒、資料零遺失、核心零停機。</li>
+            <li><b>硬核根因：</b>具備從 8051 組合語言到 LLM API 的全棧垂直理解力。</li>
+            <li><b>治理哲學：</b>拒絕模糊判斷，所有決策基於可證偽的量化指標與時間戳。</li>
+        </ul>
+    </section>
+    <footer>
+        Build: 20251222 | Version: 3.1.0-Release | Powered by AI Governance Logic
+    </footer>
 </div>
+<script>
+    const ctx = document.getElementById('performanceChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+            datasets: [{
+                label: 'Cumulative Return (%)',
+                data: [0, 60, 200, 620, 530, 1175, 1433, 2292, 2700],
+                borderColor: '#3fb950',
+                backgroundColor: 'rgba(63, 185, 80, 0.1)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.3
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true, grid: { color: '#30363d' } },
+                x: { grid: { color: '#30363d' } }
+            },
+            plugins: {
+                legend: { labels: { color: '#c9d1d9' } }
+            }
+        }
+    });
+</script>
 </body>
 </html>
