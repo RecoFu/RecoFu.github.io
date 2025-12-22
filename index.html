@@ -1,338 +1,2197 @@
-<!DOCTYPE html> <html lang="zh-TW"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>小白鼠帳戶 PoW 證明 | Reco Fu</title> <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script> <style> * { margin: 0; padding: 0; box-sizing: border-box; } body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; } .container { max-width: 1200px; margin: 0 auto; padding: 20px; } 
-    header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 20px; text-align: center; border-radius: 8px; margin-bottom: 30px; }
-    header h1 { font-size: 2.5em; margin-bottom: 10px; }
-    header p { font-size: 1.2em; opacity: 0.9; }
-    
-    .pow-badge { display: inline-block; background: #ff6b6b; color: white; padding: 10px 20px; border-radius: 20px; font-weight: bold; margin-bottom: 20px; }
-    
-    section { background: white; padding: 30px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    section h2 { color: #667eea; border-bottom: 3px solid #667eea; padding-bottom: 10px; margin-bottom: 20px; }
-    
-    .chart-container { position: relative; height: 400px; margin-bottom: 20px; }
-    
-    .data-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9em; }
-    .data-table th, .data-table td { border: 1px solid #ddd; padding: 10px; text-align: right; }
-    .data-table th { background: #667eea; color: white; }
-    .data-table td:first-child { text-align: left; }
-    
-    .highlight { background: #fffacd; padding: 2px 6px; border-radius: 3px; font-weight: bold; }
-    
-    .verification-box { background: #e8f5e9; border-left: 4px solid #27ae60; padding: 15px; margin-bottom: 15px; border-radius: 4px; }
-    .verification-box h4 { color: #27ae60; margin-bottom: 8px; }
-    .verification-box code { background: #f0f0f0; padding: 3px 6px; border-radius: 3px; font-family: monospace; }
-    
-    .failure-highlight { background: #ffebee; border-left: 4px solid #ff6b6b; padding: 15px; margin-bottom: 15px; border-radius: 4px; }
-    .failure-highlight h4 { color: #ff6b6b; margin-bottom: 8px; }
-    
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
-    .stat-card { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea; }
-    .stat-card h4 { color: #667eea; margin-bottom: 5px; font-size: 0.9em; }
-    .stat-card .value { font-size: 1.8em; font-weight: bold; color: #333; }
-    
-    .ipfs-link { background: #e3f2fd; padding: 15px; border-radius: 4px; margin-bottom: 15px; }
-    .ipfs-link strong { color: #1976d2; }
-    
-    footer { text-align: center; padding: 20px; color: #666; font-size: 0.9em; }
-    
-    .key-evidence { background: #fff3e0; border-left: 4px solid #f57c00; padding: 15px; margin-bottom: 15px; border-radius: 4px; }
-    .key-evidence h4 { color: #f57c00; margin-bottom: 8px; }
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=big5">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="reco_resume_single_page.files/filelist.xml">
+<link rel=Preview href="reco_resume_single_page.files/image.emf">
+<title>Reco Fu | 系&#32479;架构&#24072;</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Reco Fu</o:Author>
+  <o:LastAuthor>Reco Fu</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2025-12-22T08:02:00Z</o:Created>
+  <o:LastSaved>2025-12-22T08:02:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>221</o:Words>
+  <o:Characters>1264</o:Characters>
+  <o:Lines>10</o:Lines>
+  <o:Paragraphs>2</o:Paragraphs>
+  <o:CharactersWithSpaces>1483</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:TargetScreenSize>800x600</o:TargetScreenSize>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="reco_resume_single_page.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="reco_resume_single_page.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SplitPgBreakAndParaMark/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+@media print {
+            body { padding: 0.4in; font-size: 9.5pt; }
+            .no-print { display: none; }
+        }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+header { text-align: center; margin-bottom: 0.3in; border-bottom: 1px solid #000; padding-bottom: 0.15in; }
+header h1 { font-size: 16pt; font-weight: normal; letter-spacing: 2px; margin-bottom: 0.05in; }
+header p { font-size: 9pt; color: #333; }
+.ROW
+	{display: flex;
+	gap: 0.3in;}
+.COL-LEFT
+	{flex: 0 0 1.2in;}
+.COL-RIGHT
+	{flex: 1;}
+td:first-child, th:first-child { text-align: left; }
+footer { margin-top: 0.2in; border-top: 1px solid #000; padding-top: 0.1in; font-size: 8pt; text-align: center; color: #666; }
+
+ /* Font Definitions */
+ @font-face
+	{font-family:新細明體;
+	panose-1:2 1 6 1 0 1 1 1 1 1;
+	mso-font-alt:PMingLiU;
+	mso-font-charset:136;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610611969 684719354 22 0 1048577 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
+@font-face
+	{font-family:"Segoe UI Emoji";
+	panose-1:2 11 5 2 4 2 4 2 2 3;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:3 33554432 134217728 0 1 0;}
+@font-face
+	{font-family:Georgia;
+	panose-1:2 4 5 2 5 4 5 2 3 3;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:"\@新細明體";
+	panose-1:2 1 6 1 0 1 1 1 1 1;
+	mso-font-charset:136;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610611969 684719354 22 0 1048577 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:新細明體;
+	mso-fareast-theme-font:minor-fareast;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"標題 1 字元";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:新細明體;
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:新細明體;
+	mso-fareast-theme-font:minor-fareast;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:新細明體;
+	mso-fareast-theme-font:minor-fareast;}
+p.page, li.page, div.page
+	{mso-style-name:page;
+	mso-style-unhide:no;
+	margin:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:新細明體;
+	mso-fareast-theme-font:minor-fareast;}
+p.section, li.section, div.section
+	{mso-style-name:section;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	margin-bottom:18.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:新細明體;
+	mso-fareast-theme-font:minor-fareast;}
+p.section-title, li.section-title, div.section-title
+	{mso-style-name:section-title;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	margin-bottom:7.2pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	border:none;
+	mso-border-bottom-alt:solid black .75pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 4.0pt 0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:新細明體;
+	mso-fareast-theme-font:minor-fareast;
+	text-transform:uppercase;
+	letter-spacing:.75pt;
+	font-weight:bold;}
+p.row, li.row, div.row
+	{mso-style-name:row;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	margin-bottom:5.75pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:新細明體;
+	mso-fareast-theme-font:minor-fareast;}
+p.col-left, li.col-left, div.col-left
+	{mso-style-name:col-left;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:新細明體;
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+p.col-right, li.col-right, div.col-right
+	{mso-style-name:col-right;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:新細明體;
+	mso-fareast-theme-font:minor-fareast;}
+p.highlight, li.highlight, div.highlight
+	{mso-style-name:highlight;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:新細明體;
+	mso-fareast-theme-font:minor-fareast;
+	font-weight:bold;}
+p.proof, li.proof, div.proof
+	{mso-style-name:proof;
+	mso-style-unhide:no;
+	margin-top:7.2pt;
+	margin-right:0cm;
+	margin-bottom:7.2pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	background:whitesmoke;
+	border:none;
+	mso-border-left-alt:solid black 1.5pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 7.0pt;
+	font-size:8.5pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:新細明體;
+	mso-fareast-theme-font:minor-fareast;}
+span.1
+	{mso-style-name:"標題 1 字元";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"標題 1";
+	mso-ansi-font-size:20.0pt;
+	mso-bidi-font-size:20.0pt;
+	font-family:"Calibri Light",sans-serif;
+	mso-ascii-font-family:"Calibri Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:新細明體;
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"Calibri Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#2F5496;
+	mso-themecolor:accent1;
+	mso-themeshade:191;}
+span.highlight1
+	{mso-style-name:highlight1;
+	mso-style-unhide:no;
+	font-weight:bold;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	mso-font-kerning:0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+-->
 </style>
-</head> <body> <div class="container"> <header> <div class="pow-badge">✓ PROOF OF WORK</div> <h1>小白鼠帳戶戰功展示</h1> <p>自動化交易系統極限韌性測試｜2012-2020｜完全可驗證</p> </header> 
-    <!-- ========== 核心數字 ========== -->
-    <section>
-        <h2>核心戰績（一眼看到）</h2>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h4>初始資本</h4>
-                <div class="value">¥50,000</div>
-            </div>
-            <div class="stat-card">
-                <h4>峰值（2019）</h4>
-                <div class="value">¥1,350,000</div>
-                <p style="color: #27ae60; margin-top: 5px;">27倍增長</p>
-            </div>
-            <div class="stat-card">
-                <h4>運行時長</h4>
-                <div class="value">8.92年</div>
-                <p style="color: #666; margin-top: 5px;">無人值守</p>
-            </div>
-            <div class="stat-card">
-                <h4>交易筆數</h4>
-                <div class="value">1,539筆</div>
-                <p style="color: #666; margin-top: 5px;">完整記錄</p>
-            </div>
-            <div class="stat-card">
-                <h4>系統無中斷</h4>
-                <div class="value">100%</div>
-                <p style="color: #27ae60; margin-top: 5px;">颱風/地震/停電</p>
-            </div>
-            <div class="stat-card">
-                <h4>2020黑天鵝</h4>
-                <div class="value">-97.78%</div>
-                <p style="color: #ff6b6b; margin-top: 5px;">完整日誌記錄</p>
-            </div>
-        </div>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:表格內文;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman",serif;}
+</style>
+<![endif]-->
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
 
-        <div class="key-evidence">
-            <h4>🎯 關鍵證明：為什麼這個「失敗」比成功更值錢</h4>
-            <p><strong>2017年：89.59% 錯誤率，依然盈利 102.13%</strong></p>
-            <p style="margin-top: 8px;">這證明系統設計的容錯性可以承受 90% 的元件故障，仍能通過風控機制保持盈利。這是工程級的系統韌性，不是理論。</p>
-        </div>
-    </section>
+<body bgcolor=white lang=EN-US link=blue vlink=purple style='tab-interval:36.0pt;
+word-wrap:break-word'>
 
-    <!-- ========== 資金曲線 ========== -->
-    <section>
-        <h2>資金曲線：從無到有，再到黑天鵝</h2>
-        <div class="chart-container">
-            <canvas id="equityChart"></canvas>
-        </div>
-        <p style="color: #666; font-size: 0.9em;">
-            <strong>看這條線：</strong>
-            初始 50K (2012) → 穩定增長 → 2019 峰值 1.35M → 2020 原油負值崩盤 → 最終 30K<br>
-            這不是系統失敗，這是「市場黑天鵝測試」。系統在崩盤時保持了完整的交易日誌。
-        </p>
-    </section>
+<div class=WordSection1>
 
-    <!-- ========== 年度表現 ========== -->
-    <section>
-        <h2>年度績效表（完整資料）</h2>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>年份</th>
-                    <th>帳戶</th>
-                    <th>期初</th>
-                    <th>期末</th>
-                    <th>年報酬</th>
-                    <th>錯誤率</th>
-                    <th>獲利因數</th>
-                    <th>備註</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>2012</td><td>元大</td><td>¥50K</td><td>¥50K</td><td>0%</td><td>100%</td><td>0.00</td><td>初始化</td></tr>
-                <tr><td>2013</td><td>元大</td><td>¥50K</td><td>¥80K</td><td>60%</td><td>2.33%</td><td>0.78</td><td>緩增</td></tr>
-                <tr><td>2014</td><td>元大</td><td>¥80K</td><td>¥150K</td><td>87.5%</td><td>0%</td><td>0.97</td><td>加速</td></tr>
-                <tr><td>2015</td><td>元大</td><td>¥150K</td><td>¥360K</td><td>140%</td><td>0%</td><td>0.87</td><td>快增</td></tr>
-                <tr><td>2016</td><td>KGI</td><td>¥360K</td><td>¥315K</td><td>-12.36%</td><td>0%</td><td>0.94</td><td>轉帳</td></tr>
-                <tr style="background: #fff3e0;">
-                    <td><strong>2017</strong></td><td>KGI</td><td>¥315K</td><td><span class="highlight">¥637K</span></td><td><span class="highlight">102.13%</span></td><td><span class="highlight">89.59%</span></td><td><span class="highlight">2.75</span></td><td><strong>高錯誤率但獲利</strong></td>
-                </tr>
-                <tr><td>2018</td><td>KGI</td><td>¥637K</td><td>¥997K</td><td>-0.01%</td><td>40.88%</td><td>1.67</td><td>追加入金</td></tr>
-                <tr style="background: #e8f5e9;">
-                    <td><strong>2019</strong></td><td>KGI</td><td>¥997K</td><td><span class="highlight">¥1,350K</span></td><td>35.31%</td><td>33.10%</td><td>2.04</td><td><strong>峰值達成</strong></td>
-                </tr>
-                <tr style="background: #ffebee;">
-                    <td><strong>2020</strong></td><td>KGI</td><td>¥1,350K</td><td><span class="highlight">¥30K</span></td><td><span class="highlight">-97.78%</span></td><td>33.73%</td><td>2.29</td><td><strong>黑天鵝爆倒</strong></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+<div>
 
-    <!-- ========== PoW 驗證 ========== -->
-    <section>
-        <h2>Proof of Work：資料如何驗證</h2>
-        
-        <div class="verification-box">
-            <h4>✓ Gmail 時間戳記（無法篡改）</h4>
-            <p>每筆交易自動發送郵件至 reco@outlook.com</p>
-            <p style="margin-top: 8px;"><code>From: OrderMaster</code> | <code>Date: 2017-03-15 09:41:55 GMT</code></p>
-            <p style="margin-top: 8px; color: #27ae60;">Google 伺服器時間戳記 = 法律級證據</p>
-        </div>
+<h1><span lang=ZH-TW style='font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>傅瑞乾</span><span style='font-family:
+"Georgia",serif;mso-fareast-font-family:新細明體;color:black;mso-fareast-language:
+ZH-TW'> | RECO FU</span><span style='font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></h1>
 
-        <div class="verification-box">
-            <h4>✓ Merkle Tree Hash（資料完整性證明）</h4>
-            <p>所有 1,539 筆交易的加密雜湊：</p>
-            <p style="margin-top: 8px; font-family: monospace; word-break: break-all; background: #f0f0f0; padding: 10px; border-radius: 3px;">
-                b5262673025e6d6a7f9c4e2b1a8d3f5c9e7a2b4d6f8h0j2k4m6n8p
-            </p>
-            <p style="margin-top: 8px; color: #666;">修改任何一筆交易資料 → Hash 完全改變 → 無法偽造</p>
-        </div>
+<p><span lang=ZH-TW style='font-size:10.0pt;font-family:"新細明體",serif;
+mso-ascii-font-family:Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Georgia;color:black;mso-fareast-language:ZH-TW'>系統架構師</span><span
+style='font-size:10.0pt;font-family:"Georgia",serif;color:black;mso-fareast-language:
+ZH-TW'> | </span><span class=GramE><span lang=ZH-TW style='font-size:10.0pt;
+font-family:"新細明體",serif;mso-ascii-font-family:Georgia;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Georgia;color:black;mso-fareast-language:
+ZH-TW'>根因診斷</span></span><span style='font-size:10.0pt;font-family:"Georgia",serif;
+color:black;mso-fareast-language:ZH-TW'> | 40</span><span lang=ZH-TW
+style='font-size:10.0pt;font-family:"新細明體",serif;mso-ascii-font-family:Georgia;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Georgia;color:black;
+mso-fareast-language:ZH-TW'>年戰損經驗</span><span style='font-size:10.0pt;
+font-family:"Georgia",serif;color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></p>
 
-        <div class="verification-box">
-            <h4>✓ IPFS 上鏈（去中心化記錄）</h4>
-            <p>完整資料上傳至 IPFS（永久存儲）：</p>
-            <p style="margin-top: 8px; font-family: monospace;">
-                QmXxxx...（IPFS 內容位址）
-            </p>
-            <p style="margin-top: 8px; color: #666;">任何人都可以下載驗證，時間戳記與 Google 一致</p>
-        </div>
+</header>
 
-        <div class="verification-box">
-            <h4>✓ GitHub Commit（版本控制）</h4>
-            <p>所有資料及此報告已上鏈 GitHub：</p>
-            <p style="margin-top: 8px;">
-                <a href="https://github.com/recofu/autonomous-trading-resilience" target="_blank" style="color: #1976d2; text-decoration: none;">
-                    github.com/recofu/autonomous-trading-resilience
-                </a>
-            </p>
-            <p style="margin-top: 8px; color: #666;">Commit Hash 作為時間證明，不可篡改</p>
-        </div>
-    </section>
+<div style='margin-bottom:18.0pt'>
 
-    <!-- ========== 2017 神奇年份 ========== -->
-    <section>
-        <h2>2017：為什麼 89% 錯誤率還能賺 102%</h2>
-        <div class="chart-container">
-            <canvas id="errorVsProfitChart"></canvas>
-        </div>
-        <p style="color: #666; margin-top: 15px;">
-            <strong>工程學證明：</strong> 高錯誤率 ≠ 系統失敗<br>
-            風控機制（自動止損、倉位限制、每日上限）設計得當，即使 89% 交易有問題，剩餘的 11% 正確交易仍能產生 102% 年報酬。<br>
-            <br>
-            這是「容錯設計」的實證。對於 SRE/CTO，這比任何成功案例都有說服力。
-        </p>
-    </section>
+<div style='border:none;border-bottom:solid black 1.0pt;mso-border-bottom-alt:
+solid black .75pt;padding:0cm 0cm 4.0pt 0cm;margin-bottom:7.2pt'>
 
-    <!-- ========== 黑天鵝分析 ========== -->
-    <section>
-        <h2>2020：黑天鵝事件與系統行為</h2>
-        <div class="failure-highlight">
-            <h4>原油期貨負值事件（2020.04.20）</h4>
-            <p><strong>事件描述：</strong> WTI 原油期貨跌至 -37.63 美元（歷史首次負值）</p>
-            <p style="margin-top: 10px;"><strong>系統反應：</strong></p>
-            <ul style="margin-left: 20px; margin-top: 8px;">
-                <li>✓ 自動平倉，最小化損失</li>
-                <li>✓ 完整的交易日誌保存（Gmail 記錄）</li>
-                <li>✓ 系統未崩潰，按設計工作</li>
-                <li>✗ 但 2x 杠杆無法保護極端黑天鵝</li>
-            </ul>
-        </div>
+<p class=MsoNormal><b><span lang=ZH-TW style='font-size:10.0pt;font-family:
+"新細明體",serif;mso-bidi-font-family:新細明體;color:black;text-transform:uppercase;
+letter-spacing:.75pt;mso-fareast-language:ZH-TW'>核心定位</span></b><b><span
+style='font-size:10.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;text-transform:uppercase;letter-spacing:.75pt;
+mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
 
-        <div class="key-evidence">
-            <h4>💡 這個失敗教會了什麼</h4>
-            <p><strong>風控原則修正：</strong></p>
-            <ul style="margin-left: 20px; margin-top: 8px;">
-                <li>1. 杠杆需要更保守（2x → 0.5x）</li>
-                <li>2. 市場流動性檢查（拒絕極端價格交易）</li>
-                <li>3. 黑天鵝對沖（期權 straddle）</li>
-                <li>4. 單日虧損上限（> 5% 自動平倉）</li>
-            </ul>
-            <p style="margin-top: 12px; color: #f57c00;"><strong>這些都是從血淋淋的失敗中學到的。</strong></p>
-        </div>
-    </section>
-
-    <!-- ========== 給HR/獵頭的說明 ========== -->
-    <section>
-        <h2>為什麼HR/獵頭應該關注這個「失敗」</h2>
-        <p><strong>常見誤解：</strong> 「這個人交易失敗了，不可靠」</p>
-        <p style="margin-top: 12px; color: #666;"><strong>正確理解：</strong></p>
-        <ul style="margin-left: 20px; margin-top: 8px;">
-            <li>✓ 證明系統韌性：8 年無人值守，零中斷</li>
-            <li>✓ 證明故障恢復：颱風/地震/停電都活下來</li>
-            <li>✓ 證明風控進化：失敗後反覆運算出更好的機制</li>
-            <li>✓ 證明資料誠實：所有記錄可驗證，不是吹牛</li>
-            <li>✓ 證明黑天鵝應對：在歷史級市場崩盤中保持日誌完整</li>
-        </ul>
-        <p style="margin-top: 15px; background: #e3f2fd; padding: 12px; border-radius: 4px;">
-            <strong>對 Fintech CTO/VP Eng 來說：</strong> 這個人活過了市場最壞的時刻，還留下了完整的診斷日誌。這比 10 個成功案例都值錢。
-        </p>
-    </section>
-
-    <!-- ========== 快速驗證指南 ========== -->
-    <section>
-        <h2>快速驗證方式（給招聘方）</h2>
-        <div style="background: #f5f5f5; padding: 15px; border-radius: 4px; margin-bottom: 15px;">
-            <strong>無需信任我，自己驗證：</strong>
-            <ol style="margin-left: 20px; margin-top: 10px;">
-                <li>訪問 <a href="https://github.com/recofu/autonomous-trading-resilience" target="_blank" style="color: #1976d2;">GitHub 倉庫</a></li>
-                <li>下載 <code>trading_data_2012_2020.csv</code></li>
-                <li>運行 <code>python3 verify_merkle.py</code></li>
-                <li>與公佈的 Hash 對比 → 匹配 = 資料未篡改</li>
-                <li>查看 commit history → 時間戳記 = 第一次提交日期</li>
-            </ol>
-        </div>
-        <p style="color: #666; font-size: 0.9em;">所有步驟都是開源、透明、無法偽造的。</p>
-    </section>
-
-    <!-- ========== 聯繫方式 ========== -->
-    <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
-        <h2 style="color: white; border-bottom-color: white;">準備好深入討論了嗎？</h2>
-        <p style="margin-top: 15px; font-size: 1.1em;">
-            <strong>Email：</strong> reco@outlook.com<br>
-            <strong>GitHub：</strong> <a href="https://github.com/recofu" style="color: white; text-decoration: underline;">@recofu</a><br>
-            <strong>LinkedIn：</strong> <a href="https://linkedin.com/in/recofu" style="color: white; text-decoration: underline;">Reco Fu</a>
-        </p>
-    </section>
-
-    <footer>
-        <p>所有資料已驗證。Merkle Tree Hash 不可篡改。GitHub Commit 時間戳記為證。</p>
-        <p style="margin-top: 10px;">© 2025 Reco Fu | Autonomous Trading System Post-mortem Report</p>
-    </footer>
 </div>
 
-<script>
-    // 資金曲線圖
-    const ctx1 = document.getElementById('equityChart').getContext('2d');
-    const equityData = [50, 50, 80, 150, 360, 315, 637, 997, 1350, 30];
-    const years = ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'];
-    
-    new Chart(ctx1, {
-        type: 'line',
-        data: {
-            labels: years,
-            datasets: [{
-                label: '帳戶權益 (單位: ×10,000元)',
-                data: equityData,
-                borderColor: '#667eea',
-                backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                borderWidth: 3,
-                fill: true,
-                tension: 0.4,
-                pointRadius: 6,
-                pointBackgroundColor: '#667eea',
-                pointBorderColor: '#fff',
-                pointBorderWidth: 2
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { display: true, position: 'top' }
-            },
-            scales: {
-                y: { beginAtZero: true, title: { display: true, text: '權益 (×10,000)' } }
-            }
-        }
-    });
+<div style='margin-bottom:5.75pt'>
 
-    // 錯誤率 vs 獲利因數
-    const ctx2 = document.getElementById('errorVsProfitChart').getContext('2d');
-    new Chart(ctx2, {
-        type: 'bar',
-        data: {
-            labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
-            datasets: [
-                {
-                    label: '錯誤率 (%)',
-                    data: [2.33, 0, 0, 0, 89.59, 40.88, 33.10, 33.73],
-                    backgroundColor: '#ff6b6b',
-                    borderRadius: 4,
-                    yAxisID: 'y'
-                },
-                {
-                    label: '獲利因數',
-                    data: [0.78, 0.97, 0.87, 0.94, 2.75, 1.67, 2.04, 2.29],
-                    backgroundColor: '#27ae60',
-                    borderRadius: 4,
-                    yAxisID: 'y1'
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            interaction: { mode: 'index', intersect: false },
-            plugins: {
-                legend: { display: true, position: 'top' }
-            },
-            scales: {
-                y: { type: 'linear', display: true, position: 'left', title: { display: true, text: '錯誤率 (%)' } },
-                y1: { type: 'linear', display: true, position: 'right', title: { display: true, text: '獲利因數' }, grid: { drawOnChartArea: false } }
-            }
-        }
-    });
-</script>
-</body> </html>
+<div>
 
+<p class=MsoNormal><b><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>職業</span></b><b><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<div>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Georgia",serif;
+mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>Principal
+Systems Architect. SRE. Root Cause Diagnosis. IT/OT Integration.</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+<div style='margin-bottom:5.75pt'>
+
+<div>
+
+<p class=MsoNormal><b><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>特質</span></b><b><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<div>
+
+<p class=MsoNormal><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>反官僚<span
+class=GramE>｜</span>決策權優先<span class=GramE>｜</span>小團隊<span class=GramE>｜</span>實戰驗證</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+<div style='margin-bottom:5.75pt'>
+
+<div>
+
+<p class=MsoNormal><b><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>地點</span></b><b><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<div>
+
+<p class=MsoNormal><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>台中（遠距優先）</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>| </span><span lang=ZH-TW
+style='font-size:9.0pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>全球可接</span><span style='font-size:9.0pt;
+font-family:"Georgia",serif;mso-fareast-font-family:"Times New Roman";
+color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div style='margin-bottom:18.0pt'>
+
+<div style='border:none;border-bottom:solid black 1.0pt;mso-border-bottom-alt:
+solid black .75pt;padding:0cm 0cm 4.0pt 0cm;margin-bottom:7.2pt'>
+
+<p class=MsoNormal><b><span lang=ZH-TW style='font-size:10.0pt;font-family:
+"新細明體",serif;mso-bidi-font-family:新細明體;color:black;text-transform:uppercase;
+letter-spacing:.75pt;mso-fareast-language:ZH-TW'>戰績速<span class=GramE>覽</span></span></b><b><span
+style='font-size:10.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;text-transform:uppercase;letter-spacing:.75pt;
+mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse;mso-yfti-tbllook:1184'>
+ <thead>
+  <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+   <td style='border:solid black 1.0pt;mso-border-alt:solid black .25pt;
+   background:#F0F0F0;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+   <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><b><span
+   lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+   新細明體;color:black;mso-fareast-language:ZH-TW'>年份範圍</span></b><b><span
+   style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+   "Times New Roman";color:black'><o:p></o:p></span></b></p>
+   </td>
+   <td style='border:solid black 1.0pt;border-left:none;mso-border-left-alt:
+   solid black .25pt;mso-border-alt:solid black .25pt;background:#F0F0F0;
+   padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+   <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><b><span
+   lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+   新細明體;color:black;mso-fareast-language:ZH-TW'>事項</span></b><b><span
+   style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+   "Times New Roman";color:black'><o:p></o:p></span></b></p>
+   </td>
+   <td style='border:solid black 1.0pt;border-left:none;mso-border-left-alt:
+   solid black .25pt;mso-border-alt:solid black .25pt;background:#F0F0F0;
+   padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+   <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><b><span
+   lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+   新細明體;color:black;mso-fareast-language:ZH-TW'>成就</span></b><b><span
+   style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+   "Times New Roman";color:black'><o:p></o:p></span></b></p>
+   </td>
+  </tr>
+ </thead>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:solid black 1.0pt;border-top:none;mso-border-top-alt:solid black .25pt;
+  mso-border-alt:solid black .25pt;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>1984-2000</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  class=SpellE><span style='font-size:8.5pt;font-family:"Georgia",serif;
+  mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>FidoNet</span></span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'> </span><span lang=ZH-TW
+  style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+  color:black;mso-fareast-language:ZH-TW'>先驅</span><span style='font-size:8.5pt;
+  font-family:"Georgia",serif;mso-fareast-font-family:"Times New Roman";
+  color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>臺灣網路基礎建設</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:solid black 1.0pt;border-top:none;mso-border-top-alt:solid black .25pt;
+  mso-border-alt:solid black .25pt;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>2003-2020</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>自動化交易系統</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>$5K</span><span
+  style='font-size:8.5pt;mso-fareast-font-family:新細明體;color:black;mso-fareast-language:
+  ZH-TW'>→</span><span style='font-size:8.5pt;font-family:"Georgia",serif;
+  mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>$1.35M |
+  8</span><span lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;
+  mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>年無人值守</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:solid black 1.0pt;border-top:none;mso-border-top-alt:solid black .25pt;
+  mso-border-alt:solid black .25pt;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>2010-2022</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>東南亞工廠</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>MIS</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>4</span><span lang=ZH-TW
+  style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+  color:black;mso-fareast-language:ZH-TW'>國基礎設施</span><span style='font-size:
+  8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:新細明體;color:black;
+  mso-fareast-language:ZH-TW'> | </span><span lang=ZH-TW style='font-size:8.5pt;
+  font-family:"新細明體",serif;mso-bidi-font-family:新細明體;color:black;mso-fareast-language:
+  ZH-TW'>勒索</span><span style='font-size:8.5pt;font-family:"Georgia",serif;
+  mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>36h</span><span
+  lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>零損失</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:solid black 1.0pt;border-top:none;mso-border-top-alt:solid black .25pt;
+  mso-border-alt:solid black .25pt;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>2016-2017</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>LF</span><span lang=ZH-TW
+  style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+  color:black;mso-fareast-language:ZH-TW'>公司</span><span style='font-size:8.5pt;
+  font-family:"Georgia",serif;mso-fareast-font-family:新細明體;color:black;
+  mso-fareast-language:ZH-TW'>SRE</span><span style='font-size:8.5pt;
+  font-family:"Georgia",serif;mso-fareast-font-family:"Times New Roman";
+  color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>Broadcom NIC 100+</span><span
+  lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>案例診斷</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;mso-yfti-lastrow:yes'>
+  <td style='border:solid black 1.0pt;border-top:none;mso-border-top-alt:solid black .25pt;
+  mso-border-alt:solid black .25pt;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>2022-</span><span lang=ZH-TW
+  style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+  color:black;mso-fareast-language:ZH-TW'>現在</span><span style='font-size:8.5pt;
+  font-family:"Georgia",serif;mso-fareast-font-family:"Times New Roman";
+  color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>AI</span><span lang=ZH-TW
+  style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+  color:black;mso-fareast-language:ZH-TW'>安全集成</span><span style='font-size:
+  8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:"Times New Roman";
+  color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>ChatGPT API </span><span
+  lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>漏洞</span><span style='font-size:
+  8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:新細明體;color:black;
+  mso-fareast-language:ZH-TW'>-75%</span><span style='font-size:8.5pt;
+  font-family:"Georgia",serif;mso-fareast-font-family:"Times New Roman";
+  color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<div style='margin-bottom:18.0pt'>
+
+<div style='border:none;border-bottom:solid black 1.0pt;mso-border-bottom-alt:
+solid black .75pt;padding:0cm 0cm 4.0pt 0cm;margin-bottom:7.2pt'>
+
+<p class=MsoNormal><b><span lang=ZH-TW style='font-size:10.0pt;font-family:
+"新細明體",serif;mso-bidi-font-family:新細明體;color:black;text-transform:uppercase;
+letter-spacing:.75pt;mso-fareast-language:ZH-TW'>小白鼠帳戶</span></b><b><span
+style='font-size:10.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;text-transform:uppercase;letter-spacing:.75pt;mso-fareast-language:
+ZH-TW'> POW</span></b><b><span lang=ZH-TW style='font-size:10.0pt;font-family:
+"新細明體",serif;mso-bidi-font-family:新細明體;color:black;text-transform:uppercase;
+letter-spacing:.75pt;mso-fareast-language:ZH-TW'>（</span></b><b><span
+style='font-size:10.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;text-transform:uppercase;letter-spacing:.75pt;mso-fareast-language:
+ZH-TW'>2012-2020</span></b><b><span lang=ZH-TW style='font-size:10.0pt;
+font-family:"新細明體",serif;mso-bidi-font-family:新細明體;color:black;text-transform:
+uppercase;letter-spacing:.75pt;mso-fareast-language:ZH-TW'>）</span></b><b><span
+style='font-size:10.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;text-transform:uppercase;letter-spacing:.75pt;
+mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<div style='border:none;border-left:solid black 1.5pt;padding:0cm 0cm 0cm 7.0pt;
+margin-top:7.2pt;margin-bottom:7.2pt'>
+
+<p class=MsoNormal style='background:whitesmoke'><strong><span lang=ZH-TW
+style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>設計目的：</span></strong><span lang=ZH-TW
+style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'> </span><span class=GramE><span
+lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>無人值守極限</span></span><span
+lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>環境測試</span><span style='font-size:
+8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:新細明體;color:black;
+mso-fareast-language:ZH-TW'> | </span><strong><span lang=ZH-TW
+style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>運行時長：</span></strong><span
+style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'> 8.92</span><span lang=ZH-TW
+style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>年</span><span style='font-size:8.5pt;
+font-family:"Georgia",serif;mso-fareast-font-family:新細明體;color:black;
+mso-fareast-language:ZH-TW'> | </span><strong><span lang=ZH-TW
+style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>交易筆數：</span></strong><span
+style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'> 1,539</span><span lang=ZH-TW
+style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>筆</span><span lang=ZH-TW
+style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'> </span><span
+style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></p>
+
+</div>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse;mso-yfti-tbllook:1184'>
+ <thead>
+  <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+   <td style='border:solid black 1.0pt;mso-border-alt:solid black .25pt;
+   background:#F0F0F0;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+   <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><b><span
+   lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+   新細明體;color:black;mso-fareast-language:ZH-TW'>年份</span></b><b><span
+   style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+   "Times New Roman";color:black'><o:p></o:p></span></b></p>
+   </td>
+   <td style='border:solid black 1.0pt;border-left:none;mso-border-left-alt:
+   solid black .25pt;mso-border-alt:solid black .25pt;background:#F0F0F0;
+   padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+   <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><b><span
+   lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+   新細明體;color:black;mso-fareast-language:ZH-TW'>期初</span></b><b><span
+   style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+   "Times New Roman";color:black'><o:p></o:p></span></b></p>
+   </td>
+   <td style='border:solid black 1.0pt;border-left:none;mso-border-left-alt:
+   solid black .25pt;mso-border-alt:solid black .25pt;background:#F0F0F0;
+   padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+   <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><b><span
+   lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+   新細明體;color:black;mso-fareast-language:ZH-TW'>期末</span></b><b><span
+   style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+   "Times New Roman";color:black'><o:p></o:p></span></b></p>
+   </td>
+   <td style='border:solid black 1.0pt;border-left:none;mso-border-left-alt:
+   solid black .25pt;mso-border-alt:solid black .25pt;background:#F0F0F0;
+   padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+   <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><b><span
+   lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+   新細明體;color:black;mso-fareast-language:ZH-TW'>年報酬</span></b><b><span
+   style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+   "Times New Roman";color:black'><o:p></o:p></span></b></p>
+   </td>
+   <td style='border:solid black 1.0pt;border-left:none;mso-border-left-alt:
+   solid black .25pt;mso-border-alt:solid black .25pt;background:#F0F0F0;
+   padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+   <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><b><span
+   lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+   新細明體;color:black;mso-fareast-language:ZH-TW'>錯誤率</span></b><b><span
+   style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+   "Times New Roman";color:black'><o:p></o:p></span></b></p>
+   </td>
+   <td style='border:solid black 1.0pt;border-left:none;mso-border-left-alt:
+   solid black .25pt;mso-border-alt:solid black .25pt;background:#F0F0F0;
+   padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+   <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><b><span
+   lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+   新細明體;color:black;mso-fareast-language:ZH-TW'>獲利因數</span></b><b><span
+   style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+   "Times New Roman";color:black'><o:p></o:p></span></b></p>
+   </td>
+  </tr>
+ </thead>
+ <tr style='mso-yfti-irow:1'>
+  <td style='border:solid black 1.0pt;border-top:none;mso-border-top-alt:solid black .25pt;
+  mso-border-alt:solid black .25pt;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>2012-15</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>&yen;50K</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>&yen;360K</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>620%</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>~2%</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>0.87</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td style='border:solid black 1.0pt;border-top:none;mso-border-top-alt:solid black .25pt;
+  mso-border-alt:solid black .25pt;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>2016</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>&yen;360K</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>&yen;315K</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>-12.36%</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>0%</span><span style='font-size:
+  8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:"Times New Roman";
+  color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>0.94</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td style='border:solid black 1.0pt;border-top:none;mso-border-top-alt:solid black .25pt;
+  mso-border-alt:solid black .25pt;background:lemonchiffon;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  class=highlight1><span style='font-size:8.5pt;font-family:"Georgia",serif;
+  mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>2017</span></span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:lemonchiffon;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>&yen;315K</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:lemonchiffon;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>&yen;637K</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:lemonchiffon;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  class=highlight1><span style='font-size:8.5pt;font-family:"Georgia",serif;
+  mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>102.13%</span></span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:lemonchiffon;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  class=highlight1><span style='font-size:8.5pt;font-family:"Georgia",serif;
+  mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>89.59%</span></span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:lemonchiffon;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  class=highlight1><span style='font-size:8.5pt;font-family:"Georgia",serif;
+  mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>2.75</span></span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td style='border:solid black 1.0pt;border-top:none;mso-border-top-alt:solid black .25pt;
+  mso-border-alt:solid black .25pt;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>2018</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>&yen;637K</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>&yen;997K</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>-0.01%</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>40.88%</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>1.67</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td style='border:solid black 1.0pt;border-top:none;mso-border-top-alt:solid black .25pt;
+  mso-border-alt:solid black .25pt;background:#E8F5E9;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  class=highlight1><span style='font-size:8.5pt;font-family:"Georgia",serif;
+  mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>2019</span></span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:#E8F5E9;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>&yen;997K</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:#E8F5E9;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  class=highlight1><span style='font-size:8.5pt;font-family:"Georgia",serif;
+  mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>&yen;1.35M</span></span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:#E8F5E9;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>35.31%</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:#E8F5E9;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>33.10%</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:#E8F5E9;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>2.04</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes'>
+  <td style='border:solid black 1.0pt;border-top:none;mso-border-top-alt:solid black .25pt;
+  mso-border-alt:solid black .25pt;background:#FFEBEE;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  class=highlight1><span style='font-size:8.5pt;font-family:"Georgia",serif;
+  mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>2020</span></span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:#FFEBEE;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>&yen;1.35M</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:#FFEBEE;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>&yen;30K</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:#FFEBEE;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  class=highlight1><span style='font-size:8.5pt;font-family:"Georgia",serif;
+  mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>-97.78%</span></span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:#FFEBEE;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>33.73%</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+  <td style='border-top:none;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:solid black 1.0pt;mso-border-top-alt:solid black .25pt;
+  mso-border-left-alt:solid black .25pt;mso-border-alt:solid black .25pt;
+  background:#FFEBEE;padding:2.9pt 3.6pt 2.9pt 3.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:7.2pt;text-align:right'><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  新細明體;color:black;mso-fareast-language:ZH-TW'>2.29</span><span
+  style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+  "Times New Roman";color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<div style='border:none;border-left:solid black 1.5pt;padding:0cm 0cm 0cm 7.0pt;
+margin-top:7.2pt;margin-bottom:7.2pt'>
+
+<p class=MsoNormal style='background:whitesmoke'><strong><span lang=ZH-TW
+style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>關鍵發現：</span></strong><span lang=ZH-TW
+style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'> </span><span style='font-size:
+8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:新細明體;color:black;
+mso-fareast-language:ZH-TW'>2017</span><span lang=ZH-TW style='font-size:8.5pt;
+font-family:"新細明體",serif;mso-bidi-font-family:新細明體;color:black;mso-fareast-language:
+ZH-TW'>年</span><span style='font-size:8.5pt;font-family:"Georgia",serif;
+mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'> 89.59% </span><span
+lang=ZH-TW style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>錯誤率但獲利</span><span
+style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'> 102%</span><span lang=ZH-TW
+style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>，證明系統容錯設計極強｜</span><span
+style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'> 2020</span><span lang=ZH-TW
+style='font-size:8.5pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>年黑天鵝（原油負值）測試通過，完整日誌保存</span><span
+lang=ZH-TW style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'> </span><span
+style='font-size:8.5pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+<div style='margin-bottom:18.0pt'>
+
+<div style='border:none;border-bottom:solid black 1.0pt;mso-border-bottom-alt:
+solid black .75pt;padding:0cm 0cm 4.0pt 0cm;margin-bottom:7.2pt'>
+
+<p class=MsoNormal><b><span lang=ZH-TW style='font-size:10.0pt;font-family:
+"新細明體",serif;mso-bidi-font-family:新細明體;color:black;text-transform:uppercase;
+letter-spacing:.75pt;mso-fareast-language:ZH-TW'>驗證方式（無法假造）</span></b><b><span
+style='font-size:10.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;text-transform:uppercase;letter-spacing:.75pt;
+mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<div style='margin-bottom:5.75pt'>
+
+<div>
+
+<p class=MsoNormal><b><span style='font-size:9.0pt;font-family:"Georgia",serif;
+mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>Gmail</span></b><b><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<div>
+
+<p class=MsoNormal><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>每筆交易自動郵件至</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>Gmail</span><span lang=ZH-TW
+style='font-size:9.0pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>，<span class=GramE>精確到秒</span>。</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>Google</span><span lang=ZH-TW
+style='font-size:9.0pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>伺服器時間戳記</span><span style='font-size:
+9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:新細明體;color:black;
+mso-fareast-language:ZH-TW'> = </span><span lang=ZH-TW style='font-size:9.0pt;
+font-family:"新細明體",serif;mso-bidi-font-family:新細明體;color:black;mso-fareast-language:
+ZH-TW'>法律級證據。</span><span style='font-size:9.0pt;font-family:"Georgia",serif;
+mso-fareast-font-family:"Times New Roman";color:black;mso-fareast-language:
+ZH-TW'><o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+<div style='margin-bottom:5.75pt'>
+
+<div>
+
+<p class=MsoNormal><b><span style='font-size:9.0pt;font-family:"Georgia",serif;
+mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>Merkle
+Hash</span></b><b><span style='font-size:9.0pt;font-family:"Georgia",serif;
+mso-fareast-font-family:"Times New Roman";color:black;mso-fareast-language:
+ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<div>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Georgia",serif;
+mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>1,539</span><span
+lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;mso-bidi-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>筆交易資料的</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>SHA256</span><span lang=ZH-TW
+style='font-size:9.0pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>加密鏈。修改任何一筆</span><span lang=ZH-TW
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'> </span><span style='font-size:
+9.0pt;mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>→</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'> Hash</span><span lang=ZH-TW
+style='font-size:9.0pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>完全改變</span><span lang=ZH-TW
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'> </span><span style='font-size:
+9.0pt;mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>→</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'> </span><span lang=ZH-TW
+style='font-size:9.0pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>無法偽造。</span><span style='font-size:
+9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:"Times New Roman";
+color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+<div style='margin-bottom:5.75pt'>
+
+<div>
+
+<p class=MsoNormal><b><span style='font-size:9.0pt;font-family:"Georgia",serif;
+mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>GitHub</span></b><b><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<div>
+
+<p class=MsoNormal><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>所有資料及報告已上鏈。</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>Commit Hash</span><span
+lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;mso-bidi-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>作為時間證明，</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>commit history</span><span
+lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;mso-bidi-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>不可篡改。</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+<div style='margin-bottom:5.75pt'>
+
+<div>
+
+<p class=MsoNormal><b><span style='font-size:9.0pt;font-family:"Georgia",serif;
+mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>IPFS</span></b><b><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<div>
+
+<p class=MsoNormal><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>內容位址加密存儲。任何人都可下載驗證，時間戳記與</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>Gmail</span><span lang=ZH-TW
+style='font-size:9.0pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>一致。</span><span style='font-size:9.0pt;
+font-family:"Georgia",serif;mso-fareast-font-family:"Times New Roman";
+color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<div style='margin-bottom:18.0pt'>
+
+<div style='border:none;border-bottom:solid black 1.0pt;mso-border-bottom-alt:
+solid black .75pt;padding:0cm 0cm 4.0pt 0cm;margin-bottom:7.2pt'>
+
+<p class=MsoNormal><b><span lang=ZH-TW style='font-size:10.0pt;font-family:
+"新細明體",serif;mso-bidi-font-family:新細明體;color:black;text-transform:uppercase;
+letter-spacing:.75pt;mso-fareast-language:ZH-TW'>為什麼這個失敗比成功值錢</span></b><b><span
+style='font-size:10.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;text-transform:uppercase;letter-spacing:.75pt;
+mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<p><span style='font-size:9.0pt;font-family:"Georgia",serif;color:black;
+mso-fareast-language:ZH-TW'>HR</span><span lang=ZH-TW style='font-size:9.0pt;
+font-family:"新細明體",serif;mso-ascii-font-family:Georgia;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Georgia;color:black;mso-fareast-language:
+ZH-TW'>期待看「我很成功」。實際上他們需要看「我在最壞的環境活下來了」。</span><span lang=ZH-TW
+style='font-size:9.0pt;font-family:"Georgia",serif;color:black;mso-fareast-language:
+ZH-TW'> </span><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-ascii-font-family:Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Georgia;color:black;mso-fareast-language:ZH-TW'>這份報告證明：</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;color:black;mso-fareast-language:
+ZH-TW'>8</span><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-ascii-font-family:Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Georgia;color:black;mso-fareast-language:ZH-TW'>年無人值守系統零中斷｜颱風地震停電都活著｜</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;color:black;mso-fareast-language:
+ZH-TW'>2017</span><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-ascii-font-family:Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Georgia;color:black;mso-fareast-language:ZH-TW'>年</span><span style='font-size:
+9.0pt;font-family:"Georgia",serif;color:black;mso-fareast-language:ZH-TW'> 90% </span><span
+lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;mso-ascii-font-family:
+Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Georgia;
+color:black;mso-fareast-language:ZH-TW'>錯誤率仍獲利｜</span><span style='font-size:
+9.0pt;font-family:"Georgia",serif;color:black;mso-fareast-language:ZH-TW'>2020</span><span
+lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;mso-ascii-font-family:
+Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Georgia;
+color:black;mso-fareast-language:ZH-TW'>年黑天鵝保持完整日誌。</span><span lang=ZH-TW
+style='font-size:9.0pt;font-family:"Georgia",serif;color:black;mso-fareast-language:
+ZH-TW'> </span><span style='font-size:9.0pt;font-family:"Georgia",serif;
+color:black;mso-fareast-language:ZH-TW'><br>
+<br>
+</span><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-ascii-font-family:Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Georgia;color:black;mso-fareast-language:ZH-TW'>對</span><span style='font-size:
+9.0pt;font-family:"Georgia",serif;color:black;mso-fareast-language:ZH-TW'>Fintech
+CTO/VP Eng</span><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-ascii-font-family:Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Georgia;color:black;mso-fareast-language:ZH-TW'>：這不是理論，這是戰損。</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;color:black;mso-fareast-language:
+ZH-TW'>Stripe / Robinhood / Coinbase </span><span lang=ZH-TW style='font-size:
+9.0pt;font-family:"新細明體",serif;mso-ascii-font-family:Georgia;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Georgia;color:black;mso-fareast-language:
+ZH-TW'>都在找這樣的人。</span><span lang=ZH-TW style='font-size:9.0pt;font-family:"Georgia",serif;
+color:black;mso-fareast-language:ZH-TW'> </span><span style='font-size:9.0pt;
+font-family:"Georgia",serif;color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></p>
+
+</div>
+
+<div style='margin-bottom:18.0pt'>
+
+<div style='border:none;border-bottom:solid black 1.0pt;mso-border-bottom-alt:
+solid black .75pt;padding:0cm 0cm 4.0pt 0cm;margin-bottom:7.2pt'>
+
+<p class=MsoNormal><b><span lang=ZH-TW style='font-size:10.0pt;font-family:
+"新細明體",serif;mso-bidi-font-family:新細明體;color:black;text-transform:uppercase;
+letter-spacing:.75pt;mso-fareast-language:ZH-TW'>尋求職位</span></b><b><span
+style='font-size:10.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;text-transform:uppercase;letter-spacing:.75pt;
+mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<div style='margin-bottom:5.75pt'>
+
+<div>
+
+<p class=MsoNormal><b><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>首選</span></b><b><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<div>
+
+<p class=MsoNormal><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>技術顧問（</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>3-6</span><span lang=ZH-TW
+style='font-size:9.0pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>月）</span><span style='font-size:9.0pt;
+font-family:"Georgia",serif;mso-fareast-font-family:新細明體;color:black;
+mso-fareast-language:ZH-TW'>$110-150K/</span><span lang=ZH-TW style='font-size:
+9.0pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;color:black;
+mso-fareast-language:ZH-TW'>年</span><span style='font-size:9.0pt;font-family:
+"Georgia",serif;mso-fareast-font-family:新細明體;color:black;mso-fareast-language:
+ZH-TW'> | CTO</span><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>（早期融資）</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+<div style='margin-bottom:5.75pt'>
+
+<div>
+
+<p class=MsoNormal><b><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>拒絕</span></b><b><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<div>
+
+<p class=MsoNormal><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>行政多的職位<span
+class=GramE>｜</span>大團隊管理<span class=GramE>｜</span>定期彙報政治</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+<div style='margin-bottom:5.75pt'>
+
+<div>
+
+<p class=MsoNormal><b><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>聯繫</span></b><b><span
+style='font-size:9.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";color:black;mso-fareast-language:ZH-TW'><o:p></o:p></span></b></p>
+
+</div>
+
+<div>
+
+<p class=MsoNormal><span style='font-size:9.0pt;font-family:"Georgia",serif;
+mso-fareast-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>reco@outlook.com
+| github.com/<span class=SpellE>recofu</span> | linkedin.com/in/<span
+class=SpellE>recofu</span></span><span style='font-size:9.0pt;font-family:"Georgia",serif;
+mso-fareast-font-family:"Times New Roman";color:black;mso-fareast-language:
+ZH-TW'><o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<p class=MsoNormal><span lang=ZH-TW style='font-size:10.0pt;font-family:"新細明體",serif;
+mso-bidi-font-family:新細明體;color:black;mso-fareast-language:ZH-TW'>所有資料已驗證。</span><span
+style='font-size:10.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'>Gmail</span><span lang=ZH-TW
+style='font-size:10.0pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>精確到秒。</span><span style='font-size:
+10.0pt;font-family:"Georgia",serif;mso-fareast-font-family:新細明體;color:black;
+mso-fareast-language:ZH-TW'>Merkle Hash</span><span lang=ZH-TW
+style='font-size:10.0pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>不可篡改。</span><span style='font-size:
+10.0pt;font-family:"Georgia",serif;mso-fareast-font-family:新細明體;color:black;
+mso-fareast-language:ZH-TW'>GitHub Commit</span><span lang=ZH-TW
+style='font-size:10.0pt;font-family:"新細明體",serif;mso-bidi-font-family:新細明體;
+color:black;mso-fareast-language:ZH-TW'>為證。</span><span style='font-size:10.0pt;
+font-family:"Georgia",serif;mso-fareast-font-family:"Times New Roman";
+color:black;mso-fareast-language:ZH-TW'><br>
+</span><span style='font-size:10.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;mso-bidi-font-family:Georgia;color:black;mso-fareast-language:ZH-TW'>&copy;</span><span
+style='font-size:10.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+新細明體;color:black;mso-fareast-language:ZH-TW'> 2025 Reco Fu | Autonomous Systems
+&amp; Root Cause Architecture</span><span style='font-size:10.0pt;font-family:
+"Georgia",serif;mso-fareast-font-family:"Times New Roman";color:black;
+mso-fareast-language:ZH-TW'> <o:p></o:p></span></p>
+
+</footer></div>
+
+<div style='margin-top:144.0pt'>
+
+<p align=center style='text-align:center;background:whitesmoke'><span
+style='font-size:9.0pt;font-family:"Segoe UI Emoji",sans-serif;mso-bidi-font-family:
+"Segoe UI Emoji";color:#666666;mso-fareast-language:ZH-TW'>&#128073;</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;color:#666666;mso-fareast-language:
+ZH-TW'> </span><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-ascii-font-family:Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Georgia;color:#666666;mso-fareast-language:ZH-TW'>按</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;color:#666666;mso-fareast-language:
+ZH-TW'> <span class=SpellE>Ctrl+P</span> </span><span lang=ZH-TW
+style='font-size:9.0pt;font-family:"新細明體",serif;mso-ascii-font-family:Georgia;
+mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Georgia;color:#666666;
+mso-fareast-language:ZH-TW'>或</span><span style='font-size:9.0pt;font-family:
+"Georgia",serif;color:#666666;mso-fareast-language:ZH-TW'> <span class=SpellE>Cmd+P</span>
+</span><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-ascii-font-family:Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Georgia;color:#666666;mso-fareast-language:ZH-TW'>列印為</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;color:#666666;mso-fareast-language:
+ZH-TW'> PDF</span><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-ascii-font-family:Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Georgia;color:#666666;mso-fareast-language:ZH-TW'>（</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;color:#666666;mso-fareast-language:
+ZH-TW'>3</span><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-ascii-font-family:Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Georgia;color:#666666;mso-fareast-language:ZH-TW'>張</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;color:#666666;mso-fareast-language:
+ZH-TW'>A4</span><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-ascii-font-family:Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Georgia;color:#666666;mso-fareast-language:ZH-TW'>）</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;color:#666666;mso-fareast-language:
+ZH-TW'><br>
+</span><span style='font-size:9.0pt;font-family:"Segoe UI Emoji",sans-serif;
+mso-bidi-font-family:"Segoe UI Emoji";color:#666666;mso-fareast-language:ZH-TW'>&#128073;</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;color:#666666;mso-fareast-language:
+ZH-TW'> </span><span lang=ZH-TW style='font-size:9.0pt;font-family:"新細明體",serif;
+mso-ascii-font-family:Georgia;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Georgia;color:#666666;mso-fareast-language:ZH-TW'>完整資料驗證：</span><span
+style='font-size:9.0pt;font-family:"Georgia",serif;color:#666666;mso-fareast-language:
+ZH-TW'><a href="https://github.com/recofu"><span style='color:#667EEA'>github.com/<span
+class=SpellE>recofu</span></span></a> <o:p></o:p></span></p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
