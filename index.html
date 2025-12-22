@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reco Fu 傅瑞乾｜Battle-Tested Systems Architect</title>
-
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --bg: #f8fafc;
@@ -20,7 +18,6 @@
       --danger: #991b1b;
       --shadow: 0 12px 30px rgba(0,0,0,0.08);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -28,13 +25,11 @@
       color: var(--text);
       line-height: 1.75;
     }
-
     .container {
       max-width: 1200px;
       margin: auto;
       padding: 0 24px;
     }
-
     /* ================= HERO ================= */
     header {
       background: linear-gradient(135deg, #1e3a8a, #020617);
@@ -42,44 +37,37 @@
       padding: 96px 0 72px;
       text-align: center;
     }
-
     header h1 {
       font-size: clamp(2.8rem, 6vw, 4rem);
       font-weight: 800;
       letter-spacing: -0.02em;
       margin-bottom: 12px;
     }
-
     header .subtitle {
       font-size: clamp(1.1rem, 2.4vw, 1.4rem);
       font-weight: 600;
       opacity: 0.95;
     }
-
     header .math {
       margin-top: 24px;
       font-size: 1rem;
       opacity: 0.9;
     }
-
     /* ================= SECTION ================= */
     section {
       margin: 72px 0;
     }
-
     h2 {
       font-size: 2.2rem;
       font-weight: 800;
       margin-bottom: 24px;
       letter-spacing: -0.02em;
     }
-
     .lead {
       font-size: 1.2rem;
       color: var(--muted);
       max-width: 900px;
     }
-
     /* ================= TRUST ================= */
     .trust-box {
       background: var(--surface);
@@ -89,23 +77,19 @@
       box-shadow: var(--shadow);
       margin-top: 32px;
     }
-
     .trust-box ul {
       margin-top: 16px;
       padding-left: 20px;
     }
-
     .trust-box li {
       margin: 10px 0;
     }
-
     /* ================= BATTLES ================= */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
       gap: 28px;
     }
-
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -114,7 +98,6 @@
       box-shadow: var(--shadow);
       position: relative;
     }
-
     .card::before {
       content: "";
       position: absolute;
@@ -125,30 +108,25 @@
       background: linear-gradient(180deg, var(--primary), var(--accent));
       border-radius: 4px 0 0 4px;
     }
-
     .card h3 {
       font-size: 1.35rem;
       font-weight: 700;
       margin-bottom: 6px;
     }
-
     .meta {
       font-size: 0.95rem;
       color: var(--muted);
       margin-bottom: 16px;
     }
-
     .block {
       padding: 14px 16px;
       border-radius: 10px;
       margin-bottom: 12px;
       font-size: 0.95rem;
     }
-
     .problem { background: #fee2e2; }
     .solution { background: #ecfdf5; }
     .result { background: #fef3c7; font-weight: 600; }
-
     /* ================= FRAMEWORK ================= */
     .framework {
       background: linear-gradient(135deg, var(--accent), #064e3b);
@@ -157,7 +135,6 @@
       padding: 48px 32px;
       text-align: center;
     }
-
     .steps {
       display: flex;
       flex-wrap: wrap;
@@ -165,20 +142,17 @@
       gap: 24px;
       margin-top: 32px;
     }
-
     .step {
       background: rgba(255,255,255,0.18);
       border-radius: 14px;
       padding: 22px;
       min-width: 260px;
     }
-
     .step strong {
       display: block;
       font-size: 1.3rem;
       margin-bottom: 8px;
     }
-
     /* ================= FOOTER ================= */
     footer {
       background: #020617;
@@ -187,21 +161,17 @@
       text-align: center;
       font-size: 0.9rem;
     }
-
     footer span {
       color: white;
       font-weight: 600;
     }
-
     @media (max-width: 640px) {
       header { padding: 72px 0 56px; }
       section { margin: 56px 0; }
     }
   </style>
 </head>
-
 <body>
-
 <header>
   <div class="container">
     <h1>Reco Fu 傅瑞乾</h1>
@@ -213,16 +183,13 @@
     </div>
   </div>
 </header>
-
 <main class="container">
-
   <section>
     <h2>Why You Can Trust This Page</h2>
     <p class="lead">
       This is not a résumé. It is a verifiable operational record.
       Every claim below is expensive to fake and easy to audit.
     </p>
-
     <div class="trust-box">
       <ul>
         <li>40+ years building and operating real systems since 1984</li>
@@ -233,11 +200,9 @@
       </ul>
     </div>
   </section>
-
   <section>
     <h2>Selected Battles</h2>
     <div class="grid">
-
       <div class="card">
         <h3>National Telecom & Financial Backbone</h3>
         <div class="meta">1996–2003 · Taiwan · National Scale</div>
@@ -245,7 +210,6 @@
         <div class="block solution">Designed PBX billing, 3G core, and ATM/T1 high-availability architecture.</div>
         <div class="block result">99.99% SLA, zero critical outage.</div>
       </div>
-
       <div class="card">
         <h3>Broadcom VMQ Root Cause Diagnosis</h3>
         <div class="meta">2016 · Cluster instability incident</div>
@@ -253,7 +217,6 @@
         <div class="block solution">ETW + queue analysis isolated Broadcom VMQ driver defect.</div>
         <div class="block result">MTTR reduced from unknown to 4 hours.</div>
       </div>
-
       <div class="card">
         <h3>Cambodia Ransomware Incident</h3>
         <div class="meta">2015 · Garment factory</div>
@@ -261,7 +224,6 @@
         <div class="block solution">Memory forensics, isolation, rebuild, education.</div>
         <div class="block result">Zero data loss, no ransom paid.</div>
       </div>
-
       <div class="card">
         <h3>8.92 Years Unattended Trading System</h3>
         <div class="meta">2012–2020 · Fully autonomous</div>
@@ -269,7 +231,6 @@
         <div class="block solution">Automated risk control, alerts, Merkle verification.</div>
         <div class="block result">5萬 → 135萬，terminated by design in 2020.</div>
       </div>
-
       <div class="card">
         <h3>GDI + AI Security Hardening</h3>
         <div class="meta">2022–Present</div>
@@ -277,10 +238,8 @@
         <div class="block solution">Custom monitoring, secure wrappers, anomaly detection.</div>
         <div class="block result">Vulnerability rate reduced by 75%.</div>
       </div>
-
     </div>
   </section>
-
   <section class="framework">
     <h2>3-Step Diagnostic Framework</h2>
     <div class="steps">
@@ -301,14 +260,11 @@
       Provide logs and incident history. A diagnostic report follows within 72 hours.
     </p>
   </section>
-
 </main>
-
 <footer>
   <div class="container">
     © 2025 <span>Reco Fu 傅瑞乾</span> · All claims verifiable · GitHub & Merkle proof available
   </div>
 </footer>
-
 </body>
 </html>
