@@ -2,64 +2,64 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>傅瑞乾 Reco Fu - 戰損系統架構師</title>
+  <title>Reco Fu 傅瑞乾 - Battle-Tested Systems Architect</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
+      font-size: 16px;          /* 放大約 120% */
+      line-height: 1.7;
       color:#111;
       background:#f5f5f5;
     }
     .page {
-      max-width: 900px;
+      max-width: 960px;
       margin:20px auto 40px;
-      padding:24px 28px;
+      padding:26px 30px;
       background:#fff;
-      box-shadow:0 2px 8px rgba(0,0,0,0.08);
-      border-radius:6px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.12);
+      border-radius:8px;
     }
     h1 {
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom:4px;
-      font-weight:600;
+      font-weight:650;
     }
     h2 {
-      font-size: 18px;
-      margin:18px 0 10px;
+      font-size: 20px;
+      margin:20px 0 10px;
       border-bottom:1px solid #ddd;
-      padding-bottom:4px;
+      padding-bottom:5px;
       font-weight:600;
     }
-    p { margin:4px 0; }
+    p { margin:5px 0; }
     a { color:#2563eb; text-decoration:none; }
     a:hover { text-decoration:underline; }
-    .tagline {
-      font-size: 15px;
-      color:#444;
-      margin-bottom:4px;
+    .tagline-en {
+      font-size: 16px;
+      color:#222;
+      margin-bottom:2px;
     }
-    .sub-tagline {
-      font-size:13px;
-      color:#777;
+    .tagline-zh {
+      font-size:14px;
+      color:#555;
       margin-bottom:10px;
     }
     .meta {
-      font-size: 13px;
+      font-size:14px;
       color:#555;
       margin-bottom:6px;
     }
     .badge-row {
-      margin:8px 0 4px;
+      margin:10px 0 6px;
       display:flex;
       flex-wrap:wrap;
       gap:6px;
     }
     .badge {
       font-size:12px;
-      padding:2px 8px;
+      padding:3px 10px;
       border-radius:999px;
       background:#eef2ff;
       color:#3730a3;
@@ -68,8 +68,8 @@
     .grid-2 {
       display:grid;
       grid-template-columns: 1.4fr 1fr;
-      gap:16px;
-      margin-top:8px;
+      gap:18px;
+      margin-top:6px;
     }
     @media (max-width: 768px) {
       .page { margin:0; border-radius:0; box-shadow:none; }
@@ -77,39 +77,45 @@
     }
     .story-list { list-style:none; margin-top:4px; }
     .story-list li {
-      margin:4px 0;
-      padding-left:10px;
+      margin:6px 0 8px;
+      padding-left:12px;
       border-left:3px solid #4f46e5;
     }
-    .story-title {
-      font-weight:600;
+    .story-title-en {
+      font-weight:650;
       color:#111;
     }
+    .story-title-zh {
+      font-size:14px;
+      color:#444;
+    }
     .story-meta {
-      font-size:12px;
+      font-size:13px;
       color:#666;
+      margin-top:2px;
     }
     .highlight {
       background:#fef9c3;
-      padding:4px 8px;
+      padding:5px 10px;
       border-radius:4px;
       display:inline-block;
-      margin-top:4px;
-      font-size: 13px;
+      margin-top:6px;
+      font-size: 14px;
     }
     .proof-box {
       background:#f9fafb;
       border-left:3px solid #4b5563;
       padding:8px 10px;
       font-size:13px;
-      margin:4px 0 8px;
+      margin:5px 0 8px;
     }
     .mono {
       font-family: "SF Mono","Consolas","Courier New",monospace;
       font-size:12px;
+      word-break:break-all;
     }
     .footer {
-      margin-top:12px;
+      margin-top:14px;
       font-size:12px;
       color:#888;
       text-align:center;
@@ -120,100 +126,174 @@
 <div class="page">
   <!-- Header -->
   <header>
-    <h1>傅瑞乾 Reco Fu</h1>
-    <div class="tagline">系統架構師｜SRE｜根因診斷｜IT/OT 融合｜AI 安全整合</div>
-    <div class="sub-tagline">Principal Architect | Root Cause Analysis | 30+ 年戰損經驗</div>
+    <h1>Reco Fu 傅瑞乾</h1>
+    <div class="tagline-en">Battle-Tested Systems Architect | SRE | Root Cause Diagnosis | IT/OT & AI-Security Integration</div>
+    <div class="tagline-zh">系統架構師｜SRE｜根因診斷｜IT/OT 融合｜AI 安全整合｜30+ 年戰損經驗</div>
     <p class="meta">
-      📍 台中｜遠距優先｜全球可接<br>
-      💼 技術顧問（NT$110–150K/月 等級）｜Fintech / AI 安全顧問｜3–6 個月專案
+      📍 Taichung, Taiwan · Remote-first · Available for global projects<br>
+      📍 台中｜遠距優先｜可接全球專案
+    </p>
+    <p class="meta">
+      💼 Target: Fractional CTO / Systems Resilience Architect / Fintech & AI Security Advisor (3–6 month missions)<br>
+      💼 目標角色：分時 CTO｜系統韌性架構師｜金融與 AI 安全顧問（3–6 個月戰損任務）
     </p>
     <p class="meta">
       📧 <a href="mailto:reco@outlook.com">reco@outlook.com</a> ｜ 
       🔗 <a href="https://github.com/RecoFu" target="_blank">github.com/RecoFu</a> ｜ 
-      ✅ <a href="https://github.com/RecoFu/mouse-account-verification" target="_blank">小白鼠帳戶驗證</a>
+      ✅ <a href="https://github.com/RecoFu/mouse-account-verification" target="_blank">Mouse Account Proof-of-Work</a>
     </p>
     <div class="badge-row">
-      <span class="badge">反官僚</span>
-      <span class="badge">決策權優先</span>
-      <span class="badge">小團隊</span>
-      <span class="badge">戰損驗證</span>
-      <span class="badge">無人系統韌性</span>
+      <span class="badge">Anti-bureaucracy</span>
+      <span class="badge">Decision-rights first</span>
+      <span class="badge">Small elite teams</span>
+      <span class="badge">War-tested systems</span>
+      <span class="badge">Unattended resilience</span>
     </div>
   </header>
   <!-- Core positioning -->
   <section>
-    <h2>核心定位｜我能解決什麼</h2>
+    <h2>Positioning｜核心定位</h2>
     <div class="grid-2">
       <div>
-        <p><strong>▌目標角色</strong></p>
-        <p>・戰損級 <span class="highlight">系統架構師 / SRE / Fintech CTO 顧問</span><br>
-           ・接手「長年沒人敢動」的老系統與高風險環境：<br>
-           &nbsp;&nbsp;電信骨幹、金融交易、海外工廠、AI 安全 API</p>
+        <p><strong>What I actually do</strong></p>
+        <p>
+          ・Take over legacy, nobody-dares-to-touch systems in telecom, finance, and manufacturing.<br>
+          ・Decide: refactor, surgically split, or kill-and-rebuild.<br>
+          ・Design systems that stay up through earthquakes, typhoons, black swans, and human errors.
+        </p>
+        <p>
+          我專門接手「多年沒人敢動」的電信、金融與工廠老系統，判斷該重構、拆分，還是直接拉掉重寫，<br>
+          目標是讓系統在地震、颱風、黑天鵝與人為失誤下依然活著。
+        </p>
       </div>
       <div>
-        <p><strong>▌你給的任務類型</strong></p>
-        <p>・幫你判斷：系統要重構、拆分，還是拉掉重寫<br>
-           ・關鍵事故的 root cause 判斷與復盤<br>
-           ・AI / ChatGPT API 與既有系統安全整合</p>
+        <p><strong>When to call me</strong></p>
+        <p>
+          ・Your core system has no single owner and too much political debt.<br>
+          ・Incidents keep repeating, nobody can show you a real root cause graph.<br>
+          ・You want AI / ChatGPT integrated, but you do not trust the security story.
+        </p>
+        <p>
+          當你的關鍵系統沒有人真正在「負責」、事故一再重演、又想導入 AI / ChatGPT 但不信任安全設計時，<br>
+          找我來做最後一刀的判決與設計。
+        </p>
       </div>
     </div>
   </section>
-  <!-- 5 战役 -->
+  <!-- 5 Battle Stories -->
   <section>
-    <h2>5 個關鍵戰役</h2>
+    <h2>Five Battle Stories｜五個戰役節點</h2>
     <ul class="story-list">
       <li>
-        <div class="story-title">1. 國家級骨幹：戶役政＋中華電信＋金融三所</div>
-        <div class="story-meta">1996–2003｜戶役政電腦化、中華電信帳單催費、證交所／期交所／集保／中信局 ATM/T1 骨幹</div>
-        <p>從手寫到數位，從地方戶役政做到全國帳單與金融骨幹，證明能扛「國家級系統」的風險與複雜度。</p>
+        <div class="story-title-en">1. National Backbones: Civil Registry, Telecom Billing, and Financial Cores</div>
+        <div class="story-title-zh">國家級骨幹：戶役政、中華電信帳單、證交所／期交所／集保／中信局 ATM/T1</div>
+        <div class="story-meta">1996–2003</div>
+        <p>
+          From handwritten local records to fully digital civil registry, and from single-site billing to nationwide telecom and ATM backbones – I carried projects where “downtime” is a political incident, not just a ticket count.
+        </p>
+        <p>
+          從地方手寫戶役政到全面數位化，再到全國帳單與 ATM 骨幹，這些系統一旦停機就是政治事件而不是工單數字，<br>
+          我習慣在這種壓力下做決策與落地。
+        </p>
       </li>
       <li>
-        <div class="story-title">2. 無人值守 8.92 年：小白鼠全自動交易系統</div>
-        <div class="story-meta">2012–2020｜人在海外，系統在台中家中獨立運行</div>
-        <p>扛過地震、颱風、停電與黑天鵝（2020/3/18 舊系統終止），帳戶從 5 萬累積到 10 倍以上，完整日誌與交易紀錄可驗證。</p>
+        <div class="story-title-en">2. 8.92 Years Unattended: Mouse Account Automated Trading</div>
+        <div class="story-title-zh">8.92 年無人值守：小白鼠全自動交易系統</div>
+        <div class="story-meta">2012–2020｜Human abroad, system alone in Taichung apartment</div>
+        <p>
+          A fully automated futures/options system ran for 8.92 years in an empty apartment, surviving earthquakes, typhoons, power and network outages, scaling one small NT$50k “mouse account” to over 10× before its planned death.
+        </p>
+        <p>
+          一套全自動期貨／選擇權系統，在台中空屋裡獨自運行了 8.92 年，撐過地震、颱風、停電與斷線，<br>
+          把 5 萬元「小白鼠帳戶」放大超過 10 倍，最後由我親手關機。
+        </p>
         <div class="proof-box">
-          Gmail 時間戳＋券商對帳單 CSV＋Merkle Hash＋GitHub commit history，全公開驗證：<br>
+          <strong>Proof-of-Work & Generational Shift｜世代交替的證明</strong><br>
+          The system was intentionally terminated on 2020-03-18: the old “quant resonance” model could not survive in the emerging AI hive market.<br>
+          One month later, negative oil prices marked the funeral of that era – and the start of an AI-governed trading epoch.<br>
+          2020/3/18，我主動宣判舊量化共振模型「自然死亡」，因為它已無法在 AI 蜂巢市場中存活；<br>
+          一個月後的負油價，成為舊文明的葬禮，也宣告以 AI 治理為核心的新交易世代開啟。
+        </div>
+        <div class="proof-box">
+          Gmail timestamps + broker CSVs + Merkle Hash + GitHub commits – everything is verifiable:<br>
           <span class="mono">0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a</span>
         </div>
       </li>
       <li>
-        <div class="story-title">3. 89% 錯誤率仍獲利 102%</div>
-        <div class="story-meta">2017｜KGI 小白鼠帳戶年度報酬 102.13%</div>
-        <p>當年錯誤率高達 89.59%，仍然實現 102% 年報酬，證明風控設計足以「容納失敗」而不是假裝沒有錯誤。</p>
+        <div class="story-title-en">3. 89.59% Error Rate, +102% Annual Return</div>
+        <div class="story-title-zh">89.59% 錯誤率，仍然年報酬 +102%</div>
+        <div class="story-meta">2017｜KGI Mouse Account</div>
+        <p>
+          In 2017 the system logged an 89.59% trade error rate and still produced +102.13% annual return – a live-fire proof that resilience means “absorbing failures by design”, not pretending errors do not happen.
+        </p>
+        <p>
+          2017 年，小白鼠帳戶的交易錯誤率高達 89.59%，仍然拿到 102.13% 年化報酬，<br>
+          這是實戰證明：真正的韌性，是靠設計把錯誤吃進去，而不是假裝沒有錯。
+        </p>
       </li>
       <li>
-        <div class="story-title">4. Broadcom NIC VMQ 根因戰役</div>
-        <div class="story-meta">2016｜叢集隨機當機，業界久拖未解</div>
-        <p>在其他人只敢換機、重開的情況下，獨立定位到 Broadcom VMQ 根因，說服董事會接受重構決策，證明「根因診斷」而非「症狀治療」。</p>
+        <div class="story-title-en">4. Broadcom VMQ: From Random Cluster Crashes to a Board-Level Decision</div>
+        <div class="story-title-zh">Broadcom VMQ 根因戰：從隨機當機到董事會決策</div>
+        <div class="story-meta">2016｜Random cluster failures nobody could explain</div>
+        <p>
+          Where others kept swapping hardware and rebooting, I traced the real root cause to Broadcom NIC VMQ behavior and convinced the board to approve a structural redesign – turning recurring incidents into one decisive surgery.
+        </p>
+        <p>
+          在大家只敢換機、重開機的恐慌裡，我把根因追到 Broadcom NIC 的 VMQ 行為，<br>
+          並說服董事會接受重構方案，把「無限事故」收斂成「一次手術」。
+        </p>
       </li>
       <li>
-        <div class="story-title">5. GDI＋AI 安全：個人級防禦體系</div>
-        <div class="story-meta">2022–至今｜GDI 個人環境即時守護＋ChatGPT 安全 API</div>
-        <p>自研 GDI 守護系統，並設計 ChatGPT 安全 API 協議，將實際環境中的 API 漏洞發生率壓低約 75%，把「AI 安全」變成可量測工程。</p>
+        <div class="story-title-en">5. GDI + AI Security: Personal-Scale Defense Grid</div>
+        <div class="story-title-zh">GDI + AI 安全：個人級防禦矩陣</div>
+        <div class="story-meta">2022–Now｜GDI real-time guard + ChatGPT secure API</div>
+        <p>
+          I built GDI, a personal real-time defense environment, and designed a hardened ChatGPT API integration that reduced real-world API incident rates by roughly 75% – turning “AI security” from slides into measurable engineering.
+        </p>
+        <p>
+          我自研 GDI 個人即時守護環境，並設計強化版 ChatGPT API 安全整合機制，<br>
+          在實際環境裡把 API 相關事故降低約 75%，讓「AI 安全」變成可量測的工程結果。
+        </p>
       </li>
     </ul>
   </section>
-  <!-- 原則 & 對雇主的話 -->
+  <!-- Principles -->
   <section>
-    <h2>系統韌性原則｜30+ 年的悟</h2>
-    <p>・預防失敗，不如設計系統可以吞下失敗：2017 的 89% 錯誤率仍獲利，是最好的證明。<br>
-       ・真正的 SLA 不是紙上的 99.9%，而是颱風、地震、停電、黑天鵝發生後，系統和日誌還在。<br>
-       ・不可竄改的紀錄（Gmail＋Merkle Hash＋GitHub）才是信任基礎：我不要你相信我；我給你驗證入口。</p>
+    <h2>Resilience Principles｜系統韌性原則（30+ 年的悟）</h2>
+    <p>
+      ・Design for graceful failure, not the illusion of zero failure.<br>
+      ・Real SLA is measured under earthquakes, black swans, and human panic – not just in monthly reports.<br>
+      ・Trust should be built on evidence: Gmail, Merkle Hash, GitHub history – not on titles and slogans.
+    </p>
+    <p>
+      真正的韌性，是設計可優雅失敗，而不是追求不可能的零失敗；<br>
+      真正的 SLA 是在地震、黑天鵝與人心恐慌中量出來的；<br>
+      真正的信任建立在證據上，而不是「我有 30 年經驗」這句話。
+    </p>
     <p class="highlight">
-      30+ 年戰損，0 次資料遺失。<br>
-      若你有一套誰都不敢動的關鍵系統，可以給我 3 天讀 log，再決定要不要讓我動刀。
+      30+ years in war zones, zero data loss.<br>
+      三十多年戰損實戰，零資料遺失。<br>
+      If you have a critical system nobody dares to touch, give me its logs for three days and then decide.
     </p>
   </section>
+  <!-- Links -->
   <section>
-    <h2>完整履歷與驗證</h2>
-    <p>・完整 3 頁履歷（含職涯時間軸、投資明細表與系統韌性詳解），請見：<br>
-       &nbsp;&nbsp;<a href="https://recofu.github.io/git.html" target="_blank">recofu.github.io/git.html</a></p>
-    <p>・小白鼠帳戶零知識驗證專案：<br>
-       &nbsp;&nbsp;<a href="https://github.com/RecoFu/mouse-account-verification" target="_blank">
-       github.com/RecoFu/mouse-account-verification</a></p>
+    <h2>Full Resume & Verification｜完整履歷與驗證</h2>
+    <p>
+      Full 3-page narrative resume with detailed career timeline and performance tables:<br>
+      完整三頁敘事版履歷（職涯時間軸與投資績效表）：<br>
+      <a href="https://recofu.github.io/git.html" target="_blank">https://recofu.github.io/git.html</a>
+    </p>
+    <p>
+      Mouse Account zero-knowledge style verification project:<br>
+      小白鼠帳戶零知識風格驗證專案：<br>
+      <a href="https://github.com/RecoFu/mouse-account-verification" target="_blank">
+        https://github.com/RecoFu/mouse-account-verification
+      </a>
+    </p>
   </section>
   <div class="footer">
-    © 2025 傅瑞乾 Reco Fu ｜30+ 年戰損系統架構師｜所有數據可驗證
+    © 2025 Reco Fu 傅瑞乾 ｜ Battle-Tested Systems Architect ｜ All claims are externally verifiable.
   </div>
 </div>
 </body>
