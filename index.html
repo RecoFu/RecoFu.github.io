@@ -1,270 +1,134 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reco Fu 傅瑞乾｜Battle-Tested Systems Architect</title>
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reco Fu 傅瑞乾 | Battle-Tested Systems Architect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --primary: #1e3a8a;
-      --accent: #0d9488;
-      --text: #0f172a;
-      --muted: #475569;
-      --border: #e2e8f0;
-      --danger: #991b1b;
-      --shadow: 0 12px 30px rgba(0,0,0,0.08);
+      --bg:#f9fafb; --ink:#0f172a; --muted:#475569;
+      --line:#e5e7eb; --accent:#1e3a8a; --warn:#7c2d12;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing:border-box; }
     body {
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.75;
+      margin:0; font-family:Inter,system-ui,sans-serif;
+      background:var(--bg); color:var(--ink); line-height:1.7;
     }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 24px;
+    .wrap { max-width:1080px; margin:auto; padding:48px 24px; }
+    h1 { font-size:2.8rem; margin-bottom:0.2em; }
+    h2 { margin-top:64px; font-size:1.9rem; }
+    h3 { margin-top:36px; font-size:1.3rem; }
+    p { margin:12px 0; }
+    .muted { color:var(--muted); }
+    .box {
+      border:1px solid var(--line); background:#fff;
+      border-radius:12px; padding:24px; margin:24px 0;
     }
-    /* ================= HERO ================= */
-    header {
-      background: linear-gradient(135deg, #1e3a8a, #020617);
-      color: white;
-      padding: 96px 0 72px;
-      text-align: center;
+    .claim {
+      border-left:4px solid var(--accent);
+      padding-left:16px; margin:20px 0;
     }
-    header h1 {
-      font-size: clamp(2.8rem, 6vw, 4rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
+    .scar {
+      border-left:4px solid var(--warn);
+      padding-left:16px; margin:20px 0;
+      background:#fff7ed;
     }
-    header .subtitle {
-      font-size: clamp(1.1rem, 2.4vw, 1.4rem);
-      font-weight: 600;
-      opacity: 0.95;
+    table {
+      width:100%; border-collapse:collapse; margin-top:16px;
     }
-    header .math {
-      margin-top: 24px;
-      font-size: 1rem;
-      opacity: 0.9;
+    th, td {
+      border:1px solid var(--line);
+      padding:12px; vertical-align:top;
     }
-    /* ================= SECTION ================= */
-    section {
-      margin: 72px 0;
-    }
-    h2 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
-    .lead {
-      font-size: 1.2rem;
-      color: var(--muted);
-      max-width: 900px;
-    }
-    /* ================= TRUST ================= */
-    .trust-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 32px;
-      box-shadow: var(--shadow);
-      margin-top: 32px;
-    }
-    .trust-box ul {
-      margin-top: 16px;
-      padding-left: 20px;
-    }
-    .trust-box li {
-      margin: 10px 0;
-    }
-    /* ================= BATTLES ================= */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 28px;
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-      position: relative;
-    }
-    .card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--primary), var(--accent));
-      border-radius: 4px 0 0 4px;
-    }
-    .card h3 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-    .meta {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-    .block {
-      padding: 14px 16px;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
-    }
-    .problem { background: #fee2e2; }
-    .solution { background: #ecfdf5; }
-    .result { background: #fef3c7; font-weight: 600; }
-    /* ================= FRAMEWORK ================= */
-    .framework {
-      background: linear-gradient(135deg, var(--accent), #064e3b);
-      color: white;
-      border-radius: 24px;
-      padding: 48px 32px;
-      text-align: center;
-    }
-    .steps {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 32px;
-    }
-    .step {
-      background: rgba(255,255,255,0.18);
-      border-radius: 14px;
-      padding: 22px;
-      min-width: 260px;
-    }
-    .step strong {
-      display: block;
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-    }
-    /* ================= FOOTER ================= */
+    th { background:#f1f5f9; text-align:left; }
     footer {
-      background: #020617;
-      color: #cbd5f5;
-      padding: 36px 0;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-    footer span {
-      color: white;
-      font-weight: 600;
-    }
-    @media (max-width: 640px) {
-      header { padding: 72px 0 56px; }
-      section { margin: 56px 0; }
+      margin-top:96px; padding-top:24px;
+      border-top:1px solid var(--line);
+      font-size:0.9rem; color:var(--muted);
     }
   </style>
 </head>
 <body>
-<header>
-  <div class="container">
-    <h1>Reco Fu 傅瑞乾</h1>
-    <div class="subtitle">
-      Battle-Tested Systems Architect · Root Cause Specialist
-    </div>
-    <div class="math">
-      40+ Years Systems · 30 Years Root Cause Ownership · Zero Data Loss
-    </div>
+<div class="wrap">
+  <h1>Reco Fu 傅瑞乾</h1>
+  <p class="muted">
+    Battle-Tested Systems Architect / Root Cause Owner<br/>
+    40+ Years Systems · 30 Years Failure Responsibility · Zero Data Loss
+  </p>
+  <h2>Positioning｜定位</h2>
+  <div class="box">
+    <p><strong>EN</strong><br/>
+    I design, operate, and repair systems that cannot afford failure.
+    My career is defined not by titles, but by incidents survived.</p>
+    <p><strong>繁體中文</strong><br/>
+    我負責設計、維運、並修復「不能失敗」的系統。
+    我的履歷不是職稱，而是活下來的事故紀錄。</p>
   </div>
-</header>
-<main class="container">
-  <section>
-    <h2>Why You Can Trust This Page</h2>
-    <p class="lead">
-      This is not a résumé. It is a verifiable operational record.
-      Every claim below is expensive to fake and easy to audit.
+  <h2>Unfalsifiable Evidence Layer｜高成本證偽層</h2>
+  <div class="box">
+    <p class="muted">
+      Claims below are intentionally expensive to falsify.
+      Verification requires logs, system behavior, or cryptographic proof — not opinion.
     </p>
-    <div class="trust-box">
-      <ul>
-        <li>40+ years building and operating real systems since 1984</li>
-        <li>30 years holding final responsibility for system failure outcomes</li>
-        <li>No ransomware payout, no unrecovered incident, zero data loss</li>
-        <li>Public GitHub repositories and Merkle hash verification</li>
-        <li>Systems proven to survive without human presence</li>
-      </ul>
-    </div>
-  </section>
-  <section>
-    <h2>Selected Battles</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>National Telecom & Financial Backbone</h3>
-        <div class="meta">1996–2003 · Taiwan · National Scale</div>
-        <div class="block problem">Failure meant nationwide billing or financial disruption.</div>
-        <div class="block solution">Designed PBX billing, 3G core, and ATM/T1 high-availability architecture.</div>
-        <div class="block result">99.99% SLA, zero critical outage.</div>
-      </div>
-      <div class="card">
-        <h3>Broadcom VMQ Root Cause Diagnosis</h3>
-        <div class="meta">2016 · Cluster instability incident</div>
-        <div class="block problem">Random crashes, no reproducible pattern.</div>
-        <div class="block solution">ETW + queue analysis isolated Broadcom VMQ driver defect.</div>
-        <div class="block result">MTTR reduced from unknown to 4 hours.</div>
-      </div>
-      <div class="card">
-        <h3>Cambodia Ransomware Incident</h3>
-        <div class="meta">2015 · Garment factory</div>
-        <div class="block problem">Full CryptoWall infection, ERP halted.</div>
-        <div class="block solution">Memory forensics, isolation, rebuild, education.</div>
-        <div class="block result">Zero data loss, no ransom paid.</div>
-      </div>
-      <div class="card">
-        <h3>8.92 Years Unattended Trading System</h3>
-        <div class="meta">2012–2020 · Fully autonomous</div>
-        <div class="block problem">System must survive power loss, disasters, no human intervention.</div>
-        <div class="block solution">Automated risk control, alerts, Merkle verification.</div>
-        <div class="block result">5萬 → 135萬，terminated by design in 2020.</div>
-      </div>
-      <div class="card">
-        <h3>GDI + AI Security Hardening</h3>
-        <div class="meta">2022–Present</div>
-        <div class="block problem">AI API misuse, prompt injection risks.</div>
-        <div class="block solution">Custom monitoring, secure wrappers, anomaly detection.</div>
-        <div class="block result">Vulnerability rate reduced by 75%.</div>
-      </div>
-    </div>
-  </section>
-  <section class="framework">
-    <h2>3-Step Diagnostic Framework</h2>
-    <div class="steps">
-      <div class="step">
-        <strong>1. Pattern Extraction</strong>
-        Logs → failure topology → causality map
-      </div>
-      <div class="step">
-        <strong>2. Root Cause Ranking</strong>
-        Fix what actually changes outcomes
-      </div>
-      <div class="step">
-        <strong>3. Resilience Surgery</strong>
-        Redesign with ROI and failure economics
-      </div>
-    </div>
-    <p style="margin-top:28px;font-size:1.1rem;">
-      Provide logs and incident history. A diagnostic report follows within 72 hours.
-    </p>
-  </section>
-</main>
-<footer>
-  <div class="container">
-    © 2025 <span>Reco Fu 傅瑞乾</span> · All claims verifiable · GitHub & Merkle proof available
+    <table>
+      <tr>
+        <th>Claim / 主張</th>
+        <th>Evidence / 證據</th>
+        <th>Falsification Cost / 證偽成本</th>
+      </tr>
+      <tr>
+        <td>40+ years, zero data loss</td>
+        <td>跨 OS / Network / HW 世代的實際系統</td>
+        <td>需解釋 4 世代技術的一致存活性</td>
+      </tr>
+      <tr>
+        <td>8.92 years unattended trading</td>
+        <td>時間連續交易紀錄 + 災害期間行為</td>
+        <td>需解釋颱風、斷電、換倉下的不中斷性</td>
+      </tr>
+      <tr>
+        <td>Merkle hash verification</td>
+        <td>可重算的雜湊承諾</td>
+        <td>任何人可驗，不依賴信任</td>
+      </tr>
+      <tr>
+        <td>Broadcom VMQ root cause</td>
+        <td>ETW / driver-level analysis</td>
+        <td>需具備供應商等級低層知識</td>
+      </tr>
+    </table>
   </div>
-</footer>
+  <h2>Scars｜傷疤（不是榮耀）</h2>
+  <div class="scar">
+    <p><strong>EN</strong><br/>
+    Systems failed while I was accountable. That is how these scars were earned.</p>
+    <p><strong>繁體中文</strong><br/>
+    系統曾在我負責時失敗，這些傷疤正是因此留下。</p>
+  </div>
+  <div class="claim">
+    <p><strong>2015 Cambodia Ransomware</strong><br/>
+    Factory-wide CryptoWall infection. ERP halted.<br/>
+    Result: zero data loss, no ransom paid.</p>
+  </div>
+  <div class="claim">
+    <p><strong>2016 Cluster Instability</strong><br/>
+    Random crashes misdiagnosed for months.<br/>
+    Root cause traced to Broadcom VMQ driver behavior.</p>
+  </div>
+  <h2>Career Spine｜職涯主幹（節錄）</h2>
+  <div class="box">
+    <ul>
+      <li><strong>1984–1993</strong> Protocol / OS / hardware intuition formation</li>
+      <li><strong>1996–2003</strong> National telecom & financial backbone systems</li>
+      <li><strong>2003–2020</strong> Fully automated trading & quantitative systems</li>
+      <li><strong>2022–Present</strong> AI-integrated monitoring & security systems</li>
+    </ul>
+  </div>
+  <footer>
+    © 2025 Reco Fu 傅瑞乾<br/>
+    All statements are written for audit, not persuasion.
+  </footer>
+</div>
 </body>
 </html>
