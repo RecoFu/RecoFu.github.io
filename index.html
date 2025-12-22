@@ -1,302 +1,220 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>傅瑞乾 Reco Fu - 履歷</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Georgia', 'Microsoft YaHei', serif;
-            font-size: 10pt;
-            line-height: 1.35;
-            color: #000;
-            background: #f0f0f0;
-        }
-        
-        .page { 
-            width: 21cm; 
-            height: 29.7cm; 
-            margin: 10px auto;
-            padding: 0.8cm;
-            background: white;
-            box-shadow: 0 0 8px rgba(0,0,0,0.1);
-        }
-        
-        @media print {
-            body { margin: 0; padding: 0; background: white; }
-            .page { margin: 0; box-shadow: none; }
-        }
-        
-        .header { text-align: center; border-bottom: 1px solid #000; padding-bottom: 0.25cm; margin-bottom: 0.3cm; }
-        .header h1 { font-size: 16pt; font-weight: normal; margin-bottom: 0.05cm; }
-        .header p { font-size: 9pt; color: #555; }
-        
-        .section { margin-bottom: 0.25cm; }
-        .section-title { 
-            font-size: 10pt; 
-            font-weight: bold; 
-            border-bottom: 1px solid #000;
-            padding-bottom: 0.05cm;
-            margin-bottom: 0.1cm;
-        }
-        
-        table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin-bottom: 0.1cm; }
-        th, td { border: 0.5px solid #000; padding: 0.05cm 0.07cm; }
-        th { background: #f3f3f3; font-weight: bold; }
-        td { text-align: right; }
-        td:first-child { text-align: left; }
-        
-        .highlight { background: #fffacd; }
-        .critical { background: #ffe0e0; }
-        
-        .story { 
-            margin-bottom: 0.12cm; 
-            border-left: 1.5px solid #667eea;
-            padding-left: 0.1cm;
-            font-size: 9pt;
-            line-height: 1.3;
-        }
-        .story strong { color: #667eea; }
-        
-        .proof-box { 
-            background: #f8f8f8; 
-            border-left: 1px solid #000; 
-            padding: 0.08cm 0.1cm; 
-            margin: 0.08cm 0; 
-            font-size: 8.5pt;
-        }
-        
-        .mono { font-family: 'Courier New', monospace; font-size: 8pt; }
-        
-        .footer { 
-            margin-top: 0.15cm;
-            border-top: 1px solid #ccc;
-            padding-top: 0.08cm;
-            font-size: 7.5pt;
-            text-align: center;
-            color: #999;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>傅瑞乾 Reco Fu - 戰損系統架構師</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color:#111;
+      background:#f5f5f5;
+    }
+    .page {
+      max-width: 900px;
+      margin:20px auto 40px;
+      padding:24px 28px;
+      background:#fff;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+      border-radius:6px;
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom:4px;
+      font-weight:600;
+    }
+    h2 {
+      font-size: 18px;
+      margin:18px 0 10px;
+      border-bottom:1px solid #ddd;
+      padding-bottom:4px;
+      font-weight:600;
+    }
+    p { margin:4px 0; }
+    a { color:#2563eb; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .tagline {
+      font-size: 15px;
+      color:#444;
+      margin-bottom:4px;
+    }
+    .sub-tagline {
+      font-size:13px;
+      color:#777;
+      margin-bottom:10px;
+    }
+    .meta {
+      font-size: 13px;
+      color:#555;
+      margin-bottom:6px;
+    }
+    .badge-row {
+      margin:8px 0 4px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    .badge {
+      font-size:12px;
+      padding:2px 8px;
+      border-radius:999px;
+      background:#eef2ff;
+      color:#3730a3;
+      border:1px solid #c7d2fe;
+    }
+    .grid-2 {
+      display:grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap:16px;
+      margin-top:8px;
+    }
+    @media (max-width: 768px) {
+      .page { margin:0; border-radius:0; box-shadow:none; }
+      .grid-2 { grid-template-columns:1fr; }
+    }
+    .story-list { list-style:none; margin-top:4px; }
+    .story-list li {
+      margin:4px 0;
+      padding-left:10px;
+      border-left:3px solid #4f46e5;
+    }
+    .story-title {
+      font-weight:600;
+      color:#111;
+    }
+    .story-meta {
+      font-size:12px;
+      color:#666;
+    }
+    .highlight {
+      background:#fef9c3;
+      padding:4px 8px;
+      border-radius:4px;
+      display:inline-block;
+      margin-top:4px;
+      font-size: 13px;
+    }
+    .proof-box {
+      background:#f9fafb;
+      border-left:3px solid #4b5563;
+      padding:8px 10px;
+      font-size:13px;
+      margin:4px 0 8px;
+    }
+    .mono {
+      font-family: "SF Mono","Consolas","Courier New",monospace;
+      font-size:12px;
+    }
+    .footer {
+      margin-top:12px;
+      font-size:12px;
+      color:#888;
+      text-align:center;
+    }
+  </style>
 </head>
 <body>
-    <!-- ========== PAGE 1 ========== -->
-    <div class="page">
-        <div class="header">
-            <h1>傅瑞乾 Reco Fu</h1>
-            <p>系統架構師｜根因診斷｜40年戰損經驗</p>
-            <p style="font-size: 8pt; color: #777;">Principal Architect | Root Cause Analysis | 40 Years Battle-Tested</p>
-        </div>
-
-        <div class="section">
-            <div class="section-title">核心定位</div>
-            <table>
-                <tr><td>職業</td><td style="text-align: left;">系統架構師｜SRE｜根因診斷｜IT/OT融合｜AI安全整合</td></tr>
-                <tr><td>特質</td><td style="text-align: left;">反官僚｜決策權優先｜小團隊｜戰損驗證｜無人系統韌性</td></tr>
-                <tr><td>尋求</td><td style="text-align: left;">技術顧問 ($110-150K/年) | Fintech CTO | 3-6月短期專案</td></tr>
-                <tr><td>地點</td><td style="text-align: left;">台中｜遠距優先｜全球可接</td></tr>
-            </table>
-        </div>
-
-        <div class="section">
-            <div class="section-title">10個戰役故事 | 10 Battle Stories (不可證偽)</div>
-            
-            <div class="story"><strong>1984-2000 | FidoNet 先驅</strong> 網際網路時代前，我就在台灣架設 FidoNet 節點讓人安全傳訊——我從一開始就懂協議安全。</div>
-            
-            <div class="story"><strong>1994-1995 | 國軍精實專案</strong> 當兵時獨立把試考題庫及精實資料庫從紙本變成電腦系統，提升效率好幾倍——軍方都信我。</div>
-            
-            <div class="story"><strong>1995-1996 | 養雞場自動化</strong> 為養雞場做自動化系統，系統設計到硬體整合一套搞定，省下大筆人力——農業就開始玩硬軟整合。</div>
-            
-            <div class="story"><strong>1996-1998 | 戶役政系統</strong> 整個中部戶役政系統電腦化，從手寫變數位——政府大案我做過，規模能力我有。</div>
-            
-            <div class="story"><strong>1996-1998 | 中華電信帳單</strong> 全台灣中華電信帳單列印催費系統是我做的，機房跟流程全搞定——全國級規模我扛得住。</div>
-            
-            <div class="story"><strong>1999-2003 | 3G 核心 & 金融骨幹</strong> 中部第一座 3G 核心中心是我協助部署的；證交所、期交所、集保、中信局的全國 ATM/T1 骨幹是我建的——電信骨幹、金融命脈我都碰過。</div>
-            
-            <div class="story"><strong>2015 | 柬埔寨勒索零損失</strong> 工廠被勒索病毒攻擊，我 36 小時內救回全部資料，零資料損失，完整日誌保存——真刀真槍打過勒索戰。</div>
-            
-            <div class="story"><strong>2016 | Broadcom NIC 根因</strong> 叢集隨機當機無人能診斷，我獨立抓出 Broadcom VMQ 根因，說服董事會重構——根因判定我最強。</div>
-            
-            <div class="story"><strong>2003-2020 | 無人交易系統</strong> 人在海外，系統在家獨自跑十年，扛過颱風斷電地震，賺超過 10 倍——韌性是我寫進程式碼的。2020 年 3 月 18 日停止：舊量化時代遇上 AI 蜂巢，一個月後原油負值宣告舊文明葬禮。</div>
-            
-            <div class="story"><strong>2022-現在 | GDI + AI 安全</strong> 我自己開發 GDI（個人環境即時守護系統）；ChatGPT API 安全協議我設計，漏洞降低 75%——AI 安全我現在玩。</div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">聯絡方式</div>
-            <p style="font-size: 9pt; margin-bottom: 0.1cm;">
-                📧 reco@outlook.com | 
-                🔗 <a href="https://github.com/RecoFu" style="color: #0066cc; text-decoration: none;">github.com/RecoFu</a> |
-                💼 <a href="https://linkedin.com/in/recofu" style="color: #0066cc; text-decoration: none;">linkedin.com/in/recofu</a> |
-                ✅ <a href="https://github.com/RecoFu/mouse-account-verification" style="color: #0066cc; text-decoration: none;">完整驗證</a>
-            </p>
-        </div>
-
-        <div class="footer">
-            完整驗證數據在 GitHub：github.com/RecoFu/mouse-account-verification | Merkle Hash: 0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a
-        </div>
+<div class="page">
+  <!-- Header -->
+  <header>
+    <h1>傅瑞乾 Reco Fu</h1>
+    <div class="tagline">系統架構師｜SRE｜根因診斷｜IT/OT 融合｜AI 安全整合</div>
+    <div class="sub-tagline">Principal Architect | Root Cause Analysis | 30+ 年戰損經驗</div>
+    <p class="meta">
+      📍 台中｜遠距優先｜全球可接<br>
+      💼 技術顧問（NT$110–150K/月 等級）｜Fintech / AI 安全顧問｜3–6 個月專案
+    </p>
+    <p class="meta">
+      📧 <a href="mailto:reco@outlook.com">reco@outlook.com</a> ｜ 
+      🔗 <a href="https://github.com/RecoFu" target="_blank">github.com/RecoFu</a> ｜ 
+      ✅ <a href="https://github.com/RecoFu/mouse-account-verification" target="_blank">小白鼠帳戶驗證</a>
+    </p>
+    <div class="badge-row">
+      <span class="badge">反官僚</span>
+      <span class="badge">決策權優先</span>
+      <span class="badge">小團隊</span>
+      <span class="badge">戰損驗證</span>
+      <span class="badge">無人系統韌性</span>
     </div>
-
-    <!-- ========== PAGE 2 ========== -->
-    <div class="page">
-        <div class="header">
-            <h1>小白鼠帳戶 PoW | 2012-2020</h1>
-            <p>自動化交易系統完整驗證｜無人值守 8.92 年</p>
-        </div>
-
-        <div class="section">
-            <div class="section-title">年度績效表</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>年份</th>
-                        <th>帳戶</th>
-                        <th>期初</th>
-                        <th>期末</th>
-                        <th>年報酬</th>
-                        <th>錯誤率</th>
-                        <th>獲利因子</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>2012-15</td><td>元大</td><td>¥50K</td><td>¥360K</td><td>620%</td><td>~2%</td><td>0.87</td></tr>
-                    <tr><td>2016</td><td>KGI</td><td>¥360K</td><td>¥315K</td><td>-12.36%</td><td>0%</td><td>0.94</td></tr>
-                    <tr class="highlight"><td>2017</td><td>KGI</td><td>¥315K</td><td>¥637K</td><td>102.13%</td><td>89.59%</td><td>2.75</td></tr>
-                    <tr><td>2018</td><td>KGI</td><td>¥637K</td><td>¥997K</td><td>-0.01%</td><td>40.88%</td><td>1.67</td></tr>
-                    <tr class="highlight"><td>2019</td><td>KGI</td><td>¥997K</td><td>¥1.35M</td><td>35.31%</td><td>33.10%</td><td>2.04</td></tr>
-                    <tr class="critical"><td>2020</td><td>KGI</td><td>¥1.35M</td><td>¥30K</td><td>-97.78%</td><td>33.73%</td><td>2.29</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="section">
-            <div class="section-title">關鍵數據</div>
-            <div class="proof-box">
-                <strong>總交易筆數：</strong> 2,013 筆 | <strong>運行時長：</strong> 8.92 年無人值守<br/>
-                <strong>2017 神奇：</strong> 89.59% 錯誤率仍獲利 102% （系統容錯能力極強）<br/>
-                <strong>2020 黑天鵝：</strong> 原油負值事件，系統自動平倉，保持日誌完整<br/>
-                <strong>系統零中斷：</strong> 颱風｜地震｜停電｜網路中斷｜均存活
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">無法假造的驗證方式</div>
-            
-            <div class="proof-box">
-                <strong>Gmail 精確到秒</strong><br/>
-                每筆交易自動郵件至 Gmail。Google 伺服器時間戳 = 法律級證據。無人能偽造。
-            </div>
-            
-            <div class="proof-box">
-                <strong>Merkle Hash (SHA256)</strong><br/>
-                <span class="mono">0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a</span><br/>
-                修改任何 1 筆交易 → 整個 hash 改變 → 無法偽造。
-            </div>
-            
-            <div class="proof-box">
-                <strong>GitHub Commit History</strong><br/>
-                所有數據 + CSV 檔案已上鍊。Commit history 不可篡改。任何人可驗證。<br/>
-                <a href="https://github.com/RecoFu/mouse-account-verification" style="color: #0066cc; text-decoration: none;">github.com/RecoFu/mouse-account-verification</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">為什麼 2017 年 89% 錯誤率仍能獲利 102%？</div>
-            <p style="font-size: 9pt;">
-                這證明系統設計的容錯性極強。高錯誤率 ≠ 系統失敗。風控機制（自動止損、倉位限制、每日上限）設計得當，即使 89% 交易有問題，剩餘 11% 正確交易仍能產生 102% 年報酬。<br/>
-                <strong>工程學證明：</strong> 一個設計良好的系統可以容忍 90% 的組件故障，仍能通過風控機制保持盈利。這對 SRE/CTO 來說，比任何成功案例都有說服力。
-            </p>
-        </div>
-
-        <div class="footer">
-            驗證方式：Gmail 精確時間戳 + Merkle Hash 不可篡改 + GitHub Commit 作為時間證明
-        </div>
+  </header>
+  <!-- Core positioning -->
+  <section>
+    <h2>核心定位｜我能解決什麼</h2>
+    <div class="grid-2">
+      <div>
+        <p><strong>▌目標角色</strong></p>
+        <p>・戰損級 <span class="highlight">系統架構師 / SRE / Fintech CTO 顧問</span><br>
+           ・接手「長年沒人敢動」的老系統與高風險環境：<br>
+           &nbsp;&nbsp;電信骨幹、金融交易、海外工廠、AI 安全 API</p>
+      </div>
+      <div>
+        <p><strong>▌你給的任務類型</strong></p>
+        <p>・幫你判斷：系統要重構、拆分，還是拉掉重寫<br>
+           ・關鍵事故的 root cause 判斷與復盤<br>
+           ・AI / ChatGPT API 與既有系統安全整合</p>
+      </div>
     </div>
-
-    <!-- ========== PAGE 3 ========== -->
-    <div class="page">
-        <div class="header">
-            <h1>系統韌性原則｜30 年的悟</h1>
-            <p>我的系統沒中過病毒，也沒掉過任何資料；在職期間更是零損失。</p>
+  </section>
+  <!-- 5 战役 -->
+  <section>
+    <h2>5 個關鍵戰役</h2>
+    <ul class="story-list">
+      <li>
+        <div class="story-title">1. 國家級骨幹：戶役政＋中華電信＋金融三所</div>
+        <div class="story-meta">1996–2003｜戶役政電腦化、中華電信帳單催費、證交所／期交所／集保／中信局 ATM/T1 骨幹</div>
+        <p>從手寫到數位，從地方戶役政做到全國帳單與金融骨幹，證明能扛「國家級系統」的風險與複雜度。</p>
+      </li>
+      <li>
+        <div class="story-title">2. 無人值守 8.92 年：小白鼠全自動交易系統</div>
+        <div class="story-meta">2012–2020｜人在海外，系統在台中家中獨立運行</div>
+        <p>扛過地震、颱風、停電與黑天鵝（2020/3/18 舊系統終止），帳戶從 5 萬累積到 10 倍以上，完整日誌與交易紀錄可驗證。</p>
+        <div class="proof-box">
+          Gmail 時間戳＋券商對帳單 CSV＋Merkle Hash＋GitHub commit history，全公開驗證：<br>
+          <span class="mono">0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a</span>
         </div>
-
-        <div class="section">
-            <div class="section-title">5 個核心原則</div>
-            
-            <div class="story" style="margin-bottom: 0.15cm;">
-                <strong>1. 預防失敗，不如設計容納失敗</strong><br/>
-                2017 年 89% 錯誤率但仍獲利 102% 證明了這一點。系統設計要讓風控機制自動吸收錯誤，而非企圖完全避免錯誤。
-            </div>
-            
-            <div class="story" style="margin-bottom: 0.15cm;">
-                <strong>2. 極端環境測試是最好的品質保證</strong><br/>
-                颱風、地震、停電、網路中斷——這些都不能中斷我的系統。這才是真正的可靠性驗證。紙上談兵的 SLA 沒有意義。
-            </div>
-            
-            <div class="story" style="margin-bottom: 0.15cm;">
-                <strong>3. 根因診斷永遠優於症狀治療</strong><br/>
-                Broadcom NIC VMQ 隨機故障困擾了業界，我獨立診斷出根因。治標不如治本，快速診斷值 100 倍的補丁。
-            </div>
-            
-            <div class="story" style="margin-bottom: 0.15cm;">
-                <strong>4. 黑天鵝是系統設計的最後考試</strong><br/>
-                2020 年原油負值事件我沒預測到，沒人能預測到。但系統在崩盤時保持了完整的日誌——這就是設計的真正價值。
-            </div>
-            
-            <div class="story">
-                <strong>5. 不可竄改的記錄才是信任基礎</strong><br/>
-                Gmail + Merkle Hash + GitHub，任何人都能驗證。我不要你們信我，我要證據讓你們自己驗證。
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">給 HR / CTO 的最後一句話</div>
-            <p style="font-size: 9pt; font-style: italic;">
-                你們期待看「我很成功的故事」。實際上你們需要看「我在最壞環境活下來」的證據。這份履歷就是那份證據——不是吹牛，而是用 Merkle Hash + Gmail 時間戳 + GitHub 不可篡改的歷史記錄作證。40 年戰損，0 次資料遺失。這是我能提供的全部。
-            </p>
-        </div>
-
-        <div class="section">
-            <div class="section-title">為什麼我值得聘用</div>
-            <table style="font-size: 9pt;">
-                <tr>
-                    <td style="text-align: left;">別人說的</td>
-                    <td style="text-align: left;">「我有 30 年經驗」</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;">我證明的</td>
-                    <td style="text-align: left;">系統在 8 年無人值守 + 市場黑天鵝中存活，完整日誌可查</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;">別人說的</td>
-                    <td style="text-align: left;">「我能診斷複雜問題」</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;">我證明的</td>
-                    <td style="text-align: left;">Broadcom NIC 100+ 案例，業界無人能診斷的我診斷了</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;">別人說的</td>
-                    <td style="text-align: left;">「我能管理國家級系統」</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;">我證明的</td>
-                    <td style="text-align: left;">戶役政、中華電信、證交所、期交所 ATM 骨幹——全做過</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;">別人說的</td>
-                    <td style="text-align: left;">「我很誠實」</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;">我證明的</td>
-                    <td style="text-align: left;">所有聲稱都用 Merkle Hash + GitHub 不可篡改地記錄</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="footer">
-            © 2025 傅瑞乾 Reco Fu | 所有數據可驗證 | 40 年零資料損失記錄
-        </div>
-    </div>
+      </li>
+      <li>
+        <div class="story-title">3. 89% 錯誤率仍獲利 102%</div>
+        <div class="story-meta">2017｜KGI 小白鼠帳戶年度報酬 102.13%</div>
+        <p>當年錯誤率高達 89.59%，仍然實現 102% 年報酬，證明風控設計足以「容納失敗」而不是假裝沒有錯誤。</p>
+      </li>
+      <li>
+        <div class="story-title">4. Broadcom NIC VMQ 根因戰役</div>
+        <div class="story-meta">2016｜叢集隨機當機，業界久拖未解</div>
+        <p>在其他人只敢換機、重開的情況下，獨立定位到 Broadcom VMQ 根因，說服董事會接受重構決策，證明「根因診斷」而非「症狀治療」。</p>
+      </li>
+      <li>
+        <div class="story-title">5. GDI＋AI 安全：個人級防禦體系</div>
+        <div class="story-meta">2022–至今｜GDI 個人環境即時守護＋ChatGPT 安全 API</div>
+        <p>自研 GDI 守護系統，並設計 ChatGPT 安全 API 協議，將實際環境中的 API 漏洞發生率壓低約 75%，把「AI 安全」變成可量測工程。</p>
+      </li>
+    </ul>
+  </section>
+  <!-- 原則 & 對雇主的話 -->
+  <section>
+    <h2>系統韌性原則｜30+ 年的悟</h2>
+    <p>・預防失敗，不如設計系統可以吞下失敗：2017 的 89% 錯誤率仍獲利，是最好的證明。<br>
+       ・真正的 SLA 不是紙上的 99.9%，而是颱風、地震、停電、黑天鵝發生後，系統和日誌還在。<br>
+       ・不可竄改的紀錄（Gmail＋Merkle Hash＋GitHub）才是信任基礎：我不要你相信我；我給你驗證入口。</p>
+    <p class="highlight">
+      30+ 年戰損，0 次資料遺失。<br>
+      若你有一套誰都不敢動的關鍵系統，可以給我 3 天讀 log，再決定要不要讓我動刀。
+    </p>
+  </section>
+  <section>
+    <h2>完整履歷與驗證</h2>
+    <p>・完整 3 頁履歷（含職涯時間軸、投資明細表與系統韌性詳解），請見：<br>
+       &nbsp;&nbsp;<a href="https://recofu.github.io/git.html" target="_blank">recofu.github.io/git.html</a></p>
+    <p>・小白鼠帳戶零知識驗證專案：<br>
+       &nbsp;&nbsp;<a href="https://github.com/RecoFu/mouse-account-verification" target="_blank">
+       github.com/RecoFu/mouse-account-verification</a></p>
+  </section>
+  <div class="footer">
+    © 2025 傅瑞乾 Reco Fu ｜30+ 年戰損系統架構師｜所有數據可驗證
+  </div>
+</div>
 </body>
 </html>
