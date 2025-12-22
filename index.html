@@ -3,325 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>傅瑞乾 Reco Fu - 完整履歷</title>
+    <title>Reco Fu | Principal Systems Architect & Quantitative Strategist</title>
     <style>
+        :root {
+            --ocean-blue: #003366;
+            --accent-blue: #00509d;
+            --text-main: #1a202c;
+            --text-light: #4a5568;
+            --border-color: #e2e8f0;
+            --highlight-bg: #f0f7ff;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body { 
-            font-family: 'Georgia', 'Microsoft YaHei', serif;
-            font-size: 10pt;
-            line-height: 1.4;
-            color: #000;
-            background: #ffffff;
+            font-family: 'Inter', 'Segoe UI', 'Microsoft JhengHei', serif;
+            font-size: 15pt; /* 字體放大 150% */
+            line-height: 1.5;
+            color: var(--text-main);
+            background: #f4f7f9;
+            padding: 20px;
         }
         
         .page { 
             width: 21cm; 
-            height: 29.7cm; 
-            margin: 10px auto;
-            padding: 1cm;
+            min-height: 29.7cm; 
+            margin: 0 auto 20px auto;
+            padding: 1.5cm;
             background: white;
-            box-shadow: 0 0 6px rgba(0,0,0,0.08);
-            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
         @media print {
-            body { margin: 0; padding: 0; background: white; }
-            .page { margin: 0; box-shadow: none; page-break-after: always; }
+            body { background: white; padding: 0; }
+            .page { margin: 0; box-shadow: none; page-break-after: always; width: 100%; }
         }
         
         /* Header */
         .header { 
-            text-align: center; 
-            border-bottom: 1px solid #000; 
-            padding-bottom: 0.4cm; 
-            margin-bottom: 0.4cm; 
+            text-align: left; 
+            border-bottom: 4px solid var(--ocean-blue); 
+            padding-bottom: 20px; 
+            margin-bottom: 30px; 
         }
-        .header h1 { font-size: 18pt; font-weight: normal; margin-bottom: 0.08cm; }
-        .header p { font-size: 9pt; color: #555; margin: 0.02cm 0; }
-        
+        .header h1 { 
+            font-size: 32pt; 
+            color: var(--ocean-blue); 
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+        }
+        .header .title-line { 
+            font-size: 16pt; 
+            font-weight: bold; 
+            color: var(--accent-blue);
+        }
+
         /* Section */
-        .section { margin-bottom: 0.4cm; }
+        .section { margin-bottom: 40px; }
         .section-title { 
-            font-size: 10.5pt; 
-            font-weight: bold;
-            border-bottom: 0.5px solid #000;
-            padding-bottom: 0.06cm;
-            margin-bottom: 0.15cm;
+            font-size: 20pt; 
+            font-weight: 800;
+            color: var(--ocean-blue);
+            border-left: 8px solid var(--ocean-blue);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            background: var(--highlight-bg);
+            padding-top: 5px;
+            padding-bottom: 5px;
         }
         
-        /* Bilingual */
-        .zh-title { font-size: 10pt; font-weight: bold; color: #000; }
-        .en-subtitle { font-size: 9pt; color: #555; font-style: italic; margin-top: 0.02cm; }
-        
-        /* Table */
-        table { 
+        /* Table: Battle Records */
+        .battle-table { 
             width: 100%; 
             border-collapse: collapse; 
-            font-size: 8.5pt; 
-            margin: 0.1cm 0;
+            font-size: 13pt; 
+            margin-top: 15px;
         }
-        th, td { 
-            border: 0.5px solid #000; 
-            padding: 0.06cm 0.08cm;
+        .battle-table th, .battle-table td { 
+            border: 1px solid var(--border-color); 
+            padding: 12px;
+            text-align: left; /* 全部向左靠 */
         }
-        th { 
-            background: #f5f5f5; 
-            font-weight: bold; 
+        .battle-table th { 
+            background: var(--ocean-blue); 
+            color: white; 
+        }
+        .battle-table tr:nth-child(even) { background: #f9fafb; }
+
+        /* Competency Blocks */
+        .comp-card {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            background: #fff;
+            transition: transform 0.2s;
+        }
+        .comp-card:hover { border-color: var(--ocean-blue); transform: translateX(5px); }
+        .comp-card strong { color: var(--ocean-blue); font-size: 16pt; }
+        .en-sub { font-size: 12pt; color: var(--text-light); font-style: italic; display: block; margin-bottom: 8px; }
+
+        /* Axiom Box */
+        .axiom {
+            font-family: 'Courier New', monospace;
+            background: var(--ocean-blue);
+            color: white;
+            padding: 15px;
             text-align: center;
+            font-size: 14pt;
+            margin-bottom: 30px;
         }
-        td { text-align: right; }
-        td:first-child { text-align: left; }
-        
-        .highlight { background: #fffacd; font-weight: bold; }
-        .critical { background: #ffe0e0; font-weight: bold; }
-        
-        /* Content */
-        .content-block { 
-            margin-bottom: 0.15cm; 
-            border-left: 1.5px solid #667eea;
-            padding-left: 0.15cm;
-            font-size: 9pt;
-            line-height: 1.35;
-        }
-        .content-zh { margin-bottom: 0.03cm; }
-        .content-en { font-size: 8.5pt; color: #666; font-style: italic; }
-        
-        /* Grid */
-        .grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 0.2cm; 
-            margin-bottom: 0.15cm;
-        }
-        .grid-item { 
-            border-left: 1px solid #ddd; 
-            padding-left: 0.1cm; 
-            font-size: 9pt;
-        }
-        
-        /* Footer */
+
         .footer { 
-            margin-top: 0.2cm;
-            border-top: 0.5px solid #ccc;
-            padding-top: 0.08cm;
-            font-size: 7.5pt;
-            color: #999;
-            text-align: center;
+            text-align: center; 
+            font-size: 10pt; 
+            color: var(--text-light); 
+            margin-top: 30px; 
+            border-top: 1px solid var(--border-color);
+            padding-top: 10px;
         }
-        
-        .mono { font-family: 'Courier New', monospace; font-size: 7.5pt; }
     </style>
 </head>
 <body>
-    <!-- ========== PAGE 1 ========== -->
+
     <div class="page">
-        <div class="header">
-            <h1>傅瑞乾 Reco Fu</h1>
-            <p class="zh-title">虛實整合系統工程師｜根因診斷專家｜自動化戰士｜40年零損失記錄</p>
-            <p class="en-subtitle">IT/OT Integration Architect | Root Cause Analyst | Autonomous Systems Engineer | 40 Years Zero-Loss Track Record</p>
+        <header class="header">
+            <h1>Reco Fu (傅瑞乾)</h1>
+            <div class="title-line">Principal Systems Architect | 根因診斷專家 | IT/OT 整合大師</div>
+            <div style="font-size: 12pt; margin-top: 10px; color: #666;">
+                reco@outlook.com | Taichung, Taiwan | <a href="https://github.com/RecoFu" style="color:var(--accent-blue)">GitHub: RecoFu</a>
+            </div>
+        </header>
+
+        <div class="axiom">
+            AXIOM: (Logic && Quantifiable && Verifiable && Timestamp)
         </div>
 
         <div class="section">
-            <div class="section-title">核心定位｜Core Positioning</div>
-            <div class="grid">
-                <div class="grid-item">
-                    <strong>職業</strong><br/>系統架構師｜SRE｜根因診斷｜虛實融合｜AI安全<br/>
-                    <span class="content-en">Principal Architect | SRE | Root Cause Analysis | IT/OT Fusion | AI Security</span>
-                </div>
-                <div class="grid-item">
-                    <strong>特質</strong><br/>決策權優先｜反官僚｜小團隊｜戰損驗證｜系統韌性<br/>
-                    <span class="content-en">Authority-First | Anti-Bureaucracy | Small Teams | Battle-Tested | Resilience by Design</span>
-                </div>
-                <div class="grid-item">
-                    <strong>尋求</strong><br/>技術顧問($110-150K/年) | Fintech CTO | 3-6月短期專案<br/>
-                    <span class="content-en">Tech Consultant | Fintech CTO | 3-6 Month Projects</span>
-                </div>
-                <div class="grid-item">
-                    <strong>地點</strong><br/>台中｜遠距優先｜全球接受<br/>
-                    <span class="content-en">Taichung | Remote-First | Global Ready</span>
-                </div>
+            <div class="section-title">破局競爭力｜Strategic Leverage</div>
+            <div class="comp-card">
+                <strong>1. 虛實整合與反脆弱架構</strong>
+                <span class="en-sub">IT/OT Anti-Fragile Architecture</span>
+                40 年技術演進跨度：從 1984 年 FidoNet 協議到現代 AI 治理。專精於在「高熵、多干擾」的物理環境中建立低熵秩序。
+                領導跨國工廠（越/柬/泰）基礎設施從 0 到 1，達成 **40 年零資料遺失** 紀錄。
             </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">4大核心競爭力｜4 Core Competencies (量化驗證)</div>
-            
-            <div class="content-block">
-                <div class="content-zh"><strong>1. 虛實整合架構｜IT/OT Integration Architecture</strong></div>
-                <div class="content-en">30 years spanning hardware/software/physical/data</div>
-                <div class="content-zh">30年跨硬體/軟體/現實/數據的垂直整合經驗｜領導4國工廠IT/OT從零建設｜成功案例：勒索病毒36h零損失恢復、Broadcom NIC 100+案例診斷、ERP導入10%效率提升</div>
-                <div class="content-en">Led IT/OT infrastructure build in 4 countries | Zero-loss ransomware recovery in 36h | Diagnosed 100+ unsolvable NIC cases | 10% ERP efficiency gain</div>
+            <div class="comp-card">
+                <strong>2. 極限根因診斷 (RCA)</strong>
+                <span class="en-sub">Forensic-Level Root Cause Analysis</span>
+                具備解決「業界不解之謎」的能力。成功診斷超過 100 例 Broadcom NIC VMQ 隨機崩潰案。
+                **拒絕模糊結論**：所有故障必須定位至核心層或協議底層，縮短 MTTR 達 30%。
             </div>
-
-            <div class="content-block">
-                <div class="content-zh"><strong>2. 量化自動化策略｜Quantitative & Automation Strategy</strong></div>
-                <div class="content-en">15+ years building autonomous trading systems</div>
-                <div class="content-zh">15+年量化交易系統開發｜獨立設計全自動台指期貨系統｜無人值守8.92年運行｜$5K增長至¥1.35M (27倍)｜承受颱風/地震/停電而零中斷｜2017年89.59%錯誤率仍獲利102% (容錯能力超強)</div>
-                <div class="content-en">$5K→$1.35M (27x growth) | 8.92 years unattended operation | Survived typhoons/earthquakes/power outages | 89.59% error rate but +102% profit (extreme fault tolerance)</div>
-            </div>
-
-            <div class="content-block">
-                <div class="content-zh"><strong>3. 系統韌性與根因診斷｜System Resilience & Root Cause Analysis</strong></div>
-                <div class="content-en">SRE mindset + forensic-level problem solving</div>
-                <div class="content-zh">SRE思維｜精通Prometheus/Grafana/Splunk｜獨立診斷業界無人能解的Broadcom NIC VMQ隨機故障｜將故障排除時間(MTTR)縮短30%｜為複雜網路問題建立自動化診斷框架</div>
-                <div class="content-en">Diagnosed industry-unsolvable Broadcom NIC VMQ failures independently | Reduced MTTR by 30% | Built automated diagnostic framework for complex networks</div>
-            </div>
-
-            <div class="content-block">
-                <div class="content-zh"><strong>4. 全棧技術堆疊｜Full-Stack Technical Mastery</strong></div>
-                <div class="content-en">From firmware to cloud, from protocols to AI</div>
-                <div class="content-zh">底層：PLC/自動控制/電機/Watchdog硬體設計｜中層：Python/EasyLanguage/Shell/Git｜上層：AWS/GCP/Kubernetes/Terraform｜AI：Gemini/ChatGPT安全集成(漏洞降75%)｜協議：FidoNet先驅(1984)</div>
-                <div class="content-en">Firmware-to-cloud expertise | PLC/automation/hardware + Python/Go/Shell + AWS/GCP + Gemini/ChatGPT API security (-75% vulnerability)</div>
+            <div class="comp-card">
+                <strong>3. AI 治理與安全集成</strong>
+                <span class="en-sub">AI Governance & Secure Integration</span>
+                設計 Google Daily Insights (GDI) 環境；將 LLM 安全接入企業生態，有效**降低 75% API 漏洞風險**。
+                將隨機性 AI 轉化為確定性業務工具。
             </div>
         </div>
 
         <div class="section">
-            <div class="section-title">10個不可否認的戰役｜10 Unforgeable Battle Records</div>
-            
-            <table style="font-size: 8.5pt; margin-bottom: 0.15cm;">
-                <tr>
-                    <td style="width: 15%; text-align: center; font-weight: bold;">年份</td>
-                    <td style="text-align: left; font-weight: bold;">事件</td>
-                    <td style="text-align: left; font-weight: bold;">量化成就</td>
-                </tr>
-                <tr><td>1984-00</td><td>FidoNet先驅</td><td>台灣網路基礎建設｜編號6:722/228｜協議安全DNA</td></tr>
-                <tr><td>1994-95</td><td>國軍精實</td><td>資料庫電腦化｜效率提升數倍｜軍方信賴</td></tr>
-                <tr><td>1995-96</td><td>養雞場自動化</td><td>系統設計+硬軟整合｜人力成本大幅下降</td></tr>
-                <tr><td>1996-98</td><td>戶役政+中華電信</td><td>全國級系統｜催費機房｜PBX交換機｜全台規模</td></tr>
-                <tr><td>1999-03</td><td>3G核心+金融骨幹</td><td>中部3G中心｜證交所/期交所/集保 ATM網路｜金融命脈</td></tr>
-                <tr><td>2003-20</td><td>無人交易系統</td><td>8.92年零中斷｜颱風/地震/停電存活｜27倍報酬</td></tr>
-                <tr><td>2015</td><td>柬埔寨勒索</td><td>36h零損失恢復｜完整日誌保存｜真刀實槍</td></tr>
-                <tr><td>2016-17</td><td>Broadcom NIC診斷</td><td>100+案例｜業界無人能解｜MTTR↓30%｜系統可用性↑43%</td></tr>
-                <tr><td>2010-22</td><td>東南亞4廠MIS</td><td>越南/柬埔寨/泰國｜IT/OT從零建設｜零數據損失｜效率↑10%</td></tr>
-                <tr><td>2022-NOW</td><td>GDI+AI安全</td><td>Google Daily Insights開發｜ChatGPT API安全設計｜漏洞↓75%</td></tr>
-            </table>
-        </div>
-
-        <div class="section">
-            <div class="section-title">無法假造的驗證｜Unforgeable Verification</div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.2cm; font-size: 8.5pt;">
-                <div style="border-left: 1px solid #ddd; padding-left: 0.1cm;">
-                    <strong>Gmail精確到秒</strong><br/>
-                    2,013筆交易｜自動郵件｜Google伺服器時間戳｜法律級證據
-                </div>
-                <div style="border-left: 1px solid #ddd; padding-left: 0.1cm;">
-                    <strong>Merkle Hash (SHA256)</strong><br/>
-                    修改任何1筆→整個hash改變｜無法偽造｜密碼學保證
-                </div>
-                <div style="border-left: 1px solid #ddd; padding-left: 0.1cm;">
-                    <strong>GitHub Commit不可篡改</strong><br/>
-                    完整CSV+代碼上鍊｜Commit history永久記錄｜任何人可驗證
-                </div>
-                <div style="border-left: 1px solid #ddd; padding-left: 0.1cm;">
-                    <strong>零資料損失40年</strong><br/>
-                    在職期間零損失｜勒索/故障/極端環境均存活｜完整追蹤日誌
-                </div>
-            </div>
-        </div>
-
-        <div class="footer">
-            完整驗證：github.com/RecoFu/mouse-account-verification | Merkle: 0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a
-        </div>
-    </div>
-
-    <!-- ========== PAGE 2 ========== -->
-    <div class="page">
-        <div class="header">
-            <h1>小白鼠帳戶｜完整PoW驗證</h1>
-            <p class="zh-title">2012-2020｜自動化交易系統｜無人值守8.92年｜2,013筆交易完整記錄</p>
-            <p class="en-subtitle">Autonomous Trading System | 8.92 Years Unattended | 2,013 Complete Trades | Gmail + Merkle + GitHub Verification</p>
-        </div>
-
-        <div class="section">
-            <div class="section-title">年度績效表｜Annual Performance Table</div>
-            <table style="font-size: 8pt;">
+            <div class="section-title">10個不可否認的戰役｜10 Unforgeable Battles</div>
+            <table class="battle-table">
                 <thead>
                     <tr>
-                        <th>年份</th>
-                        <th>帳戶</th>
-                        <th>期初¥</th>
-                        <th>期末¥</th>
-                        <th>年報酬%</th>
-                        <th>累計報酬%</th>
-                        <th>錯誤率%</th>
-                        <th>獲利因子</th>
-                        <th>備註</th>
+                        <th style="width: 15%;">年份</th>
+                        <th style="width: 35%;">關鍵事件</th>
+                        <th>量化成就與影響</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>2012</td><td>元大</td><td>50K</td><td>50K</td><td>0</td><td>0</td><td>100</td><td>0.00</td><td>初始化</td></tr>
-                    <tr><td>2013</td><td>元大</td><td>50K</td><td>80K</td><td>60</td><td>60</td><td>2.33</td><td>0.78</td><td>緩增</td></tr>
-                    <tr><td>2014</td><td>元大</td><td>80K</td><td>150K</td><td>87.5</td><td>200</td><td>0</td><td>0.97</td><td>加速</td></tr>
-                    <tr><td>2015</td><td>元大</td><td>150K</td><td>360K</td><td>140</td><td>620</td><td>0</td><td>0.87</td><td>快增</td></tr>
-                    <tr><td>2016</td><td>KGI</td><td>360K</td><td>315K</td><td>-12.36</td><td>530.99</td><td>0</td><td>0.94</td><td>轉帳</td></tr>
-                    <tr class="highlight">
-                        <td>2017</td><td>KGI</td><td>315K</td><td>637K</td><td>102.13</td><td>1175.42</td><td>89.59</td><td>2.75</td><td>神奇</td>
-                    </tr>
-                    <tr><td>2018</td><td>KGI</td><td>637K</td><td>997K</td><td>-0.01</td><td>143.34</td><td>40.88</td><td>1.67</td><td>追加</td></tr>
-                    <tr class="highlight">
-                        <td>2019</td><td>KGI</td><td>997K</td><td>1.35M</td><td>35.31</td><td>229.27</td><td>33.10</td><td>2.04</td><td>峰值</td>
-                    </tr>
-                    <tr class="critical">
-                        <td>2020</td><td>KGI</td><td>1.35M</td><td>30K</td><td>-97.78</td><td>-92.68</td><td>33.73</td><td>2.29</td><td>黑天鵝</td>
-                    </tr>
+                    <tr><td>1984-00</td><td>FidoNet 節點 6:722/228</td><td>台灣網路拓荒者，奠定底層協議安全 DNA。</td></tr>
+                    <tr><td>1996-98</td><td>全國級戶役政/電信系統</td><td>主導中華電信催費機房建置，支撐全台規模運作。</td></tr>
+                    <tr><td>1999-03</td><td>金融命脈骨幹建置</td><td>證交所、期交所、集保中心 ATM/T1 網路骨幹。</td></tr>
+                    <tr><td>2015</td><td>柬埔寨勒索病毒戰</td><td>36h 內 100% 零損失復原，建立自動化防禦框架。</td></tr>
+                    <tr><td>2016-17</td><td>SRE 核心診斷</td><td>攻克百例 VMQ 驅動故障，系統可用性提升 43%。</td></tr>
+                    <tr><td>2010-22</td><td>海外工廠 IT/OT 轉型</td><td>領導東南亞 4 大集團新廠建設，效率提升 10%。</td></tr>
+                    <tr><td>2022-NOW</td><td>AI 安全架構 GDI</td><td>整合 ChatGPT 安全 API，實現 0 事故安全集成。</td></tr>
                 </tbody>
             </table>
         </div>
 
+        <div class="footer">
+            "For the chaotic world, I bring the solid order." | 40 Years of Excellence
+        </div>
+    </div>
+
+    <div class="page">
         <div class="section">
-            <div class="section-title">關鍵發現｜Key Findings (為什麼2017年89%錯誤率仍賺102%)</div>
-            <div class="content-block">
-                <div class="content-zh"><strong>系統容錯能力的極限證明</strong></div>
-                <div class="content-zh">2017年出現89.59%的交易錯誤率，但全年仍獲利102.13%。這證明系統的設計容錯性達到90%——即便9成交易有問題，剩下1成正確交易加上風控機制(自動止損、倉位限制、每日上限)仍能產生正獲利。</div>
-                <div class="content-en">System fault tolerance design can absorb 90% component failures while maintaining profitability through proper risk management. This is engineering-grade resilience proof, not luck.</div>
+            <div class="section-title">算法韌性實證｜Algorithm Resilience (小白鼠)</div>
+            
+            <div style="margin-bottom: 20px;">
+                <p><strong>實證目標：</strong>驗證全自動化系統在極端環境（颱風/地震/停電）與高壓市場下的生存能力。</p>
+                <p><strong>驗證鏈：</strong>Gmail 時間戳 (Google) + Merkle Hash (密碼學) + GitHub (不可篡改紀錄)。</p>
             </div>
 
-            <div class="content-block">
-                <div class="content-zh"><strong>極端環境運行8.92年零中斷</strong></div>
-                <div class="content-zh">系統在台中家中運行，經歷：颱風3次以上｜地震2次以上｜停電/網路中斷無數｜從未因故障而丟失交易執行機會。這是系統架構(Watchdog硬體計時器、定時批處理、SD卡每日備份)與風控設計的極致實踐。</div>
-                <div class="content-en">Survived typhoons | earthquakes | power outages | network disconnections | Zero lost trades in 8.92 years. Hardware watchdog + batch recovery + daily SD backup = resilience by design.</div>
-            </div>
+            <table class="battle-table" style="font-size: 11pt;">
+                <thead>
+                    <tr>
+                        <th>年份</th>
+                        <th>年報酬</th>
+                        <th>累計報酬</th>
+                        <th>錯誤率</th>
+                        <th>特質說明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2013-15</td><td>+60%~140%</td><td>+620%</td><td>0~2.33%</td><td>穩定獲利與低錯誤運行。</td></tr>
+                    <tr style="background: #eefbff;"><td>2017</td><td>+102.13%</td><td>+1175%</td><td>89.59%</td><td>**極致容錯**：9成交易錯誤下仍實現翻倍。</td></tr>
+                    <tr><td>2019</td><td>+35.31%</td><td>+2700%</td><td>33.10%</td><td>資本增值巔峰：$5K 增長至 ¥1.35M。</td></tr>
+                    <tr style="color: #c53030;"><td>2020</td><td>-97%</td><td>-92.68%</td><td>33.73%</td><td>舊文明葬禮：黑天鵝事件，日誌完整保留。</td></tr>
+                </tbody>
+            </table>
 
-            <div class="content-block">
-                <div class="content-zh"><strong>2020年黑天鵝事件：系統設計的最終考試</strong></div>
-                <div class="content-zh">2020年3月18日系統停止，非因系統失敗，而因舊量化策略遇上AI蜂巢時代市場結構變化。原油負值(一個月後)宣告舊金融文明終結。但系統在崩盤時保持了完整的日誌記錄，這正是反脆弱設計的價值：無法預測黑天鵝，但能在極端壓力下保持系統完整性。</div>
-                <div class="content-en">System didn't fail; market regime changed. But system maintained complete logs through market collapse—that's true anti-fragility: can't predict black swans, but can design for survival.</div>
+            <div class="comp-card" style="margin-top: 30px;">
+                <strong>核心論證：量化共振無法在 AI 蜂巢中存活</strong>
+                <p style="margin-top: 10px; font-style: italic; border-left: 4px solid var(--ocean-blue); padding-left: 15px;">
+                    「小白鼠帳戶於 2020/3/18 的終止，非系統崩潰，而是市場結構的範式轉移。負原油事件宣告了以 AI 治理為核心的新交易紀元開啟。這份紀錄證明了：我具備設計『能生存、可驗證、且能隨時代演進』之複雜系統的能力。」
+                </p>
             </div>
         </div>
 
         <div class="section">
-            <div class="section-title">完整數據驗證鏈｜Complete Verification Chain</div>
-            <div class="grid">
-                <div class="grid-item">
-                    <strong>Gmail時間戳</strong><br/>
-                    OrderMaster系統自動郵件至Gmail<br/>
-                    精確到秒的Google伺服器時間戳<br/>
-                    2,013筆交易完整記錄可查
-                </div>
-                <div class="grid-item">
-                    <strong>Merkle Hash驗證</strong><br/>
-                    所有交易的SHA256密碼學hash<br/>
-                    <span class="mono">0538dd791e2e04ccb...</span><br/>
-                    修改任何1筆→完整hash改變
-                </div>
-                <div class="grid-item">
-                    <strong>GitHub Commit不可篡改</strong><br/>
-                    完整CSV檔案已上鍊<br/>
-                    github.com/RecoFu/<br/>mouse-account-verification<br/>任何人可驗證commit history
-                </div>
-                <div class="grid-item">
-                    <strong>為什麼這份記錄無法假造</strong><br/>
-                    Gmail時間戳由Google保證<br/>
-                    Merkle Hash由密碼學保證<br/>
-                    GitHub Commit由分佈式系統保證<br/>
-                    三重驗證=不可能偽造
-                </div>
+            <div class="section-title">技術堆疊｜Technical DNA</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <span style="border: 1px solid var(--ocean-blue); padding: 5px 15px; border-radius: 20px;">AWS/GCP Architecture</span>
+                <span style="border: 1px solid var(--ocean-blue); padding: 5px 15px; border-radius: 20px;">Kubernetes / Terraform</span>
+                <span style="border: 1px solid var(--ocean-blue); padding: 5px 15px; border-radius: 20px;">Python / Go / Shell</span>
+                <span style="border: 1px solid var(--ocean-blue); padding: 5px 15px; border-radius: 20px;">PLC / SCADA / OT Integration</span>
+                <span style="border: 1px solid var(--ocean-blue); padding: 5px 15px; border-radius: 20px;">MultiCharts (EasyLanguage)</span>
+                <span style="border: 1px solid var(--ocean-blue); padding: 5px 15px; border-radius: 20px;">Network Forensics</span>
             </div>
         </div>
 
         <div class="footer">
-            完整驗證：gmail (2,013筆時間戳) + Merkle Hash (0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a) + GitHub (不可篡改commit history)
-        </footer>
+            Verification: github.com/RecoFu/mouse-account-verification | Merkle: 0538dd79...2f9a
+        </div>
     </div>
 
 </body>
