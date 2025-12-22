@@ -1,134 +1,94 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Reco Fu 傅瑞乾 | Battle-Tested Systems Architect</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg:#f9fafb; --ink:#0f172a; --muted:#475569;
-      --line:#e5e7eb; --accent:#1e3a8a; --warn:#7c2d12;
-    }
-    * { box-sizing:border-box; }
-    body {
-      margin:0; font-family:Inter,system-ui,sans-serif;
-      background:var(--bg); color:var(--ink); line-height:1.7;
-    }
-    .wrap { max-width:1080px; margin:auto; padding:48px 24px; }
-    h1 { font-size:2.8rem; margin-bottom:0.2em; }
-    h2 { margin-top:64px; font-size:1.9rem; }
-    h3 { margin-top:36px; font-size:1.3rem; }
-    p { margin:12px 0; }
-    .muted { color:var(--muted); }
-    .box {
-      border:1px solid var(--line); background:#fff;
-      border-radius:12px; padding:24px; margin:24px 0;
-    }
-    .claim {
-      border-left:4px solid var(--accent);
-      padding-left:16px; margin:20px 0;
-    }
-    .scar {
-      border-left:4px solid var(--warn);
-      padding-left:16px; margin:20px 0;
-      background:#fff7ed;
-    }
-    table {
-      width:100%; border-collapse:collapse; margin-top:16px;
-    }
-    th, td {
-      border:1px solid var(--line);
-      padding:12px; vertical-align:top;
-    }
-    th { background:#f1f5f9; text-align:left; }
-    footer {
-      margin-top:96px; padding-top:24px;
-      border-top:1px solid var(--line);
-      font-size:0.9rem; color:var(--muted);
-    }
-  </style>
+<meta charset="utf-8">
+<title>Reco Fu 傅瑞乾 — Systems That Survive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+  margin:0; padding:32px;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  background:#ffffff; color:#000;
+  max-width:720px;
+}
+h1{font-size:1.6rem; margin:0;}
+h2{font-size:1.05rem; margin-top:28px;}
+p,li{font-size:0.92rem; line-height:1.55;}
+hr{border:none; border-top:1px solid #000; margin:20px 0;}
+.small{font-size:0.8rem;}
+ul{padding-left:18px; margin:8px 0;}
+.core{font-weight:600;}
+.note{border-left:3px solid #000; padding-left:10px; margin:14px 0;}
+</style>
 </head>
+
 <body>
-<div class="wrap">
-  <h1>Reco Fu 傅瑞乾</h1>
-  <p class="muted">
-    Battle-Tested Systems Architect / Root Cause Owner<br/>
-    40+ Years Systems · 30 Years Failure Responsibility · Zero Data Loss
-  </p>
-  <h2>Positioning｜定位</h2>
-  <div class="box">
-    <p><strong>EN</strong><br/>
-    I design, operate, and repair systems that cannot afford failure.
-    My career is defined not by titles, but by incidents survived.</p>
-    <p><strong>繁體中文</strong><br/>
-    我負責設計、維運、並修復「不能失敗」的系統。
-    我的履歷不是職稱，而是活下來的事故紀錄。</p>
-  </div>
-  <h2>Unfalsifiable Evidence Layer｜高成本證偽層</h2>
-  <div class="box">
-    <p class="muted">
-      Claims below are intentionally expensive to falsify.
-      Verification requires logs, system behavior, or cryptographic proof — not opinion.
-    </p>
-    <table>
-      <tr>
-        <th>Claim / 主張</th>
-        <th>Evidence / 證據</th>
-        <th>Falsification Cost / 證偽成本</th>
-      </tr>
-      <tr>
-        <td>40+ years, zero data loss</td>
-        <td>跨 OS / Network / HW 世代的實際系統</td>
-        <td>需解釋 4 世代技術的一致存活性</td>
-      </tr>
-      <tr>
-        <td>8.92 years unattended trading</td>
-        <td>時間連續交易紀錄 + 災害期間行為</td>
-        <td>需解釋颱風、斷電、換倉下的不中斷性</td>
-      </tr>
-      <tr>
-        <td>Merkle hash verification</td>
-        <td>可重算的雜湊承諾</td>
-        <td>任何人可驗，不依賴信任</td>
-      </tr>
-      <tr>
-        <td>Broadcom VMQ root cause</td>
-        <td>ETW / driver-level analysis</td>
-        <td>需具備供應商等級低層知識</td>
-      </tr>
-    </table>
-  </div>
-  <h2>Scars｜傷疤（不是榮耀）</h2>
-  <div class="scar">
-    <p><strong>EN</strong><br/>
-    Systems failed while I was accountable. That is how these scars were earned.</p>
-    <p><strong>繁體中文</strong><br/>
-    系統曾在我負責時失敗，這些傷疤正是因此留下。</p>
-  </div>
-  <div class="claim">
-    <p><strong>2015 Cambodia Ransomware</strong><br/>
-    Factory-wide CryptoWall infection. ERP halted.<br/>
-    Result: zero data loss, no ransom paid.</p>
-  </div>
-  <div class="claim">
-    <p><strong>2016 Cluster Instability</strong><br/>
-    Random crashes misdiagnosed for months.<br/>
-    Root cause traced to Broadcom VMQ driver behavior.</p>
-  </div>
-  <h2>Career Spine｜職涯主幹（節錄）</h2>
-  <div class="box">
-    <ul>
-      <li><strong>1984–1993</strong> Protocol / OS / hardware intuition formation</li>
-      <li><strong>1996–2003</strong> National telecom & financial backbone systems</li>
-      <li><strong>2003–2020</strong> Fully automated trading & quantitative systems</li>
-      <li><strong>2022–Present</strong> AI-integrated monitoring & security systems</li>
-    </ul>
-  </div>
-  <footer>
-    © 2025 Reco Fu 傅瑞乾<br/>
-    All statements are written for audit, not persuasion.
-  </footer>
+
+<h1>Reco Fu 傅瑞乾</h1>
+<p class="core">
+Systems Architect · Quant Engineer · Failure Owner
+</p>
+
+<p class="small">
+40+ years systems · zero data loss · incidents survived, not avoided
+</p>
+
+<hr>
+
+<h2>What I Actually Do｜我真正負責的事</h2>
+<p>
+EN — I design and operate systems that must continue under failure,
+legal pressure, human error, and infrastructure collapse.
+</p>
+<p>
+中 — 我負責的是：<strong>系統在出事時仍然成立</strong>。
+</p>
+
+<hr>
+
+<h2>Non-Marketing Facts｜不可包裝事實</h2>
+<ul>
+<li>40+ years cross-generation systems (HW / OS / Network)</li>
+<li>8.92 years unattended automated trading (continuous execution)</li>
+<li>No data loss record, including ransomware & infrastructure failure</li>
+<li>Root-cause ownership down to driver / protocol layer</li>
+</ul>
+
+<hr>
+
+<h2>Scars (Cost Paid)｜傷疤（已支付代價）</h2>
+<div class="note">
+<p>
+2015 Cambodia — factory-wide ransomware, ERP halted.<br>
+Result: zero data loss, no ransom, full recovery.
+</p>
+<p>
+2016 — random cluster crashes misdiagnosed for months.<br>
+Root cause: Broadcom VMQ driver behavior.
+</p>
 </div>
+
+<hr>
+
+<h2>Unfalsifiable Layer｜高成本證偽層</h2>
+<p class="small">
+Claims here are not persuasive — they are expensive to falsify.<br>
+Verification requires logs, timelines, or cryptographic recomputation.
+</p>
+
+<ul class="small">
+<li>Time-continuous execution across disasters</li>
+<li>Merkle-hash verifiable records</li>
+<li>Behavior-level system evidence (not screenshots)</li>
+</ul>
+
+<hr>
+
+<p class="small">
+This page is written for audit, not for approval.<br>
+If you need systems that survive contact with reality — this is my work.
+</p>
+
 </body>
 </html>
