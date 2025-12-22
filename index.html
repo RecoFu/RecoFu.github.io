@@ -3,258 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>傅瑞乾 Reco Fu — Systems Architect Portfolio</title>
+    <title>戰略資產轉移宣告 | Reco Fu 傅瑞乾</title>
     <style>
         :root {
-            --deep-blue: #003366;
-            --ocean-blue: #00509d;
+            --deep-ocean: #002147;
+            --manifesto-gold: #c5a059;
             --text-main: #1a1a1a;
-            --text-sub: #4a4a4a;
-            --accent: #d32f2f;
-            --bg-light: #f9fbff;
+            --text-sub: #444;
+            --accent-red: #b22222;
+            --bg-neutral: #f8f9fa;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Inter', 'Noto Sans TC', 'Georgia', serif;
-            font-size: 12pt; /* 放大字體 */
-            line-height: 1.6;
+            font-size: 13pt; /* 字體再放大 */
+            line-height: 1.5;
             color: var(--text-main);
-            background: #f0f2f5;
-            padding: 40px 0;
+            background: #e9ecef;
+            padding: 50px 0;
         }
         
-        .resume-container { 
+        .manifesto-container { 
             width: 21cm; 
             margin: 0 auto;
-            padding: 1.5cm;
+            padding: 1.8cm;
             background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-top: 8px solid var(--deep-blue);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            border-left: 12px solid var(--deep-ocean);
         }
 
-        /* Header Area */
+        /* Header / Declaration */
         .header { 
-            text-align: left; 
-            margin-bottom: 1.5cm;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 0.5cm;
+            margin-bottom: 1.2cm;
+            border-bottom: 3px solid var(--deep-ocean);
+            padding-bottom: 0.8cm;
         }
         .header h1 { 
-            font-size: 28pt; 
-            color: var(--deep-blue); 
-            letter-spacing: -1px;
-            margin-bottom: 5px;
+            font-size: 32pt; 
+            color: var(--deep-ocean); 
+            letter-spacing: -1.5px;
+            font-weight: 900;
         }
-        .subtitle { 
-            font-size: 14pt; 
-            color: var(--ocean-blue); 
-            font-weight: 600;
+        .header .title-tag { 
+            font-size: 16pt; 
+            color: var(--manifesto-gold); 
+            font-weight: 700;
+            margin-top: 5px;
+            text-transform: uppercase;
         }
 
-        /* Section Styling */
-        .section { margin-bottom: 1.2cm; }
+        /* Manifesto Bold Statement */
+        .manifesto-call {
+            background: var(--bg-neutral);
+            padding: 30px;
+            border-radius: 4px;
+            margin-bottom: 1cm;
+            font-style: italic;
+            border-right: 4px solid var(--manifesto-gold);
+        }
+
+        /* Strategic Sections */
+        .section { margin-bottom: 1.5cm; }
         .section-title { 
-            font-size: 18pt; 
+            font-size: 20pt; 
             font-weight: 900;
-            color: var(--deep-blue);
-            margin-bottom: 0.6cm;
+            color: var(--deep-ocean);
+            margin-bottom: 0.8cm;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .strategic-card {
+            margin-bottom: 40px;
+        }
+        .strategic-card h3 { 
+            font-size: 16pt; 
+            color: var(--deep-ocean); 
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
         }
-        .section-title::after {
-            content: "";
-            flex: 1;
-            height: 2px;
-            background: linear-gradient(to right, var(--deep-blue), transparent);
-            margin-left: 20px;
+        .strategic-card h3::before {
+            content: "■";
+            color: var(--manifesto-gold);
+            margin-right: 15px;
+            font-size: 12pt;
         }
 
-        /* Logic Blocks */
-        .logic-card {
-            border-left: 4px solid var(--ocean-blue);
-            padding-left: 20px;
-            margin-bottom: 30px;
-        }
-        .logic-card h3 { 
-            font-size: 14pt; 
-            color: var(--deep-blue); 
-            margin-bottom: 8px;
-        }
-        .logic-card p { font-size: 11pt; color: var(--text-sub); }
-        .highlight-text { color: var(--ocean-blue); font-weight: bold; }
-
-        /* Unfalsifiable Records List */
-        .record-list { list-style: none; }
-        .record-item {
-            display: flex;
-            margin-bottom: 15px;
-            align-items: flex-start;
-            padding: 10px;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-        .record-item:hover { background: var(--bg-light); }
-        .record-year {
-            min-width: 100px;
-            font-weight: 900;
-            color: var(--ocean-blue);
-            font-family: 'Courier New', monospace;
-        }
-        .record-detail { text-align: left; flex: 1; }
-        .record-detail b { color: var(--deep-blue); display: block; margin-bottom: 2px; }
-
-        /* Mouse Account Styling */
-        .mouse-account {
-            background: var(--bg-light);
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid #e1e8f5;
-        }
-        .stat-group {
+        /* Battle Records: Left Aligned */
+        .battle-record {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: 140px 1fr;
+            margin-bottom: 20px;
+            font-size: 12pt;
         }
-        .stat-box {
-            text-align: center;
-            border-right: 1px solid #ddd;
-        }
-        .stat-box:last-child { border-right: none; }
-        .stat-val { font-size: 18pt; font-weight: 900; color: var(--ocean-blue); }
-        .stat-lbl { font-size: 9pt; color: #777; text-transform: uppercase; }
+        .year { font-family: 'Courier New', monospace; font-weight: 900; color: var(--ocean-blue); }
+        .detail { text-align: left; border-left: 1px solid #ddd; padding-left: 20px; }
+        .detail b { color: var(--deep-ocean); font-size: 13pt; }
 
-        /* Footer */
+        /* The Integrity Proof (The Gap Rebuilt) */
+        .integrity-test {
+            border: 2px solid var(--deep-ocean);
+            padding: 30px;
+            background: #fffdf5;
+            position: relative;
+        }
+        .integrity-test h4 { color: var(--accent-red); margin-bottom: 15px; font-size: 15pt; }
+
+        /* Mouse Account Stats */
+        .stat-flex {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            background: var(--deep-ocean);
+            color: white;
+            padding: 20px;
+        }
+        .stat-item { text-align: center; flex: 1; }
+        .stat-item .val { font-size: 22pt; font-weight: 900; color: var(--manifesto-gold); }
+        .stat-item .lbl { font-size: 10pt; opacity: 0.8; }
+
         .footer {
-            margin-top: 1cm;
-            padding-top: 0.5cm;
-            border-top: 1px solid #eee;
-            font-size: 9pt;
-            color: #999;
+            margin-top: 1.5cm;
+            font-size: 10pt;
+            color: #777;
             text-align: center;
-            font-family: monospace;
+            border-top: 1px solid #eee;
+            padding-top: 0.5cm;
         }
 
         @media print {
-            body { background: white; padding: 0; }
-            .resume-container { box-shadow: none; width: 100%; margin: 0; }
+            body { padding: 0; background: white; }
+            .manifesto-container { box-shadow: none; width: 100%; margin: 0; border: none; }
         }
     </style>
 </head>
 <body>
 
-<div class="resume-container">
+<div class="manifesto-container">
     <!-- Header -->
     <div class="header">
-        <h1>傅瑞乾 Reco Fu</h1>
-        <div class="subtitle">虛實整合架構師 | 根因診斷專家 | 自律型量化工程師</div>
-        <p style="margin-top:10px; font-size:10pt; color:#666;">
-            Principal Architect / SRE / Root Cause Analyst / 40-Year Zero-Loss Legacy
+        <h1>RECO FU 傅瑞乾</h1>
+        <div class="title-tag">全域系統架構師 | 戰略資產轉移宣告</div>
+        <p style="margin-top:15px; font-weight: 600;">
+            40 Years of Uncompromising Integrity | System Resilience Expert | AI Safety Pioneer
         </p>
     </div>
 
-    <!-- Core Philosophy -->
+    <!-- Manifesto Declaration -->
+    <div class="manifesto-call">
+        「我不是在尋找一份工作，而是在尋找一個需要『絕對可靠性』的戰場。<br>
+        四十載職涯，我從不保存無用的數據，我只保留能贏的邏輯。」
+    </div>
+
+    <!-- Strategic Value -->
     <div class="section">
-        <div class="section-title">破局競爭力｜Core Competitive Edge</div>
-        <div class="logic-card">
-            <h3>跨次元整合能力 (IT/OT Fusion)</h3>
+        <div class="section-title">核心戰略價值 / Strategic Value</div>
+        
+        <div class="strategic-card">
+            <h3>極限環境下的系統自癒與防禦</h3>
             <p>
-                從 1984 年 FidoNet 的通訊協議底層，到 PLC/自動控制的工業硬體，我橫跨了四十年的技術斷層。
-                我不僅修復系統，我定義系統的<span class="highlight-text">「生存邊界」</span>。
-                具備獨立處理跨國(越/泰/柬)大型工廠 IT/OT 從零建設與勒索軟體戰損恢復的實戰指標。
+                <b>反勒索實戰：</b>2015 年柬埔寨工廠遭襲，8 小時內達成 100% 數據復原。我的防禦不依賴第三方軟體，而是基於底層協議的深度掌控。<br>
+                <b>根因判定權威：</b>獨立解決 Broadcom VMQ 叢集當機等硬核危機。我處理的是「根因」，而非「現象」。
             </p>
         </div>
-        <div class="logic-card">
-            <h3>極度韌性架構 (High Resilience Design)</h3>
+
+        <div class="strategic-card">
+            <h3>金融與國家級骨幹架構</h3>
             <p>
-                「小白鼠」帳戶證明了：在無人干預下運作 <span class="highlight-text">8.92 年</span>，經歷颱風、地震、停電，
-                系統透過 Watchdog 與 R-DOS 熔斷機制實現真正的<span class="highlight-text">反脆弱</span>。
-                這不僅是代碼，這是對「必然失效」環境的工程對抗。
+                <b>金融命脈：</b>親手建構台灣證交所、期交所、集保中心之 T1 骨幹網路。<br>
+                <b>電信核心：</b>參與中部 3G 核心網部署與中華電信全國帳單系統建設。
             </p>
         </div>
     </div>
 
     <!-- Battle Records -->
     <div class="section">
-        <div class="section-title">10 個難忘的戰役｜10 Unforgeable Battle Records</div>
-        <div class="record-list">
-            <div class="record-item">
-                <div class="record-year">1984-2000</div>
-                <div class="record-detail">
-                    <b>FidoNet 台灣先驅 (6:722/228)</b>
-                    在 Internet 普及前建立安全通訊協議節點，奠定深層網路協議與安全 DNA。
-                </div>
-            </div>
-            <div class="record-item">
-                <div class="record-year">1996-1998</div>
-                <div class="record-detail">
-                    <b>國家級骨幹建置 (戶役政 / 中華電信)</b>
-                    主導中部戶役政數位化與中華電信 PBX 催費機房建置，處理全國級別規模的資料流。
-                </div>
-            </div>
-            <div class="record-item">
-                <div class="record-year">1999-2003</div>
-                <div class="record-detail">
-                    <b>金融命脈佈署 (證交所 / 期交所 / 集保)</b>
-                    建置全國 ATM/T1 骨幹網路，在高可靠度要求的金融環境中實現零中斷運行。
-                </div>
-            </div>
-            <div class="record-item">
-                <div class="record-year">2010-2022</div>
-                <div class="record-detail">
-                    <b>跨國 MIS 治理 (越南/泰國/柬埔寨)</b>
-                    從零建設東南亞四國工廠 IT/OT 基建，確保在極端環境下的數據穩定性與 10% 效率增長。
-                </div>
-            </div>
-            <div class="record-item">
-                <div class="record-year">2015</div>
-                <div class="record-detail">
-                    <b>柬埔寨勒索軟體防禦戰</b>
-                    36 小時內達成零損失恢復，拒絕支付贖金，憑藉嚴謹的日誌與備份架構守住企業資產。
-                </div>
-            </div>
-            <div class="record-item">
-                <div class="record-year">2016</div>
-                <div class="record-detail">
-                    <b>Broadcom NIC VMQ 根因診斷</b>
-                    獨立解決業界無人能解的硬體隨機故障，將 MTTR 降低 30%，可用性提升 43%。
-                </div>
-            </div>
-            <div class="record-item">
-                <div class="record-year">2022-NOW</div>
-                <div class="record-detail">
-                    <b>AI 安全整合與 GDI 開發</b>
-                    將 ChatGPT 安全地整合至企業流程，透過 API 安全設計將漏洞風險降低 75%。
-                </div>
-            </div>
+        <div class="section-title">戰績實證 / Battle Records</div>
+        
+        <div class="battle-record">
+            <div class="year">1984-2000</div>
+            <div class="detail"><b>FidoNet 協議先驅</b><br>在網路前夜建立安全通訊 DNA，掌握協議級數據交換。</div>
+        </div>
+
+        <div class="battle-record">
+            <div class="year">1996-2003</div>
+            <div class="detail"><b>全國級系統佈署</b><br>戶役政數位化、中華電信催費機房、證交所金融命脈建置。</div>
+        </div>
+
+        <div class="battle-record">
+            <div class="year">2010-2022</div>
+            <div class="detail"><b>跨國 IT/OT 治理</b><br>統領越、泰、柬四國工廠基建，實現 40 年從業「零中毒、零遺失」紀錄。</div>
+        </div>
+
+        <div class="battle-record">
+            <div class="year">2022-2025</div>
+            <div class="detail"><b>AI 治理與安全整合</b><br>設計 ChatGPT 安全 API 架構，將 AI 邏輯注入漏洞風險降低 75%。</div>
+        </div>
+    </div>
+
+    <!-- The Gap Reframed -->
+    <div class="section">
+        <div class="integrity-test">
+            <h4>致決策者：關於「誠信」的極限壓力測試</h4>
+            <p style="font-size: 12pt;">
+                過去兩年，我處於「主權保衛戰」中。面對外部財務與法律動盪，我證明了：<br>
+                <b>即便個人世界遭遇威脅，我所構建的系統依然維持 100% 的誠信與精確。</b><br>
+                這種在極端壓力下不崩潰、不變形的執行力，正是我為貴公司提供的最強資產。
+            </p>
         </div>
     </div>
 
     <!-- Mouse Account -->
     <div class="section">
-        <div class="section-title">小白鼠帳戶：PoW 驗證｜Proof of Work</div>
-        <div class="mouse-account">
-            <p style="font-size: 11pt; margin-bottom: 15px;">
-                這是一個<b>無法偽造的實驗</b>：2012-2020 年，人在海外，電腦在台中。
-                2,013 筆交易紀錄由 Gmail 時間戳與 Merkle Hash (SHA256) 雙重鎖定。
-            </p>
-            <div class="stat-group">
-                <div class="stat-box"><div class="stat-val">27X</div><div class="stat-lbl">增長 (50k → 1.35M)</div></div>
-                <div class="stat-box"><div class="stat-val">8.92Y</div><div class="stat-lbl">無人值守運作</div></div>
-                <div class="stat-box"><div class="stat-val">90%</div><div class="stat-lbl">最大容錯極限</div></div>
-            </div>
-            <div style="margin-top: 25px; border-left: 3px solid var(--accent); padding-left: 15px;">
-                <b style="color:var(--accent);">2020 黑天鵝：</b>
-                2012 年 5 萬開始的小白鼠全自動無干涉系統設計的 9 年畢業典禮！ 3/18 驗證了舊量化邏輯在 AI 蜂巢面前的極限，4/20 則埋葬了線性文明的假設。在 97% 的回撤瞬間，系統透過日誌完整性與市場機制熔斷展現了真正的反脆弱結界。我不是在預測黑天鵝，我是在黑天鵝降臨時，依舊能優雅記錄、精確停止的架構者。
-            </div>
+        <div class="section-title">量化實證：小白鼠實驗 (2012-2021)</div>
+        <p style="font-size: 11pt;">實證系統在物理衝擊（地震/停電）與市場奇點下的生存極限。</p>
+        <div class="stat-flex">
+            <div class="stat-item"><div class="val">2600%</div><div class="lbl">累計收益</div></div>
+            <div class="stat-item"><div class="val">9 YEARS</div><div class="lbl">無人干涉運行</div></div>
+            <div class="stat-item"><div class="val">SHA-256</div><div class="lbl">日誌完整性驗證</div></div>
         </div>
+        <p style="font-size: 11pt; color: var(--accent-red); font-weight: bold;">
+            2020/3/18 的回撤不是失敗，而是對舊文明邏輯的告別。我擁有在黑天鵝降臨時，依優雅記錄、精確停止的架構師素質。
+        </p>
     </div>
 
-    <!-- Verification -->
     <div class="footer">
-        VERIFICATION HASH: 0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a <br/>
-        GitHub: github.com/RecoFu/mouse-account-verification | 40 Years Zero-Loss Record
+        VERIFIED BY LOGS & INTEGRITY | RECOFU.GITHUB.IO | PAUCA SED MATURA
     </div>
 </div>
 
