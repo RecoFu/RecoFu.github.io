@@ -2,84 +2,101 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>Reco Fu | Systems Architect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reco Fu (傅瑞乾) | Systems Architect</title>
     <style>
-        body { font-family: "PingFang TC", "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; padding: 40px; max-width: 960px; margin: auto; background: #f8f9fa; }
-        h1 { font-size: 32px; border-bottom: 4px solid #004080; padding-bottom: 12px; color: #004080; }
-        h2 { font-size: 24px; background: #004080; color: #fff; padding: 10px 15px; margin-top: 40px; border-radius: 6px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
-        .section { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .label { font-weight: bold; color: #004080; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
-        th { background: #004080; color: #fff; }
-        .footnote { font-size: 14px; color: #666; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; }
-        a { color: #004080; text-decoration: none; }
+        body { font-family: "PingFang TC", "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.8; color: #333; background: #f8f9fa; margin: 0; padding: 0; }
+        header { background: #004080; color: #fff; padding: 60px 20px; text-align: center; }
+        h1 { font-size: 40px; margin: 0; }
+        h2 { font-size: 28px; background: #004080; color: #fff; padding: 15px 20px; margin: 40px 0 20px; border-radius: 8px; }
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+        .section { background: #fff; padding: 30px; margin-bottom: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; }
+        .label { font-weight: bold; color: #004080; font-size: 18px; }
+        table { width: 100%; border-collapse: collapse; margin: 30px 0; background: #fff; }
+        th, td { border: 1px solid #ddd; padding: 15px; text-align: center; }
+        th { background: #004080; color: #fff; font-size: 16px; }
+        .footnote { font-size: 15px; color: #666; padding: 20px; background: #eee; border-radius: 8px; }
+        a { color: #004080; text-decoration: none; font-weight: bold; }
         a:hover { text-decoration: underline; }
+        .intro { font-size: 20px; text-align: center; margin: 30px 0; }
+        ul { padding-left: 30px; }
+        li { margin-bottom: 15px; }
     </style>
 </head>
 <body>
-<h1>RECO FU (傅瑞乾) : SYSTEMS ARCHITECT</h1>
-<div class="grid">
+<header>
+    <h1>RECO FU (傅瑞乾)<br>Systems Architect & Quantitative Logician</h1>
+    <p class="intro">40年零資料遺失紀錄 | 跨域抗脆弱系統建構者</p>
+</header>
+
+<div class="container">
     <div class="section">
-        <span class="label">STATUS：</span> 40年零資料遺失紀錄<br>
-        <span class="label">CORE：</span> 核心級除錯 / 量化邏輯
+        <span class="label">核心理念：</span> Pauca sed matura (少，但成熟)<br><br>
+        <span class="label">位置：</span> <a href="https://github.com/RecoFu" target="_blank">github.com/RecoFu</a> (目前儲存庫頁面)<br><br>
+        <span class="label">專業焦點：</span> 核心級除錯、量化邏輯、危機恢復與安全編排。<br>
+        從國家級基礎設施到無人值守量化系統，專注建構經得起時間與極端事件考驗的抗脆弱系統。
     </div>
+
+    <h2>職業故事與關鍵成就</h2>
+    <div class="grid">
+        <div class="section">
+            <strong>國家級基礎設施建置 (1984-2003)</strong>
+            <ul>
+                <li>參與台灣證交所及中華電信T1/ATM骨幹網路部署。</li>
+                <li>負責國家規模資料傳輸與完整性管理，奠定早期台灣數位基礎。</li>
+                <li>在資源有限時代，建立高可靠性網路架構，經歷數十年仍穩定運作。</li>
+            </ul>
+        </div>
+        <div class="section">
+            <strong>企業危機恢復實戰 (2015)</strong>
+            <ul>
+                <li>面對跨國企業勒索軟體攻擊，於8小時內完整恢復ERP系統。</li>
+                <li>零支付贖金、零資料遺失，仰賴預先設計的氣隙 (air-gap) 備份機制。</li>
+                <li>證明防禦深度設計在真實威脅下的價值，拯救企業營運連續性。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="section">
+            <strong>根因診斷與修正 (2016)</strong>
+            <ul>
+                <li>識別Broadcom VMQ驅動程式中斷衝突bug，導致叢集不穩定。</li>
+                <li>獨立診斷並推翻供應商官方誤判，提供修正方案。</li>
+                <li>提升系統可靠性，避免潛在大規模故障，展現核心級除錯能力。</li>
+            </ul>
+        </div>
+        <div class="section">
+            <strong>AI安全編排整合 (2022-2025)</strong>
+            <ul>
+                <li>將大型語言模型 (LLM) 整合至自建Guardian Defense Interface (GDI)。</li>
+                <li>有效降低邏輯注入攻擊風險達75%，強化系統防禦深度。</li>
+                <li>開啟AI輔助安全監控新階段，結合量化邏輯實現主動防護。</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>量化系統實證 (2012-2020)</h2>
     <div class="section">
-        <span class="label">LOCATION：</span> <a href="https://recofu.github.io" target="_blank">recofu.github.io</a><br>
-        <span class="label">REFERENCE：</span> Pauca sed matura (少，但成熟)
+        <p>於台中家中建置無人值守自動交易系統，本人長期駐海外。</p>
+        <p>系統歷經多次斷電、颱風侵襲、2020市場黑天鵝事件，邏輯始終穩健，權益持續成長。</p>
+        <table>
+            <thead>
+                <tr><th>年份</th><th>報酬率</th><th>權益 (TWD)</th><th>ZKP Hash Proof</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>2013</td><td>+60.00%</td><td>80,000</td><td>692c11e23b44c257</td></tr>
+                <tr><td>2015</td><td>+140.0%</td><td>360,000</td><td>b6034e26329e6424</td></tr>
+                <tr><td>2017</td><td>+102.1%</td><td>637,711</td><td>53bdb60190796cfc</td></tr>
+                <tr><td>2019</td><td>+35.31%</td><td>1,350,000</td><td>ed323687a580dea0</td></tr>
+            </tbody>
+        </table>
+        <p class="footnote">
+            * 此系統體現Lindy效應：簡單、成熟邏輯在極端環境下存活並繁榮。<br>
+            如需進一步討論或合作，請透過GitHub聯繫。
+        </p>
     </div>
 </div>
-
-<h2>I. 技術實施協議</h2>
-<div class="grid">
-    <div class="section">
-        <strong>[Infra] 基礎設施</strong><br>
-        1984-2003 骨幹網路部署<br>
-        負責台灣證交所及中華電信 T1/ATM 網路建置，管理國家級資料完整性。
-    </div>
-    <div class="section">
-        <strong>[Crisis] 危機處理</strong><br>
-        2015 勒索軟體防禦<br>
-        8小時內恢復跨國ERP系統，零贖金支付，透過氣隙備份實現零資料損失。
-    </div>
-</div>
-
-<h2>II. 根因分析實例</h2>
-<div class="grid">
-    <div class="section">
-        <strong>[SRE] 網站可靠性工程</strong><br>
-        2016 VMQ 驅動程式錯誤<br>
-        識別Broadcom中斷衝突導致叢集不穩定，推翻供應商誤判並修正。
-    </div>
-    <div class="section">
-        <strong>[AI] 人工智慧應用</strong><br>
-        2022-2025 安全編排<br>
-        整合大型語言模型與GDI（Guardian Defense Interface），降低邏輯注入風險75%。
-    </div>
-</div>
-
-<h2>III. 量化實證紀錄</h2>
-<table>
-    <thead>
-        <tr>
-            <th>年份</th>
-            <th>報酬率</th>
-            <th>權益 (TWD)</th>
-            <th>ZKP Hash Proof</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td>2013</td><td>+60.00%</td><td>80,000</td><td>692c11e23b44c257</td></tr>
-        <tr><td>2015</td><td>+140.0%</td><td>360,000</td><td>b6034e26329e6424</td></tr>
-        <tr><td>2017</td><td>+102.1%</td><td>637,711</td><td>53bdb60190796cfc</td></tr>
-        <tr><td>2019</td><td>+35.31%</td><td>1,350,000</td><td>ed323687a580dea0</td></tr>
-    </tbody>
-</table>
-
-<p class="footnote">
-    * 數據說明：2012-2020 量化系統於台中家中無人值守運作（本人駐海外）。歷經多次斷電、颱風侵襲與2020市場極端事件，系統邏輯始終穩健成立。<br>
-    GitHub 儲存庫：<a href="https://github.com/RecoFu" target="_blank">github.com/RecoFu</a>
-</p>
 </body>
 </html>
