@@ -1,120 +1,228 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<title>Reco Fu | Systems Architect & Quantitative Engineer</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        font-size: 150%;
-        line-height: 1.6;
-        background-color: #f5f5f5;
-        color: #111;
-        margin: 2em;
-    }
-    h1, h2, h3 {
-        color: #00274d; /* 海洋深藍 */
-        margin-bottom: 0.5em;
-    }
-    table {
-        border-collapse: collapse;
-        width: 100%;
-        margin-bottom: 2em;
-    }
-    th, td {
-        border: 1px solid #ccc;
-        padding: 0.5em;
-        text-align: left; /* 靠左 */
-    }
-    th {
-        background-color: #cce0ff;
-    }
-    p {
-        margin-bottom: 1em;
-    }
-    .small-note {
-        font-size: 0.9em;
-        color: #555;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reco Fu 傅瑞乾 — 系統架構師 | 零損失保證</title>
+    <style>
+        :root {
+            --ocean-blue: #003366;
+            --text-dark: #1a1a1a;
+            --gray-sub: #555555;
+            --highlight: #f0f4f8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', 'PingFang TC', 'Microsoft YaHei', serif;
+            font-size: 11.5pt; /* 字體放大 */
+            line-height: 1.5;
+            color: var(--text-dark);
+            background: #f0f0f0;
+        }
+        
+        .page { 
+            width: 21cm; 
+            min-height: 29.7cm; 
+            margin: 20px auto;
+            padding: 1.2cm;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        @media print {
+            body { background: white; }
+            .page { margin: 0; box-shadow: none; page-break-after: always; }
+        }
+        
+        /* Header */
+        .header { 
+            text-align: left; 
+            border-bottom: 3px solid var(--ocean-blue); 
+            padding-bottom: 0.5cm; 
+            margin-bottom: 0.6cm; 
+        }
+        .header h1 { 
+            font-size: 24pt; 
+            color: var(--ocean-blue); 
+            letter-spacing: 2px;
+            margin-bottom: 0.1cm;
+        }
+        .header .tagline { 
+            font-size: 13pt; 
+            font-weight: bold; 
+            color: var(--text-dark); 
+        }
+        .header .sub-tagline { font-size: 10pt; color: var(--gray-sub); font-style: italic; }
+
+        /* Section */
+        .section { margin-bottom: 0.6cm; }
+        .section-title { 
+            font-size: 14pt; 
+            font-weight: bold;
+            color: var(--ocean-blue); /* 海洋深藍色 */
+            border-left: 6px solid var(--ocean-blue);
+            padding-left: 12px;
+            margin-bottom: 0.3cm;
+            background: var(--highlight);
+        }
+        
+        /* Content Block */
+        .content-block { 
+            margin-bottom: 0.3cm; 
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .hero-text { font-weight: bold; color: var(--ocean-blue); }
+        .en-desc { font-size: 10pt; color: var(--gray-sub); font-style: italic; }
+
+        /* Table */
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            font-size: 10.5pt; 
+            margin: 0.2cm 0;
+        }
+        th, td { 
+            border: 1px solid #ddd; 
+            padding: 10px;
+            text-align: left; /* 全部向左靠 */
+        }
+        th { 
+            background: var(--ocean-blue); 
+            color: white;
+            font-weight: bold;
+        }
+        .critical-row { background: #fff5f5; font-weight: bold; }
+        
+        /* Footer */
+        .footer { 
+            margin-top: 0.5cm;
+            font-size: 9pt;
+            color: #999;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
 </head>
 <body>
 
-<h1>Reco Fu | Systems Architect & Quantitative Engineer (1984–2025)</h1>
-<p><strong>Systems built for survival. Data that speaks for itself. Zero failure legacy.</strong></p>
-<p><em>"When systems fail and the world enters chaos, I am the constant."</em></p>
+    <!-- PAGE 1: THE ARCHITECT -->
+    <div class="page">
+        <div class="header">
+            <h1>RECO FU (傅瑞乾)</h1>
+            <p class="tagline">跨國系統架構師 | 40年數據零損失紀錄 | 根因診斷「最後一道防線」</p>
+            <p class="sub-tagline">Systems Architect | Zero-Loss Guardian | Root Cause Specialist</p>
+        </div>
 
-<h2>0. Executive Decision Matrix | 閱覽決策樹</h2>
-<ul>
-    <li><strong>Target: Infrastructure Stability</strong> -> Skip to <a href="#section2">Section 2: Survival Log</a></li>
-    <li><strong>Target: Quantitative Edge</strong> -> Skip to <a href="#section3">Section 3: Quant Performance Analysis</a></li>
-    <li><strong>Target: Future-Proofing (AI)</strong> -> Skip to <a href="#section4">Section 4: AI & GDI Security</a></li>
-</ul>
+        <div class="section">
+            <div class="section-title">破局競爭力 | Competitive Edge</div>
+            <div class="content-block">
+                <span class="hero-text">● 當系統失效、全體撤退時，我是留下來解決問題的人。</span><br/>
+                我不只具備維運能力，更具備在「無人敢接手」的舊系統與極端環境中，重建秩序的實戰權威。
+                <div class="en-desc">I specialize in restoring order where others see chaos—managing undocumented legacy systems and extreme crises.</div>
+            </div>
+            <div class="content-block">
+                <span class="hero-text">● 四十年「零數據遺失」是我的職業信仰。</span><br/>
+                從 1984 年 FidoNet 撥接時代到 2025 年 AI 治理，歷經勒索病毒攻擊、國家級骨幹故障、自然災害，始終維持 100% 數據可用性。
+                <div class="en-desc">40 years of zero data loss across typhoons, earthquakes, and ransomware attacks.</div>
+            </div>
+        </div>
 
-<h2 id="section1">1. Professional Narrative | 職涯核心敘事</h2>
-<p><strong>EN:</strong> Forty years of battling system entropy. From FidoNet (1984) to AI-driven automation (2025), I ensure survival in hostile environments. Zero Data Loss. Zero Ransomware Payments.</p>
-<p><strong>中:</strong> 對抗系統「熵增」四十載。從 1984 年 FidoNet 到 2025 年 AI 自動化治理，我是極端環境下的生存專家。數據零遺失，勒索零支付。</p>
+        <div class="section">
+            <div class="section-title">10個不可否認的戰役 | 10 Unforgeable Battle Records</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">年份</th>
+                        <th style="width: 45%;">事件 / 戰場</th>
+                        <th style="width: 40%;">破局成就 (量化結果)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1984-00</td><td>FidoNet 節點營運</td><td>台灣網路先驅 (6:722/228)，獨立掌握底層安全協議。</td></tr>
+                    <tr><td>1994-95</td><td>國軍精實專案</td><td>獨立將測考題庫與精實資料庫數位化，軍方信賴的資訊兵。</td></tr>
+                    <tr><td>1996-98</td><td>中華電信 & 戶役政</td><td>主導全國級催費機房與交換機系統，扛起中部行政數位化。</td></tr>
+                    <tr><td>1999-03</td><td>金融骨幹建置</td><td>證交所、期交所、集保、中信局 ATM/T1 骨幹核心佈署。</td></tr>
+                    <tr><td>2003-20</td><td>無人值守量化系統</td><td><b>8.92 年無人操作</b>，27 倍資本增長，抗衡所有自然災害。</td></tr>
+                    <tr class="critical-row"><td>2015</td><td>柬埔寨勒索軟體戰</td><td><b>8小時內全系統恢復</b>，零贖金支付，零數據損失。</td></tr>
+                    <tr><td>2016-17</td><td>SRE 根因判定</td><td>獨立定位 Broadcom NIC VMQ 底層漏洞，解決全球級硬體死穴。</td></tr>
+                    <tr><td>2010-22</td><td>東南亞四廠 MIS</td><td>越南、泰國、柬埔寨從零建置 IT/OT 基建，數據效率提升 10%。</td></tr>
+                    <tr><td>2022-25</td><td>AI 治理 & 安全</td><td>ChatGPT 安全架構設計，API 漏洞降低 75%，確保企業級 AI 落地。</td></tr>
+                    <tr><td>全時期</td><td>秩序守護者</td><td><b>40 年職涯：零中毒、零掉資料、零損失。</b></td></tr>
+                </tbody>
+            </table>
+        </div>
 
-<h2 id="section2">2. Critical Incidents | 關鍵技術實績</h2>
-<p><strong>[1984 - 2003] Protocol Era / 協議骨幹期</strong></p>
-<ul>
-    <li>FidoNet Node 6:722/228, Taichung: Independent node operation, low-level protocol mastery.</li>
-    <li>Army Engineering School: Digitized testing & database systems.</li>
-    <li>TWSE & Central Trust: Deployed T1/ATM backbone, built first 3G core in Central Taiwan.</li>
-</ul>
+        <div class="section">
+            <div class="section-title">全棧技術深度 | Technical Depth</div>
+            <p><strong>底層：</strong> PLC/自動控制、 watchDog 硬體計時器、8051 微處理器、Fortran 77。<br/>
+               <strong>架構：</strong> AWS/GCP、K8s、Novell/OS2、電信 3G Core、金融 ATM 骨幹。<br/>
+               <strong>安全：</strong> GDI 即時守護、AI 注入防禦、Merkle-Hash 數據校驗。
+            </p>
+        </div>
 
-<p><strong>[2010 - 2022] Overseas Crisis Management / 跨國危機處理</strong></p>
-<ul>
-    <li>2015 Cambodia Ransomware Defense: Restored ERP in 8 hours. Zero ransom, zero data lost.</li>
-    <li>2016 LF Co.: Diagnosed Broadcom VMQ driver bug causing cluster crashes. Corrected prior vendor misdiagnosis.</li>
-</ul>
+        <div class="footer">
+            VERIFIED BY RECO FU | PAUCA SED MATURA | GITHUB.COM/RECOFU
+        </div>
+    </div>
 
-<h2 id="section3">3. Quantitative Execution | 量化交易與數據證實</h2>
-<p>Condition: Unattended execution at home system, surviving natural disasters.</p>
-<table>
-    <tr>
-        <th>Year | 年度</th>
-        <th>Trades | 筆數</th>
-        <th>Net Equity | 期末權益</th>
-        <th>Return | 報酬%</th>
-        <th>ZKP Hash | 零知識證明</th>
-    </tr>
-    <tr><td>2012</td><td>0</td><td>50,000</td><td>0%</td><td>4da1bdcd23bee271</td></tr>
-    <tr><td>2013</td><td>42</td><td>80,000</td><td>60%</td><td>692c11e23b44c257</td></tr>
-    <tr><td>2014</td><td>210</td><td>150,000</td><td>87.5%</td><td>a66f8898a7368f9c</td></tr>
-    <tr><td>2015</td><td>391</td><td>360,000</td><td>140%</td><td>b6034e26329e6424</td></tr>
-    <tr><td>2017</td><td>23</td><td>637,711</td><td>102.13%</td><td>53bdb60190796cfc</td></tr>
-    <tr><td>2019</td><td>194</td><td>1,350,000</td><td>35.31%</td><td>ed323687a580dea0</td></tr>
-</table>
-<p>Peak Multiplier: 27x initial capital. Evidence: 10 years of logs under seismic & infrastructure stress.</p>
+    <!-- PAGE 2: THE PROOF -->
+    <div class="page">
+        <div class="header">
+            <h1>小白鼠帳戶 (THE PROOF)</h1>
+            <p class="tagline">2012-2020 | 無人值守自動化交易系統 | 韌性與容錯的數學實證</p>
+        </div>
 
-<h2 id="section4">4. AI & GDI Governance | AI 治理與安全</h2>
-<ul>
-    <li>GDI: Real-time environment protection system.</li>
-    <li>LLM Integration: ChatGPT API into ERP/MIS. Reduced vulnerabilities by 75%.</li>
-    <li>Transitioned to AI-Governance-Core execution post 2020.</li>
-</ul>
+        <div class="section">
+            <div class="section-title">核心績效數據 | Performance Summary</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>年份</th>
+                        <th>期初 (TWD)</th>
+                        <th>期末 (TWD)</th>
+                        <th>年報酬 (%)</th>
+                        <th>備註 (環境壓力)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2013</td><td>50,000</td><td>80,000</td><td>+60.00%</td><td>初始自動化測試</td></tr>
+                    <tr><td>2015</td><td>150,000</td><td>360,000</td><td>+140.00%</td><td>策略爆發期</td></tr>
+                    <tr class="critical-row"><td>2017</td><td>315,493</td><td>637,711</td><td>+102.13%</td><td><b>89% 錯誤率下仍獲利 (極致容錯)</b></td></tr>
+                    <tr><td>2019</td><td>997,678</td><td>1,350,000</td><td>+35.31%</td><td>達到資本峰值 (27倍增長)</td></tr>
+                </tbody>
+            </table>
+        </div>
 
-<h2 id="section5">5. Unforgeable Battles | 10個不可否認的戰役</h2>
-<table>
-    <tr><th>Year | 年度</th><th>Event | 事件</th><th>Result | 結果</th></tr>
-    <tr><td>1993</td><td>FidoNet Node Takeover</td><td>Success</td></tr>
-    <tr><td>2000</td><td>National Backbone Deployment</td><td>Success</td></tr>
-    <tr><td>2015</td><td>Cambodia Ransomware Defense</td><td>Zero Loss</td></tr>
-    <tr><td>2016</td><td>Root Cause Diagnostics</td><td>System Restored</td></tr>
-    <tr><td>2017</td><td>Quant System Upgrade</td><td>27x Peak</td></tr>
-    <tr><td>2018</td><td>Cloud ERP Integration</td><td>Seamless</td></tr>
-    <tr><td>2019</td><td>AI Risk Mitigation</td><td>Reduced Exposure 75%</td></tr>
-    <tr><td>2020</td><td>Hive-mind Quant Transition</td><td>Complete</td></tr>
-    <tr><td>2022</td><td>GDI AI Protection</td><td>Operational</td></tr>
-    <tr><td>2025</td><td>Full AI Governance</td><td>Ongoing</td></tr>
-</table>
+        <div class="section">
+            <div class="section-title">破局觀點：為何這份數據「無法反駁」？</div>
+            <div class="content-block">
+                <span class="hero-text">1. 數學級容錯證明 (The 2017 Miracle)</span><br/>
+                2017 年出現 89% 的執行錯誤，但依靠自動止損與風險管理，系統依然產出 102% 的回報。這證明了我的**架構設計優先於單純的預測邏輯**。
+            </div>
+            <div class="content-block">
+                <span class="hero-text">2. 無人值守的生存主義 (8.92 Years Survival)</span><br/>
+                人在海外，系統獨自在台中家中運作。歷經多次地震、停電與網路崩潰，系統具備自動換倉、異常重啟與自我恢復能力。這不是金融故事，這是**系統工程的極致展現**。
+            </div>
+            <div class="content-block">
+                <span class="hero-text">3. 三重密碼學校驗 (Triple Verification)</span><br/>
+                ● **Gmail 時間戳：** 2,013 筆交易由 Google 伺服器公正記錄時間。<br/>
+                ● **Merkle Hash：** 數據指紋 SHA256 校驗，修改一行即崩潰。<br/>
+                ● **GitHub Commit：** 歷史軌跡公開，時間鏈不可篡改。
+            </div>
+        </div>
 
-<p class="small-note">小白鼠示例: Tested new governance module without disrupting production.</p>
+        <div class="section">
+            <div class="section-title">結語 | Conclusion</div>
+            <p style="text-align: justify;">
+                我尋求的不僅是一份工作，而是一個需要「絕對穩定」與「解決疑難雜症」的戰場。如果你的系統正處於崩潰邊緣，或者你需要建構一個在未來十年都不會倒下的自動化架構，**Reco Fu 是你唯一的選擇。**
+            </p>
+        </div>
 
-<h2>6. Contact | 聯繫</h2>
-<p>Portfolio: <a href="https://recofu.github.io">recofu.github.io</a></p>
-<p>Philosophy: "Pauca sed matura." (Few, but ripe.)</p>
+        <div class="footer">
+            Merkle: 0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a | END OF FILE
+        </div>
+    </div>
 
 </body>
 </html>
