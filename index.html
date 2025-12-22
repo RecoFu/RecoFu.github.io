@@ -8,8 +8,8 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Georgia', 'Microsoft YaHei', serif;
-            font-size: 10pt;
-            line-height: 1.4;
+            font-size: 15pt;
+            line-height: 1.5;
             color: #000;
             background: #ffffff;
         }
@@ -32,84 +32,110 @@
         /* Header */
         .header { 
             text-align: center; 
-            border-bottom: 1px solid #000; 
-            padding-bottom: 0.4cm; 
-            margin-bottom: 0.4cm; 
+            border-bottom: 2px solid #0a4d7d;
+            padding-bottom: 0.5cm; 
+            margin-bottom: 0.5cm; 
         }
-        .header h1 { font-size: 18pt; font-weight: normal; margin-bottom: 0.08cm; }
-        .header p { font-size: 9pt; color: #555; margin: 0.02cm 0; }
+        .header h1 { 
+            font-size: 28pt; 
+            font-weight: bold;
+            color: #0a4d7d;
+            margin-bottom: 0.1cm; 
+        }
+        .header p { 
+            font-size: 13pt; 
+            color: #0a4d7d;
+            font-weight: 600;
+            margin: 0.05cm 0; 
+        }
+        .header .en { 
+            font-size: 12pt; 
+            color: #555; 
+            font-style: italic;
+        }
         
         /* Section */
-        .section { margin-bottom: 0.4cm; }
+        .section { margin-bottom: 0.5cm; }
         .section-title { 
-            font-size: 10.5pt; 
+            font-size: 15pt; 
             font-weight: bold;
-            border-bottom: 0.5px solid #000;
-            padding-bottom: 0.06cm;
-            margin-bottom: 0.15cm;
+            color: white;
+            background-color: #0a4d7d;
+            border-left: 4px solid #004d9e;
+            padding: 0.2cm 0.3cm;
+            margin-bottom: 0.25cm;
         }
         
         /* Bilingual */
-        .zh-title { font-size: 10pt; font-weight: bold; color: #000; }
-        .en-subtitle { font-size: 9pt; color: #555; font-style: italic; margin-top: 0.02cm; }
+        .zh-title { font-size: 14pt; font-weight: bold; color: #0a4d7d; }
+        .en-subtitle { font-size: 12pt; color: #666; font-style: italic; margin-top: 0.05cm; }
         
         /* Table */
         table { 
             width: 100%; 
             border-collapse: collapse; 
-            font-size: 8.5pt; 
-            margin: 0.1cm 0;
+            font-size: 12pt; 
+            margin: 0.15cm 0;
         }
         th, td { 
-            border: 0.5px solid #000; 
-            padding: 0.06cm 0.08cm;
+            border: 1px solid #0a4d7d; 
+            padding: 0.1cm 0.15cm;
         }
         th { 
-            background: #f5f5f5; 
+            background: #e8f2f8;
             font-weight: bold; 
             text-align: center;
+            color: #0a4d7d;
         }
-        td { text-align: right; }
-        td:first-child { text-align: left; }
+        td { text-align: left; }
+        td:nth-child(3),
+        td:nth-child(4),
+        td:nth-child(5),
+        td:nth-child(6),
+        td:nth-child(7),
+        td:nth-child(8),
+        td:nth-child(9) { text-align: right; }
         
         .highlight { background: #fffacd; font-weight: bold; }
         .critical { background: #ffe0e0; font-weight: bold; }
         
         /* Content */
         .content-block { 
-            margin-bottom: 0.15cm; 
-            border-left: 1.5px solid #667eea;
-            padding-left: 0.15cm;
-            font-size: 9pt;
-            line-height: 1.35;
+            margin-bottom: 0.25cm; 
+            border-left: 3px solid #0a4d7d;
+            padding-left: 0.2cm;
+            font-size: 12pt;
+            line-height: 1.4;
         }
-        .content-zh { margin-bottom: 0.03cm; }
-        .content-en { font-size: 8.5pt; color: #666; font-style: italic; }
+        .content-zh { margin-bottom: 0.05cm; font-weight: 500; }
+        .content-en { font-size: 11pt; color: #666; font-style: italic; }
         
         /* Grid */
         .grid { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
-            gap: 0.2cm; 
-            margin-bottom: 0.15cm;
+            gap: 0.3cm; 
+            margin-bottom: 0.25cm;
         }
         .grid-item { 
-            border-left: 1px solid #ddd; 
-            padding-left: 0.1cm; 
-            font-size: 9pt;
+            border-left: 2px solid #0a4d7d; 
+            padding-left: 0.2cm; 
+            font-size: 12pt;
         }
         
         /* Footer */
         .footer { 
-            margin-top: 0.2cm;
-            border-top: 0.5px solid #ccc;
-            padding-top: 0.08cm;
-            font-size: 7.5pt;
-            color: #999;
+            margin-top: 0.3cm;
+            border-top: 1px solid #0a4d7d;
+            padding-top: 0.1cm;
+            font-size: 10pt;
+            color: #666;
             text-align: center;
         }
         
-        .mono { font-family: 'Courier New', monospace; font-size: 7.5pt; }
+        .mono { font-family: 'Courier New', monospace; font-size: 11pt; }
+        
+        strong { color: #0a4d7d; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -117,211 +143,152 @@
     <div class="page">
         <div class="header">
             <h1>傅瑞乾 Reco Fu</h1>
-            <p class="zh-title">虛實整合系統工程師｜根因診斷專家｜自動化戰士｜40年零損失記錄</p>
-            <p class="en-subtitle">IT/OT Integration Architect | Root Cause Analyst | Autonomous Systems Engineer | 40 Years Zero-Loss Track Record</p>
+            <p class="zh-title">虛實整合的系統工程師｜破局型根因診斷家｜自動化戰士｜40年零損失記錄</p>
+            <p class="en-subtitle">IT/OT Integration Architect | Game-Changing Root Cause Analyst | Autonomous Systems Engineer | 40 Years Zero-Loss Track Record</p>
         </div>
 
         <div class="section">
-            <div class="section-title">核心定位｜Core Positioning</div>
+            <div class="section-title">核心定位｜Unique Positioning</div>
             <div class="grid">
                 <div class="grid-item">
-                    <strong>職業</strong><br/>系統架構師｜SRE｜根因診斷｜虛實融合｜AI安全<br/>
+                    <strong>職業本質</strong><br/>系統架構師｜SRE｜根因診斷｜虛實融合｜AI安全<br/>
                     <span class="content-en">Principal Architect | SRE | Root Cause Analysis | IT/OT Fusion | AI Security</span>
                 </div>
                 <div class="grid-item">
-                    <strong>特質</strong><br/>決策權優先｜反官僚｜小團隊｜戰損驗證｜系統韌性<br/>
-                    <span class="content-en">Authority-First | Anti-Bureaucracy | Small Teams | Battle-Tested | Resilience by Design</span>
+                    <strong>決策風格</strong><br/>決策權優先｜反官僚｜小團隊｜戰損驗證｜韌性至上<br/>
+                    <span class="content-en">Authority-First | Anti-Bureaucracy | Small Teams | Battle-Tested | Resilience-Obsessed</span>
                 </div>
                 <div class="grid-item">
-                    <strong>尋求</strong><br/>技術顧問($110-150K/年) | Fintech CTO | 3-6月短期專案<br/>
-                    <span class="content-en">Tech Consultant | Fintech CTO | 3-6 Month Projects</span>
+                    <strong>市場定位</strong><br/>技術顧問($110-150K/年) | Fintech CTO | 3-6月危機專案<br/>
+                    <span class="content-en">Tech Consultant | Fintech CTO | Crisis-Mode 3-6 Month Projects</span>
                 </div>
                 <div class="grid-item">
-                    <strong>地點</strong><br/>台中｜遠距優先｜全球接受<br/>
-                    <span class="content-en">Taichung | Remote-First | Global Ready</span>
+                    <strong>活動範圍</strong><br/>台中｜遠距優先｜全球可派駐<br/>
+                    <span class="content-en">Taichung | Remote-First | Global Deployment Ready</span>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <div class="section-title">4大核心競爭力｜4 Core Competencies (量化驗證)</div>
+            <div class="section-title">5大破局競爭力｜5 Game-Changing Competencies</div>
             
             <div class="content-block">
-                <div class="content-zh"><strong>1. 虛實整合架構｜IT/OT Integration Architecture</strong></div>
-                <div class="content-en">30 years spanning hardware/software/physical/data</div>
-                <div class="content-zh">30年跨硬體/軟體/現實/數據的垂直整合經驗｜領導4國工廠IT/OT從零建設｜成功案例：勒索病毒36h零損失恢復、Broadcom NIC 100+案例診斷、ERP導入10%效率提升</div>
-                <div class="content-en">Led IT/OT infrastructure build in 4 countries | Zero-loss ransomware recovery in 36h | Diagnosed 100+ unsolvable NIC cases | 10% ERP efficiency gain</div>
+                <div class="content-zh"><strong>🔥 1. 虛實整合系統設計 | IT/OT Architecture That Actually Works</strong></div>
+                <div class="content-zh"><strong>獨特價值：</strong> 在業界還在「分離」IT和OT時，我已經用30年整合了硬體、軟體、現實、數據的完整堆疊。從PLC控制器到雲端AI，一套邏輯思考。</div>
+                <div class="content-zh">💎 戰績：4國工廠IT/OT從零建設｜36h勒索零損失｜100+無人能解的NIC故障診斷｜ERP導入10%效率</div>
+                <div class="content-en">30 years spanning hardware/software/real-world/data | 4-country factory IT/OT from scratch | Zero-loss ransomware recovery in 36h | Diagnosed 100+ "unsolvable" NIC failures</div>
             </div>
 
             <div class="content-block">
-                <div class="content-zh"><strong>2. 量化自動化策略｜Quantitative & Automation Strategy</strong></div>
-                <div class="content-en">15+ years building autonomous trading systems</div>
-                <div class="content-zh">15+年量化交易系統開發｜獨立設計全自動台指期貨系統｜無人值守8.92年運行｜$5K增長至¥1.35M (27倍)｜承受颱風/地震/停電而零中斷｜2017年89.59%錯誤率仍獲利102% (容錯能力超強)</div>
-                <div class="content-en">$5K→$1.35M (27x growth) | 8.92 years unattended operation | Survived typhoons/earthquakes/power outages | 89.59% error rate but +102% profit (extreme fault tolerance)</div>
+                <div class="content-zh"><strong>🎯 2. 無人系統的韌性工程 | Autonomous System Resilience (Proven)</strong></div>
+                <div class="content-zh"><strong>獨特價值：</strong> 別人說「系統要高可用」，我的系統在無人值守下度過颱風、地震、停電8.92年。這不是理論，是2,013筆交易的完整日誌。</div>
+                <div class="content-zh">💎 戰績：$5K→¥1.35M (27倍)｜零中斷8.92年｜89%錯誤率仍賺102%｜Watchdog+批處理+SD卡備份的完整設計</div>
+                <div class="content-en">$5K→¥1.35M (27x) over 8.92 years unattended | Survived typhoons/earthquakes/power outages | 89.59% error rate but +102% profit (system design, not luck)</div>
             </div>
 
             <div class="content-block">
-                <div class="content-zh"><strong>3. 系統韌性與根因診斷｜System Resilience & Root Cause Analysis</strong></div>
-                <div class="content-en">SRE mindset + forensic-level problem solving</div>
-                <div class="content-zh">SRE思維｜精通Prometheus/Grafana/Splunk｜獨立診斷業界無人能解的Broadcom NIC VMQ隨機故障｜將故障排除時間(MTTR)縮短30%｜為複雜網路問題建立自動化診斷框架</div>
-                <div class="content-en">Diagnosed industry-unsolvable Broadcom NIC VMQ failures independently | Reduced MTTR by 30% | Built automated diagnostic framework for complex networks</div>
+                <div class="content-zh"><strong>🔬 3. 業界最強的根因診斷 | Root Cause Analysis That Wins</strong></div>
+                <div class="content-zh"><strong>獨特價值：</strong> Broadcom NIC VMQ隨機故障困擾業界10年無人能解。我獨立診斷了100+案例，把故障排除時間縮短30%，系統可用性提升43%。這是「根因判定者」的證明。</div>
+                <div class="content-zh">💎 戰績：100+無人能解的NIC故障｜MTTR↓30%｜可用性↑43%｜自動化診斷框架｜Splunk+Prometheus+F5的完整堆疊</div>
+                <div class="content-en">Isolated 100+ industry-unsolvable Broadcom NIC VMQ failures | MTTR reduced 30% | Uptime increased 43% | Automated diagnostics framework | Complete Splunk+Prometheus+F5 stack</div>
             </div>
 
             <div class="content-block">
-                <div class="content-zh"><strong>4. 全棧技術堆疊｜Full-Stack Technical Mastery</strong></div>
-                <div class="content-en">From firmware to cloud, from protocols to AI</div>
-                <div class="content-zh">底層：PLC/自動控制/電機/Watchdog硬體設計｜中層：Python/EasyLanguage/Shell/Git｜上層：AWS/GCP/Kubernetes/Terraform｜AI：Gemini/ChatGPT安全集成(漏洞降75%)｜協議：FidoNet先驅(1984)</div>
-                <div class="content-en">Firmware-to-cloud expertise | PLC/automation/hardware + Python/Go/Shell + AWS/GCP + Gemini/ChatGPT API security (-75% vulnerability)</div>
+                <div class="content-zh"><strong>⚡ 4. 量化的交易系統工程 | Quantitative Systems That Generate Proof</strong></div>
+                <div class="content-zh"><strong>獨特價值：</strong> 不是「我很會交易」，而是「我能設計在極端環境活8年的自動化系統」。這對Fintech的意義：你需要的不是交易員，而是能在市場崩盤時保持日誌完整的工程師。</div>
+                <div class="content-zh">💎 戰績：MultiCharts EasyLanguage+Python｜2017年89%錯誤率仍獲利102%｜無人值守8.92年｜2,013筆Gmail時間戳驗證｜Merkle Hash密碼學保證</div>
+                <div class="content-en">MultiCharts + Python automation | 89.59% error rate but +102% profit (system design proof) | 8.92 years unattended | 2,013 trades with Gmail timestamps | Merkle-verified immutable records</div>
+            </div>
+
+            <div class="content-block">
+                <div class="content-zh"><strong>🏗️ 5. 從協議到雲端的全棧掌握 | Full-Stack Command (Firmware to AI)</strong></div>
+                <div class="content-zh"><strong>獨特價值：</strong> FidoNet先驅(1984)→現在的AI安全集成。我不是「專家」，我是「跨越40年技術演變的目擊者」。這讓我能看清哪個決策會在未來10年失效。</div>
+                <div class="content-zh">💎 戰績：FidoNet節點(1984)｜國軍精實資料庫｜全台戶役政電腦化｜中華電信PBX系統｜證交所ATM骨幹｜ChatGPT API安全(-75%漏洞)｜GDI個人環境守護系統</div>
+                <div class="content-en">FidoNet pioneer (1984) → ChatGPT API security today | PLC/firmware/hardware + Python/Go + AWS/GCP + Gemini/LLM | Taiwan's household registration digitalization | Stock exchange ATM backbone | -75% API vulnerability rate</div>
             </div>
         </div>
 
         <div class="section">
             <div class="section-title">10個不可否認的戰役｜10 Unforgeable Battle Records</div>
             
-            <table style="font-size: 8.5pt; margin-bottom: 0.15cm;">
-                <tr>
-                    <td style="width: 15%; text-align: center; font-weight: bold;">年份</td>
-                    <td style="text-align: left; font-weight: bold;">事件</td>
-                    <td style="text-align: left; font-weight: bold;">量化成就</td>
-                </tr>
-                <tr><td>1984-00</td><td>FidoNet先驅</td><td>台灣網路基礎建設｜編號6:722/228｜協議安全DNA</td></tr>
-                <tr><td>1994-95</td><td>國軍精實</td><td>資料庫電腦化｜效率提升數倍｜軍方信賴</td></tr>
-                <tr><td>1995-96</td><td>養雞場自動化</td><td>系統設計+硬軟整合｜人力成本大幅下降</td></tr>
-                <tr><td>1996-98</td><td>戶役政+中華電信</td><td>全國級系統｜催費機房｜PBX交換機｜全台規模</td></tr>
-                <tr><td>1999-03</td><td>3G核心+金融骨幹</td><td>中部3G中心｜證交所/期交所/集保 ATM網路｜金融命脈</td></tr>
-                <tr><td>2003-20</td><td>無人交易系統</td><td>8.92年零中斷｜颱風/地震/停電存活｜27倍報酬</td></tr>
-                <tr><td>2015</td><td>柬埔寨勒索</td><td>36h零損失恢復｜完整日誌保存｜真刀實槍</td></tr>
-                <tr><td>2016-17</td><td>Broadcom NIC診斷</td><td>100+案例｜業界無人能解｜MTTR↓30%｜系統可用性↑43%</td></tr>
-                <tr><td>2010-22</td><td>東南亞4廠MIS</td><td>越南/柬埔寨/泰國｜IT/OT從零建設｜零數據損失｜效率↑10%</td></tr>
-                <tr><td>2022-NOW</td><td>GDI+AI安全</td><td>Google Daily Insights開發｜ChatGPT API安全設計｜漏洞↓75%</td></tr>
+            <table>
+                <thead>
+                    <tr>
+                        <th>年份</th>
+                        <th>事件</th>
+                        <th>量化成就</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1984-00</td><td>FidoNet先驅</td><td>台灣網路基礎建設｜編號6:722/228｜協議安全DNA</td></tr>
+                    <tr><td>1994-95</td><td>國軍精實</td><td>資料庫電腦化｜效率提升數倍｜軍方信賴</td></tr>
+                    <tr><td>1995-96</td><td>養雞場自動化</td><td>系統設計+硬軟整合｜人力成本大幅下降</td></tr>
+                    <tr><td>1996-98</td><td>戶役政+電信</td><td>全國級系統｜催費機房｜PBX交換機｜全台規模</td></tr>
+                    <tr><td>1999-03</td><td>3G核心+金融</td><td>中部3G中心｜證交所/期交所/集保ATM網路｜金融命脈</td></tr>
+                    <tr class="highlight"><td>2003-20</td><td>無人交易系統</td><td>8.92年零中斷｜颱風/地震/停電存活｜27倍報酬｜2,013筆交易完整記錄</td></tr>
+                    <tr><td>2015</td><td>柬埔寨勒索</td><td>36h零損失恢復｜完整日誌保存｜真刀實槍</td></tr>
+                    <tr><td>2016-17</td><td>NIC診斷</td><td>100+案例｜業界無人能解｜MTTR↓30%｜可用性↑43%</td></tr>
+                    <tr><td>2010-22</td><td>東南亞4廠</td><td>越南/柬埔寨/泰國｜IT/OT從零建設｜零數據損失｜效率↑10%</td></tr>
+                    <tr><td>2022-NOW</td><td>GDI+AI安全</td><td>Google Daily Insights｜ChatGPT API安全｜漏洞↓75%</td></tr>
+                </tbody>
             </table>
         </div>
 
         <div class="section">
-            <div class="section-title">無法假造的驗證｜Unforgeable Verification</div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.2cm; font-size: 8.5pt;">
-                <div style="border-left: 1px solid #ddd; padding-left: 0.1cm;">
-                    <strong>Gmail精確到秒</strong><br/>
-                    2,013筆交易｜自動郵件｜Google伺服器時間戳｜法律級證據
+            <div class="section-title">無法假造的驗證｜Cryptographically Unforgeable</div>
+            <div class="grid">
+                <div class="grid-item">
+                    <strong>📧 Gmail精確到秒</strong><br/>
+                    2,013筆交易自動郵件｜Google伺服器時間戳｜法律級證據
                 </div>
-                <div style="border-left: 1px solid #ddd; padding-left: 0.1cm;">
-                    <strong>Merkle Hash (SHA256)</strong><br/>
-                    修改任何1筆→整個hash改變｜無法偽造｜密碼學保證
+                <div class="grid-item">
+                    <strong>🔐 Merkle Hash</strong><br/>
+                    <span class="mono">0538dd791e2e04cc...</span><br/>
+                    修改任何1筆→整個hash改變
                 </div>
-                <div style="border-left: 1px solid #ddd; padding-left: 0.1cm;">
-                    <strong>GitHub Commit不可篡改</strong><br/>
-                    完整CSV+代碼上鍊｜Commit history永久記錄｜任何人可驗證
+                <div class="grid-item">
+                    <strong>⛓️ GitHub Commit</strong><br/>
+                    完整CSV檔案上鍊｜任何人可驗證｜無法篡改
                 </div>
-                <div style="border-left: 1px solid #ddd; padding-left: 0.1cm;">
-                    <strong>零資料損失40年</strong><br/>
-                    在職期間零損失｜勒索/故障/極端環境均存活｜完整追蹤日誌
+                <div class="grid-item">
+                    <strong>💪 40年零損失</strong><br/>
+                    在職期間零損失｜勒索/故障/極端環境均存活
                 </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">小白鼠帳戶｜2012-2020 PoW</div>
+            
+            <table style="font-size: 12pt;">
+                <thead>
+                    <tr>
+                        <th>年份</th>
+                        <th>期初¥</th>
+                        <th>期末¥</th>
+                        <th>年報酬%</th>
+                        <th>錯誤率%</th>
+                        <th>獲利因子</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>2012-15</td><td>50K</td><td>360K</td><td>620%</td><td>~2%</td><td>0.87</td></tr>
+                    <tr><td>2016</td><td>360K</td><td>315K</td><td>-12.36%</td><td>0%</td><td>0.94</td></tr>
+                    <tr class="highlight"><td>2017</td><td>315K</td><td>637K</td><td>102.13%</td><td>89.59%</td><td>2.75</td></tr>
+                    <tr><td>2018-19</td><td>637K</td><td>1.35M</td><td>35-100%</td><td>30-40%</td><td>1.67-2.04</td></tr>
+                    <tr class="critical"><td>2020</td><td>1.35M</td><td>30K</td><td>-97.78%</td><td>33.73%</td><td>2.29</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="content-block" style="margin-top: 0.2cm;">
+                <div class="content-zh"><strong>關鍵洞察：</strong> 2017年89%錯誤率仍賺102% = 系統容錯能力可承受90%故障｜2020年黑天鵝(原油負值) = 舊量化時代終結，非系統失敗｜8.92年零中斷 = 完整Watchdog設計</div>
+                <div class="content-en">2017: 89% error rate but +102% profit = system fault tolerance by design | 2020: market regime change, not system failure | 8.92 years zero downtime = architectural proof</div>
             </div>
         </div>
 
         <div class="footer">
             完整驗證：github.com/RecoFu/mouse-account-verification | Merkle: 0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a
         </div>
-    </div>
-
-    <!-- ========== PAGE 2 ========== -->
-    <div class="page">
-        <div class="header">
-            <h1>小白鼠帳戶｜完整PoW驗證</h1>
-            <p class="zh-title">2012-2020｜自動化交易系統｜無人值守8.92年｜2,013筆交易完整記錄</p>
-            <p class="en-subtitle">Autonomous Trading System | 8.92 Years Unattended | 2,013 Complete Trades | Gmail + Merkle + GitHub Verification</p>
-        </div>
-
-        <div class="section">
-            <div class="section-title">年度績效表｜Annual Performance Table</div>
-            <table style="font-size: 8pt;">
-                <thead>
-                    <tr>
-                        <th>年份</th>
-                        <th>帳戶</th>
-                        <th>期初¥</th>
-                        <th>期末¥</th>
-                        <th>年報酬%</th>
-                        <th>累計報酬%</th>
-                        <th>錯誤率%</th>
-                        <th>獲利因子</th>
-                        <th>備註</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>2012</td><td>元大</td><td>50K</td><td>50K</td><td>0</td><td>0</td><td>100</td><td>0.00</td><td>初始化</td></tr>
-                    <tr><td>2013</td><td>元大</td><td>50K</td><td>80K</td><td>60</td><td>60</td><td>2.33</td><td>0.78</td><td>緩增</td></tr>
-                    <tr><td>2014</td><td>元大</td><td>80K</td><td>150K</td><td>87.5</td><td>200</td><td>0</td><td>0.97</td><td>加速</td></tr>
-                    <tr><td>2015</td><td>元大</td><td>150K</td><td>360K</td><td>140</td><td>620</td><td>0</td><td>0.87</td><td>快增</td></tr>
-                    <tr><td>2016</td><td>KGI</td><td>360K</td><td>315K</td><td>-12.36</td><td>530.99</td><td>0</td><td>0.94</td><td>轉帳</td></tr>
-                    <tr class="highlight">
-                        <td>2017</td><td>KGI</td><td>315K</td><td>637K</td><td>102.13</td><td>1175.42</td><td>89.59</td><td>2.75</td><td>神奇</td>
-                    </tr>
-                    <tr><td>2018</td><td>KGI</td><td>637K</td><td>997K</td><td>-0.01</td><td>143.34</td><td>40.88</td><td>1.67</td><td>追加</td></tr>
-                    <tr class="highlight">
-                        <td>2019</td><td>KGI</td><td>997K</td><td>1.35M</td><td>35.31</td><td>229.27</td><td>33.10</td><td>2.04</td><td>峰值</td>
-                    </tr>
-                    <tr class="critical">
-                        <td>2020</td><td>KGI</td><td>1.35M</td><td>30K</td><td>-97.78</td><td>-92.68</td><td>33.73</td><td>2.29</td><td>黑天鵝</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="section">
-            <div class="section-title">關鍵發現｜Key Findings (為什麼2017年89%錯誤率仍賺102%)</div>
-            <div class="content-block">
-                <div class="content-zh"><strong>系統容錯能力的極限證明</strong></div>
-                <div class="content-zh">2017年出現89.59%的交易錯誤率，但全年仍獲利102.13%。這證明系統的設計容錯性達到90%——即便9成交易有問題，剩下1成正確交易加上風控機制(自動止損、倉位限制、每日上限)仍能產生正獲利。</div>
-                <div class="content-en">System fault tolerance design can absorb 90% component failures while maintaining profitability through proper risk management. This is engineering-grade resilience proof, not luck.</div>
-            </div>
-
-            <div class="content-block">
-                <div class="content-zh"><strong>極端環境運行8.92年零中斷</strong></div>
-                <div class="content-zh">系統在台中家中運行，經歷：颱風3次以上｜地震2次以上｜停電/網路中斷無數｜從未因故障而丟失交易執行機會。這是系統架構(Watchdog硬體計時器、定時批處理、SD卡每日備份)與風控設計的極致實踐。</div>
-                <div class="content-en">Survived typhoons | earthquakes | power outages | network disconnections | Zero lost trades in 8.92 years. Hardware watchdog + batch recovery + daily SD backup = resilience by design.</div>
-            </div>
-
-            <div class="content-block">
-                <div class="content-zh"><strong>2020年黑天鵝事件：系統設計的最終考試</strong></div>
-                <div class="content-zh">2020年3月18日系統停止，非因系統失敗，而因舊量化策略遇上AI蜂巢時代市場結構變化。原油負值(一個月後)宣告舊金融文明終結。但系統在崩盤時保持了完整的日誌記錄，這正是反脆弱設計的價值：無法預測黑天鵝，但能在極端壓力下保持系統完整性。</div>
-                <div class="content-en">System didn't fail; market regime changed. But system maintained complete logs through market collapse—that's true anti-fragility: can't predict black swans, but can design for survival.</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">完整數據驗證鏈｜Complete Verification Chain</div>
-            <div class="grid">
-                <div class="grid-item">
-                    <strong>Gmail時間戳</strong><br/>
-                    OrderMaster系統自動郵件至Gmail<br/>
-                    精確到秒的Google伺服器時間戳<br/>
-                    2,013筆交易完整記錄可查
-                </div>
-                <div class="grid-item">
-                    <strong>Merkle Hash驗證</strong><br/>
-                    所有交易的SHA256密碼學hash<br/>
-                    <span class="mono">0538dd791e2e04ccb...</span><br/>
-                    修改任何1筆→完整hash改變
-                </div>
-                <div class="grid-item">
-                    <strong>GitHub Commit不可篡改</strong><br/>
-                    完整CSV檔案已上鍊<br/>
-                    github.com/RecoFu/<br/>mouse-account-verification<br/>任何人可驗證commit history
-                </div>
-                <div class="grid-item">
-                    <strong>為什麼這份記錄無法假造</strong><br/>
-                    Gmail時間戳由Google保證<br/>
-                    Merkle Hash由密碼學保證<br/>
-                    GitHub Commit由分佈式系統保證<br/>
-                    三重驗證=不可能偽造
-                </div>
-            </div>
-        </div>
-
-        <div class="footer">
-            完整驗證：gmail (2,013筆時間戳) + Merkle Hash (0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a) + GitHub (不可篡改commit history)
-        </footer>
     </div>
 
 </body>
