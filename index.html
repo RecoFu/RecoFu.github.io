@@ -3,119 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reco Fu · Principal Resilience Architect</title>
+    <title>Reco Fu - Systems Architect | Resume</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; max-width: 900px; margin: 40px auto; padding: 20px; color: #333; background: #fff; }
-        h1, h2, h3 { color: #1a1a1a; }
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; vertical-align: top; }
-        th { background: #f4f4f4; }
-        a { color: #0066cc; }
-        blockquote { border-left: 4px solid #0066cc; padding-left: 20px; font-style: italic; color: #555; margin: 30px 0; }
-        ul { padding-left: 20px; }
+        /* --- CSS 樣式設定 --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        /* Bilingual Row Structure */
+        .bi-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+
+        .col-en, .col-zh {
+            flex: 1;
+        }
+
+        .col-zh {
+            color: #555;
+            border-left: 1px solid #ddd;
+            padding-left: 20px;
+        }
+
+        /* Sections */
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: #34495e;
+        }
+
+        ul {
+            margin-left: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Project Cards */
+        .project-card {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+
+        /* Skills Tag */
+        .skills-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .bi-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .col-zh {
+                border-left: none;
+                border-top: 1px dashed #ccc;
+                padding-left: 0;
+                padding-top: 10px;
+            }
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            .nav-links {
+                display: none; /* 簡化手機版選單 */
+            }
+        }
     </style>
 </head>
 <body>
 
-<h1>Reco Fu · Principal Resilience Architect<br>傅瑞乾 · 首席韌性架構師</h1>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Reco Fu</h1>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<p>📍 Taichung, Taiwan | 🌐 <a href="https://www.linkedin.com/in/recofu">LinkedIn</a> | 📂 <a href="https://github.com/RecoFu">GitHub</a></p>
+    <section class="hero">
+        <div class="container">
+            <h2>Systems Architect | Root Cause Diagnostician</h2>
+            <p>"I solve problems that break other engineers." <br> 「我解決那些讓其他工程師束手無策的問題。」</p>
+        </div>
+    </section>
 
-<blockquote>
-I am not looking for a job. I am looking for the next chaos worth taming.<br>
-我不是在尋找一份工作。我是在尋找，下一個值得被馴服的「混沌」。
-</blockquote>
+    <section id="about">
+        <div class="container">
+            <h3>Core Competencies | 核心能力</h3>
+            <div class="bi-row">
+                <div class="col-en">
+                    <ul>
+                        <li><strong>Root Cause Analysis:</strong> Expert in Broadcom NIC, ransomware recovery, and deep system failures.</li>
+                        <li><strong>Autonomous System Design:</strong> 10-year unattended trading system resilience.</li>
+                        <li><strong>IT/OT Integration:</strong> Infrastructure for SEA factories.</li>
+                        <li><strong>AI Security:</strong> ChatGPT API integration with -75% vulnerability risk.</li>
+                    </ul>
+                </div>
+                <div class="col-zh">
+                    <ul>
+                        <li><strong>根因分析：</strong> 精通 Broadcom 網卡故障、勒索病毒恢復及深層系統失效分析。</li>
+                        <li><strong>自動化系統設計：</strong> 具備十年無人值守交易系統的抗災韌性設計經驗。</li>
+                        <li><strong>IT/OT 整合：</strong> 跨東南亞工廠的基礎建設與資訊同步。</li>
+                        <li><strong>AI 安全：</strong> 整合 ChatGPT API 並降低 75% 的安全漏洞風險。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p>With 30+ years bridging physical (OT) and digital (IT/FinTech) chaos, I engineer anti-fragile, self-sustaining intelligent ecosystems that preserve value under extreme conditions.<br>
-30年穿梭物理世界（工業OT）與數位世界（IT/量化金融）的邊界，我的核心使命：為最高風險場景構建反脆弱、可自主運行的智慧生態系統。</p>
+    <section id="experience">
+        <div class="container">
+            <h3>Professional Timeline | 職業生涯</h3>
+            
+            <div class="project-card">
+                <div class="bi-row">
+                    <div class="col-en">
+                        <h4>AI Integration & Security (2022-Now)</h4>
+                        <ul>
+                            <li>Designed ChatGPT API security protocols.</li>
+                            <li>Maintained GDI (Google Daily Insights) open-source project.</li>
+                            <li>Multi-AI consensus decision-making framework.</li>
+                        </ul>
+                    </div>
+                    <div class="col-zh">
+                        <h4>AI 整合與安全 (2022-至今)</h4>
+                        <ul>
+                            <li>設計 ChatGPT API 安全通訊協定。</li>
+                            <li>維護 GDI (Google Daily Insights) 開源項目。</li>
+                            <li>開發多 AI 共識決策框架。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-<h2>Core Battlefields & Arsenal</h2>
-<table>
-    <thead>
-        <tr><th>Battlefield / 戰場</th><th>Key Arsenal / 核心武器</th><th>Key Engagement / 經典戰役</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Personal Ambient Security<br>個人環境守護</td><td>Guardian Distributed Intelligence (GDI)<br>守護者分散式智慧系統</td><td>GDI：個人周遭環境即時整合監管系統，透過分散式感測與即時分析，主動守護物理與數位邊界安全。<br>GDI: Real-time ambient integration system actively guarding physical-digital boundaries via distributed sensing and analysis.</td></tr>
-        <tr><td>Agricultural Automation<br>農業自動化</td><td>Embedded Systems, Hardware-Software Integration<br>嵌入式系統、硬軟整合</td><td>Automated poultry farm system, significantly reduced labor cost.<br>養雞場自動化系統，大幅降低人力成本。</td></tr>
-        <tr><td>Government Informatization<br>政府資訊化</td><td>Database & System Migration<br>資料庫與系統遷移</td><td>Central Taiwan household registration computerization.<br>整個中部戶役政系統電腦化。</td></tr>
-        <tr><td>Telecom Infrastructure<br>電信基礎設施</td><td>Billing Systems, ISDN/Frontrelay<br>帳單系統、ISDN/Frontrelay</td><td>Nationwide Chunghwa Telecom billing/printing/fee collection system.<br>全台灣中華電信帳單列印/催費系統。</td></tr>
-        <tr><td>Mobile Core Network<br>行動核心網路</td><td>3G Core Deployment<br>3G核心部署</td><td>Central Taiwan's first 3G core center.<br>中部第一座3G core center。</td></tr>
-        <tr><td>Financial Backbone Network<br>金融骨幹網路</td><td>ATM/T1 High-Reliability Network<br>ATM/T1高可靠網路</td><td>Nationwide backbone for TWSE, TAIFEX, etc.<br>全台灣證交所/期交所等金融骨幹網路建置。</td></tr>
-        <tr><td>Defense & Government Systems<br>國防與政府系統</td><td>Informationization, Database Architecture<br>資訊化、資料庫架構</td><td>Military "Jing Shi" project informatization.<br>國軍「精實專案」資訊化。</td></tr>
-        <tr><td>Protocol & Early Networks<br>協議與早期網路</td><td>FidoNet Pioneering, Secure Communication<br>FidoNet先驅、安全通信</td><td>Taiwan FidoNet node operator (1984–2000).<br>台灣FidoNet節點運營（1984–2000）。</td></tr>
-        <tr><td>Industrial 4.0 & Physical World<br>工業4.0 & 物理世界</td><td>IT/OT Fusion, Supply Chain Resilience<br>IT/OT深度融合、供應鏈韌性</td><td>Defeated ransomware in Cambodia with <strong>zero data loss</strong>.<br>柬埔寨工廠擊退勒索病毒，<strong>零資料損失</strong>。</td></tr>
-        <tr><td>Financial Markets & Algorithms<br>金融市場 & 演算法</td><td>Fully Automated Trading Architecture<br>全自動交易系統架構</td><td>Decade-long unattended system, >10× return.<br>無人系統十年存活，實現<strong>超過10倍</strong>回報。</td></tr>
-        <tr><td>Cloud & Intelligent Security<br>雲端 & 智慧安全</td><td>AI-Driven Defense, HA/DR<br>AI驅動防禦、高可用性架構</td><td>Reduced overhead by <strong>30–50%</strong> via automation.<br>自動化部署降低負擔<strong>30–50%</strong>。</td></tr>
-    </tbody>
-</table>
+            <div class="project-card">
+                <div class="bi-row">
+                    <div class="col-en">
+                        <h4>SEA Manufacturing IT Director (2010-2022)</h4>
+                        <ul>
+                            <li>Built infrastructure in Vietnam, Cambodia, Thailand.</li>
+                            <li>2015 Ransomware recovery: 36h, zero data loss.</li>
+                            <li>ERP + PLC + Firewall synchronized deployment.</li>
+                        </ul>
+                    </div>
+                    <div class="col-zh">
+                        <h4>東南亞製造業 IT 總監 (2010-2022)</h4>
+                        <ul>
+                            <li>於越南、柬埔寨、泰國從零構建 IT 基礎建設。</li>
+                            <li>2015年勒索病毒事件：36小時內恢復，零數據損失。</li>
+                            <li>實現 ERP、PLC 與防火牆的同步部署。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-<h2>Full Stack: From Physics to Machine Learning</h2>
-<ul>
-    <li>Cloud & SRE: AWS · GCP · Azure · VMware · Docker · Kubernetes · Ansible · Terraform · Prometheus · Grafana</li>
-    <li>Security & Network: Fortinet · Splunk · F5 BIG-IP · Zero Trust · TCP/IP · SD-WAN</li>
-    <li>Development & Quant: Python (Pandas/TensorFlow) · EasyLanguage · Shell · Fully Automated Trading · AI/LLM Integration</li>
-</ul>
-<ul>
-    <li>雲端與SRE：AWS · GCP · Azure · VMware · Docker · Kubernetes · Ansible · Terraform · Prometheus · Grafana</li>
-    <li>資安與網路：Fortinet · Splunk · F5 BIG-IP · 零信任架構 · TCP/IP · SD-WAN</li>
-    <li>開發與量化：Python (Pandas/TensorFlow) · EasyLanguage · Shell · 全自動交易系統 · AI/LLM整合</li>
-</ul>
+            <div class="project-card">
+                <div class="bi-row">
+                    <div class="col-en">
+                        <h4>SRE & System Diagnostics (2016-2017)</h4>
+                        <ul>
+                            <li>Diagnosed 100+ Broadcom NIC VMQ failures at LF.</li>
+                            <li>Increased system availability by 43% (99.99% uptime).</li>
+                        </ul>
+                    </div>
+                    <div class="col-zh">
+                        <h4>SRE 與系統診斷 (2016-2017)</h4>
+                        <ul>
+                            <li>於 LF 公司診斷超過 100 起 Broadcom 網卡 VMQ 失效案。</li>
+                            <li>提升系統可用性 43%，達成 99.99% 上線率。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h2>Selected Engagements (STAR)</h2>
+    <section id="portfolio">
+        <div class="container">
+            <h3>Key Projects | 關鍵專案</h3>
+            <div class="bi-row">
+                <div class="col-en">
+                    <h4>Autonomous Trading System (2003-2020)</h4>
+                    <p>10-year unattended system resilient to typhoons, earthquakes, and power outages. Growth from $5K to $1.3M.</p>
+                </div>
+                <div class="col-zh">
+                    <h4>自動交易系統 (2003-2020)</h4>
+                    <p>運行十年的無人值守系統，歷經颱風、地震與斷電考驗。資產從 5千美金成長至 130萬美金。</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h3>Poultry Farm Automation (1995–1996)</h3>
-<p>Situation: High labor cost in traditional farming.<br>Action: Designed hardware-software integrated automation system.<br>Result: Significantly reduced manpower and improved efficiency.</p>
-<p>養雞場自動化 (1995–1996)<br>情境：傳統養雞場人力成本高。<br>行動：設計硬軟整合自動化系統。<br>結果：大幅降低人力，提升生產效率。</p>
+    <section id="skills">
+        <div class="container">
+            <h3>Technical Skills | 技術棧</h3>
+            <div class="skills-container">
+                <p><strong>Cloud/DevOps:</strong> AWS, GCP, Azure, Docker, Kubernetes, Terraform, Ansible, Jenkins, CI/CD</p>
+                <p><strong>Security/Network:</strong> F5 Big-IP, Splunk, Ransomware Forensics, DDoS Mitigation</p>
+                <p><strong>Languages/DB:</strong> Python, Go, Shell, MySQL, PostgreSQL, MongoDB</p>
+            </div>
+        </div>
+    </section>
 
-<h3>Central Taiwan Household Registration Computerization (1996–1998)</h3>
-<p>Situation: Inefficient manual household registration processes.<br>Action: Led full computerization of central Taiwan system.<br>Result: Modernized regional administrative efficiency.</p>
-<p>中部戶役政系統電腦化 (1996–1998)<br>情境：戶政手動流程低效。<br>行動：領導整個中部戶役政系統電腦化。<br>結果：區域行政效率現代化。</p>
+    <section id="contact">
+        <div class="container">
+            <h3>Contact | 聯絡方式</h3>
+            <div class="bi-row">
+                <div class="col-en">
+                    <p>Email: reco@outlook.com</p>
+                    <p>GitHub: <a href="https://github.com/recofu">@recofu</a></p>
+                    <p>LinkedIn: <a href="#">Reco Fu</a></p>
+                </div>
+                <div class="col-zh">
+                    <p>電子郵件: reco@outlook.com</p>
+                    <p>GitHub 連結: <a href="https://github.com/recofu">@recofu</a></p>
+                    <p>領英: <a href="#">Reco Fu</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h3>Nationwide Telecom Billing & Collection System (1996–1998)</h3>
-<p>Situation: Need for reliable nationwide billing infrastructure.<br>Action: Built Frontrelay/ISDN machine room and printing/collection systems.<br>Result: Enabled efficient nationwide telecom billing operations.</p>
-<p>全台灣中華電信帳單/催費系統 (1996–1998)<br>情境：全國帳單催費需可靠基礎設施。<br>行動：建置Frontrelay/ISDN機房與列印催費系統。<br>結果：實現全國電信帳單高效運作。</p>
+    <footer>
+        <div class="container">
+            <p>© 2025 Reco Fu. All records are cryptographically verified. <br> 所有紀錄均經過加密驗證。</p>
+        </div>
+    </footer>
 
-<h3>Central Taiwan First 3G Core Center (1999–2003)</h3>
-<p>Situation: Transition to 3G mobile network in central Taiwan.<br>Action: Led deployment of region's first 3G core center.<br>Result: Established foundation for 3G services in central Taiwan.</p>
-<p>中部第一座3G Core Center (1999–2003)<br>情境：中部地區轉型3G行動網路。<br>行動：領導部署中部第一座3G核心中心。<br>結果：奠定中部3G行動服務基礎。</p>
-
-<h3>Nationwide Financial Backbone Network (1999–2003)</h3>
-<p>Situation: Financial institutions required high-reliability connectivity.<br>Action: Built ATM & T1 backbone for TWSE, TAIFEX, etc.<br>Result: Enabled secure, high-speed nationwide financial data exchange.</p>
-<p>全台灣金融骨幹網路 (1999–2003)<br>情境：金融機構需高可靠互聯。<br>行動：建置證交所/期交所等ATM&T1骨幹網路。<br>結果：實現全國金融資料安全高速交換。</p>
-
-<h3>Military "Jing Shi" Project Informatization (1994–1995)</h3>
-<p>Situation: Army unit required data processing modernization.<br>Action: Independently responsible for testing center and database construction.<br>Result: Significantly improved data processing and unit efficiency.</p>
-<p>國軍「精實專案」資訊化 (1994–1995)<br>情境：部隊需資料處理現代化。<br>行動：獨立負責測試中心與資料庫建置。<br>結果：大幅提升資料處理與單位運作效率。</p>
-
-<h3>FidoNet Pioneering (1984–2000)</h3>
-<p>Situation: Pre-internet era need for secure communication.<br>Action: Established and operated early FidoNet nodes.<br>Result: Pioneered secure information exchange in Taiwan.</p>
-<p>FidoNet先驅 (1984–2000)<br>情境：前網際網路時代需安全通信。<br>行動：建立並運營早期FidoNet節點。<br>結果：開創台灣安全資訊交換。</p>
-
-<h3>Root Cause Judgment - Virtualization Cluster NIC Crisis (2016)</h3>
-<p>Situation: Random network failures in Hyper-V cluster.<br>Action: Independently diagnosed Broadcom NIC VMQ issue.<br>Result: Convinced board to restructure, restoring stability.</p>
-<p>根因判定 - 虛擬化叢集網卡危機 (2016)<br>情境：Hyper-V叢集隨機網路故障。<br>行動：獨立診斷Broadcom NIC VMQ問題。<br>結果：說服董事會重構系統，恢復穩定。</p>
-
-<h3>Cambodia Factory Defense (2015)</h3>
-<p>Situation: Large-scale ransomware in vulnerable infrastructure.<br>Action: Physical isolation + offline backup + security rebuild.<br>Result: Recovery in 36 hours, <strong>zero data loss</strong>.</p>
-<p>柬埔寨工廠保衛戰 (2015)<br>情境：基礎設施脆弱的大型工廠遭遇勒索攻擊。<br>行動：物理隔離 + 離線備份 + 安全邊界重構。<br>結果：36小時內恢復生產，<strong>零資料損失</strong>。</p>
-
-<h3>Unattended Trading System (2003–2020)</h3>
-<p>Situation: Needed autonomous agent while overseas.<br>Action: Built resilient MultiCharts+Python system.<br>Result: Ran unattended nearly a decade, <strong>>10× return</strong>.</p>
-<p>無人交易系統 (2003–2020)<br>情境：人在海外，需要7×24自主金融決策代理人。<br>行動：開發多層冗餘MultiCharts+Python系統。<br>結果：無人值守穩定運行近十年，<strong>超過10倍</strong>回報。</p>
-
-<h3>AI/LLM Security Integration (2022–Present)</h3>
-<p>Situation: Emerging LLM adoption with security gaps.<br>Action: Designed secure API protocols for ChatGPT integration.<br>Result: Reduced vulnerability exposure by <strong>75%</strong>.</p>
-<p>AI/LLM安全整合 (2022–至今)<br>情境：LLM快速採用伴隨安全缺口。<br>行動：設計ChatGPT安全API通信協議。<br>結果：漏洞風險降低<strong>75%</strong>。</p>
-
-<h2>The Next Decade: My Sowing Plan</h2>
-<p>Seeking to seed resilient, intelligent systems in elite teams. Open to Global Tech, Finance, Supply Chain – Taiwan · Singapore · Remote.</p>
-<p>未來十年：我的播種計畫<br>
-尋求在精英團隊深植韌性智慧系統，專注AI治理、零信任基礎設施或量化風險管理。可考慮全球科技、金融、供應鏈 – 台灣 · 新加坡 · 遠端。</p>
-
-<p>Verification records available upon private message request.<br>
-驗證記錄可私訊索取。</p>
-
-<p><strong>Let's talk.</strong></p>
-
+    <script>
+        // 平滑捲動功能
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
