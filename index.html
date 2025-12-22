@@ -2,93 +2,130 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
-<title>Reco Fu 傅瑞乾 — Systems That Survive</title>
+<title>Reco Fu 傅瑞乾 — Systems Architect Resume</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
 body{
-  margin:0; padding:32px;
+  margin:0; padding:40px;
   font-family: system-ui, -apple-system, Segoe UI, sans-serif;
-  background:#ffffff; color:#000;
-  max-width:720px;
+  color:#000; background:#fff;
+  max-width:900px;
 }
-h1{font-size:1.6rem; margin:0;}
-h2{font-size:1.05rem; margin-top:28px;}
-p,li{font-size:0.92rem; line-height:1.55;}
-hr{border:none; border-top:1px solid #000; margin:20px 0;}
-.small{font-size:0.8rem;}
-ul{padding-left:18px; margin:8px 0;}
-.core{font-weight:600;}
-.note{border-left:3px solid #000; padding-left:10px; margin:14px 0;}
+h1{font-size:1.8rem; margin-bottom:4px;}
+h2{font-size:1.25rem; margin-top:36px;}
+h3{font-size:1.05rem; margin-top:22px;}
+p,li{font-size:0.95rem; line-height:1.6;}
+ul{padding-left:20px;}
+hr{border:none; border-top:1px solid #000; margin:28px 0;}
+.section-note{font-size:0.85rem; color:#222;}
 </style>
 </head>
-
 <body>
-
 <h1>Reco Fu 傅瑞乾</h1>
-<p class="core">
-Systems Architect · Quant Engineer · Failure Owner
-</p>
-
-<p class="small">
-40+ years systems · zero data loss · incidents survived, not avoided
-</p>
-
-<hr>
-
-<h2>What I Actually Do｜我真正負責的事</h2>
 <p>
-EN — I design and operate systems that must continue under failure,
-legal pressure, human error, and infrastructure collapse.
+Systems Architect · Quant Engineer · Long-Horizon Operator
+</p>
+<hr>
+<h2>Career Narrative｜職涯敘事（不是標語）</h2>
+<p>
+<strong>EN</strong><br>
+My career did not grow inside stable environments.  
+It grew inside systems that were already breaking.
 </p>
 <p>
-中 — 我負責的是：<strong>系統在出事時仍然成立</strong>。
+<strong>中</strong><br>
+我的職涯不是在「正常運作」的環境中成長的，  
+而是在<strong>已經出問題、而且沒有人能接手的系統裡</strong>被迫成熟。
 </p>
-
+<p>
+From early infrastructure work to quantitative systems, my role has
+consistently been the same:  
+to stay when others leave, and make the system explain itself.
+</p>
+<p>
+從基礎設施到量化系統，我的角色始終一致：  
+<strong>當系統失效、責任不清時，留下來把事情弄清楚。</strong>
+</p>
 <hr>
-
-<h2>Non-Marketing Facts｜不可包裝事實</h2>
+<h2>Timeline & Responsibility｜時間軸與責任演化</h2>
+<h3>Early Career — Owning What Others Avoided</h3>
+<p>
+I entered systems work not through greenfield design, but through
+legacy environments: undocumented behavior, fragile dependencies,
+and real-world consequences.
+</p>
+<p>
+我不是從乾淨的新系統開始，而是從<strong>沒文件、會出事、不能重來</strong>的舊系統開始。
+</p>
 <ul>
-<li>40+ years cross-generation systems (HW / OS / Network)</li>
-<li>8.92 years unattended automated trading (continuous execution)</li>
-<li>No data loss record, including ransomware & infrastructure failure</li>
-<li>Root-cause ownership down to driver / protocol layer</li>
+<li>Cross-generation OS and network environments</li>
+<li>Manual recovery before automation was possible</li>
+<li>Learning cost paid in downtime, not theory</li>
 </ul>
-
-<hr>
-
-<h2>Scars (Cost Paid)｜傷疤（已支付代價）</h2>
-<div class="note">
+<h3>Mid Career — Automation Under No Supervision</h3>
 <p>
-2015 Cambodia — factory-wide ransomware, ERP halted.<br>
-Result: zero data loss, no ransom, full recovery.
+The focus shifted from “keeping systems running” to
+“allowing systems to run without people.”
 </p>
 <p>
-2016 — random cluster crashes misdiagnosed for months.<br>
-Root cause: Broadcom VMQ driver behavior.
+重點不再是「人盯著系統」，而是<strong>系統在沒人時仍然成立</strong>。
 </p>
-</div>
-
-<hr>
-
-<h2>Unfalsifiable Layer｜高成本證偽層</h2>
-<p class="small">
-Claims here are not persuasive — they are expensive to falsify.<br>
-Verification requires logs, timelines, or cryptographic recomputation.
-</p>
-
-<ul class="small">
-<li>Time-continuous execution across disasters</li>
-<li>Merkle-hash verifiable records</li>
-<li>Behavior-level system evidence (not screenshots)</li>
+<ul>
+<li>8.92 years unattended automated trading execution</li>
+<li>Failure handling without human intervention</li>
+<li>Designing for boredom, not heroics</li>
 </ul>
-
-<hr>
-
-<p class="small">
-This page is written for audit, not for approval.<br>
-If you need systems that survive contact with reality — this is my work.
+<h3>Critical Incidents — Where the Scars Came From</h3>
+<p>
+<strong>2015 — Cambodia Ransomware Incident</strong><br>
+Factory-wide infection halted ERP operations.
 </p>
-
+<p>
+Outcome: zero data loss, no ransom paid, full operational recovery.
+</p>
+<p>
+<strong>2016 — Persistent Cluster Instability</strong><br>
+Random crashes misdiagnosed at application level for months.
+</p>
+<p>
+Root cause traced to Broadcom VMQ driver behavior under specific traffic patterns.
+</p>
+<p class="section-note">
+These were not “projects.”  
+They were situations where failure had real financial and human cost.
+</p>
+<hr>
+<h2>What the Scars Changed｜傷疤改變了什麼</h2>
+<ul>
+<li>I no longer trust dashboards without behavioral evidence</li>
+<li>I design systems assuming documentation will be wrong</li>
+<li>I optimize for recoverability, not elegance</li>
+</ul>
+<ul>
+<li>我不再相信只存在於簡報中的系統</li>
+<li>我假設文件會錯、流程會斷、人會離開</li>
+<li>我優先設計的是<strong>出事後還能回來</strong></li>
+</ul>
+<hr>
+<h2>Unfalsifiable Evidence Layer｜高成本證偽層</h2>
+<p>
+The following are not claims meant to impress, but statements that
+require real artifacts to refute.
+</p>
+<ul>
+<li>Continuous execution across disasters and infrastructure failures</li>
+<li>Merkle-hash verifiable records for trading history</li>
+<li>Driver- and protocol-level root cause ownership</li>
+</ul>
+<hr>
+<h2>Why This Matters to an Employer｜對公司的實際價值</h2>
+<p>
+If your system fails quietly, I am not useful.  
+If it fails publicly, legally, or financially — I am.
+</p>
+<p>
+如果你的系統只需要「好看」，我不適合。  
+如果你需要的是<strong>有人能在事情變糟時留下來</strong>，那正是我的角色。
+</p>
 </body>
 </html>
