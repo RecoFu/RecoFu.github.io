@@ -1,154 +1,69 @@
-<!DOCTYPE html>
-<html lang="zh-Hant-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reco F. | Chief Architect & AI Governance Strategist</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #0f172a; --secondary: #2563eb; --accent: #10b981;
-            --gray-100: #f8fafc; --gray-800: #1e293b; --text: #334155;
-        }
-        body { font-family: 'Inter', 'Noto Sans TC', sans-serif; color: var(--text); background: var(--gray-100); margin: 0; line-height: 1.7; }
-        .container { max-width: 1100px; margin: 50px auto; background: white; padding: 60px; box-shadow: 0 4px 30px rgba(0,0,0,0.05); border-radius: 2px; }
-        
-        /* Header */
-        header { border-bottom: 2px solid var(--primary); padding-bottom: 30px; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: flex-end; }
-        h1 { font-size: 3rem; margin: 0; color: var(--primary); letter-spacing: -2px; }
-        .contact-info { text-align: right; font-size: 0.9rem; }
-        .contact-info a { color: var(--secondary); text-decoration: none; margin-left: 15px; }
+# Reco F. | System Architect & Quantitative Strategist
+> **Axiom:** `(Logic && Quantifiable && Verifiable && Timestamp)`
+> **Strategic Ratio:** 20% Stability (Legacy Wisdom) || 80% Velocity (AI Leverage)
+> **Status:** 40 Years of Zero-Loss System Governance.
 
-        /* Sections */
-        section { margin-bottom: 50px; }
-        h2 { font-size: 1.5rem; color: var(--primary); border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 25px; display: flex; justify-content: space-between; }
-        h2 span { font-size: 0.8rem; color: var(--secondary); font-weight: normal; }
+---
 
-        /* Future Path Grid */
-        .path-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 20px 0; }
-        .path-card { background: var(--gray-100); padding: 20px; border-top: 4px solid var(--secondary); }
-        .path-card h3 { font-size: 1rem; margin-top: 0; color: var(--primary); }
-        .path-card p { font-size: 0.85rem; margin-bottom: 0; }
+## I. Executive Summary | 核心摘要：高斯收斂的系統治理
+**English:** A cross-domain architect with 40 years of empirical practice, specializing in merging the chaotic physical world (IT/OT, Manufacturing, Supply Chain) with high-order digital solutions (Quantitative Analytics, AI Automation). My career is a proof of "Anti-fragile" system design—from 3G core backbones to autonomous trading systems that survive typhoons and blackouts.
 
-        /* Milestone */
-        .milestone { display: grid; grid-template-columns: 180px 1fr; margin-bottom: 30px; }
-        .m-year { font-weight: bold; color: var(--secondary); font-family: monospace; }
-        .m-content h4 { margin: 0 0 10px 0; font-size: 1.1rem; }
-        .lang-switch { display: block; font-size: 0.85rem; color: #64748b; margin-top: 5px; }
+**中文：**
+一位擁有 40 年實踐經驗的跨領域架構師，專精於將混亂的物理世界（IT/OT、製造、供應鏈）與高階數位方案（量化分析、AI 自動化）進行深度整合。我的職涯即是「反脆弱」系統設計的證明：從 3G 電信骨幹到能在颱風停電中生存的無人值守自動化交易系統。
 
-        /* Philosophy */
-        .philosophy { background: #fffbeb; border: 1px solid #fef3c7; padding: 30px; border-radius: 8px; margin: 40px 0; }
-        .philosophy blockquote { margin: 0; font-size: 1.2rem; color: #92400e; font-style: italic; font-weight: 300; }
+---
 
-        /* The Mouse */
-        .mouse-section { background: #f1f5f9; padding: 30px; border-radius: 8px; font-size: 0.85rem; border: 1px dashed #cbd5e1; }
-        .mouse-header { color: #475569; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+## II. Technical Matrix | 技術矩陣 (Logic && Scale)
 
-        @media print { .container { margin: 0; box-shadow: none; } body { background: white; } .path-card { border: 1px solid #eee; } }
-    </style>
-</head>
-<body>
+### 1. IT/OT Convergence & Governance | 虛實整合架構與治理
+* **Scale:** Spearheaded IT/OT infrastructure for 4 major industrial groups across 3 countries (VN, TH, KH).
+* **Result:** 10% efficiency gain in digital management; Zero-loss record against ransomware attacks.
+* **中:** 主導越、泰、柬三國四大集團 IT/OT 基礎建設；數位管理效率提升 10%，維持零資料損失之資安紀錄。
 
-<div class="container">
-    <header>
-        <div>
-            <h1>Reco F.</h1>
-            <div style="color: var(--secondary); font-weight: bold; font-size: 1.2rem;">Systems Architect & AI Governance Strategist</div>
-        </div>
-        <div class="contact-info">
-            <div><i class="fas fa-map-marker-alt"></i> Taichung, Taiwan </div>
-            <div><i class="fas fa-envelope"></i> reco@outlook.com</div>
-            <div style="margin-top: 10px;">
-                <a href="https://linkedin.com/in/recofu"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/RecoFu"><i class="fab fa-github"></i> GitHub</a>
-            </div>
-        </div>
-    </header>
+### 2. SRE & System Resilience | 網站可靠性工程與韌性
+* **Capability:** Root Cause Analysis (RCA) at the kernel/driver level (e.g., Broadcom NIC VMQ).
+* **Optimization:** Reduced MTTR by 30% via automated monitoring (Prometheus, Grafana, Splunk).
+* **中:** 具備核心驅動層級之根因分析能力（如 Broadcom NIC VMQ 難題）；透過自動化監控降低 30% 平均故障處理時間。
 
-    <section>
-        <h2>Strategic 10-Year ROI Path <span>未來 10 年投資報酬路徑</span></h2>
-        <div class="path-grid">
-            <div class="path-card">
-                <h3>2025-2027: AI Security</h3>
-                <p>Governing the "AI Hive" and protecting logical integrity through AI Security Orchestration (ASO).<br>治理「AI 蜂巢」，透過安全編排防止邏輯崩潰。</p>
-            </div>
-            <div class="path-card" style="border-top-color: var(--accent);">
-                <h3>2027-2030: Edge OT AI</h3>
-                <p>Embedding LLMs into OT environments for real-time, autonomous Root Cause Analysis (RCA).<br>將 LLM 嵌入 OT 環境，達成工業級即時自主根因分析。</p>
-            </div>
-            <div class="path-card" style="border-top-color: var(--primary);">
-                <h3>2030-2035: Cognitive Arch</h3>
-                <p>Supervising autonomous capital agents with 40 years of architectural stability wisdom.<br>以 40 年架構經驗監理高流速的自主資本代理系統。</p>
-            </div>
-        </div>
-    </section>
+### 3. AI & LLM Integration | AI 與大語言模型整合 (2022-2025)
+* **Achievement:** Seamlessly fused LLMs into enterprise software ecosystems; developed GDI security wrappers for ChatGPT API.
+* **中:** 主導 LLM 與企業軟體生態之無縫融合；開發 GDI 即時守護系統，針對 AI API 進行安全性加固。
 
-    <section>
-        <h2>Professional Milestones <span>職業里程碑</span></h2>
-        
-        <div class="milestone">
-            <div class="m-year">2020 — PRESENT</div>
-            <div class="m-content">
-                <h4>AI Orchestration & Cloud Security</h4>
-                <span class="lang-switch">AI 編排與雲端安全治理</span>
-                <p>Architected GDI real-time defense. Bridging the gap between LLM capabilities and enterprise security. 75% reduction in API communication vulnerabilities.<br>建構 GDI 即時防禦架構，對接 LLM 產能與企業安全，降低 75% API 通信風險。</p>
-            </div>
-        </div>
+---
 
-        <div class="milestone">
-            <div class="m-year">2010 — 2022</div>
-            <div class="m-content">
-                <h4>Overseas IT/OT Director (Multi-National)</h4>
-                <span class="lang-switch">跨國 IT/OT 治理主管</span>
-                <p>Led IT infrastructure for 4 mega-factories in TH, VN, KH. Achieved 8-hour RTO during Ransomware attack with zero data loss. 40-year record of zero system poisoning.<br>主導東南亞四大廠區 IT 基礎建設。於勒索病毒攻擊中達成 8 小時完全復原、零資料遺失。維持 40 年零中毒紀錄。</p>
-            </div>
-        </div>
+## III. Strategic Milestones | 關鍵里程碑
 
-        <div class="milestone">
-            <div class="m-year">2016 — 2017</div>
-            <div class="m-content">
-                <h4>SRE & Kernel Root Cause Analysis</h4>
-                <span class="lang-switch">SRE 與核心層根因分析</span>
-                <p>Identified and resolved stochastic Broadcom NIC driver failure on high-concurrency clusters. Improved MTTR by 30%.<br>解決高併發叢集下的 Broadcom 網卡驅動隨機失效問題。縮短 30% 平均故障處理時間。</p>
-            </div>
-        </div>
+### [Epoch 4: AI Intelligence & Security] 2020 - 2025
+* **AI Ecosystem Bridge:** Bridging technical logic with business value in the Generative AI era.
+* **中: AI 智慧與安全:** 在生成式 AI 時代，擔任技術邏輯與業務價值間的橋樑，構建防禦性 AI 架構。
 
-        <div class="milestone">
-            <div class="m-year">1999 — 2003</div>
-            <div class="m-content">
-                <h4>Critical Financial Backbone Deployment</h4>
-                <span class="lang-switch">金融關鍵骨幹網路建置</span>
-                <p>Engineered T1/ATM backbones for National Stock/Futures Exchanges and Banking Infrastructure.<br>建置國家級證券、期貨交易所及銀行體系之 T1/ATM 骨幹網絡。</p>
-            </div>
-        </div>
-    </section>
+### [Epoch 3: Global Infrastructure & SRE] 2010 - 2020
+* **Overseas MIS Director (PH Group / TY / LF):** Managed large-scale factory IT/OT from zero to one.
+* **Network Kernel Breakthrough:** Solved random crash issues for massive clusters by identifying NIC driver flaws.
+* **中: 全球基礎設施與 SRE:** 橫跨東南亞多國，從零構建大型工廠 IT/OT 體系；成功偵測並解決超大型叢集之網路核心驅動故障。
 
-    <div class="philosophy">
-        <blockquote>
-            "Quantitative Resonance cannot survive in the AI Hive."<br>
-            <span style="font-size: 1rem; font-weight: 400; font-style: normal; display: block; margin-top: 15px;">
-                「2012年5萬起始的小白鼠帳戶死於2020/3/18，證明了量化共振無法在AI蜂巢中存活；一個月後的負原油就是舊文明的葬禮，宣告了以AI治理為核心的新交易紀元開啟。」
-            </span>
-        </blockquote>
-    </div>
+### [Epoch 2: Financial & Telecom Backbone] 1996 - 2010
+* **Critical Infrastructure:** Built T1/ATM backbones for Taiwan Stock Exchange and 3G Core centers.
+* **中: 金融與電信骨幹:** 建置證交所、期交所、集保中心之全國級骨幹網路；部署中部首座 3G 核心中心。
 
-    <section class="mouse-section">
-        <div class="mouse-header"><i class="fas fa-flask"></i> Historical Verification | 小白鼠帳戶驗證 (Logic Sample)</div>
-        <p>This "Mouse Account" (2012-2020) served as a <b>Proof of Concept</b> for fully unmanned, autonomous trading resilience. It successfully weathered typhoons, power outages, and rollover events in Taichung while the operator was overseas.<br>
-        此帳戶（2012-2020）作為<b>概念驗證 (PoC)</b>，測試了無人值守自主交易的韌性。在操作員身處海外期間，系統於台中獨自應對了颱風、斷電與換倉挑戰。</p>
-        <div style="display: flex; gap: 20px; align-items: center;">
-            <span style="color: var(--accent); font-weight: bold;">ROI: +2700%</span>
-            <span style="color: var(--text-muted);">|</span>
-            <a href="https://github.com/RecoFu/mouse-account-verification" style="color: var(--secondary);">Verification Repo (GitHub)</a>
-        </div>
-    </section>
+### [Epoch 1: Legacy Wisdom & Automation] 1984 - 1996
+* **FidoNet Pioneer (Node 6:722/228):** Independent maintenance of global message relay systems in the pre-internet era.
+* **Industrial Automation:** Developed QBasic-based control systems for agricultural automation.
+* **中: 經典智慧與自動化:** 在網際網路黎明期獨立維護 FidoNet 節點；開發早期農業自動化控制系統。
 
-    <footer style="margin-top: 50px; text-align: center; font-size: 0.8rem; color: #94a3b8;">
-        (Logic && Quantifiable && Verifiable && Timestamp) | Reco F. 2025 Strategy Release
-    </footer>
-</div>
+---
 
-</body>
-</html>
+## IV. Education & Certifications | 學歷與認證
+* **Electrical Engineering (Nankai):** Deep understanding of hardware, power, and automatic control.
+* **Microsoft Learn AI Skills Challenge (2023)**
+* **Google Analytics Individual Certification (2021)**
+* **AI & Business Data Applications Certificate (2020)**
+
+---
+
+## V. Appendix: The "Anti-Fragile" Verification | 附錄：反脆弱驗證 (The Lab Rat Account)
+> **Strategic Insight:** "The 2020/3/18 failure of the quantitative resonance model marked the funeral of the Old Civilization, signaling the birth of the AI Governance Era."
+
+* **2012-2020 Automated Performance:** Achieved **+2700%** cumulative return through fully autonomous systems.
+* **Resilience Test:** The system survived earthquakes, power outages, and rollover cycles in an empty house while the architect was overseas.
+* **Verification:** [https://github.com/RecoFu/mouse-account-verification](https://github.com/RecoFu/mouse-account-verification)
