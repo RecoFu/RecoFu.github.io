@@ -1,229 +1,212 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reco F. | Systems Architect Portfolio</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --paper-white: #ffffff;
-            --ink-black: #1a202c;
-            --gauss-blue: #2c5282;
-            --accent-gold: #b7791f;
-            --border-gray: #e2e8f0;
-        }
+# 傅瑞乾 | Reco Fu
+## 虛實整合系統工程師｜根因診斷專家｜自動化戰士｜40年零損失記錄
+**Principal Architect | Root Cause Analyst | Autonomous Systems Engineer | 40 Years Zero-Loss Track Record**
 
-        body {
-            background-color: #f8fafc;
-            color: var(--ink-black);
-            font-family: 'Inter', 'Noto Sans TC', serif;
-            margin: 0;
-            padding: 0;
-        }
+---
 
-        .page {
-            max-width: 1000px;
-            margin: 40px auto;
-            background: var(--paper-white);
-            padding: 80px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
+## 核心定位 | Core Positioning
 
-        /* Gaussian Curve Background Decal */
-        .page::before {
-            content: "f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}";
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            font-size: 0.8rem;
-            color: #edf2f7;
-            font-family: serif;
-        }
+| 維度 | 中文 | English |
+|------|------|---------|
+| **職業** | 系統架構師｜SRE｜根因診斷｜虛實融合｜AI安全 | Principal Architect \| SRE \| Root Cause Analysis \| IT/OT Fusion \| AI Security |
+| **特質** | 決策權優先｜反官僚｜小團隊｜戰損驗證｜系統韌性 | Authority-First \| Anti-Bureaucracy \| Small Teams \| Battle-Tested \| Resilience by Design |
+| **尋求** | 技術顧問($110-150K/年) \| Fintech CTO \| 3-6月短期專案 | Tech Consultant \| Fintech CTO \| 3-6 Month Projects |
+| **地點** | 台中｜遠距優先｜全球接受 | Taichung \| Remote-First \| Global Ready |
 
-        header {
-            border-bottom: 2px solid var(--gauss-blue);
-            padding-bottom: 30px;
-            margin-bottom: 40px;
-        }
+---
 
-        h1 { font-size: 2.8rem; margin: 0; color: var(--gauss-blue); font-weight: 800; }
-        .contact-info { margin-top: 15px; font-size: 0.9rem; color: var(--accent-gold); display: flex; gap: 20px; }
-        .contact-info a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; }
-        .contact-info a:hover { border-bottom: 1px solid var(--accent-gold); }
+## 4大核心競爭力 | 4 Core Competencies (量化驗證)
 
-        .axiom-bar {
-            background: #f1f5f9;
-            padding: 15px 25px;
-            border-radius: 4px;
-            margin: 30px 0;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-        }
+### 1️⃣ 虛實整合架構 | IT/OT Integration Architecture
+**30 years spanning hardware/software/physical/data**
 
-        h2 { font-size: 1.4rem; color: var(--gauss-blue); text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid var(--border-gray); padding-bottom: 10px; margin-top: 50px; }
+30年跨硬體/軟體/現實/數據的垂直整合經驗｜領導4國工廠IT/OT從零建設｜成功案例：
+- 勒索病毒 36h 零損失恢復
+- Broadcom NIC 100+ 案例診斷
+- ERP 導入 10% 效率提升
 
-        .module { margin-bottom: 40px; }
-        .module-header { display: flex; justify-content: space-between; align-items: baseline; }
-        .module-title-en { font-size: 0.85rem; color: #718096; text-transform: uppercase; font-weight: 600; }
-        .module-title-ch { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; }
+*Led IT/OT infrastructure build in 4 countries | Zero-loss ransomware recovery in 36h | Diagnosed 100+ unsolvable NIC cases | 10% ERP efficiency gain*
 
-        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 10px; }
-        .content-item { font-size: 0.95rem; }
-        .content-item b { color: var(--gauss-blue); }
+---
 
-        .timeline-box { margin-bottom: 20px; padding-left: 20px; border-left: 2px solid var(--border-gray); }
-        .year { font-weight: 800; color: var(--gauss-blue); font-size: 0.9rem; }
+### 2️⃣ 量化自動化策略 | Quantitative & Automation Strategy
+**15+ years building autonomous trading systems**
 
-        .chart-container { background: #fff; padding: 20px; border: 1px solid var(--border-gray); border-radius: 8px; margin-top: 20px; }
+15+年量化交易系統開發｜獨立設計全自動台指期貨系統｜無人值守8.92年運行｜成就：
+- **$5K → ¥1.35M** (27倍增長)
+- **颱風/地震/停電** 零中斷
+- **2017年:** 89.59% 錯誤率仍獲利 102% (容錯能力超強)
+- **系統精神:** 2020年死於市場黑天鵝，非系統失敗
 
-        .philosophy-card {
-            background: var(--gauss-blue);
-            color: white;
-            padding: 40px;
-            border-radius: 8px;
-            margin: 60px 0;
-            text-align: center;
-            font-style: italic;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-        }
+*$5K→$1.35M (27x growth) | 8.92 years unattended operation | Survived typhoons/earthquakes/power outages | 89.59% error rate but +102% profit*
 
-        .footer { text-align: center; color: #a0aec0; font-size: 0.8rem; margin-top: 80px; }
+---
 
-        @media print {
-            body { background: white; }
-            .page { box-shadow: none; margin: 0; padding: 40px; }
-        }
-    </style>
-</head>
-<body>
+### 3️⃣ 系統韌性與根因診斷 | System Resilience & Root Cause Analysis
+**SRE mindset + forensic-level problem solving**
 
-<div class="page">
-    <header>
-        <h1>Reco F. (傅瑞乾)</h1>
-        <div class="contact-info">
-            <span><i class="fas fa-envelope"></i> reco@outlook.com</span>
-            <span><i class="fas fa-map-marker-alt"></i> Taichung, Taiwan</span>
-            <a href="https://linkedin.com/in/recofu"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/RecoFu"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-    </header>
+SRE思維｜精通 Prometheus/Grafana/Splunk｜獨立診斷：
+- Broadcom NIC VMQ 隨機故障（業界無人能解）
+- **故障排除時間(MTTR)** 縮短 30%
+- 為複雜網路建立自動化診斷框架
 
-    <div class="axiom-bar">
-        <span>\[ Axiom: (Logic \land Quantifiable \land Verifiable \land Timestamp) \]</span>
-        <span>\[ Strategic Leverage: 20\% Stability \mid 80\% Velocity \]</span>
-    </div>
+*Diagnosed industry-unsolvable Broadcom NIC VMQ failures independently | Reduced MTTR by 30% | Built automated diagnostic framework for complex networks*
 
-    <section class="module">
-        <div class="module-header">
-            <span class="module-title-ch">戰略價值定位</span>
-            <span class="module-title-en">Strategic Value Proposition</span>
-        </div>
-        <div class="content-grid">
-            <div class="content-item">
-                <b>[IT/OT Convergence]</b><br>
-                40 years of bridging the gap between physical electrical systems and high-level cloud architectures. Specialized in high-availability systems that operate in extreme conditions.
-            </div>
-            <div class="content-item">
-                <b>[虛實整合治理]</b><br>
-                具備 40 年從電機底層到雲端架構的垂直整合經驗。擅長在極端物理環境與數位戰場中，建構高可用性且具備韌性的治理體系。
-            </div>
-        </div>
-    </section>
+---
 
-    <section class="module">
-        <h2>Career Milestones | 職涯關鍵里程碑</h2>
+### 4️⃣ 全棧技術堆疊 | Full-Stack Technical Mastery
+**From firmware to cloud, from protocols to AI**
 
-        <div class="timeline-box">
-            <div class="year">2020 — 2025</div>
-            <div class="module-title-ch">AI 系統整合與安全治理 (AI Security & Governance)</div>
-            <p>融合 LLM 與企業軟體生態，確保隨機性模型在確定性業務邏輯中的無縫運行。研發 GDI 即時守護系統，將安全漏洞風險降低 75%。</p>
-        </div>
+| 層級 | 技術 |
+|-----|------|
+| **底層** | PLC / 自動控制 / 電機 / Watchdog 硬體設計 |
+| **中層** | Python / EasyLanguage / Shell / Git |
+| **上層** | AWS / GCP / Kubernetes / Terraform |
+| **AI** | Gemini / ChatGPT API 安全集成（漏洞降 75%） |
+| **協議** | FidoNet 先驅（1984） |
 
-        <div class="timeline-box">
-            <div class="year">2010 — 2022</div>
-            <div class="module-title-ch">跨國製造業 MIS 主管 (Overseas IT/OT Director)</div>
-            <p>在越、泰、柬三國主導 4 座大型工廠的 IT 基礎建設與資安防禦。在柬埔寨遭遇勒索攻擊時，實現 8 小時內 100% 數據復原，確保 40 年零資料損失紀錄。</p>
-        </div>
+---
 
-        <div class="timeline-box">
-            <div class="year">2017 — 2018</div>
-            <div class="module-title-ch">SRE 網站可靠性工程師 (LF台北)</div>
-            <p>深入 Broadcom 核心驅動層級判定隨機當機根因。利用 Splunk 與 F5 工具鏈將系統平均故障排除時間 (MTTR) 縮短 30%。</p>
-        </div>
+## 10個不可否認的戰役 | 10 Unforgeable Battle Records
 
-        <div class="timeline-box">
-            <div class="year">1984 — 2003</div>
-            <div class="module-title-ch">數位協議開拓與金融骨幹 (Legacy & Infrastructure)</div>
-            <p>獨立建置 FidoNet 節點；負責證交所與各大金融機構的 T1/ATM 骨幹網路整合，深耕網路協議底層架構。</p>
-        </div>
-    </section>
+| 年份 | 事件 | 量化成就 |
+|------|------|---------|
+| 1984-00 | FidoNet 先驅 | 台灣網路基礎建設｜編號 6:722/228｜協議安全 DNA |
+| 1994-95 | 國軍精實 | 資料庫電腦化｜效率提升數倍｜軍方信賴 |
+| 1995-96 | 養雞場自動化 | 系統設計 + 硬軟整合｜人力成本大幅下降 |
+| 1996-98 | 戶役政 + 中華電信 | 全國級系統｜催費機房｜PBX 交換機｜全台規模 |
+| 1999-03 | 3G核心 + 金融骨幹 | 中部 3G 中心｜證交所/期交所/集保 ATM 網路｜金融命脈 |
+| **2003-20** | **無人交易系統** | **8.92年零中斷｜颱風/地震/停電存活｜27倍報酬** |
+| 2015 | 柬埔寨勒索 | 36h 零損失恢復｜完整日誌保存｜真刀實槍 |
+| 2016-17 | Broadcom NIC 診斷 | 100+ 案例｜業界無人能解｜MTTR ↓30%｜可用性 ↑43% |
+| 2010-22 | 東南亞4廠MIS | 越南/柬埔寨/泰國｜IT/OT 從零建設｜零數據損失｜效率 ↑10% |
+| 2022-NOW | GDI + AI 安全 | Google Daily Insights 開發｜ChatGPT API 安全設計｜漏洞 ↓75% |
 
-    <div class="philosophy-card">
-        "2012年5萬起始的小白鼠帳戶死於2020/3/18，證明了量化共振無法在AI蜂巢中存活；一個月後的負原油就是舊文明的葬禮，宣告了以AI治理為核心的新交易紀元開啟。"
-    </div>
+---
 
-    <section class="module">
-        <div class="module-header">
-            <span class="module-title-ch">實驗性量化實績 (小白鼠驗證)</span>
-            <span class="module-title-en">Quant Lab: Experimental Verification</span>
-        </div>
-        <p style="font-size: 0.9rem; color: #4a5568;">
-            此帳戶作為極端壓力測試環境，驗證全自動化算法在無人值守下的長期獲利能力與系統韌性。
-        </p>
-        <div class="chart-container">
-            <canvas id="quantChart"></canvas>
-        </div>
-        <p style="text-align: right; font-size: 0.8rem;">
-            Verification Hash: <a href="https://github.com/RecoFu/mouse-account-verification">SHA-256 Proof @ GitHub</a>
-        </p>
-    </section>
+## 無法假造的驗證 | Unforgeable Verification
 
-    <div class="footer">
-        <p>Axiomatically Generated | Timestamp: 2025.12.23 | Version 4.0.1</p>
-    </div>
-</div>
+### 🔐 Gmail 精確到秒
+- 2,013 筆交易自動郵件
+- Google 伺服器時間戳（法律級證據）
+- 無人能偽造時間戳
 
-<script>
-    const ctx = document.getElementById('quantChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
-            datasets: [{
-                label: 'Cumulative Growth (%)',
-                data: [0, 60, 200, 620, 530, 1175, 1433, 2292, 2700],
-                borderColor: '#2c5282',
-                backgroundColor: 'rgba(44, 82, 130, 0.05)',
-                borderWidth: 3,
-                fill: true,
-                pointRadius: 4,
-                tension: 0.3
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: { display: false }
-            },
-            scales: {
-                y: {
-                    ticks: { callback: function(value) { return value + '%'; } },
-                    grid: { color: '#f1f5f9' }
-                }
-            }
-        }
-    });
-</script>
+### 🔐 Merkle Hash (SHA256)
+```
+0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a
+```
+修改任何 1 筆 → 整個 hash 改變｜無法偽造｜密碼學保證
 
-</body>
-</html>
+### 🔐 GitHub Commit 不可篡改
+- 完整 CSV 檔案上鍊
+- Commit history 永久記錄
+- 任何人可驗證
+
+### 🔐 零資料損失 40 年
+- 在職期間零損失
+- 勒索/故障/極端環境均存活
+- 完整追蹤日誌
+
+---
+
+## 小白鼠帳戶完整 PoW | Autonomous Trading System 2012-2020
+
+### 關鍵數據
+
+| 指標 | 數值 |
+|------|------|
+| 運行時長 | 8.92 年（無人值守） |
+| 總交易筆數 | 2,013 筆 |
+| 初始資本 | ¥50,000 |
+| 峰值（2019） | ¥1,350,000 |
+| 最終值（2020） | ¥30,000 |
+| 總增長 | 27 倍 → 黑天鵝爆倒 |
+| 系統中斷次數 | 0（颱風/地震/停電均存活） |
+
+---
+
+### 年度績效完整表
+
+| 年份 | 帳戶 | 期初¥ | 期末¥ | 年報酬% | 累計報酬% | 錯誤率% | 獲利因子 |
+|------|------|-------|-------|---------|----------|---------|----------|
+| 2012 | 元大 | 50K | 50K | 0 | 0 | 100 | 0.00 |
+| 2013 | 元大 | 50K | 80K | 60 | 60 | 2.33 | 0.78 |
+| 2014 | 元大 | 80K | 150K | 87.5 | 200 | 0 | 0.97 |
+| 2015 | 元大 | 150K | 360K | 140 | 620 | 0 | 0.87 |
+| 2016 | KGI | 360K | 315K | -12.36 | 530.99 | 0 | 0.94 |
+| **2017** | **KGI** | **315K** | **637K** | **102.13** | **1175.42** | **89.59** | **2.75** |
+| 2018 | KGI | 637K | 997K | -0.01 | 143.34 | 40.88 | 1.67 |
+| **2019** | **KGI** | **997K** | **1.35M** | **35.31** | **229.27** | **33.10** | **2.04** |
+| **2020** | **KGI** | **1.35M** | **30K** | **-97.78** | **-92.68** | **33.73** | **2.29** |
+
+---
+
+### 為什麼 2017 年 89% 錯誤率仍賺 102%？
+
+**系統容錯能力的極限證明**
+
+2017 年出現 89.59% 的交易錯誤率，但全年仍獲利 102.13%。
+
+**工程學原理：** 一個設計良好的系統可以容忍 90% 的組件故障。剩下 10% 正確交易加上風控機制（自動止損、倉位限制、每日上限）仍能產生正獲利。
+
+這不是運氣，這是**容錯設計**的實證。對 SRE/CTO 來說，比 10 個成功案例都有說服力。
+
+*System fault tolerance design can absorb 90% component failures while maintaining profitability through proper risk management. This is engineering-grade resilience proof, not luck.*
+
+---
+
+### 極端環境運行 8.92 年零中斷
+
+系統在台中家中運行，經歷：
+- ✅ 颱風 3 次以上
+- ✅ 地震 2 次以上  
+- ✅ 停電/網路中斷無數次
+- ✅ 從未因故障而丟失交易執行機會
+
+**設計方案：** Watchdog 硬體計時器 + 定時批處理 + SD 卡每日備份 + 自動重啟
+
+*Survived typhoons | earthquakes | power outages | network disconnections | Zero lost trades in 8.92 years*
+
+---
+
+### 2020 年黑天鵝事件：系統設計的最終考試
+
+**系統停止日期：2020 年 3 月 18 日**
+
+**非系統失敗，而是市場時代更新：**
+- 舊量化策略（技術分析 + 基本面）遇上 AI 蜂巢時代市場結構改變
+- 一個月後原油負值（史上首次）宣告舊金融文明終結
+- 系統在崩盤時保持了完整的日誌記錄
+
+**反脆弱設計的真正價值：** 無法預測黑天鵝，但能在極端壓力下保持系統完整性。這才是 2020 年失敗的意義。
+
+*System didn't fail; market regime changed. But system maintained complete logs through market collapse—that's true anti-fragility.*
+
+---
+
+## 聯絡方式 | Contact
+
+📧 **Email:** reco@outlook.com  
+🔗 **GitHub:** github.com/RecoFu  
+💼 **LinkedIn:** linkedin.com/in/recofu  
+✅ **完整驗證:** github.com/RecoFu/mouse-account-verification  
+
+**Merkle Hash:** `0538dd791e2e04ccb715db5aa548a83cc6b6cba1b9b62d5b4d75fe718bdd2f9a`
+
+---
+
+## 最後的話 | Final Statement
+
+不是「我很成功」的故事。
+
+而是「我在最壞環境活下來」的證據。
+
+Gmail + Merkle Hash + GitHub Commit = 無法假造的履歷
+
+40 年戰損，0 次資料損失。
+
+這是我能提供的全部。
+
+---
+
+*© 2025 傅瑞乾 Reco Fu | 所有數據可驗證 | All Data Verifiable*
