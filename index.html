@@ -13,7 +13,6 @@
             --spec-border: #dee2e6;
             --accent: #d35400;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Noto Sans TC', sans-serif;
@@ -22,7 +21,6 @@
             line-height: 1.6;
             padding: 40px 10px;
         }
-
         .spec-container {
             max-width: 900px;
             margin: 0 auto;
@@ -31,19 +29,16 @@
             padding: 60px;
             position: relative;
         }
-
         /* 浮水印與編號感 */
         .spec-container::before {
             content: "SYSTEM ARTIFACT: 40Y_RECO_FU";
             position: absolute; top: 10px; right: 15px;
             font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #ccc;
         }
-
         /* Header */
         header { border-bottom: 3px solid var(--spec-blue); padding-bottom: 20px; margin-bottom: 40px; }
         .name { font-family: 'Noto Serif TC', serif; font-size: 48px; color: var(--spec-blue); }
         .tagline { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--spec-grey); margin-top: 5px; }
-
         /* Interaction Protocol - 使用說明 */
         .protocol-section {
             background: #f1f4f8;
@@ -52,24 +47,20 @@
             margin-bottom: 40px;
         }
         .protocol-title { font-weight: 900; font-size: 18px; margin-bottom: 15px; color: var(--spec-blue); }
-
         .guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
         .guide-item h5 { font-weight: 700; font-size: 14px; margin-bottom: 10px; color: var(--spec-grey); text-transform: uppercase; }
         .guide-item ul { list-style: none; font-size: 14px; }
         .guide-item ul li { margin-bottom: 5px; position: relative; padding-left: 15px; }
         .guide-item ul li::before { content: "»"; position: absolute; left: 0; color: var(--spec-blue); }
-
         /* Ten Battles - 3 Lines Each */
         .section-title {
             font-family: 'Noto Serif TC', serif; font-size: 22px; color: var(--spec-blue);
             margin: 40px 0 25px 0; border-bottom: 1px solid var(--spec-blue);
         }
-
         .battle-record { margin-bottom: 25px; }
         .battle-line-1 { font-weight: 700; font-size: 16px; color: #111; display: flex; justify-content: space-between; }
         .battle-line-2 { font-size: 14px; color: #333; margin-top: 2px; }
         .battle-line-3 { font-size: 13px; color: #666; font-style: italic; }
-
         /* Project Links */
         .lab-links { display: flex; gap: 20px; margin-top: 30px; }
         .lab-card {
@@ -79,20 +70,16 @@
         .lab-card:hover { background: #f0f7ff; }
         .lab-card strong { color: var(--spec-blue); font-size: 14px; }
         .lab-card p { font-size: 12px; margin-top: 5px; color: #555; }
-
         footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--spec-border); font-size: 11px; text-align: center; color: #999; }
-
         @media (max-width: 650px) { .spec-container { padding: 30px; } .guide-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-
 <div class="spec-container">
     <header>
         <div class="name">傅瑞乾 Reco Fu</div>
         <div class="tagline">ARCHITECT / ROOT CAUSE ANALYST / AUTOMATION WARRIOR / 40Y INTEGRITY</div>
     </header>
-
     <!-- 💡 介面說明書 (The Interface Spec) -->
     <div class="protocol-section">
         <div class="protocol-title">🔌 系統溝通與協作協議 (User Interface Spec)</div>
@@ -115,16 +102,13 @@
             </div>
         </div>
     </div>
-
     <!-- ⚔️ 十場實證紀錄 (The 10 Evolutionary Artifacts) -->
     <div class="section-title">📜 歷史真跡紀錄 (10 Sequential Battles)</div>
-
     <div class="battle-record">
         <div class="battle-line-1"><span>2022–至今 | ChatGPT 整合與 AI 安全治理</span> <span>ChatGPT Expert</span></div>
         <div class="battle-line-2">自研 GDI 即時守護系統與安全 API 框架，使漏洞風險下降 75% 並提升 20% 用戶體驗。</div>
         <div class="battle-line-3">透過與數個 AI 高強度對練，校正非線性風險，確保大模型在企業環境的穩定運行。</div>
     </div>
-
     <div class="battle-record">
         <div class="battle-record">
             <div class="battle-line-1"><span>2021–2022 | 柬埔寨 Pih Group MIS 副理</span> <span>MIS Sub-Manager</span></div>
@@ -132,55 +116,46 @@
             <div class="battle-line-3">在極端異地環境建置據點，從零建構工廠數據化與自動化架構。</div>
         </div>
     </div>
-
     <div class="battle-record">
         <div class="battle-line-1"><span>2017–2018 | LF Internet SRE 系統工程師</span> <span>SRE Specialist</span></div>
         <div class="battle-line-2">獨立診斷業界無人能解的 Broadcom NIC VMQ 隨機故障，解決數百次當機。</div>
         <div class="battle-line-3">部署測試 AWS、GCP、Azure、阿里雲混合架構，精通 Splunk 與 F5 Big-IP 流量治理。</div>
     </div>
-
     <div class="battle-record">
         <div class="battle-line-1"><span>2015 | 柬埔寨勒索病毒戰役：8 小時救援</span> <span>Disaster Recovery</span></div>
         <div class="battle-line-2">工廠遭襲全線停擺，於 8 小時內達成 100% 數據恢復且支付零贖金，救回生產命脈。</div>
         <div class="battle-line-3">24 小時內交付 Root Cause 報告並重構防禦體系，守住 40 年零中毒之物理底線。</div>
     </div>
-
     <div class="battle-record">
         <div class="battle-line-1"><span>2010–2014 | 越南與泰國 MIS 建廠治理</span> <span>Regional IT Lead</span></div>
         <div class="battle-line-2">主導志強興業與 TY 集團跨國 IT 基礎設施建設，導入 ERP 提升生產效率 10%。</div>
         <div class="battle-line-3">在泰國政治動盪環境下維持機房 100% 穩定，平衡專業技術與地區政治風險。</div>
     </div>
-
     <div class="battle-record">
         <div class="battle-line-1"><span>2003–2020 | 無人值守量化系統開發</span> <span>Quant Architect</span></div>
         <div class="battle-line-2">人在海外，機器在台中家中獨立運行 9 年。5 萬起步達成 27 倍收益，跨越多次黑天鵝。</div>
         <div class="battle-line-3">實證了具備熔斷機制與日誌完整性的自動化系統，能扛過颱風、停電與自然災害。</div>
     </div>
-
     <div class="battle-record">
         <div class="battle-line-1"><span>1999–2003 | 國家金融骨幹與 3G 核心部署</span> <span>Infrastructure</span></div>
         <div class="battle-line-2">親手建置台灣證交所、期交所、集保中心的全國 ATM/T1 骨幹，並協助部署首座 3G 中心。</div>
         <div class="battle-line-3">在秒級千金的金融命脈中工作，確保每一筆高併發交易與通訊路由的絕對零誤差。</div>
     </div>
-
     <div class="battle-record">
         <div class="battle-line-1"><span>1996–1998 | 全國戶役政與電信計費電腦化</span> <span>System Integration</span></div>
         <div class="battle-line-2">負責全國規模的自動化帳單處理與中華電信催費流程，實現戶役政從紙本到數位的轉型。</div>
         <div class="battle-line-3">處理國家級海量敏感數據，實證了在高吞吐量物理環境下的絕對穩定性與零殘留防禦。</div>
     </div>
-
     <div class="battle-record">
         <div class="battle-line-1"><span>1994–1995 | 國軍精實專案與資訊兵</span> <span>Military Automation</span></div>
         <div class="battle-line-2">於高雄工兵學校獨立完成測考題庫與資料庫電腦化，將軍事單位作業效率提升數倍。</div>
         <div class="battle-line-3">在嚴謹環境下展現交付能力，獲得軍方信賴，開啟「人、機、法、環」之整合生涯。</div>
     </div>
-
     <div class="battle-record">
         <div class="battle-line-1"><span>1984–1993 | FidoNet 先驅與電機工程基礎</span> <span>The Foundation</span></div>
         <div class="battle-line-2">南開電機工程出身（1987-1993）。建立台灣首批 FidoNet 節點 (6:722/228)，奠定底層邏輯。</div>
         <div class="battle-line-3">從 0 軌與 MBR 級別定義協議安全。這十年間，確立了拒絕黑盒、追求物理真實的基因。</div>
     </div>
-
     <!-- 🔗 LABS -->
     <div class="section-title">🧪 實證連結 (Evidence & Projects)</div>
     <div class="lab-links">
@@ -193,12 +168,10 @@
             <p>與多個 AI 對練、校正非線性風險的實踐場域，專注於分散式安全治理。</p>
         </a>
     </div>
-
     <footer>
         RECO FU | 40 Years of Uncompromising Integrity<br>
         「我不拜乖乖，我只吃乖乖。因為我就是定義穩定的人。」
     </footer>
 </div>
-
 </body>
 </html>
