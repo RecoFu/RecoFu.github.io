@@ -3,169 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reco Fu | 系統紀錄與實證</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Reco Fu | 系統守護者使用手冊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2c3e50;
-            --accent: #3498db;
-            --bg: #fdfdfd;
-            --card-bg: #ffffff;
-            --text: #333333;
-            --border: #e0e6ed;
-            --gold: #b8860b;
+            --title-blue: #1b4f72;
+            --tech-grey: #ecf0f1;
+            --text-main: #2c3e50;
+            --accent-blue: #3498db;
+            --border-color: #d5d8dc;
+            --highlight: #fdfefe;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            background-color: #f4f7f6;
+            color: var(--text-main);
             line-height: 1.8;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
-        .resume-container {
-            max-width: 850px;
+        .container {
+            max-width: 900px;
             margin: 0 auto;
-            background: var(--card-bg);
-            padding: 60px;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            background: var(--highlight);
+            padding: 70px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        /* Header */
-        .header {
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 30px;
-            margin-bottom: 40px;
-        }
-        .name { font-family: 'Noto Serif TC', serif; font-size: 42px; font-weight: 700; color: var(--primary); margin-bottom: 5px; }
-        .intro-simple { font-size: 18px; color: var(--accent); font-weight: 400; letter-spacing: 1px; }
-        .status-tag { display: inline-block; background: #eee; padding: 2px 12px; border-radius: 20px; font-size: 12px; color: #666; margin-top: 10px; }
+        /* Introduction */
+        .intro-block { margin-bottom: 60px; }
+        .intro-block h1 { font-family: 'Noto Serif TC', serif; font-size: 38px; color: var(--title-blue); margin-bottom: 20px; }
+        .intro-block p { font-size: 16px; text-align: justify; }
 
-        /* Ordinary Intro */
-        .bio { font-size: 16px; margin-bottom: 40px; text-align: justify; }
-
-        /* Sections */
-        .section { margin-bottom: 50px; }
-        .section-title {
+        /* Ten Battles - The Narrative Flow */
+        .section-header {
             font-family: 'Noto Serif TC', serif;
-            font-size: 22px;
-            color: var(--primary);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 8px;
-            margin-bottom: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            font-size: 24px;
+            color: var(--title-blue);
+            border-bottom: 2px solid var(--title-blue);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            margin-top: 50px;
         }
 
-        /* The Mouse Experiment Section */
-        .mouse-box {
-            background: #f8fbfe;
-            border: 1px solid #d6eaf8;
+        .battle-narrative { margin-bottom: 40px; }
+        .battle-narrative h4 { font-size: 18px; color: var(--title-blue); margin-bottom: 10px; display: flex; align-items: center; }
+        .battle-narrative h4::before { content: "•"; margin-right: 10px; color: var(--accent-blue); }
+        .battle-narrative p { font-size: 15px; color: #444; margin-left: 20px; }
+
+        /* User Guide Table */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .guide-box {
+            background: #fcfdfd;
+            border: 1px solid var(--border-color);
             padding: 25px;
             border-radius: 4px;
-            margin-bottom: 30px;
         }
-        .mouse-title { color: #2980b9; font-weight: 700; margin-bottom: 10px; display: block; }
+        .guide-box h5 { color: var(--title-blue); margin-bottom: 15px; font-size: 16px; border-left: 4px solid var(--accent-blue); padding-left: 10px; }
+        .guide-box ul { list-style: none; font-size: 14px; }
+        .guide-box ul li { margin-bottom: 10px; }
 
-        /* Work Items */
-        .work-item { margin-bottom: 30px; }
-        .work-header { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 5px; color: #444; }
-        .work-desc { font-size: 14px; color: #555; }
-        .work-cn { font-size: 13px; color: #777; margin-top: 5px; font-style: italic; }
-
-        /* Contact Links */
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid var(--border);
+        /* The Lab - Mouse Account */
+        .lab-section {
+            background: #f4f7f9;
+            border-radius: 8px;
+            padding: 35px;
+            margin-top: 60px;
+            border: 1px dashed var(--accent-blue);
         }
-        .footer-links a { color: var(--accent); text-decoration: none; font-size: 14px; }
-        .footer-links a:hover { text-decoration: underline; }
+        .lab-tag { background: var(--title-blue); color: white; padding: 3px 10px; font-size: 11px; border-radius: 3px; }
 
-        @media (max-width: 600px) {
-            .resume-container { padding: 30px; }
-            .name { font-size: 32px; }
-            .work-header { flex-direction: column; }
+        .footer-note { text-align: center; margin-top: 80px; font-size: 13px; color: #95a5a6; }
+
+        @media (max-width: 700px) {
+            .container { padding: 30px; }
+            .guide-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<div class="resume-container">
-    <!-- HEADER -->
-    <div class="header">
-        <h1 class="name">Reco Fu</h1>
-        <div class="intro-simple">系統守護者 | 40 年實務經驗</div>
-        <div class="status-tag">目前狀態：休整中 / 觀察 AI 蜂巢演進</div>
+<div class="container">
+    
+    <div class="intro-block">
+        <h1>系統守護者使用說明書</h1>
+        <p>
+            這不是一份傳統的簡歷，而是一個在資訊工業戰場運作了 40 年的「人機一體系統」說明。從 FidoNet 的撥接時代到 AI 蜂巢的自動交易紀元，我執著於一件事情：<strong>確保邏輯的絕對執行與數據的完整性。</strong> 過去四十年，這套系統未曾中毒、未曾遺失任何一位元數據。
+        </p>
     </div>
 
-    <!-- BIO -->
-    <div class="bio">
-        我是一個平凡的系統工程師。這 40 年來，我的工作很簡單：確保資料不掉、系統不中毒、在別人束手無策時找出根因。我曾協助台灣證交所建構骨幹，也在東南亞跨國工廠守護機房。我不相信奇蹟，我只相信物理定律與完整的日誌。目前沒有固定職位，正在整理過去四十載的技術真跡。
+    <!-- THE TEN BATTLES -->
+    <div class="section-header">⚔️ 職涯實證：十場決定性的戰役</div>
+
+    <div class="battle-narrative">
+        <h4>1984–2000：FidoNet 協議建設</h4>
+        <p>在網際網路尚未降臨台灣時，我在 0 軌與 MBR 之間建立了 FidoNet 節點。這段經歷定義了我的底層基因：如果協議不安全，連結就毫無意義。</p>
     </div>
 
-    <!-- MOUSE EXPERIMENT -->
-    <div class="section">
-        <div class="section-title">🐭 九年小白鼠實驗 (2012-2020)</div>
-        <div class="mouse-box">
-            <span class="mouse-title">全自動無人干涉系統研究</span>
-            <p style="font-size: 14px;">
-                從 2012 年 5 萬資金起步，系統獨自在台中家中運行九年，歷經地震、颱風、斷電，我人在海外從未干涉。2019 年權益達到 135 萬峰值，最終於 2020 年 3 月 18 日驗證了線性邏輯在 AI 蜂巢環境下的崩潰點。
-                <br><br>
-                <strong>核心真跡：</strong> 在 97% 回撤瞬間，系統精確執行熔斷並留下完整日誌。這不是虧損的故事，而是系統完整性（System Integrity）的實證。
-            </p>
+    <div class="battle-narrative">
+        <h4>1994–1995：國軍精實專案數位化</h4>
+        <p>服役期間，我獨立將負責單位的測考題庫與資料庫由紙本轉為電腦化。這是「系統自動化」在極端嚴謹環境下的第一次大規模實踐。</p>
+    </div>
+
+    <div class="battle-narrative">
+        <h4>1995–1996：農業硬軟整合自動化</h4>
+        <p>為大型養雞場導入自動化環境控制與飼餵系統。這是我對「人、機、環」共生關係的早期探索：在惡劣的物理環境中，代碼必須比鋼鐵更強韌。</p>
+    </div>
+
+    <div class="battle-narrative">
+        <h4>1996–1998：全國戶役政電腦化</h4>
+        <p>帶領中部團隊完成戶役政系統從手寫到數位的轉型。處理國家級敏感數據，讓我學會如何在大規模異步環境中維持誠信。</p>
+    </div>
+
+    <div class="battle-narrative">
+        <h4>1996–1998：電信計費與催費系統</h4>
+        <p>建構中華電信全國帳單列印與催費流程。在全國級的流量面前，我驗證了「系統高可用性」與「零誤差處理」的物理極限。</p>
+    </div>
+
+    <div class="battle-narrative">
+        <h4>1999–2003：電信骨幹與 3G 部署</h4>
+        <p>協助部署中部第一座 3G 核心中心（Core Network）。在電信命脈中工作，讓我對「連結的本質」有了納秒級的認知。</p>
+    </div>
+
+    <div class="battle-narrative">
+        <h4>1999–2003：金融交易 T1 全國骨幹</h4>
+        <p>親手建構證交所、期交所、集保中心的全國 ATM/T1 骨幹。這是我職業生涯中最接近「金錢脈動」的時刻，每一毫秒的延遲都代表了系統主權的喪失。</p>
+    </div>
+
+    <div class="battle-narrative">
+        <h4>2015：勒索病毒 8 小時無損復原</h4>
+        <p>在柬埔寨工廠遭遇毀滅性攻擊時，我在 8 小時內完成救援，24 小時內產出根因報告。證明了真正的安全不在於預防，而在於不破壞日誌完整性的自癒力。</p>
+    </div>
+
+    <div class="battle-narrative">
+        <h4>2016：Broadcom VMQ 叢集危機</h4>
+        <p>面對連原廠都解釋不了的隨機當機，我追蹤到六層板與驅動程式的衝突根因，說服董事會重構架構。這證實了我的診斷能力優於自動化工具。</p>
+    </div>
+
+    <div class="battle-narrative">
+        <h4>2003–2020：跨維度無人交易系統</h4>
+        <p>人在海外，系統獨自守在台中家中跑了十年。扛過地震颱風，達成 10 倍以上收益。這不是投資，這是關於「系統韌性」長達十載的極限實務。</p>
+    </div>
+
+    <!-- USER GUIDE -->
+    <div class="section-header">⚙️ 使用指南 (Capabilities & Constraints)</div>
+    
+    <div class="guide-grid">
+        <div class="guide-box">
+            <h5>💪 核心優勢 (Pros)</h5>
+            <ul>
+                <li><strong>絕不掉資料</strong>：40 年零遺失紀錄，對完整性有生理級的執著。</li>
+                <li><strong>根因分析 (RCA)</strong>：無視表面症狀，直接定址物理或協議層的錯誤。</li>
+                <li><strong>高維防禦</strong>：不依賴第三方軟體，從底層邏輯隔離病毒與威脅。</li>
+            </ul>
+        </div>
+        <div class="guide-box">
+            <h5>⚠️ 已知局限 (Cons)</h5>
+            <ul>
+                <li><strong>拒絕平庸</strong>：無法忍受無意義的會議與官僚流程。</li>
+                <li><strong>語言密度</strong>：溝通頻寬需求極大，低智力環境會產生嚴重的傳輸損耗。</li>
+                <li><strong>單機模式</strong>：一次只能開一台車，拒絕低質量的異步並行。</li>
+            </ul>
         </div>
     </div>
 
-    <!-- EXPERIENCE -->
-    <div class="section">
-        <div class="section-title">⚔️ 歷程簡述</div>
-
-        <div class="work-item">
-            <div class="work-header"><span>FidoNet 節點建設 (6:722/228)</span> <span>1984 – 2000</span></div>
-            <div class="work-desc">在網際網路未普及前，建立台灣早期安全傳訊協議。</div>
-        </div>
-
-        <div class="work-item">
-            <div class="work-header"><span>台灣金融與電信基礎建設</span> <span>1996 – 2003</span></div>
-            <div class="work-desc">協助證交所、期交所、集保中心 T1 骨幹建置；參與 3G 核心中心部署。</div>
-        </div>
-
-        <div class="work-item">
-            <div class="work-header"><span>跨國製造業 IT 負責人 (越南、柬埔寨)</span> <span>2010 – 2022</span></div>
-            <div class="work-desc">從零建置工廠機房，實踐資安零事故與零遺失。</div>
-        </div>
-
-        <div class="work-item">
-            <div class="work-header"><span>勒索病毒防禦與復原實戰</span> <span>2015</span></div>
-            <div class="work-desc">工廠遭襲，8 小時內 100% 數據恢復，24 小時產出 Root Cause 報告。</div>
+    <div class="guide-grid" style="margin-top:0;">
+        <div class="guide-box" style="grid-column: span 2;">
+            <h5>📌 啟動重點 (Key Points)</h5>
+            <ul>
+                <li><strong>啟用條件</strong>：當系統死透、專家離職、或面臨不可預見的黑天鵝災難時。</li>
+                <li><strong>數據倫理</strong>：不保存公司數據，只守護執行邏輯的真實與真跡。</li>
+                <li><strong>對價原則</strong>：直覺與經驗是有價資產，先確認對價，再啟動診斷報告。</li>
+            </ul>
         </div>
     </div>
 
-    <!-- CONTACT -->
-    <div class="section">
-        <div class="section-title">🔗 相關連結</div>
-        <div class="bio" style="margin-bottom: 10px; font-size: 14px; color: #666;">
-            如果您遇到了「專家解決不了、Splunk 查不出來」的底層系統故障，或者想討論 AI 治理的真跡，歡迎聯繫。
-        </div>
-        <div class="footer-links">
-            <a href="mailto:reco@outlook.com">✉️ reco@outlook.com</a>
-            <a href="https://github.com/RecoFu" target="_blank">💻 GitHub (真跡存檔)</a>
-            <a href="https://www.linkedin.com/in/recofu/" target="_blank">📄 LinkedIn</a>
-        </div>
+    <!-- THE LAB -->
+    <div class="lab-section">
+        <span class="lab-tag">FINAL EXPERIMENT</span>
+        <h4 style="margin-top:15px; color: var(--title-blue);">九年小白鼠實驗日誌 (2012-2020)</h4>
+        <p style="font-size: 14px; margin-top: 10px;">
+            這是為了測試「線性邏輯」極限而進行的封閉實驗。從 5 萬起步到 135 萬，最終於 2020/03/18 親證了量化共振在 AI 蜂巢面前的集體崩解。97% 的回撤不是失敗，而是「熔斷結界」的實測成果：數據被完整記錄，損失被精確止住。
+        </p>
+        <p style="font-size: 13px; color: #7f8c8d; margin-top: 15px;">
+            👉 驗證 Hash: <code style="background: #e8eaed; padding: 2px 5px;">0538dd79...2f9a</code> (SHA-256 Verified)
+        </p>
     </div>
 
-    <!-- PHILOSOPHY -->
-    <div style="text-align: center; margin-top: 60px; font-size: 12px; color: #999; border-top: 1px solid #eee; padding-top: 20px;">
-        「我不拜乖乖，我只吃乖乖。因為我就是定義穩定的人。」
+    <div class="footer-note">
+        「我不拜乖乖，我只吃乖乖。因為我就是定義穩定的人。」<br>
+        Reco Fu | 40 Years of Uncompromising Integrity
     </div>
+
 </div>
 
 </body>
