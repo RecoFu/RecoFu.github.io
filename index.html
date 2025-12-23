@@ -3,268 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reco Fu | The Sovereign Architect</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Reco Fu | 系統紀錄與實證</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0d1117;
-            --surface: #161b22;
-            --border: #30363d;
-            --accent: #58a6ff;
-            --gold: #d29922;
-            --text-main: #c9d1d9;
-            --text-dim: #8b949e;
-            --critical: #f85149;
-            --success: #3fb950;
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #fdfdfd;
+            --card-bg: #ffffff;
+            --text: #333333;
+            --border: #e0e6ed;
+            --gold: #b8860b;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', 'Microsoft JhengHei', sans-serif;
+            font-family: 'Noto Sans TC', sans-serif;
             background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 20px;
+            color: var(--text);
+            line-height: 1.8;
+            padding: 40px 20px;
         }
 
-        .container {
-            max-width: 1000px;
+        .resume-container {
+            max-width: 850px;
             margin: 0 auto;
+            background: var(--card-bg);
+            padding: 60px;
             border: 1px solid var(--border);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            background: var(--bg);
-        }
-
-        /* Top Bar - System Status Style */
-        .system-status {
-            background: var(--surface);
-            padding: 10px 20px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: var(--success);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
         /* Header */
         .header {
-            padding: 60px 40px;
-            background: radial-gradient(circle at top right, #1a2333, var(--bg));
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        .name { font-family: 'Noto Serif TC', serif; font-size: 42px; font-weight: 700; color: var(--primary); margin-bottom: 5px; }
+        .intro-simple { font-size: 18px; color: var(--accent); font-weight: 400; letter-spacing: 1px; }
+        .status-tag { display: inline-block; background: #eee; padding: 2px 12px; border-radius: 20px; font-size: 12px; color: #666; margin-top: 10px; }
+
+        /* Ordinary Intro */
+        .bio { font-size: 16px; margin-bottom: 40px; text-align: justify; }
+
+        /* Sections */
+        .section { margin-bottom: 50px; }
+        .section-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 22px;
+            color: var(--primary);
             border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .name { font-size: 56px; font-weight: 900; letter-spacing: -2px; color: #fff; line-height: 1; margin-bottom: 10px; }
-        .title { font-size: 20px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
-        .tagline { margin-top: 20px; color: var(--text-dim); font-style: italic; border-left: 2px solid var(--gold); padding-left: 15px; max-width: 600px; }
 
-        /* Stats Section */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            border-bottom: 1px solid var(--border);
-        }
-        .stat-item {
-            padding: 30px;
-            border-right: 1px solid var(--border);
-            text-align: center;
-        }
-        .stat-item:last-child { border-right: none; }
-        .stat-num { font-size: 28px; font-weight: 900; color: var(--gold); font-family: 'JetBrains Mono', monospace; }
-        .stat-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; margin-top: 5px; }
-
-        /* Content Area */
-        .main-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 1px;
-            background: var(--border);
-        }
-        .left-col { background: var(--bg); padding: 40px; }
-        .right-col { background: var(--surface); padding: 40px; }
-
-        h3 { font-size: 14px; font-weight: 900; text-transform: uppercase; color: var(--accent); margin-bottom: 30px; display: flex; align-items: center; }
-        h3::before { content: "//"; margin-right: 10px; opacity: 0.5; }
-
-        /* Battle Items */
-        .battle-item { margin-bottom: 40px; position: relative; }
-        .battle-year { font-family: 'JetBrains Mono', monospace; color: var(--gold); font-size: 13px; margin-bottom: 5px; }
-        .battle-title { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px; }
-        .battle-desc { font-size: 14px; color: var(--text-main); margin-bottom: 10px; text-align: justify; }
-        .battle-cn { font-size: 13px; color: var(--text-dim); background: rgba(255,255,255,0.03); padding: 10px; border-radius: 4px; }
-
-        /* Special Window: Black Swan */
-        .black-swan-window {
-            background: #1c1300;
-            border: 1px solid var(--gold);
+        /* The Mouse Experiment Section */
+        .mouse-box {
+            background: #f8fbfe;
+            border: 1px solid #d6eaf8;
             padding: 25px;
-            margin-top: 20px;
             border-radius: 4px;
+            margin-bottom: 30px;
         }
-        .window-title { color: var(--gold); font-weight: bold; font-size: 12px; margin-bottom: 15px; display: block; }
+        .mouse-title { color: #2980b9; font-weight: 700; margin-bottom: 10px; display: block; }
 
-        /* Right Column Modules */
-        .module { margin-bottom: 50px; }
-        .module-title { font-size: 12px; font-weight: 900; color: var(--text-dim); margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 5px; }
-        .tech-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; background: rgba(88, 166, 255, 0.1); color: var(--accent); padding: 2px 8px; margin: 0 4px 8px 0; border-radius: 3px; }
+        /* Work Items */
+        .work-item { margin-bottom: 30px; }
+        .work-header { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 5px; color: #444; }
+        .work-desc { font-size: 14px; color: #555; }
+        .work-cn { font-size: 13px; color: #777; margin-top: 5px; font-style: italic; }
 
-        .call-me-grid { font-size: 13px; }
-        .yes-item { color: var(--success); margin-bottom: 8px; list-style: none; }
-        .no-item { color: var(--critical); margin-bottom: 8px; list-style: none; opacity: 0.7; }
-        .yes-item::before { content: "✓ "; }
-        .no-item::before { content: "✕ "; }
+        /* Contact Links */
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+        }
+        .footer-links a { color: var(--accent); text-decoration: none; font-size: 14px; }
+        .footer-links a:hover { text-decoration: underline; }
 
-        /* Links */
-        .link-item { display: block; color: #fff; text-decoration: none; margin-bottom: 15px; font-size: 14px; transition: 0.2s; }
-        .link-item:hover { color: var(--accent); transform: translateX(5px); }
-        .link-item span { display: block; font-size: 11px; color: var(--text-dim); }
-
-        /* Footer */
-        .footer { padding: 40px; border-top: 1px solid var(--border); text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); }
-
-        @media (max-width: 850px) {
-            .main-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 600px) {
+            .resume-container { padding: 30px; }
+            .name { font-size: 32px; }
+            .work-header { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- SYSTEM STATUS BAR -->
-        <div class="system-status">
-            <span>OBJECT_ID: RECO_FU_0軌守護者</span>
-            <span>Uptime: 40 Years / Status: OPERATIONAL</span>
-            <span>Integrity: 100% Verified</span>
-        </div>
+<div class="resume-container">
+    <!-- HEADER -->
+    <div class="header">
+        <h1 class="name">Reco Fu</h1>
+        <div class="intro-simple">系統守護者 | 40 年實務經驗</div>
+        <div class="status-tag">目前狀態：休整中 / 觀察 AI 蜂巢演進</div>
+    </div>
 
-        <!-- HEADER -->
-        <div class="header">
-            <h1 class="name">RECO FU</h1>
-            <div class="title">Sovereign System Architect | 系統主權架構師</div>
-            <p class="tagline">"I don't find miracles. I find root causes. 40 years of unblemished integrity in the bits that matter most."</p>
-        </div>
+    <!-- BIO -->
+    <div class="bio">
+        我是一個平凡的系統工程師。這 40 年來，我的工作很簡單：確保資料不掉、系統不中毒、在別人束手無策時找出根因。我曾協助台灣證交所建構骨幹，也在東南亞跨國工廠守護機房。我不相信奇蹟，我只相信物理定律與完整的日誌。目前沒有固定職位，正在整理過去四十載的技術真跡。
+    </div>
 
-        <!-- CORE STATS -->
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-num">40+</div>
-                <div class="stat-label">Years Resilience</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">0</div>
-                <div class="stat-label">Data Lost / Breaches</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">100%</div>
-                <div class="stat-label">Root Cause Fix Rate</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">2.6k%</div>
-                <div class="stat-label">Quant Peak RoI</div>
-            </div>
-        </div>
-
-        <!-- MAIN LAYOUT -->
-        <div class="main-grid">
-            
-            <!-- LEFT COLUMN: THE BATTLES -->
-            <div class="left-col">
-                <h3>Major Empirical Proofs | 重大實證</h3>
-
-                <div class="battle-item">
-                    <div class="battle-year">1984 – 2000</div>
-                    <div class="battle-title">Taiwan FidoNet Founding & Node Architecture</div>
-                    <div class="battle-desc">Designed secure messaging protocols and architected node infrastructures (6:722/228) before the commercial internet. Established the first principle of system logic: Protocol is Sovereignty.</div>
-                    <div class="battle-cn">在網際網路前寒武紀時期設計協議。這是我對「系統邏輯即主權」執著的起源。</div>
-                </div>
-
-                <div class="battle-item">
-                    <div class="battle-year">1996 – 1998</div>
-                    <div class="battle-title">National Finance & Infrastructure Construction</div>
-                    <div class="battle-desc">Lead architect for national-level ATM backbones, Futures Exchange core networks, and high-frequency financial settlement systems. 0% margin for error, 100% mission success.</div>
-                    <div class="battle-cn">主導台灣證交所、期交所的全國級金融命脈骨幹建置。秒級千金，不容出錯。</div>
-                </div>
-
-                <div class="battle-item">
-                    <div class="battle-year">DEC 2015</div>
-                    <div class="battle-title">Ransomware Zero-Loss Counterstrike</div>
-                    <div class="battle-desc">Crisis management for a multi-national manufacturing site. 100% data restoration achieved within 8 hours. Zero ransom paid. Full root cause analysis delivered in 24 hours.</div>
-                    <div class="battle-cn">柬埔寨工廠遭勒索病毒襲擊。8小時內數據完美復原，24小時內完成根因診斷並重構防禦體系。</div>
-                </div>
-
-                <div class="battle-item">
-                    <div class="battle-year">MAR 2016 – JUL 2017</div>
-                    <div class="battle-title">Deep Hardware Diagnostics: The VMQ Crisis</div>
-                    <div class="battle-desc">Resolved hundreds of random cluster crashes by tracing a specific Broadcom driver conflict at the VMQ layer. Restored availability from 85% to 99.9% when vendors gave up.</div>
-                    <div class="battle-cn">解決數百次隨機當機。當原廠都放棄時，我追到Broadcom驅動與VMQ層級的衝突點，徹底修復。</div>
-                </div>
-
-                <div class="battle-item">
-                    <div class="battle-year">2012 – 2020</div>
-                    <div class="battle-title">Black Swan Resilience Proof (9-Year Autonomous Study)</div>
-                    <div class="battle-desc">Zero-intervention quantitative system survived 9 years of environmental chaos. Successfully executed circuit-breaker during the Mar 18, 2020 collapse. Proof of architecture over prediction.</div>
-                    <div class="battle-cn">九年小白鼠實驗。在2020年3月18日黑天鵝降臨時，系統依舊優雅紀錄並精確執行熔斷流程。</div>
-                </div>
-
-                <div class="black-swan-window">
-                    <span class="window-title">LOG_ANALYSIS: [GRADUATION_REPORT]</span>
-                    <p style="font-size: 13px; color: var(--text-main);">
-                        Merkle Root: 0538dd79...2f9a<br>
-                        2,013 Verified Records via Gmail Timestamp.<br><br>
-                        <strong>"I am not an oracle; I am the architect who ensures the system records with precision and ceases with grace."</strong>
-                    </p>
-                </div>
-            </div>
-
-            <!-- RIGHT COLUMN: CAPABILITIES -->
-            <div class="right-col">
-                
-                <div class="module">
-                    <div class="module-title">Operational Protocol</div>
-                    <ul class="call-me-grid">
-                        <li class="yes-item">System is dead & experts quit</li>
-                        <li class="yes-item">Need Root Cause, not patches</li>
-                        <li class="yes-item">Black Swan high-risk analysis</li>
-                        <li class="no-item">Surface-level bureaucracy</li>
-                        <li class="no-item">Meetings without diagnostic data</li>
-                    </ul>
-                </div>
-
-                <div class="module">
-                    <div class="module-title">Technical DNA</div>
-                    <span class="tech-tag">MBR/Track 0</span>
-                    <span class="tech-tag">INT 21h</span>
-                    <span class="tech-tag">PCI Protocols</span>
-                    <span class="tech-tag">Driver Forensics</span>
-                    <span class="tech-tag">Zero-Knowledge Proof</span>
-                    <span class="tech-tag">Merkle Tree</span>
-                    <span class="tech-tag">AI Safety (GDI)</span>
-                    <span class="tech-tag">Disaster Recovery</span>
-                </div>
-
-                <div class="module">
-                    <div class="module-title">Transmission Gates</div>
-                    <a href="mailto:reco@outlook.com" class="link-item">reco@outlook.com<span>Primary Direct Link</span></a>
-                    <a href="https://github.com/RecoFu" class="link-item">github.com/RecoFu<span>Source of Truth</span></a>
-                    <a href="https://www.linkedin.com/in/recofu/" class="link-item">linkedin.com/in/recofu<span>Professional Epoch</span></a>
-                </div>
-
-                <div class="module">
-                    <div class="module-title">System Note</div>
-                    <p style="font-size: 12px; color: var(--text-dim); line-height: 1.5;">
-                        I don't pray to "Kuai Kuai". I define stability via physical laws. If your system is failing, I don't need a summary—I need a scope.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- FOOTER -->
-        <div class="footer">
-            HASH_VAL: 4da1bdcd23bee271...7033f4aedb404817<br>
-            © 2025 RECO FU. DEPLOYED WITH ABSOLUTE INTEGRITY.
+    <!-- MOUSE EXPERIMENT -->
+    <div class="section">
+        <div class="section-title">🐭 九年小白鼠實驗 (2012-2020)</div>
+        <div class="mouse-box">
+            <span class="mouse-title">全自動無人干涉系統研究</span>
+            <p style="font-size: 14px;">
+                從 2012 年 5 萬資金起步，系統獨自在台中家中運行九年，歷經地震、颱風、斷電，我人在海外從未干涉。2019 年權益達到 135 萬峰值，最終於 2020 年 3 月 18 日驗證了線性邏輯在 AI 蜂巢環境下的崩潰點。
+                <br><br>
+                <strong>核心真跡：</strong> 在 97% 回撤瞬間，系統精確執行熔斷並留下完整日誌。這不是虧損的故事，而是系統完整性（System Integrity）的實證。
+            </p>
         </div>
     </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+        <div class="section-title">⚔️ 歷程簡述</div>
+
+        <div class="work-item">
+            <div class="work-header"><span>FidoNet 節點建設 (6:722/228)</span> <span>1984 – 2000</span></div>
+            <div class="work-desc">在網際網路未普及前，建立台灣早期安全傳訊協議。</div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-header"><span>台灣金融與電信基礎建設</span> <span>1996 – 2003</span></div>
+            <div class="work-desc">協助證交所、期交所、集保中心 T1 骨幹建置；參與 3G 核心中心部署。</div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-header"><span>跨國製造業 IT 負責人 (越南、柬埔寨)</span> <span>2010 – 2022</span></div>
+            <div class="work-desc">從零建置工廠機房，實踐資安零事故與零遺失。</div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-header"><span>勒索病毒防禦與復原實戰</span> <span>2015</span></div>
+            <div class="work-desc">工廠遭襲，8 小時內 100% 數據恢復，24 小時產出 Root Cause 報告。</div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section">
+        <div class="section-title">🔗 相關連結</div>
+        <div class="bio" style="margin-bottom: 10px; font-size: 14px; color: #666;">
+            如果您遇到了「專家解決不了、Splunk 查不出來」的底層系統故障，或者想討論 AI 治理的真跡，歡迎聯繫。
+        </div>
+        <div class="footer-links">
+            <a href="mailto:reco@outlook.com">✉️ reco@outlook.com</a>
+            <a href="https://github.com/RecoFu" target="_blank">💻 GitHub (真跡存檔)</a>
+            <a href="https://www.linkedin.com/in/recofu/" target="_blank">📄 LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- PHILOSOPHY -->
+    <div style="text-align: center; margin-top: 60px; font-size: 12px; color: #999; border-top: 1px solid #eee; padding-top: 20px;">
+        「我不拜乖乖，我只吃乖乖。因為我就是定義穩定的人。」
+    </div>
+</div>
 
 </body>
 </html>
