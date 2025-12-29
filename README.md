@@ -118,25 +118,21 @@ ARCHITECT / ROOT CAUSE ANALYST / AUTOMATION WARRIOR / 40Y INTEGRITY
 </div>
 
 ---
+## Root Cause Architect for Critical Systems
 
-Root Cause as a Service (R CaaS)
-Quantitative analysis, system architecture (on premises and cloud), microservices, automated maintenance, and root cause proof are not separate careers for me—they are one continuous experiment in system sovereignty.
-Layer 1 – Physical & Link
-•	FidoNet node 6:722/228 (1980s–2000s), null modem RS 232 links, QEMM386 + DesqView multi session DOS—early “hivemind” for BBS and relay systems.
-•	Register level diagnosis of NIC and PCI behavior, including Broadcom related incidents that turned 85% uptime warzones into stable 99.9% production.
-Layer 2 – Infrastructure & Financial Backbone
-•	Telecom and PBX integration for national carriers and financial institutions in central Taiwan.
-•	Projects covering stock and futures exchange connectivity, ATM, and 3G rollout—focused on “no silent data corruption, no unrecoverable loss” under my scope.
-Layer 3 – Data Sovereignty & Autonomous Systems
-•	9 year unattended futures micro account running in Taichung while I worked abroad—designed as a crash test dummy to measure structural resilience, not as a trophy PnL curve.
-•	Every order and state change logged via email and hashed as a zero knowledge proof trail, so that reconstruction does not depend on trust or memory, only on logs.
-Today
-I help organizations that need:
-•	Explanations that survive cross examination, not just pretty dashboards
-•	Architecture that degrades gracefully under earthquakes, power cuts, or black swan markets
-•	AI assisted operations where LLMs augment but do not replace root cause logic.
-Contact for: RCA deep dives, resilience architecture reviews, and experimental AI augmented operations design.
+I design, debug, and harden systems from transistor glitches and NIC registers up through financial backbones, overseas factories, and fully automated trading systems.[file:1]
+- 40+ years from FidoNet and INT 21h debugging to cloud, AI and zero-trust security  
+- Built and operated telecom, PBX, exchange connectivity, ATM and factory IT/OT in TW & SE Asia  
+- Ran a 9-year fully unattended futures “lab-rat” account with complete email+hash audit trails.
 
+### Root Cause as a Service (R‑CaaS)
+
+I work with teams who need verifiable explanations, not just dashboards:
+- Deep RCA for outages and performance anomalies across hardware, network, OS, app, and trading systems  
+- Resilience reviews for legacy infra and factories moving toward cloud / zero-trust  
+- AI-augmented operations: using LLMs as assistants for monitoring, log triage and governance, not as oracles[web:42][file:1]
+
+For full career history: see my [LinkedIn profile](https://www.linkedin.com/in/recofu) and 104 resume (Chinese).
 ---
 
 ## Footer
