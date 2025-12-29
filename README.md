@@ -130,7 +130,7 @@ I design, debug, and harden systems from transistor glitches and NIC registers u
 I work with teams who need verifiable explanations, not just dashboards:
 - Deep RCA for outages and performance anomalies across hardware, network, OS, app, and trading systems  
 - Resilience reviews for legacy infra and factories moving toward cloud / zero-trust  
-- AI-augmented operations: using LLMs as assistants for monitoring, log triage and governance, not as oracles[web:42][file:1]
+- AI-augmented operations: using LLMs as assistants for monitoring, log triage and governance, not as oracles
 
 For full career history: see my [LinkedIn profile](https://www.linkedin.com/in/recofu) and 104 resume (Chinese).
 ---
